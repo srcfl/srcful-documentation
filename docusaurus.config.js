@@ -63,11 +63,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.png',
       navbar: {
         title: 'srcful documentation',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'srcful - Building a sustainable future, together',
           src: 'img/logo.svg',
         },
         items: [
@@ -102,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/srcful',
               },
               {
                 label: 'Discord',
@@ -110,7 +110,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/srcful',
               },
             ],
           },
@@ -123,12 +123,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/srcfl',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Srcful`,
       },
       prism: {
         theme: lightCodeTheme,

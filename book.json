@@ -1,0 +1,10 @@
+{
+    "title": "srcful",
+    "root": "./docs",
+    "links": {
+        "sidebar": {
+
+        }
+    },
+    "plugins": ["-sharing"]
+}

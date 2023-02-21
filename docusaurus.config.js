@@ -40,10 +40,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/srcfl/srcfl.github.io',
+          editUrl:       'https://github.com/srcfl/srcfl.github.io', // Remove this to remove the "edit this page" links.
+          routeBasePath: '/',  
         },
         blog: {
           showReadingTime: true,
@@ -71,16 +69,16 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+         
+          {to: '/blog', label: 'Blog', position: 'right'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://explorer.srcful.io',
+            label: 'Explorer',
             position: 'right',
           },
         ],

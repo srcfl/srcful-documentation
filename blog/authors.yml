@@ -1,17 +1,29 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+frahlg:
+  name: Fredrik Ahlgren
+  title: CEO
+  url: https://twitter.com/frahlg
+  image_url: https://github.com/frahlg.png
 
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+leitet:
+  name: Johan Leitet
+  title: Evangelist and developer
+  url: https://twitter.com/leitet
+  image_url: https://github.com/leitet.png
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+kneeclass:
+  name: Niklas Emevi
+  title: Lead developer
+  url: https://twitter.com/kneeclass
+  image_url: https://github.com/kneeclass.png
+
+viktor:
+  name: Viktor 
+  title: Business developer and CFO
+  url: https://twitter.com/SrcfulViktor
+  image_url: https://pbs.twimg.com/profile_images/1621364087971094528/neraFF44_400x400.jpg
+
+davmoz:
+  name: David Mozart Andraws 
+  title: Lead developer
+  url: https://twitter.com/DMozartAndraws
+  image_url: https://github.com/davmoz.png

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksrcful_documentation=self.webpackChunksrcful_documentation||[]).push([[2450],{5190:s=>{s.exports=JSON.parse('{"label":"kneeclass","permalink":"/blog/tags/kneeclass","allTagsPath":"/blog/tags","count":1}')}}]);

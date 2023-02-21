@@ -2,6 +2,9 @@
   "name": "srcful-documentation",
   "version": "0.0.1",
   "private": true,
+  "overrides": {
+    "@babel/generator": "7.20.0"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

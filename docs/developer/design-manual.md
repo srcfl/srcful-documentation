@@ -16,9 +16,23 @@ Learn how to use our logo correctly and the rules that govern its use in all app
 
 Understand how to choose and use the right fonts in our designs, and their appropriate sizes and weights.
 
+| Example                                     | Name/Download                                | Usage           |
+|---------------------------------------------|----------------------------------------------|-----------------|
+| [The quick brown fox jumps over the lazy dog](https://fontsgeek.com/fonts/gilroy-light) | [Gilroy Light](./font/gilroy-light.woff2)    |  Headlines            |
+| [The quick brown fox jumps over the lazy dog](#) | [Glober](./font/glober.woff2)    |  Paragraphs            |
+
+
+
 ## Color Scheme
 
 Learn about our brand colors and how to use them consistently across all marketing materials and products.
+
+| Example              | HEX     | RGB                | Usage           |
+|----------------------|---------|--------------------|-----------------|
+|![](./img/2596be.png) | #2596be | RGB(37, 149, 190)  | ...             |
+|![](./img/ad9024.png) | #ad9024 | RGB(173, 143, 36)  | ...             |
+|![](./img/b5b5b5.png) | #b5b5b5 | RGB(181, 181, 181) | ...             |
+|![](./img/c80f77.png) | #c80f77 | RGB(200, 15, 120)  | ...             |
 
 ## Imagery Guidelines
 

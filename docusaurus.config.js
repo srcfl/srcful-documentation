@@ -40,15 +40,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:       'https://github.com/srcfl/srcfl.github.io', // Remove this to remove the "edit this page" links.
           routeBasePath: '/',  
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/srcfl/srcfl.github.io',
+     
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

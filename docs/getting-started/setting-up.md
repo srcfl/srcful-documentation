@@ -2,7 +2,13 @@
 sidebar_position: 3
 ---
 
-# Setting up the Energy Gateway
+# Setting up 
+
+## The Solana Wallet
+
+## The Srcful Energy Gateway
+
+
 
 
 

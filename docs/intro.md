@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Home'
+sidebar_label: 'Overview'
 sidebar_position: 1
 slug: /
 ---

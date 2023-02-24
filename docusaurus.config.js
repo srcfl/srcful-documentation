@@ -72,7 +72,7 @@ const config = {
          
           {to: '/blog', label: 'Blog', position: 'right'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/srcfl',
             label: 'GitHub',
             position: 'right',
           },
@@ -115,6 +115,14 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'Web',
+                href: 'https://srcful.io',
+              },
+              {
+                label: 'Explorer',
+                href: 'https://explorer.srcful.io',
+              },
               {
                 label: 'Blog',
                 to: '/blog',

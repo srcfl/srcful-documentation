@@ -12,6 +12,13 @@ Our design manual is the go-to resource for developers when creating visual and 
 
 Learn how to use our logo correctly and the rules that govern its use in all applications.
 
+| Example                                     | Download                                | Usage           |
+|---------------------------------------------|----------------------------------------------|-----------------|
+| ![](./img/logo-black-transparent.svg) | [.svg](./img/logo-black-transparent.svg), [.png](./img/logo-black-transparent.png)    |  Documents with white background, light themes            |
+| ![](./img/logo-white-transparent.svg) | [.svg](./img/logo-white-transparent.svg), [.png](./img/logo-white-transparent.png)    |  Dark themes            |
+| ![](./img/logo-gold-transparent.svg) | [.svg](./img/logo-gold-transparent.svg), [.png](./img/logo-gold-transparent.png)    |  Light and dark themes            |
+
+
 ## Typography Rules
 
 Understand how to choose and use the right fonts in our designs, and their appropriate sizes and weights.

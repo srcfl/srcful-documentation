@@ -18,6 +18,7 @@ We're thrilled to announce that we're now seeking participants to start testing 
 
 If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
 
-Link: [https://forms.gle/nAdpEi4oCuNeBHto9](https://forms.gle/nAdpEi4oCuNeBHto9)
+<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
+<br /><br />
 
 Don't miss out on this exciting opportunity to shape the future of energy with Srcful.

@@ -59,10 +59,11 @@ const config = {
       // Replace with your project's social card
       image: 'img/social-card.png',
       navbar: {
-        title: 'srcful documentation',
+        title: 'SRCFUL DOCUMENTATION',
         logo: {
           alt: 'srcful - Building a sustainable future, together',
-          src: 'img/logo.svg',
+          src: 'img/logo-black-transparent.svg',
+          srcDark: 'img/logo-white-transparent.svg'
         },
         items: [
          

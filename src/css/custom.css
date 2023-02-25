@@ -25,7 +25,9 @@
   --ifm-color-primary-lightest: #CCBA76;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-footer-background-color: #6C5A17;
 }
+
 :root h1,
 :root h2,
 :root h3,
@@ -46,4 +48,9 @@
   --ifm-color-primary-lighter: #D6C892;
   --ifm-color-primary-lightest: #E0D5AD;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
 }

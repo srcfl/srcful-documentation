@@ -107,6 +107,10 @@ const config = {
                 label: 'Twitter',
                 href: 'https://twitter.com/srcful',
               },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/srcfl',
+              },
             ],
           },
           {
@@ -123,10 +127,6 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/srcfl',
               },
             ],
           },

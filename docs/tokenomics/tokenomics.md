@@ -6,9 +6,13 @@ sidebar_position: 1
 
 The Srcful tokenomic distribution plan outlines how the total supply of SrcToken will be distributed over a period of 30 years. The plan aims to create a fair and equitable distribution of tokens that promotes decentralization and encourages widespread adoption of the Srcful platform.
 
-![](./img/distribution.svg)
+![Distribution of SrcToken](./img/distribution.svg#gh-light-mode-only)![Distribution of SrcToken](./img/distribution-dark.svg#gh-dark-mode-only)
+
 
 The distribution plan includes mechanisms to create value for the token, such as token utility, governance, and incentivization programs. The plan allocates a certain percentage of tokens to Proof-of-Source mining, Proof-of-Control mining, and Srcful and its investors. The distribution percentages change each year, with a gradual reduction in the percentage allocated to Proof-of-Source mining and an increase in the percentage allocated to Proof-of-Control over time. Overall, the tokenomic distribution plan is designed to encourage participation, increase liquidity, and build a strong, supportive community of users and investors.
+
+![Distribution of SrcToken](./img/total-distribution.svg#gh-light-mode-only)![Distribution of SrcToken](./img/total-distribution-dark.svg#gh-dark-mode-only)
+
 
 ## PoS and PoC Distribution
 

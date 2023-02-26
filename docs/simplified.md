@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Srcful for dummies'
+sidebar_label: 'Srcful Simplified'
 sidebar_position: 2
 ---
 
-# Srcful for dummies
+# Srcful Simplified
 
 
 <div class="alert alert--primary" role="alert">

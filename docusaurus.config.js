@@ -93,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/category/developer',
+                to: '/developer/overview',
               },
               {
                 label: 'API Playground',

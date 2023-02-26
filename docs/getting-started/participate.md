@@ -10,23 +10,21 @@ There are two primary ways to get involved with Srcful and start participating i
 
 By getting a Srcful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit the [Notice of Interest form](https://forms.gle/nAdpEi4oCuNeBHto9) to register your interest in the Srcful Energy Gateway. Once you've signed up, we'll notify you when the Gateway becomes available for purchase.
 
-#### Requirements
+### Requirements
 
-T.B.A
+To install a Srcful Energy Gateway, there are several requirements that must be met to ensure optimal performance and compatibility with the Srcful network.
 
-#### Solana Wallet
+Firstly, the **Modbus RTU protocol must be activated** on the inverter. This is necessary to enable the communication between the inverter and the Energy Gateway, which allows for the measurement and validation of the energy produced by the DER.
 
-To receive SRC tokens for contributing green energy to the decentralized grid, you will need a Solana wallet. A Solana wallet is a digital wallet that allows you to securely store and manage your SRC tokens. 
+In addition, the Energy Gateway requires an **RS485 physical interface** for data communication. This is necessary for the Gateway to send the data collected from the inverter to the Srcful network for validation through Proof-of-Source (PoS).
 
-Setting up a Solana wallet is a simple process that can be completed in a few steps:
+The maximum size of the DER that can be connected to the Srcful network is **100 kW**. This limit ensures that the network remains stable and that the validation process remains efficient, while also encouraging the clustering of smaller DERs to create a more reliable and decentralized energy system.
 
-1. **Choose a wallet provider:** There are several wallet providers that support Solana, including Exodus, Phantom, and Solflare. Choose one that best suits your needs and follow their instructions for creating a new wallet.
+It is also important to have access to **Wi-Fi and power delivery near** the DER to ensure that the Energy Gateway can function properly and connect to the Srcful network. This will ensure that the data collected from the DER is accurate and that the validation process is reliable.
 
-2. **Create a new wallet:** Once you've chosen a wallet provider, follow the instructions to create a new wallet. You'll be asked to choose a secure password and seed phrase, which you should keep in a safe place. **Srcful will never ask you for your seed phrase or password!**
+Finally, to receive payments for their green energy contributions through Proof-of-Source, DER owners must have a **Solana wallet**. This is necessary to receive SRC tokens as rewards, which can be used to participate in the energy marketplace or exchanged for other cryptocurrencies or fiat currency on various cryptocurrency exchanges.
 
-3. **Link your wallet to Srcful:** Finally, link your Solana wallet to Srcful by providing your wallet address when prompted during the sign-up process. This will allow you to receive SRC tokens for contributing green energy to the decentralized grid. When you receive your Energy Gateway, the gateway will be connected to your Solana wallet. 
-
-By following these steps, you'll be able to set up a Solana wallet and start receiving SRC tokens for contributing to the Srcful decentralized energy grid. If you have any questions or issues with setting up your wallet, please refer to your wallet provider's documentation or contact their support team for assistance.
+Overall, meeting these requirements will ensure that the Srcful Energy Gateway can function optimally and that DER owners can participate in the Srcful network, contribute to a more sustainable and equitable energy system, and earn rewards for their green energy contributions.
 
 ### Support the Srcful Community
 

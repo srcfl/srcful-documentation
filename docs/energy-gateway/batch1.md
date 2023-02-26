@@ -8,7 +8,7 @@ sidebar_position: 1
 
 The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways. It is based on the ESP-32 platform and is compatible with all major inverters and batteries. 
 
-The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source (PoS) and Proof-of-Control (PoC) incentive models, as well as other decentralized energy applications such as ancillary services.
+The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source and Proof-of-Control incentive models, as well as other decentralized energy applications such as ancillary services.
 
 If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
 
@@ -28,7 +28,7 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 
 - Secure communication: The gateway uses industry-standard security protocols to ensure that all communication between devices is secure and private.
 
-- PoS and PoC: The gateway can perform PoS (proof-of-source) and PoC (proof-of-control) to ensure that energy transactions on the Srcful network are secure and verified.
+- Proof-of-Source and Proof-of-Control: The gateway can perform Proof-of-Source and Proof-of-Control to ensure that energy transactions on the Srcful network are secure and verified.
 
 ## Srcful Energy Gateway Compatibility Chart
 
@@ -56,8 +56,4 @@ Make sure to join us on Discord:  <a class="button button--primary" href="https:
 
 ## Conclusion
 
-The Srcful Energy Gateway is a powerful and versatile device that enables your DER to participate in the decentralized energy economy. With support for major inverters and batteries, Wifi and Helium connectivity, and PoS and PoC, the gateway provides a complete solution for integrating your DER into the Srcful network.
-
-
-
-
+The Srcful Energy Gateway is a powerful and versatile device that enables your DER to participate in the decentralized energy economy. With support for major inverters and batteries, Wifi and Helium connectivity, and Proof-of-Source and Proof-of-Control, the gateway provides a complete solution for integrating your DER into the Srcful network.

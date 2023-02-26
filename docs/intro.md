@@ -6,11 +6,20 @@ slug: /
 
 # Srcful Documentation
 
-On this documentation site, you will find all the information you need to start using Srcful's technology to participate in shaping the future of energy. Our documentation covers everything from the Srcful Gateway to API documentation and other developer resources.
+Ready to start using Srcful's technology to participate in shaping the future of energy? Our documentation covers everything from the Srcful Gateway to API documentation and other developer resources. 
+
+Read our [whitepaper](/whitepaper/executive-summery/) to learn more about the innovative technology behind Srcful and the possibilities of renewable energy!
 
 We are committed to sustainability and ensuring that our users have a seamless experience, which is why we provide detailed troubleshooting and FAQs to address any issues that may arise.
 
 Join us in exploring the exciting possibilities of a smart, decentralized grid with Srcful.
+
+
+
+<div class="alert alert--primary" role="alert">
+"Srcful" is pronounced like "sourceful" with the emphasis on the first syllable.<br/><br/>
+The name "Srcful" is a play on the word "resourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future.
+</div>
 
 ## February update
 

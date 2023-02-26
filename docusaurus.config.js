@@ -69,6 +69,11 @@ const config = {
          
           {to: '/blog', label: 'Blog', position: 'right'},
           {
+            label: 'API',
+            href: 'https://api.srcful.dev/',
+            position: 'right'
+          },
+          {
             href: 'https://github.com/srcfl',
             label: 'GitHub',
             position: 'right',
@@ -84,11 +89,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Develop',
             items: [
               {
-                label: 'Tutorial',
-                to: '/',
+                label: 'Documentation',
+                to: '/category/developer',
+              },
+              {
+                label: 'API Playground',
+                to: 'https://api.srcful.dev/',
               },
             ],
           },

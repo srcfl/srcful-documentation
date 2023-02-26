@@ -6,7 +6,9 @@ sidebar_position: 1
 
 ## Overview
 
-The Srcful Energy Gateway (batch #1) is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways. It is based on the ESP-32 platform and is compatible with all major inverters and batteries. With the Srcful Energy Gateway, you can make your DER a part of the Srcful network, enabling it to participate in peer-to-peer energy trading and other decentralized energy applications.
+The Srcful Energy Gateway (batch #1) is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways. It is based on the ESP-32 platform and is compatible with all major inverters and batteries. 
+
+The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source (PoS) and Proof-of-Control (PoC) incentive models, as well as other decentralized energy applications such as ancillary services.
 
 ## Features
 

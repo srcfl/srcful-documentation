@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Executive Summery
+# Executive Summary
 
 The main problems that Srcful aims to address are barriers to entry for renewable energy, lack of incentives and user-friendly technology, and high upfront costs. Srcful will create a community powered virtual power plant (VPP) through the use of distributed energy resources (DERs) combined with the SRC-token. This new approach allows individuals to take control of their energy resources, contribute to the grid and shape the development of next-generation energy services through a community-driven approach. This will inject decentralization into an industry that is currently dominated by monopolies, unleash innovation and make renewable energy more accessible and widely adopted.
 

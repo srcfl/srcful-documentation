@@ -1,16 +1,4 @@
 {
   "label": "Developer",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "This section covers all the information you need to get started with integrating our technology into your applications.
-
-    Our API documentation provides a detailed reference for the endpoints and methods available for interacting with the Srcful Energy Gateway. We also offer information on how to participate as a developer, including design documents that can guide you in building innovative energy solutions.
-    
-    Whether you're an experienced developer or just starting, our documentation has everything you need to get started. We offer code samples and tutorials to help you get up and running quickly.
-    
-    In addition to the API documentation and design documents, we also offer troubleshooting guides and FAQs to help you address any issues that may arise.
-    
-    Join us in shaping the future of energy with Srcful. Browse our developer documentation and start building today!"
-  }
+  "position": 5
 }

@@ -4,8 +4,6 @@ sidebar_position: 10
 
 # Design manual
 
-## Overview
-
 Our design manual is the go-to resource for developers when creating visual and graphic elements that represent our brand. It includes guidelines and rules for our logo, color scheme, typography, imagery, and tone of voice, ensuring consistency and cohesion in our branding across all touchpoints. The manual provides a clear and concise roadmap for developers to ensure that they are aligned with our company's values, goals, and messaging, helping to create a strong and recognizable brand in the marketplace.
 
 ## Logo Guidelines

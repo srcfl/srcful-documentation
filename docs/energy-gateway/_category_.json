@@ -1,8 +1,4 @@
 {
   "label": "Srcful Energy Gateway",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "The Srcful Energy Gateway is a critical component of the Srcful virtual power plant system, designed to facilitate the transition to a decentralized grid that utilizes distributed energy resources, blockchain, and the IoT. The Gateway is a hardware device that allows developers to connect individual solar panels and batteries to the grid and earn tokens in exchange. The device is compatible with various inverter brands, making it widely accessible to developers with DER systems. The Gateway provides a digital identity to each DER, enabling it to transact and prove its energy data on the blockchain, thereby creating a decentralized community of energy producers. The Srcful Energy Gateway is a powerful tool for developers looking to monetize their energy contributions and participate in previously closed ecosystems."
-  }
+  "position": 3
 }

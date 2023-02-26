@@ -10,6 +10,10 @@ The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to
 
 The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source (PoS) and Proof-of-Control (PoC) incentive models, as well as other decentralized energy applications such as ancillary services.
 
+If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
+
+<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
+
 ## Features
 
 The Srcful Energy Gateway is a versatile device that offers the following features:
@@ -26,20 +30,9 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 
 - PoS and PoC: The gateway can perform PoS (proof-of-source) and PoC (proof-of-control) to ensure that energy transactions on the Srcful network are secure and verified.
 
-## Compatibility
+## Srcful Energy Gateway Compatibility Chart
 
-# Srcful Energy Gateway Compatibility Chart
-
-| Inverter Model | PoS | PoC |
-|----------------|:---:|:---:|
-| ABC Inverter   |  ❌  |  ✅  |
-| XYZ Inverter   |  ✅  |  ❌  |
-| PQR Inverter   |  ❌  |  ✅  |
-| DEF Inverter   |  ✅  |  ❌  |
-| GHI Inverter   |  ✅  |  ✅  |
-| JKL Inverter   |  ❌  |  ❌  |
-| MNO Inverter   |  ✅  |  ✅  |
-| STU Inverter   |  ❌  |  ✅  |
+T.B.A
 
 **Note:** The Srcful Energy Gateway is compatible with approximately 80% of the inverters on the market.
 
@@ -59,8 +52,12 @@ Installing the Srcful Energy Gateway is easy. Here's what you need to do:
 
 If you need help with the Srcful Energy Gateway, we offer comprehensive support options. This includes online documentation, email support, and community forums where you can connect with other users and developers.
 
+Make sure to join us on Discord:  <a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+
 ## Conclusion
 
 The Srcful Energy Gateway is a powerful and versatile device that enables your DER to participate in the decentralized energy economy. With support for major inverters and batteries, Wifi and Helium connectivity, and PoS and PoC, the gateway provides a complete solution for integrating your DER into the Srcful network.
+
+
 
 

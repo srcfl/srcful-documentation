@@ -6,7 +6,7 @@ sidebar_position: 2
 
 There are two primary ways to get involved with Srcful and start participating in the energy revolution at this stage:
 
-### Get a Srcful Energy Gateway
+## 1. Get a Srcful Energy Gateway
 
 By getting a Srcful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit the [Notice of Interest form](https://forms.gle/nAdpEi4oCuNeBHto9) to register your interest in the Srcful Energy Gateway. Once you've signed up, we'll notify you when the Gateway becomes available for purchase.
 
@@ -26,7 +26,7 @@ Finally, to receive payments for their green energy contributions through Proof-
 
 Overall, meeting these requirements will ensure that the Srcful Energy Gateway can function optimally and that DER owners can participate in the Srcful network, contribute to a more sustainable and equitable energy system, and earn rewards for their green energy contributions.
 
-### Support the Srcful Community
+## 2. Support the Srcful Community
 
 You can also support the community surrounding Srcful by contributing to our open-source projects on Github, participating in discussions on our Discord server, and following us on Twitter to stay up-to-date with the latest news and developments. 
 
@@ -35,6 +35,3 @@ You can also support the community surrounding Srcful by contributing to our ope
 - **Twitter:** [https://twitter.com/SrcfulEnergy](https://twitter.com/srcful)
 
 Whether you choose to get a Srcful Energy Gateway or support the community through Github, Discord, and Twitter, we're thrilled to have you on board as we work towards a more sustainable and decentralized energy system. Join us today and be a part of the energy revolution!
-
-
-

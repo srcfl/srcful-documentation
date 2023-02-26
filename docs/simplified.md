@@ -7,7 +7,7 @@ sidebar_position: 2
 
 
 <div class="alert alert--primary" role="alert">
-Where you sent here by someone or are you just feeling overwhelmed by all the information about Srcful? Don't worry, you're not alone! Srcful is a complex network that can be hard to understand, even for experts. That's why we've created this page for people who are new to the concept.
+Were you sent here by someone or are you just feeling overwhelmed by all the information about Srcful? Don't worry, you're not alone! Srcful is a complex network that can be hard to understand, even for experts. That's why we've created this page for people who are new to the concept.
 </div><br />
 
 First of all, it's important to know that Srcful is all about clean and sustainable energy. We believe that the world needs to move away from dirty fossil fuels and embrace green energy sources like solar and wind power. But we also know that the transition won't happen overnight. That's where Srcful comes in.

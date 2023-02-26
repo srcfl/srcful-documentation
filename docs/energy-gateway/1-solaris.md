@@ -4,6 +4,11 @@ sidebar_position: 1
 
 # Solaris batch
 
+
+<div class="alert alert--primary" role="alert">
+<i>Solaris, a wondrous star nestled in the vastness of the Milky Way galaxy, resides about 4,000 light-years from Earth. Its luminosity illuminates the depths of space, beckoning us to consider the limitless potential for renewable energy in our universe. As we gaze upon its radiance, we are reminded of the urgency to embrace sustainable energy practices on Earth, to harness the power of the sun and all the natural resources available to us, and to continue our pursuit of a brighter, greener future.</i>
+</div>
+
 ## Overview
 
 The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways. It is based on the ESP-32 platform and is compatible with all major inverters and batteries. 

@@ -43,3 +43,11 @@ The Srcful platform can serve as a powerful tool to complement these incentives 
 Additionally, the Proof-of-Control feature of the Srcful platform provides an additional incentive for individuals to invest in renewable energy sources. By clustering DERs and selling the power generated on the flexibility grid service markets, individuals can earn rewards for their green energy contributions while helping to create a more efficient and reliable energy grid.
 
 By leveraging the incentives offered by governments and organizations and combining them with the incentives provided by the Srcful platform, individuals can be further incentivized to invest in renewable energy sources and help create a more sustainable future for all.
+
+## United Nations Sustainable Development Goals
+
+Srcful is committed to achieving the United Nations' Sustainable Development Goals (SDGs). Our decentralized energy system is designed to help create a more sustainable, equitable, and efficient energy system that benefits everyone. Through our innovative use of blockchain technology, we aim to make energy production and consumption more transparent, reliable, and accessible.
+
+Our mission aligns with the SDGs, which are a universal call to action to end poverty, protect the planet, and ensure that all people enjoy peace and prosperity. At Srcful, we are focused on SDG7, which aims to ensure access to affordable, reliable, sustainable, and modern energy for all. We also contribute to SDG9, which seeks to build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.
+
+By encouraging the use of renewable energy sources and creating a more flexible and decentralized energy grid, we hope to help reduce global carbon emissions, increase energy access, and promote sustainable economic growth. We believe that our platform can play an important role in achieving the SDGs and creating a more sustainable and equitable world for all.

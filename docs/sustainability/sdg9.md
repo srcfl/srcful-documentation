@@ -1,12 +1,12 @@
 ---
 sidebar_label: 'SDG9'
-sidebar_position: 4
+sidebar_position: 10
 ---
 
 # SDG9 
 
 <div class="alert alert--primary" role="alert">
-<b>United Nations Sustainable Development Goal - 9</b><br />
+<b><a href="https://sdgs.un.org/goals/goal9">United Nations Sustainable Development Goal - 9</a></b><br />
 <i>Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation.</i>
 </div><br />
 

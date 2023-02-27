@@ -1,12 +1,12 @@
 ---
 sidebar_label: 'SDG7'
-sidebar_position: 2
+sidebar_position: 8
 ---
 
 # SDG7 
 
 <div class="alert alert--primary" role="alert">
-<b>United Nations Sustainable Development Goal - 7</b><br />
+<b><a href="https://sdgs.un.org/goals/goal7">United Nations Sustainable Development Goal - 7</a></b><br />
 <i>Ensure access to affordable, reliable, sustainable and modern energy for all.</i>
 </div><br />
 

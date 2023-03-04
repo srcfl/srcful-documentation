@@ -10,8 +10,9 @@ sidebar_position: 5
        
 <b>Type:</b> SPL Token on Solana<br />
 <b>Ticker:</b> SRC (Source Token)<br />
-<b>Total supply:</b> 1 000 000 000 SRC (fixed)<br />
-<b>Token contract:</b> T.B.A<br />
+<b>Total supply:</b> 1 000 000 000 SRC<br />
+<b>Token contract:</b> <a href="https://explorer.solana.com/address/9QHRNT3uMquxdTbi2oG3p8QBrMeZ8jjsGorta784CG9J/">9QHRNT3uMquxdTbi2oG3p8QBrMeZ8jjsGorta784CG9J</a><br />
+<b>Mint Authority:</b> <a href="https://explorer.solana.com/address/KD4q3cpYhpZmWyku967znmLZx8qVWmmFpme5VPCNbyx">KD4q3cpYhpZmWyku967znmLZx8qVWmmFpme5VPCNbyx</a>
 </div><br />
 
 Srcful has created a utility token called the SRC-token ("source token") on the Solana blockchain. Srcful chose to develop on the Solana blockchain due to its speed, efficiency, and strong community. Solana has a successful history of powering major decentralized projects.

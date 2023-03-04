@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: /tokenomics/
+title: Introduction
 ---
 
-# Introduction
+# The tocenomic of Srcful
 
 Welcome to the Tokenomics section of the Srcful documentation! Here, we will explore the fundamental principles behind our token economy and how it supports our goal of creating a more sustainable energy system.
 

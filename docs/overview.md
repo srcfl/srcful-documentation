@@ -8,7 +8,7 @@ slug: /
 
 Ready to start using Srcful's technology to participate in shaping the future of energy? Our documentation covers everything from the Srcful Gateway to API documentation and other developer resources. 
 
-New to Srcful? Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/executive-summery/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!
+New to Srcful? Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!
 
 We are committed to sustainability and ensuring that our users have a seamless experience, which is why we provide detailed troubleshooting and FAQs to address any issues that may arise.
 

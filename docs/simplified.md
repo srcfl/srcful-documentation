@@ -7,16 +7,26 @@ sidebar_position: 2
 
 
 <div class="alert alert--primary" role="alert">
-Were you sent here by someone or are you just feeling overwhelmed by all the information about Srcful? Don't worry, you're not alone! Srcful is a complex network that can be hard to understand, even for experts. That's why we've created this page for people who are new to the concept.
+Are you just feeling overwhelmed by all the information about Srcful? Don't worry, you're not alone! Srcful is a complex network that can be hard to understand, even for experts. That's why we've created this page for people who are new to the concept.
 </div><br />
 
 First of all, it's important to know that Srcful is all about clean and sustainable energy. We believe that the world needs to move away from dirty fossil fuels and embrace green energy sources like solar and wind power. But we also know that the transition won't happen overnight. That's where Srcful comes in.
+
+:::tip Did you know?
+"Srcful" is pronounced like "sourceful" with the emphasis on the first syllable.
+
+The name "Srcful" is a play on the word "resourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future. Additionally, the "Src" in "Srcful" represents our devotion as developers to the src-folder, which is the heart of any software project. We believe that this attention to detail and dedication to building a sustainable energy platform is what sets Srcful apart from other blockchain-based solutions in the energy sector.
+:::
 
 At its core, Srcful wants to enable the creation of a decentralized energy grid that is sustainable, efficient, and equitable for all. If you have solar panels on your roof, for example, you can use the Srcful Energy Gateway to connect to the network. The Gateway will measure how much energy you produce, and if it's validated as green energy, you'll get paid in SRC tokens. You can use these tokens to participate in the energy marketplace or exchange them for other cryptocurrencies or even real money.
 
 But that's just the beginning. In the future, Srcful could also help you buy and sell energy to your neighbors. And by clustering many small green energy sources, the network can even help stabilize the grid and prevent blackouts.
 
 It's also worth noting that Srcful uses blockchain technology, which is a way to keep track of transactions and ensure they're secure. It might sound complicated, but think of it like a digital ledger that everyone can see and no one can cheat. Learn more about the core concepts below.
+
+:::info
+There is a common misunderstanding that Srcful is a peer-to-peer energy trading platform. However, it is important to clarify that while it enables the validation and rewarding of green energy production, it is not currently a platform for peer-to-peer energy trading. This may be a possibility in the future as we continue to develop and expand the capabilities of the platform
+:::
 
 ## SRC tokens and Cryptocurrencies
 

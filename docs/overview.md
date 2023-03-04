@@ -14,12 +14,11 @@ We are committed to sustainability and ensuring that our users have a seamless e
 
 Join us in exploring the exciting possibilities of a smart, decentralized grid with Srcful.
 
+## March update
 
+We are excited to announce that the SRC token has been released on March 2, 2023! This marks an important milestone in our mission to create a more sustainable and decentralized energy system. The SRC token will enable DER owners to participate in the energy marketplace, earn rewards for their green energy contributions, and help create a more sustainable energy system. We look forward to seeing the positive impact that the SRC token will have on the energy sector and the environment.
 
-<div class="alert alert--primary" role="alert">
-"Srcful" is pronounced like "sourceful" with the emphasis on the first syllable.<br/><br/>
-The name "Srcful" is a play on the word "resourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future.
-</div>
+<a class="button button--primary" href="/whitepaper/src-token">SRC-token</a>
 
 ## February update
 

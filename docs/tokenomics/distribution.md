@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Distribution
 
-<div class="alert alert--info" role="alert">
+:::note Deep dive
 Read more about the SRC-token in our <a href="../Whitepaper/src-token/">Whitepaper</a>.
-</div><br />
+:::
 
 The Srcful tokenomic distribution plan outlines how the total supply of SrcToken will be distributed over a period of 30 years. The plan aims to create a fair and equitable distribution of tokens that promotes decentralization and encourages widespread adoption of the Srcful platform.
 

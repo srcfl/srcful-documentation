@@ -69,3 +69,31 @@ Through our platform, we aim to promote equal access to renewable energy sources
 At Srcful, we are committed to achieving SDG11, which aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Our platform's focus on decentralized energy and blockchain technology can help to create more resilient and sustainable energy systems for cities and communities.
 
 In the [SDG11 section of our documentation](./sdg11/), we explore how Srcful is working towards this goal through our platform's features and partnerships. We invite you to learn more about our efforts to create more sustainable cities and human settlements through the power of blockchain technology.
+
+## SDG12 - Responsible Production and Consumption
+
+SDG12 aims to ensure responsible consumption and production patterns. At Srcful, we recognize the importance of sustainable consumption and production and have made it a priority to reduce our environmental impact. We have developed our Energy Gateway with a focus on minimizing its environmental footprint. The hardware is designed to be small, simple, and affordable, making it accessible to a wide range of users. Additionally, our platform incentivizes the use of renewable energy sources, which can contribute to reducing greenhouse gas emissions and promote sustainable consumption patterns.
+
+## SDG13 - Climate Action
+
+SDG13 aims to take urgent action to combat climate change and its impacts. At Srcful, we recognize the urgent need to address the global challenge of climate change, and we are committed to doing our part to help mitigate its impacts.
+
+As a decentralized energy platform, we enable individuals and communities to take control of their energy resources and contribute to the transition to a more sustainable energy system. Our Energy Gateway is designed to be small and have a low environmental footprint, promoting the use of renewable energy sources and reducing reliance on centralized energy providers. While our contribution to SDG13 is only one small piece of the puzzle, we believe that every action taken towards a more sustainable future is critical in mitigating the impacts of climate change.
+
+## SDG14 - Life Below Water
+
+SDG14, Life Below Water, aims to conserve and sustainably use the oceans, seas, and marine resources for sustainable development. Although not directly related to energy, Srcful recognizes the importance of this goal for a sustainable future.
+
+## SDG15 - Life on Land
+
+SDG15 focuses on protecting and restoring the natural environment, including forests, oceans, and land. At Srcful, we recognize the importance of preserving our planet's biodiversity and natural resources, and we aim to contribute to this goal through our commitment to renewable energy sources and reducing carbon emissions.
+
+## SDG16 - Peace, Justice and strong Institutions
+
+SDG16 aims to promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels. While not directly related to energy, this goal is important in creating an enabling environment for sustainable development.
+
+At Srcful, we believe that our platform can contribute to SDG16 by promoting transparency, accountability, and inclusivity in the energy sector. By using blockchain technology to decentralize the energy system, we aim to create a more equitable and democratic energy system that benefits everyone, rather than just a few powerful players. Additionally, our commitment to open-source software and transparent decision-making processes ensures that our platform is accessible to everyone and can be scrutinized by all stakeholders. By fostering transparency and accountability, we can help build a more peaceful and inclusive society.
+
+## SDG17 - Partnership for the goals
+
+ We believe that working together with partners and stakeholders is crucial to achieving our mission of creating a more sustainable future. Our platform is designed to enable individuals and communities to take control of their energy resources and contribute to a cleaner, greener future. By promoting collaboration and partnerships, we aim to create a more inclusive and accessible energy system for all. We believe that everyone should have the opportunity to contribute to the community around renewable energy, and we are committed to fostering partnerships that promote innovation, sustainability, and positive impact.

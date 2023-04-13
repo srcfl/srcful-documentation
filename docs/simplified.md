@@ -18,7 +18,7 @@ First of all, it's important to know that Srcful is all about clean and sustaina
 The name "Srcful" is a play on the word "resourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future. Additionally, the "Src" in "Srcful" represents our devotion as developers to the src-folder, which is the heart of any software project. We believe that this attention to detail and dedication to building a sustainable energy platform is what sets Srcful apart from other blockchain-based solutions in the energy sector.
 :::
 
-At its core, Srcful wants to enable the creation of a decentralized energy grid that is sustainable, efficient, and equitable for all. If you have solar panels on your roof, for example, you can use the Srcful Energy Gateway to connect to the network. The Gateway will measure how much energy you produce, and if it's validated as green energy, you'll get paid in SRC tokens. You can use these tokens to participate in the energy marketplace or exchange them for other cryptocurrencies or even real money.
+At its core, Srcful wants to enable the creation of a decentralized energy grid that is sustainable, efficient, and equitable for all. If you have solar panels on your roof, for example, you can use the Srcful Energy Gateway to connect to the network. The Gateway will measure how much energy you produce, and if it's validated as green energy, you'll get rewarded with SRC tokens. You can use these tokens to participate in the energy marketplace or exchange them for other cryptocurrencies or even real money.
 
 But that's just the beginning. In the future, Srcful could also help you buy and sell energy to your neighbors. And by clustering many small green energy sources, the network can even help stabilize the grid and prevent blackouts.
 
@@ -40,11 +40,11 @@ Overall, SRC tokens are a way for people to participate in the energy market in 
 
 ## Proof-of-Source
 
-Proof-of-Source is a way to prove that the energy you produce is green, and then get paid for it. When you have solar panels or other ways of producing green energy, you can connect them to the Srcful network through the Energy Gateway. The Energy Gateway will then measure how much green energy you produce and send that information to the Srcful network for validation.
+Proof-of-Source is a way to prove that the energy you produce is green, and then get rewards for it. When you have solar panels or other ways of producing green energy, you can connect them to the Srcful network through the Energy Gateway. The Energy Gateway will then measure how much green energy you produce and send that information to the Srcful network for validation.
 
-If your green energy production is validated, you will get paid in SRC tokens based on how much you produced and how much other people in the network produced. These tokens are like money that you can use to participate in the energy marketplace or exchange for other kinds of money.
+If your green energy production is validated, you will get rewarded in SRC tokens based on how much you produced and how much other people in the network produced. These tokens are like money that you can use to participate in the energy marketplace or exchange for other kinds of money.
 
-By participating in PoS, you're not selling your energy to anyone. Instead, you're getting paid for being a green energy producer and helping to create a more sustainable and equitable energy system. This is the most basic form for you to join the Srcful network.
+By participating in PoS, you're not selling your energy to anyone. Instead, you're getting rewarded for being a green energy producer and helping to create a more sustainable and equitable energy system. This is the most basic form for you to join the Srcful network.
 
 ## Proof-of-Control
 
@@ -54,7 +54,7 @@ With Proof-of-Control, people who have renewable energy sources can offer to let
 
 The people who offer their renewable energy sources to be controlled by Srcful will get rewarded with SRC tokens just as in Proof-of-Source.
 
-It's important to note that with Proof-of-Control, no one is selling their energy. Instead, people are offering the ability to help stabilize the power grid, and they get paid for that help.
+It's important to note that with Proof-of-Control, no one is selling their energy. Instead, people are offering the ability to help stabilize the power grid, and they get rewarded for that help.
 
 ## The Srcful Energy Gateway
 

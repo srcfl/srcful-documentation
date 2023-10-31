@@ -64,7 +64,7 @@ The Srcful Energy Gateway is a small device that connects your renewable energy 
 
 Connecting to Srcful can provide ordinary households with several benefits, such as:
 
-1. **Saving money:** By connecting to Srcful, households with renewable energy systems can earn tokens for producing green energy. These tokens can be exchanged for cash or other cryptocurrencies on various exchanges.
+1. **Saving money:** By connecting to Srcful, households with renewable energy systems can earn tokens for producing green energy. 
 
 2. **Supporting the environment:** By producing green energy, households can contribute to a more sustainable energy system and help reduce the carbon footprint.
 

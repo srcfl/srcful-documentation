@@ -8,7 +8,7 @@ Srcful's incentive model for connecting Distributed Energy Resources (DERs) to t
 
 ![Distribution of SrcToken](./img/pos-poc-distribution.svg#gh-light-mode-only)![Distribution of SrcToken](./img/pos-poc-distribution-dark.svg#gh-dark-mode-only)
 
-## Proof-of-Souce
+## Proof-of-Source
 
 Proof-of-Source is a key component of Srcful's incentive model for connecting Distributed Energy Resources (DERs) to the Srcful network. Proof-of-Source rewards DER owners for contributing green energy to the decentralized energy grid by validating and verifying their energy source through the use of blockchain technology.
 

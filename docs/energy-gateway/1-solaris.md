@@ -16,7 +16,7 @@ The Srcful Energy Gateway provides a digital identity to your Distributed Energy
 
 If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
 
-<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
+<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBtoken economyHto9">Sign up on our Notice of Interest</a>
 
 ## Features
 
@@ -57,7 +57,9 @@ Installing the Srcful Energy Gateway is easy. Here's what you need to do:
 
 If you need help with the Srcful Energy Gateway, we offer comprehensive support options. This includes online documentation, email support, and community forums where you can connect with other users and developers.
 
-Make sure to join us on Discord:  <a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+Make sure to join us on Discord:
+
+<a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
 
 ## Conclusion
 

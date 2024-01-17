@@ -16,7 +16,7 @@ The Srcful Energy Gateway provides a digital identity to your Distributed Energy
 
 If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
 
-<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBtoken economyHto9">Sign up on our Notice of Interest</a>
+<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
 
 ## Features
 

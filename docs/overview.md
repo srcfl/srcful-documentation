@@ -6,25 +6,40 @@ slug: /
 
 # Srcful Documentation
 
-Ready to start using Srcful's technology to participate in shaping the future of energy? Our documentation covers everything from the Srcful Gateway to API documentation and other developer resources. 
+## Participate in shaping the future of energy with Srcful's technology
+Our documentation covers everything from the Srcful Energy Gateway to API documentation and other developer resources. It also contains the [Srcful Whitepaper](/whitepaper/), which comprehensively details the foundational principles, technological architecture, and strategic vision of Srcful.<br />
 
-New to Srcful? Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!
-
-We are committed to sustainability and ensuring that our users have a seamless experience, which is why we provide detailed troubleshooting and FAQs to address any issues that may arise.
+We are committed to sustainability and ensuring that our users have a seamless experience, which is why we put a heavy emphasis on maintaining our documentation, providing users a one-stop destination for reliable information and effortless navigation.
 
 Join us in exploring the exciting possibilities of a smart, decentralized grid with Srcful.
 
-## March update
+## Getting started: Srcful Simplified
+If you're new to Srcful, we recommend beginning your journey at the [Srcful Simplified](/simplified/) page. This section is designed to provide newcomers with an introduction to our platform, ensuring a smooth onboarding experience.
 
-We are excited to announce that the SRC token has been released on March 2, 2023! This marks an important milestone in our mission to create a more sustainable and decentralized energy system. The SRC token will enable DER owners to participate in the energy marketplace, earn rewards for their green energy contributions, and help create a more sustainable energy system. We look forward to seeing the positive impact that the SRC token will have on the energy sector and the environment.
+## Explore the Energy Gateway
+Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a wealth of information about the features of our Energy Gateway.<br />
 
-<a class="button button--primary" href="/whitepaper/src-token">SRC-token</a>
+Our documentation is designed to empower you with the knowledge needed to seamlessly integrate and optimize your experience with our Energy Gateway. It provides detailed insights and step-by-step instructions to install your own Gateway.
 
-## February update
-
-We're thrilled to announce that we're now seeking participants to start testing our innovative Srcful Energy Gateway. By signing up on our Notice of Interest form, you'll be the first to know about the latest updates and developments in this groundbreaking technology.
-
-If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
+### Interested in getting a Gateway?
+To secure your own Energy Gateway, simple visit the link below and fill out the form.
 
 <a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
+
+## Support and Community
+Join our vibrant community on Discord, where you can connect with fellow users, share insights, and get your questions answered by the Srcful Team. Whether you're seeking assistance, exploring new ideas, or just want to be part of the conversation, our Discord channel is the go-to space for real-time engagement. 
+
+All questions are welcomed, and our community is here to support you on your journey with Srcful.
+
+<a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+
+
+<!-- New to Srcful?
+Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!
+
+We are committed to sustainability and ensuring that our users have a seamless experience, which is why we provide detailed troubleshooting and FAQs to address any issues that may arise.
+
+Join us in exploring the exciting possibilities of a smart, decentralized grid with Srcful. -->
+
+<!-- <a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a> -->
 

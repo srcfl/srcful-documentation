@@ -54,3 +54,7 @@
 [data-theme='dark'] img[src$='#gh-light-mode-only'] {
   display: none;
 }
+
+.hidden {
+  display: none !important;
+  }

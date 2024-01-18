@@ -17,7 +17,7 @@ sidebar_position: 5
 
 Srcful has created a utility token called the SRC-token ("source token") on the Solana blockchain. Srcful chose to develop on the Solana blockchain due to its speed, efficiency, and strong community. Solana has a successful history of powering major decentralized projects.
 
-The maximum supply of SRC is 250,000,000,000 tokens. These tokens are released gradually and initially allocated as rewards for Proof-of-Source and Proof-of-Control.
+The maximum supply of SRC is 250,000,000,000 tokens. These tokens are released gradually and initially allocated as rewards for beta testers and early adopters.
 
 :::note Beta phase rewards
 During the beta phase, active beta testers and early adopters will be rewarded a set amount of tokens monthly for their engagement in the project. Read more about this in the <a href="../Tokenomics/Distribution/">Tokenomics</a>.

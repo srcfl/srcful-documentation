@@ -27,4 +27,4 @@ During the beta phase, active beta testers and early adopters will be rewarded a
 
 The compensation models for Proof-of-Source and Proof-of-Control may be changed in the future by the community to ensure the right incentives are in place to create the best value. 80% of all newly minted tokens will always be distributed back to the community that is participating in and supporting the development of the Srcful Network. 20% goes to founders and investors. -->
 
-![Distribution of SrcToken](../tokenomics/img/pos-poc-distribution.svg#gh-light-mode-only)![Distribution of SrcToken](../tokenomics/img/pos-poc-distribution-dark.svg#gh-dark-mode-only)
+<!-- ![Distribution of SrcToken](../tokenomics/img/pos-poc-distribution.svg#gh-light-mode-only)![Distribution of SrcToken](../tokenomics/img/pos-poc-distribution-dark.svg#gh-dark-mode-only) -->

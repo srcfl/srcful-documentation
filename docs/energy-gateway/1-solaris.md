@@ -37,7 +37,7 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 ## Srcful Energy Gateway Compability
 
 :::note
-The Srcful Energy Gateway is compatible with approximately 80% of the inverters on the market.
+The Srcful Energy Gateway is compatible with >50% of the inverters on the market.
 :::
 
 *(Last updated 2024-01-17)*

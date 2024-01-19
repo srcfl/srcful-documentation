@@ -14,15 +14,13 @@ By getting a Srcful Energy Gateway, you can start validating green energy from y
 
 To install a Srcful Energy Gateway, there are several requirements that must be met to ensure optimal performance and compatibility with the Srcful network.
 
-Firstly, the **Modbus RTU protocol must be activated** on the inverter. This is necessary to enable the communication between the inverter and the Energy Gateway, which allows for the measurement and validation of the energy produced by the DER.
-
-In addition, the Energy Gateway requires an **RS485 physical interface** for data communication. This is necessary for the Gateway to send the data collected from the inverter to the Srcful network for validation through Proof-of-Source (PoS).
+Firstly, the **Modbus TCP protocol must be activated** on the inverter. This is necessary to enable the communication between the inverter and the Energy Gateway, which allows for the measurement and validation of the energy produced by the DER.
 
 The maximum size of the DER that can be connected to the Srcful network is **100 kW**. This limit ensures that the network remains stable and that the validation process remains efficient, while also encouraging the clustering of smaller DERs to create a more reliable and decentralized energy system.
 
 It is also important to have access to **Wi-Fi and power delivery near** the DER to ensure that the Energy Gateway can function properly and connect to the Srcful network. This will ensure that the data collected from the DER is accurate and that the validation process is reliable.
 
-Finally, to receive rewards for their green energy contributions through Proof-of-Source, DER owners must have a **Solana wallet**. This is necessary to receive SRC tokens as rewards, which can be used to participate in the energy marketplace or exchanged for other cryptocurrencies or fiat currency on various cryptocurrency exchanges.
+Finally, to receive rewards for their green energy contributions through Proof-of-Source, DER owners must have a **Solana wallet**. This is necessary to receive SRC tokens as rewards, which can be used to participate in the energy marketplace.
 
 Overall, meeting these requirements will ensure that the Srcful Energy Gateway can function optimally and that DER owners can participate in the Srcful network, contribute to a more sustainable and equitable energy system, and earn rewards for their green energy contributions.
 

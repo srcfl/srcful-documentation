@@ -55,8 +55,8 @@ In simpler terms, decentralized virtual power plants are great because they let 
 The token distribution model and tokenomics are still under consideration and have not been finalized. Please note that this section may be subject to updates before the conclusion of the beta phase.
 :::
 
+Srcful's tokenomics distribution chart outlines the strategic allocation of tokens within the ecosystem. The chart below details the distribution plan across several components, such as the mining mechanisms Proof-of-Source and Proof-of-Control, the Srcful Foundation, and allocations for Srcful founders and investors. We strive towards a transparent approach in our model, ensuring a fair and sustainable distribution of tokens.
 
-
-<!-- Please refer to the latest official documentation for the most accurate and up-to-date information, as details may evolve during the beta phase. -->
+Please refer to the latest official documentation for the most accurate and up-to-date information, as details may evolve during the beta phase.
 
 ![](./img/distribution-chart.svg)

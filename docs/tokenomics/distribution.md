@@ -6,6 +6,7 @@ sidebar_position: 3
 
 :::note Deep dive
 Read more about the SRC-token in our <a href="../Whitepaper/src-token/">Whitepaper</a>.
+Total token supply: 250 000 000 000 SRC
 :::
 
 The Srcful tokenomic distribution plan outlines how the total supply of SRC token will be distributed over a period of a long period (+30 years). The plan aims to create a fair and equitable distribution of tokens that promotes decentralization and encourages widespread adoption of the Srcful platform.

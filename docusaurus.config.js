@@ -66,8 +66,6 @@ const config = {
           srcDark: 'img/logo-white-transparent.svg'
         },
         items: [
-         
-          {to: '/blog', label: 'Blog', position: 'right'},
           {
             label: 'API',
             href: 'https://api.srcful.dev/',
@@ -132,10 +130,6 @@ const config = {
               {
                 label: 'Explorer',
                 href: 'https://explorer.srcful.io',
-              },
-              {
-                label: 'Blog',
-                to: '/blog',
               },
             ],
           },

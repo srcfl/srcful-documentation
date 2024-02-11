@@ -28,8 +28,8 @@ Tokens will be distributed on a set date every month during the beta phase.
 
 |Month|Date|Completed|Amount|
 |-----|--------|-----|------|
-|January|11th       |✅| 4 000 000 tokens|
-|February|10th      |  |                 |
+|January|11th       | ✅ | 4 000 000 tokens |
+|February|11th      | ✅ | 2 000 000 tokens |
 |March|12th         |
 |April|11th         |
 |May|11th           |

@@ -4,6 +4,11 @@ sidebar_position: 3
 
 # Setting up 
 
+## The Srcful Energy Gateway
+
+Follow the guide: https://github.com/srcfl/egw-getting-started
+
+
 ## The Solana Wallet
 
 Setting up a Solana wallet is a simple process that can be completed in a few steps:
@@ -16,9 +21,6 @@ Setting up a Solana wallet is a simple process that can be completed in a few st
 
 By following these steps, you'll be able to set up a Solana wallet and start receiving SRC tokens for contributing to the Srcful decentralized energy grid. If you have any questions or issues with setting up your wallet, please refer to your wallet provider's documentation or contact their support team for assistance.
 
-## The Srcful Energy Gateway
-
-Installation instructions soon to be annonunced.
 
 
 

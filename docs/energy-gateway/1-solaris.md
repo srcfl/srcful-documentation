@@ -40,19 +40,7 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 The Srcful Energy Gateway is compatible with >50% of the inverters on the market.
 :::
 
-*(Last updated 2024-01-17)*
-
-### Sungrow
-
-[Compatible Sungrow inverters](./compatible-inverter/sungrow.md)
-
-### Huawei
-
-[Compatible Huawei inverters](./compatible-inverter/huawei.md)
-
-### SolarEdge
-
-[Compatible SolarEdge inverters](./compatible-inverter/solaredge.md)
+See our list of compatible inverters: [Compatible inverters](./compatible-inverter/overview.md)
 
 <!-- ## Srcful Energy Gateway Compatibility Chart
 

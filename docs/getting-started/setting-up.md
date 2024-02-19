@@ -6,6 +6,12 @@ sidebar_position: 3
 
 ## The Srcful Energy Gateway
 
+:::infoImportant
+You will need a compatible inverter to be able to connect your Energy Gateway. 
+
+See the list of currently compatible inverters: 
+:::
+
 ### Do you have an Energy Gateway that you're planning to set up?
 
 Follow the guide: https://github.com/srcfl/egw-getting-started

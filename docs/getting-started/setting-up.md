@@ -6,7 +6,13 @@ sidebar_position: 3
 
 ## The Srcful Energy Gateway
 
+### Do you have an Energy Gateway that you're planning to set up?
+
 Follow the guide: https://github.com/srcfl/egw-getting-started
+
+### Do you want to build a Do It Yourself (DIY) Energy Gateway?
+
+Follow the guide: https://github.com/srcfl/egw-diy
 
 
 ## The Solana Wallet

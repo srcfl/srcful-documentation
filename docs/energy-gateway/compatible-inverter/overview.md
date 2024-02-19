@@ -13,7 +13,7 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 *(Last updated 2024-01-17)*
 
-We add models and update the lists below continously.
+We add models and update the lists below continuously.
 
 ### Sungrow
 

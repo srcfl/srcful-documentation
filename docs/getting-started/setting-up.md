@@ -9,7 +9,7 @@ sidebar_position: 3
 :::infoImportant
 You will need a compatible inverter to be able to connect your Energy Gateway. 
 
-See the list of currently compatible inverters: 
+See the list of currently compatible inverters: [](../energy-gateway/1-solaris.md)
 :::
 
 ### Do you have an Energy Gateway that you're planning to set up?

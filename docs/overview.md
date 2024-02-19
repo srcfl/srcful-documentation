@@ -33,6 +33,13 @@ All questions are welcomed, and our community is here to support you on your jou
 
 <a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
 
+## Collaborations and partnerships
+
+Our ambition is to lead the development of the world's largest decentralized virtual power plant. By integrating solar panels and home batteries, our aim is to facilitate real-time data monitoring and control, thereby transforming energy management on a global scale. 
+
+### Do you have services that suit our members?
+
+We invite you to  contact us at sales@srcful.io to arrange a meeting. We look forward to the opportunity to discuss potential collaboration and how we can collectively advance toward our shared objectives.
 
 <!-- New to Srcful?
 Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!

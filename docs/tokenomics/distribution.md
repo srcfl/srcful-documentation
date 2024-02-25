@@ -43,7 +43,7 @@ Tokens will be distributed on a set date every month during the beta phase.
 
 ## Proof-of-Source and Proof-of-Control Distribution
 
-As we exit the beta phase, the current distribution plan will include two mining mechanisms - Proof-of-Source and Proof-of-Control - which receive a certain percentage of tokens each year. The percentage allocated to each mechanism changes over time, with a gradual reduction in the percentage allocated to Proof-of-Source and an increase in the percentage allocated to Proof-of-Control.
+As we exit the beta phase, the current distribution plan will include two mining mechanisms - Proof-of-Source (PoSRC) and Proof-of-Control (PoCTRL) - which receive a certain percentage of tokens each year. The percentage allocated to each mechanism changes over time, with a gradual reduction in the percentage allocated to Proof-of-Source and an increase in the percentage allocated to Proof-of-Control.
 
 The initial focus on Proof-of-Source provides an incentive for users to install energy gateways and connect their DERs, which are required for the Proof-of-Control mechanism. This helps to build the infrastructure for the Proof-of-Control mechanism, which becomes more profitable for users as the percentage of tokens allocated to it increases. As the Proof-of-Control mechanism becomes more profitable, it is expected that more users will participate, leading to a greater overall efficiency of the distributed energy resources (DERs). 
 

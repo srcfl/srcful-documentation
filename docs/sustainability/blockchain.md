@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 20
 ---
 
 # Blockchain and Crypto
@@ -12,7 +12,6 @@ In a PoS blockchain, validators are selected based on the number of tokens they 
 
 In addition, the Solana blockchain is designed to be highly scalable, allowing it to process a high volume of transactions while maintaining low energy consumption. This is achieved through a unique architecture that separates transaction processing from consensus, allowing the network to scale horizontally and improve its energy efficiency.
 
-Read more about Solanas Environmental Initiatives at: 
-<a class="button button--primary" href="https://solana.com/environment">Solana. Carbon neutral. Climate focused.</a><br /><br />
+Read more about Solanas Environmental Initiatives at: <a class="button button--primary" href="https://solana.com/environment">Solana. Carbon neutral. Climate focused.</a>
 
 Overall, while blockchain technology has the potential to impact the environment negatively, the use of a PoS consensus mechanism in Solana makes the Srcful platform a more sustainable option than many other blockchain-based solutions.

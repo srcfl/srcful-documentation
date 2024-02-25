@@ -34,15 +34,15 @@ Cryptocurrencies are a type of digital currency that is secured by advanced comp
 
 SRC tokens is a utility token that can be earned by homeowners who connect their green energy producers to the Srcful network and contribute to a more sustainable energy system. Overall, SRC tokens are a way for people to participate in the energy market in a new and innovative way. By using cryptocurrencies like SRC tokens, we can help create a more sustainable and equitable energy system that benefits everyone.
 
-## Proof-of-Source
+## Proof-of-Source (PoSRC)
 
 Proof-of-Source is a way to prove that the energy you produce is green, and then get rewards for it. When you have solar panels or other ways of producing green energy, you can connect them to the Srcful network through the Energy Gateway. The Energy Gateway will then measure how much green energy you produce and send that information to the Srcful network for validation.
 
 If your green energy production is validated, you will get rewarded in SRC tokens based on how much you produced and how much other people in the network produced. These tokens are like money that you can use to participate in the energy marketplace or exchange for other kinds of money.
 
-By participating in PoS, you're not selling your energy to anyone. Instead, you're getting rewarded for being a green energy producer and helping to create a more sustainable and equitable energy system. This is the most basic form for you to join the Srcful network.
+By participating in PoSRC, you're not selling your energy to anyone. Instead, you're getting rewarded for being a green energy producer and helping to create a more sustainable and equitable energy system. This is the most basic form for you to join the Srcful network.
 
-## Proof-of-Control
+## Proof-of-Control (PoCTRL)
 
 When many people use renewable energy sources, the amount of energy that is available for the power grid can be unpredictable. This can cause problems for the stability of the grid, which is important for making sure everyone has access to electricity when they need it.
 

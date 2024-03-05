@@ -18,7 +18,7 @@ Srcful is the data controller for the processing of your personal data and is re
 
 ### To analyse how our website is used in order to make improvements
 
-| What we processing we perform | What personal data we process | Our legal basis for the processing |
+| What processing we perform | What personal data we process | Our legal basis for the processing |
 |: - :|: - :|: - :|
 | <ul><li>Analyse how you use our website to improve our website and services. To do this we use our own analytic cookies and the analytic service from Google Analytics</li><li>The analytic service means that we place a random ID on your device to distinguish your device from other visitors and to acknowledge patterns in how our website is used. We will however not know who you are</li><li>The personal data we collect will be used e.g. to optimise functions and to adapt the websites to suit our visitors</li></ul> | <ul><li>An encrypted version of your IP address which Srcful cannot connect to you as an individual</li><li>Information about your device/browser (which area in the country you use our website from and your screen resolution)</li><li>Information about your activities on the website</li><li>Other information Google has about you, e.g. information about from which site you found us</li></ul> | Consent (6.1 (a) GDPR)<br/><br/> *Your personal data will be processed based on your consent. You can withdraw such consent at any time by contacting us.<br/><br/> You can prevent Google Analytics from using your personal data by downloading and installing this browser [add on](https://tools.google.com/dlpage/gaoptout).*  |
 

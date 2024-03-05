@@ -1,11 +1,9 @@
 ---
-sidebar_label: 'Srcful Terms'
-sidebar_position: 12
+sidebar_label: 'Terms and Conditions'
+sidebar_position: 1
 ---
 
-# Srcful Terms
-
-## Terms and Conditions
+# Terms and Conditions
 
 <!-- <details><summary>Click here to read the <b>Terms and Conditions</b></summary> -->
 
@@ -37,7 +35,7 @@ sidebar_position: 12
 
 - These Terms and Conditions govern the End User’s use of the Services developed and maintained by Srcful, solely for purposes in accordance with the Terms and Conditions.
 
-- Purchases of hardware products sold by Srcful are subject to Appendix 1 (Terms of Purchase) to these Terms and Conditions.
+- Purchases of hardware products sold by Srcful are subject to Appendix 1 (**Terms of Purchase**) to these Terms and Conditions.
 
 ### 4. New versions
 
@@ -194,3 +192,4 @@ sidebar_position: 12
 - The Purchaser shall be entitled to withdraw from the Agreement if the performance of the Agreement is delayed for more than six months due to a circumstance set out in 8.1.
 
 <!-- </details> -->
+

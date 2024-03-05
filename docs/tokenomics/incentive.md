@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_class_name: hidden
+# sidebar_class_name: hidden
 ---
 
 # Incentive Structure

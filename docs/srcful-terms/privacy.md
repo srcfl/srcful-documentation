@@ -149,5 +149,5 @@ You have the right to lodge a complaint with a supervisory authority. The superv
 
 ## Contact us
 
-If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@srcful.io or +46723043940.
+If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@srcful.io.
 

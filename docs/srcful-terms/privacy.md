@@ -145,7 +145,7 @@ If you have given your consent, or if we base the processing on a contract with 
 You have the right to object, on grounds relating to your situation, at any time to processing of your personal data which is based on Article 6.1 e (public interest) or 6.1 f (legitimate interest) GDPR, including profiling based on those provisions. We shall no longer process the personal data unless we can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms or for the establishment, exercise or defence of legal claims.
 
 ### Right to lodge a complaint with a supervisory authority (Article 77 GDPR)
-You have the right to lodge a complaint with a supervisory authority. The supervisory authority in Sweden is the [Swedish Authority for Privacy Protection](imy.se) (Integritetsskyddsmyndigheten, IMY). 
+You have the right to lodge a complaint with a supervisory authority. The supervisory authority in Sweden is the [Swedish Authority for Privacy Protection](https://imy.se) (Integritetsskyddsmyndigheten, IMY). 
 
 ## Contact us
 

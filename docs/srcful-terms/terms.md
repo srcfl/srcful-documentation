@@ -67,10 +67,9 @@ sidebar_position: 1
 
 ### 8. Misuse of the Service
 
-- Srcful reserves the right to, in its sole discretion, deactivate, suspend or terminate the End User’s access to the Service and right to receive any future utility tokens through the Service, in the event Srcful has reason to believe that the End User is missing the Service in any way. Misuse of the Service shall include, but not be limited to, attempting to or misrepresenting, distorting or falsifying the output from the energy gateway or otherwise by conducting any fraudulent or illegal activity.
+- Srcful reserves the right to, in its sole discretion, deactivate, suspend or terminate the End User’s access to the Service and right to receive any future utility tokens through the Service, in the event Srcful has reason to believe that the End User is misusing the Service in any way. Misuse of the Service shall include, but not be limited to, attempting to or misrepresenting, distorting or falsifying the input or output from the energy gateway or otherwise by conducting any fraudulent or illegal activity.
 
 - In the event Srcful has suspended an End User suspected of conducting activities described in Section 8.1 above, the End User access to the Service and right to receive tokens may be reinstated by validating that its has not used the Service in violation with the Agreement. The process for validation of the End User’s conduct is described on the Srcful website. However, Srcful reserves the right to assess each individual situation and in its sole discretion determine when and if an End User can be reinstated.
-
 
 ### 9. Indemnification
 

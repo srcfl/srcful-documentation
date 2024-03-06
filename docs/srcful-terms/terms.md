@@ -51,7 +51,7 @@ sidebar_position: 1
 
 - Srcful does not warrant that the output or result of using the Services will be correct, error-free or otherwise meet the End User’s requirements. 
 
-### 6. Compensation
+### 6. Utility tokens
 
 - By linking a Solana wallet to the Service, connecting the gateway to the Service and making electricity available to the network operators through the Service, the End User can be rewarded with utility tokens as described on the Srcful website. Neither the End User nor Srcful are entitled to any other compensation for using or providing the Services, unless explicitly set out in these Terms and Conditions.
 
@@ -65,17 +65,24 @@ sidebar_position: 1
 
 - 7.1, 7.2 and 7.3 apply to the maximum extent permitted by applicable mandatory law.
 
-### 8. Indemnification
+### 8. Misuse of the Service
+
+- Srcful reserves the right to, in its sole discretion, deactivate, suspend or terminate the End User’s access to the Service and right to receive any future utility tokens through the Service, in the event Srcful has reason to believe that the End User is missing the Service in any way. Misuse of the Service shall include, but not be limited to, attempting to or misrepresenting, distorting or falsifying the output from the energy gateway or otherwise by conducting any fraudulent or illegal activity.
+
+- In the event Srcful has suspended an End User suspected of conducting activities described in Section 8.1 above, the End User access to the Service and right to receive tokens may be reinstated by validating that its has not used the Service in violation with the Agreement. The process for validation of the End User’s conduct is described on the Srcful website. However, Srcful reserves the right to assess each individual situation and in its sole discretion determine when and if an End User can be reinstated.
+
+
+### 9. Indemnification
 
 - To the maximum extent permitted by applicable mandatory law, the End User agrees to defend, indemnify and hold harmless Srcful from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys’ fees) relating to (i) any non-compliance by the End User with these Terms and Conditions, (ii) any violation of applicable law, including but not limited to, infringement of any third party right relating to the End User’s use of the Services in violation with these Terms and Conditions, or (iii) a suspension of the End User’s access to or use of the Services or a deletion of the End User’s information. 
 
-### 9. Support
+### 10. Support
 
 - If you need help with the Services, visit our community on [Discord](https://discord.gg/YTUYVUqJ) where you can connect with us and other users and developers. Srcful has no responsibility for any advice given by other users and developers.
 
 - Srcful has no obligation to provide support for the Services. 
 
-### 10. Grant of Use
+### 11. Grant of Use
 
 - Subject to the End User’s compliance with the Terms and Conditions, Srcful grants the End User a limited, revocable, non-exclusive, non-transferable and non-sublicensable right to use the Services in the form provided in accordance with these Terms and Conditions and applicable law. The End User is furthermore entitled to use the Services in accordance with the open-source licensing model described in Section 11.3. 
 
@@ -83,7 +90,7 @@ sidebar_position: 1
 
 - Any third-party tools or software included in the Services may also be subject to separate license agreement with such third party. Srcful is not liable for any third-party tools or software or the End User’s use thereof. 
 
-### 11. Intellectual Property Rights
+### 12. Intellectual Property Rights
 
 - The title to and ownership of, and all Intellectual Property Rights, including but not limited to copyright, and all other rights to, the Services (or the copy of the Services or the medium on which the Services has been delivered) shall remain with Srcful, (or its third-party licensors, as applicable). Thus, these Terms and Conditions do not imply that any other rights are granted to the End User other than the right to use the Services solely for the End User’s internal use as set out in these Terms and Conditions.
 
@@ -91,29 +98,29 @@ sidebar_position: 1
 
 - Srcful has released the source code to the software used to facilitate the Services as open-source software under the MIT license. The End User is free to download and use, further develop and create derivative versions of the software in accordance with the terms set out in the MIT license.
 
-### 12. Personal Data
+### 13. Personal Data
 
 - Srcful will process personal data in accordance with our Privacy Policy. Please find our Privacy Policy.
 
-### 13. Consumers' right to rescind from the Agreement
+### 14. Consumers' right to rescind from the Agreement
 
 - If the End User is a consumer, as defined under applicable law, the End User has a right to rescind from the Agreement within fourteen (14) days from registering for the Services and through the registration entering into the Agreement with Srcful.
 
-### 14. Termination and Consequences of Termination
+### 15. Termination and Consequences of Termination
 
 - The End User may terminate the Service at any time by disconnecting the gateway from the Service.
 
-- The End User may also terminate the Service by contacting Srcful at info@srcful.io.
+- The End User may also terminate the Service by contacting Srcful at sales@srcful.io.
 
 - For avoidance of doubt, the End User are not rewarded utility tokens following termination.
 
-### 15. Confidentiality
+### 16. Confidentiality
 
 - Each Party shall maintain strict confidentiality and shall not disclose to any third party any Confidential Information which comes into that Party’s possession and shall not use Confidential Information without prior written permission by the other Party. This provision shall not, however, apply to information or material, which is, or becomes, public knowledge by means other than by breach by a Party to this section and to the extent Confidential Information must be disclosed due to applicable law, stock exchange regulations or by order of a court or a government agency or authority, provided that the disclosing Party promptly gives notice to the other Party of such obligation of disclosure. 
 
 - Each Party shall ensure that requisite confidentiality agreements are entered into with the respective Party’s employees and representatives to bind all such personnel to adherence with the abovementioned confidentiality undertaking.
 
-### 16. Limitations
+### 17. Limitations
 Srcful may suspend or revoke your license to use the Service, or parts, components and/or single features thereof, if you violate, or assist others in violating, the license limitations set forth below. You agree that you will not, in whole or in part or under any circumstances, do the following:
 
 Derivative Works: Copy or reproduce (except as provided in Section 1.B.), translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on or related to the Service.
@@ -128,7 +135,7 @@ hacks; i.e. accessing or modifying the software of the Service in any manner not
 
 any code and/or software, not expressly authorized by Blizzard, that can be used in connection with the Service and/or any component or feature thereof which changes and/or facilitates use of fraudulent data or other functionality;
 
-### 17. Miscellaneous
+### 18. Miscellaneous
 
 - The End User may not sell, assign, or transfer any of its obligations and/or rights under these Terms and Conditions without the prior written consent of Srcful.
 
@@ -141,7 +148,7 @@ any code and/or software, not expressly authorized by Blizzard, that can be used
 
 - For questions or concerns about the Services, please contact Srcful at info@srcful.io.
 
-### 18. Law and Dispute Resolution
+### 19. Law and Dispute Resolution
 
 - These Terms and Conditions shall be governed by the substantive law of Sweden, without regard to its principles and rules on conflict of laws.
 

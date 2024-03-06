@@ -113,7 +113,22 @@ sidebar_position: 1
 
 - Each Party shall ensure that requisite confidentiality agreements are entered into with the respective Party’s employees and representatives to bind all such personnel to adherence with the abovementioned confidentiality undertaking.
 
-### 16. Miscellaneous
+### 16. Limitations
+Srcful may suspend or revoke your license to use the Service, or parts, components and/or single features thereof, if you violate, or assist others in violating, the license limitations set forth below. You agree that you will not, in whole or in part or under any circumstances, do the following:
+
+Derivative Works: Copy or reproduce (except as provided in Section 1.B.), translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on or related to the Service.
+
+Cheating: Create, use, offer, promote, advertise, make available and/or distribute the following or assist therein:
+
+cheats; i.e. methods not expressly authorized by Srcful (whether accomplished using hardware, software, a combination thereof, or otherwise), influencing and/or facilitating fraudulent behavior, including exploits of any bugs.
+
+bots; i.e. any code and/or software, not expressly authorized by Srcful, that allows the automated control of a Service, or any other feature of the Service, e.g. simulation of data used by the Service;
+
+hacks; i.e. accessing or modifying the software of the Service in any manner not expressly authorized by Srcful; and/or
+
+any code and/or software, not expressly authorized by Blizzard, that can be used in connection with the Service and/or any component or feature thereof which changes and/or facilitates use of fraudulent data or other functionality;
+
+### 17. Miscellaneous
 
 - The End User may not sell, assign, or transfer any of its obligations and/or rights under these Terms and Conditions without the prior written consent of Srcful.
 
@@ -126,7 +141,7 @@ sidebar_position: 1
 
 - For questions or concerns about the Services, please contact Srcful at info@srcful.io.
 
-### 17. Law and Dispute Resolution
+### 18. Law and Dispute Resolution
 
 - These Terms and Conditions shall be governed by the substantive law of Sweden, without regard to its principles and rules on conflict of laws.
 

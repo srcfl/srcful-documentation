@@ -53,7 +53,7 @@ sidebar_position: 1
 
 ### 6. Utility tokens
 
-- By linking a Solana wallet to the Service, connecting the gateway to the Service and making electricity available to the network operators through the Service, the End User can be rewarded with utility tokens as described on the Srcful website. Neither the End User nor Srcful are entitled to any other compensation for using or providing the Services, unless explicitly set out in these Terms and Conditions.
+- By linking a Solana wallet to the Service, connecting the gateway to the Service and making electricity available to the network operators through the Service, the End User can be rewarded with utility tokens as described on the Srcful website. Neither the End User nor Srcful are entitled to any other rewards or compensation for using or providing the Services, unless explicitly set out in these Terms and Conditions.
 
 ### 7. Limitation of Liability
 
@@ -83,7 +83,7 @@ sidebar_position: 1
 
 ### 11. Grant of Use
 
-- Subject to the End User’s compliance with the Terms and Conditions, Srcful grants the End User a limited, revocable, non-exclusive, non-transferable and non-sublicensable right to use the Services in the form provided in accordance with these Terms and Conditions and applicable law. The End User is furthermore entitled to use the Services in accordance with the open-source licensing model described in Section 11.3. 
+- Subject to the End User’s compliance with the Terms and Conditions, Srcful grants the End User a limited, revocable, non-exclusive, non-transferable and non-sublicensable right to use the Services in the form provided in accordance with these Terms and Conditions and applicable law. The End User is furthermore entitled to use the Services in accordance with the open-source licensing model described in Section 12.3. 
 
 - Any notices of copyright or other Intellectual Property Right concerning ownership rights of the Services or medium on which the Services is made available may not be altered or deleted. The same applies to the corresponding markings on all documentation that is provided by Srcful.
 
@@ -112,6 +112,8 @@ sidebar_position: 1
 - The End User may also terminate the Service by contacting Srcful at sales@srcful.io.
 
 - For avoidance of doubt, the End User are not rewarded utility tokens following termination.
+
+- Srcful may terminate the Agreement at any time without cause by disconnecting the gateway from the Service.
 
 ### 16. Confidentiality
 

@@ -13,7 +13,7 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 _(Last updated 2024-03-10)_
 
-We add models and update the lists below continuously.
+We add inverters and update the table below continuously.
 
 | Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
 | ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |

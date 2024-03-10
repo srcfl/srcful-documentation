@@ -6,29 +6,37 @@ slug: /energy-gateway/compatible-inverter/
 # Overview
 
 :::info
-You will need a **compatible** inverter to connect your Energy Gateway. 
+You will need a **compatible** inverter to connect your Energy Gateway.
 :::
 
 ## List of compatible inverters
 
-*(Last updated 2024-01-17)*
+_(Last updated 2024-03-10)_
 
 We add models and update the lists below continuously.
 
-### Sungrow
-
-[Compatible Sungrow inverters](sungrow.md)
-
-### Huawei
-
-[Compatible Huawei inverters](huawei.md)
-
-### SolarEdge
-
-[Compatible SolarEdge inverters](solaredge.md)
+| Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
+| ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |
+| Sungrow     | ✅                | Partial support    | Evaluating     | [View Details](sungrow.md)   |
+| Solaredge   | ✅                | ❌                 | Evaluating     | [View Details](solaredge.md) |
+| Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
+| Deye        | ✅                | ❌                 | In Development | -                            |
+| Fronius     | ❌                | ❌                 | In Development | -                            |
+| Growatt     | ❌                | ❌                 | In Development | -                            |
+| Ferroamp    | ❌                | ❌                 | Planned        | -                            |
+| Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
+| Solis       | ❌                | ❌                 | Planned        | -                            |
+| Goodwe      | ❌                | ❌                 | Planned        | -                            |
+| Enphase     | ❌                | ❌                 | Planned        | -                            |
+| Homegrid    | ❌                | ❌                 | Planned        | -                            |
+| Sol-ark     | ❌                | ❌                 | Planned        | -                            |
+| Eg4         | ❌                | ❌                 | Planned        | -                            |
+| Sma         | ❌                | ❌                 | Planned        | -                            |
+| Sofar-solar | ❌                | ❌                 | Planned        | -                            |
+| Livoltek    | ❌                | ❌                 | Planned        | -                            |
 
 ## Can't find your specific inverter model?
 
-If you can't find your specific inverter in the lists above, don't hesitate to contact us on Discord to see if it can be made compatible: 
+If you can't find your inverter in the table above, don't hesitate to contact us on Discord to see if it can be made compatible:
 
 <a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>

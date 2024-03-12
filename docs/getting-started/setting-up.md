@@ -9,12 +9,12 @@ sidebar_position: 3
 :::infoImportant
 You will need a compatible inverter to be able to connect your Energy Gateway. 
 
-See the list of currently compatible inverters: [](../energy-gateway/1-solaris.md)
+See the list of currently compatible inverters: [Compatible Inverters](../energy-gateway/1-solaris.md)
 :::
 
 ### Do you have an Energy Gateway that you're planning to set up?
 
-Follow the guide: https://github.com/srcfl/egw-getting-started
+Follow the guide: [Setting up your Energy Gateway](https://github.com/srcfl/egw-diy/blob/main/rak-hotspot-helium-iot-src-dual-mining.md)
 
 ### Do you want to build a Do It Yourself (DIY) Energy Gateway?
 

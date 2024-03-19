@@ -135,14 +135,11 @@ Does your model support read? Keep in mind that you must ensure that communicati
 | SUN2000-6KTL-CNL0       | ✅         | ❌         |
 | SUN2000-6KTL-L1         | ✅         | ❌         |
 | SUN2000-6KTL-M0         | ✅         | ❌         |
-| SUN2000-6KTL-M0         | ✅         | ❌         |
 | SUN2000-6KTL-M1         | ✅         | ❌         |
-| SUN2000-7.6KTL-USL0     | ✅         | ❌         |
 | SUN2000-7.6KTL-USL0     | ✅         | ❌         |
 | SUN2000-70KTL-C1        | ✅         | ❌         |
 | SUN2000-70KTL-INM0      | ✅         | ❌         |
 | SUN2000-75KTL-C1        | ✅         | ❌         |
-| SUN2000-8KTL            | ✅         | ❌         |
 | SUN2000-8KTL            | ✅         | ❌         |
 | SUN2000-8KTL-M0         | ✅         | ❌         |
 | SUN2000-8KTL-M1         | ✅         | ❌         |

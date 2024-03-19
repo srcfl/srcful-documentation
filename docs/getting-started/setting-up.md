@@ -14,7 +14,7 @@ See the list of currently compatible inverters: [Compatible Inverters](../energy
 
 ### Do you have an Energy Gateway that you're planning to set up?
 
-Follow the guide: [Setting up your Energy Gateway](https://github.com/srcfl/egw-diy/blob/main/rak-hotspot-helium-iot-src-dual-mining.md)
+Follow the guide: [Setting up your Energy Gateway](https://github.com/srcfl/egw-getting-started)
 
 ### Do you want to build a Do It Yourself (DIY) Energy Gateway?
 

@@ -22,6 +22,7 @@ We add inverters and update the table below continuously.
 | Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
 | Deye        | ✅                | ❌                 | In Development | -                            |
 | Fronius     | ❌                | ❌                 | In Development | -                            |
+| Sma         | ❌                | ❌                 | In Development | -                            |
 | Growatt     | ❌                | ❌                 | In Development | -                            |
 | Ferroamp    | ❌                | ❌                 | Planned        | -                            |
 | Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
@@ -31,7 +32,6 @@ We add inverters and update the table below continuously.
 | Homegrid    | ❌                | ❌                 | Planned        | -                            |
 | Sol-ark     | ❌                | ❌                 | Planned        | -                            |
 | Eg4         | ❌                | ❌                 | Planned        | -                            |
-| Sma         | ❌                | ❌                 | Planned        | -                            |
 | Sofar-solar | ❌                | ❌                 | Planned        | -                            |
 | Livoltek    | ❌                | ❌                 | Planned        | -                            |
 

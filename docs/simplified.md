@@ -20,7 +20,7 @@ The name "Srcful" is a play on the word "resourceful," reflecting the goal of th
 
 At its core, Srcful wants to enable the creation of a decentralized energy grid that is sustainable, efficient, and equitable for all. If you have solar panels on your roof, for example, you can use the Srcful Energy Gateway to connect to the network. The Gateway will measure how much energy you produce, and if it's validated as green energy, you'll get rewarded with SRC tokens. By utilizing these tokens, you gain access to participate in the energy marketplace. As a token holder, you are granted the authority to influence decisions regarding the network's operations. Leveraging the power of Solana, we offer a variety of innovative services that enhance your experience with Srcful.
 
-In the future, Srcful could also help you buy and sell energy to your neighbors. And by clustering many small green energy sources, the network can even help stabilize the grid and prevent blackouts.
+By clustering many small green energy sources such as Solar PV and Battery storage, the network can earn from helping stabilize the grid and prevent blackouts.
 
 It's also worth noting that Srcful uses blockchain technology, which is a way to keep track of transactions and ensure they're secure. It might sound complicated, but think of it like a digital ledger that everyone can see and no one can cheat. Learn more about the core concepts below.
 
@@ -32,25 +32,25 @@ There is a common misunderstanding that Srcful is a peer-to-peer energy trading 
 
 Cryptocurrencies are a type of digital currency that is secured by advanced computer encryption methods called cryptography. They are decentralized, which means that they operate independently of governments and financial institutions. Instead of being controlled by a central authority, cryptocurrencies rely on a network of computers and algorithms to maintain their security and integrity. 
 
-SRC tokens is a utility token that can be earned by homeowners who connect their green energy producers to the Srcful network and contribute to a more sustainable energy system. Overall, SRC tokens are a way for people to participate in the energy market in a new and innovative way. By using cryptocurrencies like SRC tokens, we can help create a more sustainable and equitable energy system that benefits everyone.
+SRC tokens is a utility token that can be earned by homeowners who connect their green energy producers to the Srcful network and contribute to a more sustainable energy system. Overall, SRC tokens are a way for people to participate in the energy market in a new and innovative way.
 
 ## Proof-of-Source (PoSRC)
 
-Proof-of-Source is a way to prove that the energy you produce is green, and then get rewards for it. When you have solar panels or other ways of producing green energy, you can connect them to the Srcful network through the Energy Gateway. The Energy Gateway will then measure how much green energy you produce and send that information to the Srcful network for validation.
+Proof-of-Source is a way to prove that the energy you produce is green, and then get rewards for it. When you have solar panels or battery storage, you can connect them to the Srcful network through the Energy Gateway. The Energy Gateway will then measure how much green energy you produce and send that information to the Srcful network for validation.
 
-If your green energy production is validated, you will get rewarded in SRC tokens based on how much you produced and how much other people in the network produced. These tokens are like money that you can use to participate in the energy marketplace or exchange for other kinds of money.
+If your green energy production is validated, you will get rewarded in SRC tokens based on how much you produced and how much other people in the network produced. SRC tokens is used for a range of energy services offered through Srcful for both the DER owners and Energy Companies. 
 
-By participating in PoSRC, you're not selling your energy to anyone. Instead, you're getting rewarded for being a green energy producer and helping to create a more sustainable and equitable energy system. This is the most basic form for you to join the Srcful network.
+By participating in PoSRC, you're not selling your energy to anyone. Instead, you receive rewards for connecting and validating your resources, as well as for your contribution as a green energy producer. This is the most basic form for you to join the Srcful network.
 
 ## Proof-of-Control (PoCTRL)
 
-When many people use renewable energy sources, the amount of energy that is available for the power grid can be unpredictable. This can cause problems for the stability of the grid, which is important for making sure everyone has access to electricity when they need it.
+As the integration of renewable energy production into the grid increases, the predictability of energy availability for the power grid becomes more uncertain. This unpredictability can pose challenges to the stability of the grid, which is crucial for ensuring consistent and reliable electricity access for everyone.
 
-With Proof-of-Control, people who have renewable energy sources can offer to let Srcful control them for short periods of time, like a few minutes. This means that Srcful can help balance the supply and demand of electricity on the grid, which helps keep everything running smoothly.
+With Proof-of-Control, people who have renewable energy sources connected to Srcful can offer Energy companies the ability to control them for short periods of time, like a few minutes a few times per year. If you provide such a reserve, you get rewarded for every hour your reserve is available to support the grid's frequency, regardless of whether it's actually used or not. It's like being on standby; you're rewarded simply for being ready to help if needed. This means that Srcful creates the technical conditions to help balance the grid.
 
-The people who offer their renewable energy sources to be controlled by Srcful will get rewarded with SRC tokens just as in Proof-of-Source.
+Ancillary Services is a massive and rapidly growing market, expanding explosively as the demand increases with the integration of more renewable energy production into the energy system.
 
-It's important to note that with Proof-of-Control, no one is selling their energy. Instead, people are offering the ability to help stabilize the power grid, and they get rewarded for that help.
+The people who offer their renewable energy sources to be controlled by Srcful will get rewarded with SRC tokens just as in Proof-of-Source. It's important to note that with Proof-of-Control, no one is selling their energy. Instead, people are offering the ability to help stabilize the power grid, and they get rewarded for that help.
 
 ## The Srcful Energy Gateway
 
@@ -60,7 +60,7 @@ The Srcful Energy Gateway is a small device that connects your renewable energy 
 
 Connecting to Srcful can provide ordinary households with several benefits, such as:
 
-1. **Saving money:** By connecting to Srcful, households with renewable energy systems can earn tokens for producing green energy. 
+1. **Get Rewarded:** By connecting to Srcful, households with renewable energy systems can earn tokens for producing green energy. 
 
 2. **Supporting the environment:** By producing green energy, households can contribute to a more sustainable energy system and help reduce the carbon footprint.
 
@@ -68,7 +68,6 @@ Connecting to Srcful can provide ordinary households with several benefits, such
 
 4. **Joining a community:** By connecting to Srcful, households become part of a larger community of like-minded individuals who are committed to sustainable energy practices. This community can provide support, advice, and inspiration to help households achieve their energy goals.
 
-In summary, connecting to Srcful can help households save money, support the environment, provide stability to the grid, and join a community of like-minded individuals.
 
 <div class="alert alert--primary" role="alert">
 Now, go discover the full scope of Srcful by delving into the nitty-gritty details in the rest of the documentation!

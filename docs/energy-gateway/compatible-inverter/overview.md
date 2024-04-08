@@ -22,9 +22,9 @@ We add inverters and update the table below continuously.
 | Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
 | Deye        | ✅                | ❌                 | Evaluating     | Coming soon                  |
 | Fronius     | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| Sma         | ✅                | ❌                 | Evaluating     | Coming soon                  |
+| SMA         | ✅                | ❌                 | Evaluating     | Coming soon                  |
 | Growatt     | ❌                | ❌                 | In Development | -                            |
-| Goodwe      | ❌                | ❌                 | In Development | -                            |
+| GoodWe      | ❌                | ❌                 | In Development | -                            |
 | Ferroamp    | ❌                | ❌                 | Planned        | -                            |
 | Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
 | Solis       | ❌                | ❌                 | Planned        | -                            |

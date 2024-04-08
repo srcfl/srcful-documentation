@@ -11,7 +11,7 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 ## List of compatible inverters
 
-_(Last updated 2024-03-10)_
+_(Last updated 2024-04-08)_
 
 We add inverters and update the table below continuously.
 
@@ -20,14 +20,14 @@ We add inverters and update the table below continuously.
 | Sungrow     | ✅                | Partial support    | Evaluating     | [View Details](sungrow.md)   |
 | Solaredge   | ✅                | ❌                 | Evaluating     | [View Details](solaredge.md) |
 | Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
-| Deye        | ✅                | ❌                 | In Development | -                            |
-| Fronius     | ❌                | ❌                 | In Development | -                            |
-| Sma         | ❌                | ❌                 | In Development | -                            |
+| Deye        | ✅                | ❌                 | Evaluating     | Coming soon                  |
+| Fronius     | ✅                | ❌                 | Evaluating     | Coming soon                  |
+| Sma         | ✅                | ❌                 | Evaluating     | Coming soon                  |
 | Growatt     | ❌                | ❌                 | In Development | -                            |
+| Goodwe      | ❌                | ❌                 | In Development | -                            |
 | Ferroamp    | ❌                | ❌                 | Planned        | -                            |
 | Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
 | Solis       | ❌                | ❌                 | Planned        | -                            |
-| Goodwe      | ❌                | ❌                 | Planned        | -                            |
 | Enphase     | ❌                | ❌                 | Planned        | -                            |
 | Homegrid    | ❌                | ❌                 | Planned        | -                            |
 | Sol-ark     | ❌                | ❌                 | Planned        | -                            |

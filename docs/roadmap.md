@@ -18,9 +18,6 @@ By sharing our roadmap, we aim to maintain transparency with our users and stake
 ### Demand Response
 - Initially focusing on the Nordic region, we're working on integrating FCR-D features, helping to stabilize the grid during disturbances.
 
-### Dual Mining
-- Use your Energy Gateway for other smart applications and earn rewards from various projects. For instance, by adding an antenna, you can contribute with coverage to building the world's largest IoT network  (Helium.com)
-
 ## Future plans
 
 ### Guarantee of Origin

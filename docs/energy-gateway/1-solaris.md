@@ -14,9 +14,9 @@ The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to
 
 The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source and soon to come, Proof-of-Control incentive models, as well as other decentralized energy applications such as ancillary services.
 
-If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
+<!-- If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
 
-<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
+<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a> -->
 
 ## Features
 

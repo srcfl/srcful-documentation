@@ -26,11 +26,8 @@ Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a weal
 
 Our documentation is designed to empower you with the knowledge needed to seamlessly integrate and optimize your experience with our Energy Gateway. It provides detailed insights and step-by-step instructions to install your own Gateway.
 
-### Interested in getting a Gateway?
+<!-- ### Interested in getting a Gateway? -->
 
-To secure your own Energy Gateway, simple visit the link below and fill out the form.
-
-<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a>
 
 ## Support and Community
 

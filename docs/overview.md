@@ -6,28 +6,33 @@ slug: /
 
 # Srcful Documentation
 
+## Participate in shaping the future of energy with Srcful
+
+### What is Srcful? 
+Srcful primarily exists to accelerate and facilitate the expansion of renewable energy sources. Srcful aims to build the world’s largest virtual power plant (VPP). We build the VPP by connecting Decentralized Energy Resources (DERs), such as solar plants and battery storage, into a decentralized network.
+
 **Our mission: Accelerate solar power.**
 
-## Participate in shaping the future of energy with Srcful's technology
+### How does it work?
+By connecting your solar inverter to our Energy Gateway, you will be rewarded for your verified green energy production. In a later stage, you will also be rewarded for letting us control your solar plant, to help stabilize the energy grid.
 
-Our documentation covers everything from the Srcful Energy Gateway to API documentation and other developer resources. It also contains the [Srcful Whitepaper](/whitepaper/), which comprehensively details the foundational principles, technological architecture, and strategic vision of Srcful.<br />
+Our documentation covers everything from the Srcful Energy Gateway to Tokenomics and other important resources. It also contains the [Srcful Whitepaper](/whitepaper/), which comprehensively details the foundational principles, technological architecture, and strategic vision of Srcful.<br />
 
-We are committed to sustainability and ensuring that our users have a seamless experience, which is why we put a heavy emphasis on maintaining our documentation, providing users a one-stop destination for reliable information and effortless navigation.
+We are committed to sustainability and ensuring that our users have a seamless experience, which is why we put a heavy emphasis on maintaining our documentation.
 
-Join us in exploring the exciting possibilities of a smart, decentralized grid with Srcful.
+Join us in exploring the exciting possibilities of a smart, decentralized energy grid with Srcful.
 
 ## Getting started: Srcful Simplified
 
-If you're new to Srcful, we recommend beginning your journey at the [Srcful Simplified](/simplified/) page. This section is designed to provide newcomers with an introduction to our platform, ensuring a smooth onboarding experience.
+If you're new to Srcful, we recommend beginning your journey at the [Srcful Simplified](/simplified/) page. This section is designed to provide newcomers with an introduction to Srcful.
 
 ## Explore the Energy Gateway
 
 Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a wealth of information about the features of our Energy Gateway.<br />
 
-Our documentation is designed to empower you with the knowledge needed to seamlessly integrate and optimize your experience with our Energy Gateway. It provides detailed insights and step-by-step instructions to install your own Gateway.
+The Energy Gateway is available to buy in [RAKwireless store](/https://store.rakwireless.com/products/srcful-energy-gateway/) 
 
 <!-- ### Interested in getting a Gateway? -->
-
 
 ## Support and Community
 

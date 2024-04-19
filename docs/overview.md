@@ -30,7 +30,7 @@ If you're new to Srcful, we recommend beginning your journey at the [Srcful Simp
 
 Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a wealth of information about the features of our Energy Gateway.<br />
 
-The Energy Gateway is available to buy in [RAKwireless store](/https://store.rakwireless.com/products/srcful-energy-gateway/) 
+The Energy Gateway is available to buy in [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway/) 
 
 ## Support and Community
 

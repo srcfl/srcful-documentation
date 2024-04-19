@@ -32,8 +32,6 @@ Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a weal
 
 The Energy Gateway is available to buy in [RAKwireless store](/https://store.rakwireless.com/products/srcful-energy-gateway/) 
 
-<!-- ### Interested in getting a Gateway? -->
-
 ## Support and Community
 
 Join our vibrant community on Discord, where you can connect with fellow users, share insights, and get your questions answered by the Srcful Team. Whether you're seeking assistance, exploring new ideas, or just want to be part of the conversation, our Discord channel is the go-to space for real-time engagement.

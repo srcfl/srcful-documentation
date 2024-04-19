@@ -8,7 +8,7 @@ There are two primary ways to get involved with Srcful and start participating i
 
 ## 1. Get a Srcful Energy Gateway
 
-By getting a Srcful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit the [Srcful Shop](https://shop.srcful.io/) and acquire an Energy Gateway. 
+By getting a Srcful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit our Hardware Vendor [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway) and acquire an Energy Gateway. 
 
 ### Requirements
 

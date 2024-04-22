@@ -7,7 +7,7 @@ sidebar_position: 2
 :::infoImportant
 You will need a compatible inverter to be able to connect your Energy Gateway. 
 
-See the list of currently compatible inverters: [Compatible Inverters](../energy-gateway/1-solaris.md)
+See the list of currently compatible inverters: [Compatible Inverters](../energy-gateway/compatible-inverter/)
 :::
 
 There are two primary ways to get involved with Srcful and start participating in the energy revolution at this stage:

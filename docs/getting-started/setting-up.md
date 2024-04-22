@@ -4,24 +4,20 @@ sidebar_position: 3
 
 # Setting up 
 
-## The Srcful Energy Gateway
+## Get Started with Your Energy Gateway
 
-:::infoImportant
-You will need a compatible inverter to be able to connect your Energy Gateway. 
+### Start Here: [Onboarding Guide for Your Energy Gateway](https://github.com/srcfl/egw-getting-started)
 
-See the list of currently compatible inverters: [Compatible Inverters](../energy-gateway/1-solaris.md)
-:::
+## Build your own Energy Gateway
 
-### Do you have an Energy Gateway that you're planning to set up?
+**Do you want to build a Do It Yourself (DIY) Energy Gateway?**
 
-Follow the guide: [Setting up your Energy Gateway](https://github.com/srcfl/egw-getting-started)
-
-### Do you want to build a Do It Yourself (DIY) Energy Gateway?
-
-Follow the guide: https://github.com/srcfl/egw-diy
+**Follow this guide:** https://github.com/srcfl/egw-diy
 
 
-## The Solana Wallet
+## Solana Wallet Setup
+
+To ensure your Energy Gateway is securely assigned to you, it's essential to set up a Solana Wallet (If you already have a Solana Wallet, you can use your existing one. Each Energy Gateway must be linked to a unique Solana Wallet, serving as a digital proof of ownership and facilitating secure transactions.
 
 Setting up a Solana wallet is a simple process that can be completed in a few steps:
 

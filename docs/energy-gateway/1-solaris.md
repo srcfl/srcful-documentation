@@ -5,12 +5,11 @@ slug: /energy-gateway/
 
 # Solaris batch
 
-
 <div class="alert alert--primary" role="alert">
 <i>Solaris, a wondrous star nestled in the vastness of the Milky Way galaxy, resides about 4,000 light-years from Earth. Its luminosity illuminates the depths of space, beckoning us to consider the limitless potential for renewable energy in our universe. As we gaze upon its radiance, we are reminded of the urgency to embrace sustainable energy practices on Earth, to harness the power of the sun and all the natural resources available to us, and to continue our pursuit of a brighter, greener future.</i>
 </div><br />
 
-The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways and is compatible with a growing number of inverters. 
+The Srcful Energy Gateway (batch #1: "Solaris") is a hardware device designed to connect Distributed Energy Resources (DERs) to the Srcful network of gateways and is compatible with a growing number of inverters.
 
 The Srcful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Srcful network using the Energy Gateway, you can participate in Proof-of-Source and soon to come, Proof-of-Control incentive models, as well as other decentralized energy applications such as ancillary services.
 
@@ -34,6 +33,18 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 
 - Proof-of-Source and Proof-of-Control: The gateway will perform Proof-of-Source mechanism to ensure that energy transactions on the Srcful network are secure and verified. Proof-of-Control is planned to be launced 2024.
 
+## How it works
+
+The Srcful Energy Gateway works by connecting your DER to the Srcful network using Wifi. The gateway communicates with your DER using Modbus TCP, which is a standard protocol for connecting to inverters and other energy devices. There are at least three ways to connect the srcful energy gateway to the inverter.
+
+![alt text](image.png)
+
+1. **Direct connection**: The gateway connects directly to the inverter using a Modbus TCP connection. This is the most common way to connect the gateway to an inverter.
+
+2. **Via a Modbus TCP to RS485 converter**: If your inverter does not support Modbus TCP, you can use a Modbus TCP to RS485 converter to connect the gateway to the inverter. The RS485-to-Ethernet will allow you to consume Modbus RTU and expose it as Modbus TCP. A list of compatible converters will be available soon.
+
+3. **Via a Modbus TCP Proxy**: Your inverter does support Modbus TCP but allow only one connection at a time. You can use a Modbus TCP Proxy to connect multiple devices to the inverter. This way, you keep whatever connection you have with the inverter and connect the gateway to the proxy.
+
 ## Srcful Energy Gateway Compability
 
 :::note
@@ -53,6 +64,7 @@ T.B.A
 Installing the Srcful Energy Gateway is easy. Here's what you need to do: -->
 
 ## Installation
+
 Explore the comprehensive guide at: https://github.com/srcfl/egw-getting-started
 
 ## Support

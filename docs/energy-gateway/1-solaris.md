@@ -37,7 +37,7 @@ The Srcful Energy Gateway is a versatile device that offers the following featur
 
 The Srcful Energy Gateway works by connecting your DER to the Srcful network using Wifi. The gateway communicates with your DER using Modbus TCP, which is a standard protocol for connecting to inverters and other energy devices. There are at least three ways to connect the srcful energy gateway to the inverter.
 
-![alt text](image.png)
+![alt text](egw_setup.drawio.svg)
 
 1. **Direct connection**: The gateway connects directly to the inverter using a Modbus TCP connection. This is the most common way to connect the gateway to an inverter.
 

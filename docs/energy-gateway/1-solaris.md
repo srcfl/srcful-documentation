@@ -41,7 +41,7 @@ The Srcful Energy Gateway works by connecting your DER to the Srcful network usi
 
 1. **Direct connection**: The gateway connects directly to the inverter using a Modbus TCP connection. This is the most common way to connect the gateway to an inverter.
 
-2. **Via a Modbus TCP to RS485 converter**: If your inverter does not support Modbus TCP, you can use a Modbus TCP to RS485 converter to connect the gateway to the inverter. The RS485-to-Ethernet will allow you to consume Modbus RTU and expose it as Modbus TCP. A list of compatible converters will be available soon.
+2. **Via a Modbus TCP to RS485 converter**: If your inverter doesn't support Modbus TCP, you can still connect it to the Srcful Energy Gateway using a Modbus TCP to RS485 converter. The converter translates Modbus RTU (RS485) to Modbus TCP (Ethernet), allowing the gateway to communicate with the inverter that only support Modbus RTU. Modbus RTU is a single-master protocol, limiting communication to one device at a time. However, the converter acts as a bridge, enabling multiple devices to connect to the inverter via Modbus TCP. A list of compatible converters will be available soon.
 
 3. **Via a Modbus TCP Proxy**: Your inverter does support Modbus TCP but allow only one connection at a time. You can use a Modbus TCP Proxy to connect multiple devices to the inverter. This way, you keep whatever connection you have with the inverter and connect the gateway to the proxy.
 

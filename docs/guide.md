@@ -77,6 +77,18 @@ sidebar_class_name: item1
 
 ![](../static/img/guide/step-7.png)
 
+## Location
+
+1. **Go to the location tab** in the side menu.
+
+![](../static/img/guide/step-8.png)
+
+2. **Set your location** by entering your coordinates or click on the map, then press **Sign change**.
+
+![](../static/img/guide/step-9.png)
+
+3. **Your Energy Gateway** should now be visible in the [**Srcful Explorer**](https://srcful.io)
+
 ## Troubleshooting
 
 :::info Issues

@@ -58,3 +58,17 @@
 .hidden {
   display: none !important;
   }
+
+  /* Override non-category links to be horizonally compact */
+/* li > a.menu__link {
+  justify-content: flex-start;
+} */
+
+.item1 a {
+  color: green;
+}
+
+.item1 a::before {
+  padding-right: 0.5rem;
+  /* content: url(/static/img/button.svg); */
+}

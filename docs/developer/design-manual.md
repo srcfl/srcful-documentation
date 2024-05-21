@@ -27,6 +27,16 @@ import logoGreenLite from './img/design/logo/srcful-logo-green-lite.png';
 import logoDarkLite from './img/design/logo/srcful-logo-dark-lite.png';
 import logoGoldLite from './img/design/logo/srcful-logo-gold-lite.png';
 
+import fredrikSittingTransparent from './img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.png';
+import fredrikSittingBWTransparent from './img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.png';
+import fredrikSitting from './img/photos/fredrik/fredrik-ahlgren-sitting-medium.jpeg';
+import fredrikSittingBW from './img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.jpeg';
+
+import fredrikCoffey from './img/photos/fredrik/fredrik-ahlgren-coffey-medium.jpeg';
+import fredrikCoffeyBW from './img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.jpeg';
+import fredrikCoffeyTransparent from './img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.png';
+import fredrikCoffeyBWTransparent from './img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.png';
+
 # Design manual and press
 
 Our design manual is the go-to resource for developers when creating visual and graphic elements that represent our brand. It includes guidelines and rules for our logo, symbol, color scheme, typography, imagery, and tone of voice, ensuring consistency and cohesion in our branding across all touchpoints. The manual provides a clear and concise roadmap for developers to ensure that they are aligned with our company's values, goals, and messaging, helping to create a strong and recognizable brand in the marketplace.
@@ -58,8 +68,6 @@ Learn how to use our logo correctly and the rules that govern its use in all app
 | <center><img src={symbolGoldTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-transparent.svg), [.png](./img/design/symbol/srcful-symbol-gold-transparent.png)</center>| <center><img src={symbolGoldDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-dark.svg), [.png](./img/design/symbol/srcful-symbol-gold-dark.png)</center> |<center><img src={symbolGoldLite} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-lite.svg), [.png](./img/design/symbol/srcful-symbol-gold-lite.png)</center> |  Srcful Gold (Rare)  |
 <a target="_blank" href={ require("./img/design/srcful-graphics.zip").default } download>Download .zip archive</a>
 
-
-
 ## Typography Rules
 
 Understand how to choose and use the right fonts in our designs, and their appropriate sizes and weights.
@@ -69,29 +77,34 @@ Understand how to choose and use the right fonts in our designs, and their appro
 | [The quick brown fox jumps over the lazy dog](https://fontsgeek.com/fonts/gilroy-light) | [Gilroy Light](./font/gilroy-light.woff2)    |  Headlines            |
 | [The quick brown fox jumps over the lazy dog](#) | [Glober](./font/glober.woff2)    |  Paragraphs            |
 
-
-
 ## Color Scheme
 
 Learn about our brand colors and how to use them consistently across all marketing materials and products.
 
 | Example              | HEX     | RGB                | Usage           |
 |----------------------|---------|--------------------|-----------------|
-|![](./img/00BF63.png) | #00BF63 | RGB(0, 191, 990)  | Srcful Green             |
-|![](./img/FFFFFF.png) | #FFFFFF | RGB(255, 255, 255)  | Srcful White             |
-|![](./img/AD9024.png) | #AD9024 | RGB(173, 144, 36)  | Srcful Gold             |
-|![](./img/112532.png) | #112532 | RGB(17, 37, 50)  | Srcful Dark             |
-|![](./img/E6E6E6.png) | #E6E6E6 | RGB(230, 230, 230)  | Off white            |
-|![](./img/2E2E2E.png) | #2E2E2E | RGB(46, 46, 46)  | Dark grey            |
-|![](./img/6E6E6E.png) | #6E6E6E | RGB(110, 110, 110)  | Light grey            |
+|![](./img/00BF63.png) | #00BF63 | RGB(0, 191, 990)   | Srcful Green    |
+|![](./img/FFFFFF.png) | #FFFFFF | RGB(255, 255, 255) | Srcful White    |
+|![](./img/AD9024.png) | #AD9024 | RGB(173, 144, 36)  | Srcful Gold     |
+|![](./img/112532.png) | #112532 | RGB(17, 37, 50)    | Srcful Dark     |
+|![](./img/E6E6E6.png) | #E6E6E6 | RGB(230, 230, 230) | Off white       |
+|![](./img/2E2E2E.png) | #2E2E2E | RGB(46, 46, 46)    | Dark grey       |
+|![](./img/6E6E6E.png) | #6E6E6E | RGB(110, 110, 110) | Light grey      |
+
+
+## Fredrik Ahlgren, CEO
+
+"Dr. Fredrik Ahlgren, co-founder and CEO of Srcful"
+
+| Transparent<br />Background | Solid<br />Background |
+|-------------|------|
+|  <center><img src={fredrikSittingTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.heic) </center>   |<center><img src={fredrikSitting} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.heic) </center> |
+|  <center><img src={fredrikSittingBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.heic) </center>  |<center><img src={fredrikSittingBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.heic) </center> |
+|  <center><img src={fredrikCoffeyTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.heic) </center>  |<center><img src={fredrikCoffey} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.heic) </center> |
+|  <center><img src={fredrikCoffeyBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.heic) </center>  |<center><img src={fredrikCoffeyBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.heic) </center> |
 
 
 
-
-
-## Imagery Guidelines
-
-Discover the types of images that align with our brand, and how to use them to visually communicate our message.
 
 ## Tone of Voice
 

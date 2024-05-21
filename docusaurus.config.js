@@ -108,11 +108,15 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/tux5qPDcWw',
+                href: 'https://discord.gg/srcful',
               },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/srcful',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@srcful-official',
               },
               {
                 label: 'GitHub',
@@ -130,6 +134,14 @@ const config = {
               {
                 label: 'Explorer',
                 href: 'https://explorer.srcful.io',
+              },
+              {
+                label: 'Terms of Services',
+                href: 'https://docs.srcful.io/srcful-terms/terms',
+              },
+              {
+                label: 'Privacy Policy',
+                href: 'https://docs.srcful.io/srcful-terms/privacy',
               },
             ],
           },

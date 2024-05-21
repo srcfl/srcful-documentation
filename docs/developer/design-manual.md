@@ -35,7 +35,7 @@ Our design manual is the go-to resource for developers when creating visual and 
 
 Learn how to use our logo correctly and the rules that govern its use in all applications.
 
-| Transparent | Dark | Lite    | Usage           |
+| Transparent<br />Background | Dark<br />Background | Lite<br />Background    | Usage           |
 |-------------|------|---------|-----------------|
 |  <center><img src={logoGreenDarkTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-dark-transparent.svg), [.png](./img/design/logo/srcful-logo-green-dark-transparent.png) </center>  |   |<center><img src={logoGreenLite} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-lite.svg), [.png](./img/design/logo/srcful-logo-green-lite.png) </center> |On lite backgrounds (Default)            |
 |  <center><img src={logoDarkTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-dark-transparent.svg), [.png](./img/design/logo/srcful-logo-dark-transparent.png) </center>  | |<center><img src={logoDarkLite} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-dark-lite.svg), [.png](./img/design/logo/srcful-logo-dark-lite.png) </center> |  On lite backgrounds.            |
@@ -50,9 +50,7 @@ Learn how to use our logo correctly and the rules that govern its use in all app
 
 Learn how to use our logo correctly and the rules that govern its use in all applications.
 
-### Transparent background
-
-| Transparent | Dark  | Lite |Usage           |
+| Transparent<br />Background | Dark<br />Background  | Lite<br />Background |Usage           |
 |--------------------------|----|-----------------------|-------------------|
 | <center><img src={symbolGreenTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-transparent.svg), [.png](./img/design/symbol/srcful-symbol-green-transparent.png) </center> | <center><img src={symbolGreenDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-dark.svg), [.png](./img/design/symbol/srcful-symbol-green-dark.png)  </center>  | <center><img src={symbolGreenLite} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-lite.svg), [.png](./img/design/symbol/srcful-symbol-green-lite.png)  </center>  |  Srcful Green (Default)            |
 | <center><img src={symbolWhiteTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-white-transparent.svg), [.png](./img/design/symbol/srcful-symbol-white-transparent.png)</center>| <center><img src={symbolWhiteDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-white-dark.svg), [.png](./img/design/symbol/srcful-symbol-white-dark.png)</center> | &nbsp; | Srcful White  |

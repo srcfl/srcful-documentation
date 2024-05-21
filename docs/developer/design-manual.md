@@ -37,6 +37,11 @@ import fredrikCoffeyBW from './img/photos/fredrik/fredrik-ahlgren-coffey-bw-medi
 import fredrikCoffeyTransparent from './img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.png';
 import fredrikCoffeyBWTransparent from './img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.png';
 
+import fredrikJacket from './img/photos/fredrik/fredrik-ahlgren-jacket-medium.jpeg';
+import fredrikJacketBW from './img/photos/fredrik/fredrik-ahlgren-jacket-bw-medium.jpeg';
+import fredrikJacketTransparent from './img/photos/fredrik/fredrik-ahlgren-jacket-transparent-medium.png';
+import fredrikJacketBWTransparent from './img/photos/fredrik/fredrik-ahlgren-jacket-bw-transparent-medium.png';
+
 # Design manual and press
 
 Our design manual is the go-to resource for developers when creating visual and graphic elements that represent our brand. It includes guidelines and rules for our logo, symbol, color scheme, typography, imagery, and tone of voice, ensuring consistency and cohesion in our branding across all touchpoints. The manual provides a clear and concise roadmap for developers to ensure that they are aligned with our company's values, goals, and messaging, helping to create a strong and recognizable brand in the marketplace.
@@ -91,22 +96,25 @@ Learn about our brand colors and how to use them consistently across all marketi
 |![](./img/2E2E2E.png) | #2E2E2E | RGB(46, 46, 46)    | Dark grey       |
 |![](./img/6E6E6E.png) | #6E6E6E | RGB(110, 110, 110) | Light grey      |
 
+## Team
+
+| | Name | Role |  |
+|---|---|---|---|---|
+|  | Fredrik Ahlgren | CEO, co-founder | |
+|  | Tobias Ohlsson | CTO, co-founder | |
+|  | Viktor Olofsson| CFO, co-founder | |
+|  | Johan Leitet |CCC, co-founder | 
+|  | Nikas Emevi | co-founder|
+|  | David Mozart | co-founder |
+
 
 ## Fredrik Ahlgren, CEO
 
 "Dr. Fredrik Ahlgren, co-founder and CEO of Srcful"
 
-| Transparent<br />Background | Solid<br />Background |
-|-------------|------|
-|  <center><img src={fredrikSittingTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.heic) </center>   |<center><img src={fredrikSitting} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.heic) </center> |
-|  <center><img src={fredrikSittingBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.heic) </center>  |<center><img src={fredrikSittingBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.heic) </center> |
-|  <center><img src={fredrikCoffeyTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.heic) </center>  |<center><img src={fredrikCoffey} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.heic) </center> |
-|  <center><img src={fredrikCoffeyBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.heic) </center>  |<center><img src={fredrikCoffeyBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.heic) </center> |
-
-
-
-
-## Tone of Voice
-
-Understand the language and writing style that reflect our brand's values and connect with our audience.
+| Color<br />Transparent | Color<br />Solid | Black and White<br />Transparent | Black and White<br />Solid |
+|-------------|------|----|----|
+|  <center><img src={fredrikSittingTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.heic) </center>   |<center><img src={fredrikSitting} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-medium.heic) </center> | <center><img src={fredrikSittingBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.heic) </center>  |<center><img src={fredrikSittingBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-sitting-bw-medium.heic) </center> |
+|  <center><img src={fredrikCoffeyTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-transparent-medium.heic) </center>  |<center><img src={fredrikCoffey} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-medium.heic) </center> |  <center><img src={fredrikCoffeyBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-transparent-medium.heic) </center>  |<center><img src={fredrikCoffeyBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-coffey-bw-medium.heic) </center> |
+|  <center><img src={fredrikJacketTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-jacket-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-jacket-transparent-medium.heic) </center>  |<center><img src={fredrikJacket} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-jacket-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-jacket-medium.heic) </center> |  <center><img src={fredrikJacketBWTransparent} style={{width: 300}} /><br /> [.png](./img/photos/fredrik/fredrik-ahlgren-jacket-bw-transparent-medium.png), [.heic](./img/photos/fredrik/fredrik-ahlgren-jacket-bw-transparent-medium.heic) </center>  |<center><img src={fredrikJacketBW} style={{width: 300}} /><br /> [.jpeg](./img/photos/fredrik/fredrik-ahlgren-jacket-bw-medium.jpeg), [.heic](./img/photos/fredrik/fredrik-ahlgren-jacket-bw-medium.heic) </center> |
 

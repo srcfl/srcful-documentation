@@ -34,6 +34,7 @@ We add inverters and update the table below continuously.
 | Eg4         | ❌                | ❌                 | Planned        | -                            |
 | Sofar-solar | ❌                | ❌                 | Planned        | -                            |
 | Livoltek    | ❌                | ❌                 | Planned        | -                            |
+| Lenercom    | ❌                | ❌                 | Planned        | -                            |
 
 ## Can't find your specific inverter model?
 

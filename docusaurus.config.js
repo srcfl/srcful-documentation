@@ -50,16 +50,11 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         sitemap: {
-          lastmod: null,
           changefreq: 'weekly',
           priority: 0.5,
           ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-          createSitemapItems: async (params) => {
-            const {defaultCreateSitemapItems, ...rest} = params;
-            const items = await defaultCreateSitemapItems(rest);
-            return items.filter((item) => !item.url.includes('/page/'));
-        }},
+          filename: 'sitemap.xml'
+        },
       }),
     ],
   ],

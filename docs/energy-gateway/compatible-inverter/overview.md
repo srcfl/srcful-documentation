@@ -11,7 +11,7 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 ## List of compatible inverters
 
-_(Last updated 2024-04-08)_
+_(Last updated 2024-05-30)_
 
 We add inverters and update the table below continuously.
 
@@ -25,7 +25,7 @@ We add inverters and update the table below continuously.
 | SMA         | ✅                | ❌                 | Evaluating     | Coming soon                  |
 | Growatt     | ❌                | ❌                 | In Development | -                            |
 | GoodWe      | ❌                | ❌                 | In Development | -                            |
-| Ferroamp    | ❌                | ❌                 | Planned        | -                            |
+| Ferroamp    | ❌                | ❌                 | In Development | -                            |
 | Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
 | Solis       | ❌                | ❌                 | Planned        | -                            |
 | Enphase     | ❌                | ❌                 | Planned        | -                            |

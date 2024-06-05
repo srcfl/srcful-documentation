@@ -18,23 +18,23 @@ We add inverters and update the table below continuously.
 | Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
 | ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |
 | Sungrow     | ✅                | Partial support    | Evaluating     | [View Details](sungrow.md)   |
-| Solaredge   | ✅                | ❌                 | Evaluating     | [View Details](solaredge.md) |
-| Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
-| Deye        | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| Fronius     | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| SMA         | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| Growatt     | ❌                | ❌                 | In Development | -                            |
-| GoodWe      | ❌                | ❌                 | In Development | -                            |
-| Ferroamp    | ❌                | ❌                 | In Development | -                            |
-| Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
-| Solis       | ❌                | ❌                 | Planned        | -                            |
-| Enphase     | ❌                | ❌                 | Planned        | -                            |
-| Homegrid    | ❌                | ❌                 | Planned        | -                            |
-| Sol-ark     | ❌                | ❌                 | Planned        | -                            |
-| Eg4         | ❌                | ❌                 | Planned        | -                            |
-| Sofar-solar | ❌                | ❌                 | Planned        | -                            |
-| Livoltek    | ❌                | ❌                 | Planned        | -                            |
-| Lenercom    | ❌                | ❌                 | Planned        | -                            |
+| Solaredge   | ✅                | 🔜                 | Evaluating     | [View Details](solaredge.md) |
+| Huawei      | ✅                | 🔜                 | Evaluating     | [View Details](huawei.md)    |
+| Deye        | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| Fronius     | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| SMA         | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| Growatt     | 🔜                | 🔜                 | In Development | -                            |
+| GoodWe      | 🔜                | 🔜                 | In Development | -                            |
+| Ferroamp    | 🔜                | 🔜                 | In Development | -                            |
+| Fox-Ess     | 🔜                | 🔜                 | Planned        | -                            |
+| Solis       | 🔜                | 🔜                 | Planned        | -                            |
+| Enphase     | 🔜                | 🔜                 | Planned        | -                            |
+| Homegrid    | 🔜                | 🔜                 | Planned        | -                            |
+| Sol-ark     | 🔜                | 🔜                 | Planned        | -                            |
+| Eg4         | 🔜                | 🔜                 | Planned        | -                            |
+| Sofar-solar | 🔜                | 🔜                 | Planned        | -                            |
+| Livoltek    | 🔜                | 🔜                 | Planned        | -                            |
+| Lenercom    | 🔜                | 🔜                 | Planned        | -                            |
 
 ## Can't find your specific inverter model?
 

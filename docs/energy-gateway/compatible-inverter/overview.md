@@ -15,6 +15,10 @@ _(Last updated 2024-05-30)_
 
 We add inverters and update the table below continuously.
 
+✅ - Supported
+❌ - Not Supported
+🔜 - To be evaluated
+
 | Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
 | ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |
 | Sungrow     | ✅                | Partial support    | Evaluating     | [View Details](sungrow.md)   |

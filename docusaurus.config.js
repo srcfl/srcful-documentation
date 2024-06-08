@@ -64,10 +64,8 @@ const config = {
     ({
       algolia: {
         appId: '8SIKBTLLNP',
-        apiKey: 'adad6314afccf5bdc646522f91a84d77',
+        apiKey: 'c4d3561f9cb3b381fb8a099a1e4ad219',
         indexName: 'srcful',
-        // container: 'div',
-        contextualSearch: true,
         debug: false
     },
       // Replace with your project's social card

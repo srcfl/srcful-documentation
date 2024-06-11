@@ -62,12 +62,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      algolia: {
-        appId: '',
-        apiKey: '',
-        indexName: 'srcful',
-        debug: false
-    },
+      // algolia: {
+        // appId: '',
+        // apiKey: '',
+        // indexName: 'srcful',
+        // debug: false
+    // },
       // Replace with your project's social card
       image: 'img/social-card.png',
       navbar: {
@@ -80,7 +80,7 @@ const config = {
         items: [
           {
             label: 'API',
-            href: 'https://api.srcful.dev/',
+            href: 'https://api.srcful.dev/playground',
             position: 'right'
           },
           {

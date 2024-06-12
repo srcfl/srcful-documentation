@@ -10,6 +10,10 @@ sidebar_position: 3
 
 ## Build your own Energy Gateway
 
+:::warning Discontinuation of DIY Energy Gateway onboarding
+Effective **20th of June**, 2024, you will no longer be able to onboard new DIY Energy Gateways.
+:::
+
 **Do you want to build a Do It Yourself (DIY) Energy Gateway?**
 
 **Follow this guide:** https://github.com/srcfl/egw-diy

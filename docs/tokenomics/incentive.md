@@ -5,6 +5,10 @@ sidebar_position: 4
 
 # Incentive Structure
 
+:::caution
+Please note that Srcful is still in Beta and all token rewards should be concidered as non tradeable Beta-tokens.
+:::
+
 ## Quick Overview: Understanding Srcful Tokenomics
 
 Srcful has designed its tokenomics with two main incentive mechanisms: the **Proof-of-Source (PoSRC)** rewards program and the **service allocation pot**. The former specifically rewards owners of eco-friendly energy sources for connecting and verifying these sources, while the others is used to incentivize various valuable services within the Srcful ecosystem. One of the primary services rewarded from this pot is **Proof-of-Control (PoCTRL)**, which is the first of many potential services to be incentivized through this pot. Each incentive pool has a specific role, ensuring a well-rounded incentive scheme that supports different facets of the platform’s growth and operations.

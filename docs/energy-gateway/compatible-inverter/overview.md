@@ -15,9 +15,9 @@ _(Last updated 2024-05-30)_
 
 We add inverters and update the table below continuously.
 
-✅ - Supported
-❌ - Not Supported
-🔜 - To be evaluated
+- ✅ - Supported
+- ❌ - Not Supported
+- 🔜 - To be evaluated
 
 | Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
 | ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |
@@ -44,4 +44,4 @@ We add inverters and update the table below continuously.
 
 If you can't find your inverter in the table above, don't hesitate to contact us on Discord to see if it can be made compatible:
 
-<a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+<a class="button button--primary" href="https://discord.gg/srcful">Srcful Discord</a>

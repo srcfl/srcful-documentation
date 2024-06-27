@@ -15,29 +15,33 @@ sidebar_position: 5
 <b>Mint Authority:</b> <a href="https://explorer.solana.com/address/DqKmwGexCmxV1j542P8tBJYxUDWpFeBSzjXVf38kGVfz">DqKmwGexCmxV1j542P8tBJYxUDWpFeBSzjXVf38kGVfz</a>
 </div><br />
 
-Srcful has created a utility token called the SRC-token ("source token") on the Solana blockchain. Srcful chose to develop on the Solana blockchain due to its speed, efficiency, and strong community. Solana has a successful history of powering major decentralized projects.
+Srcful has created a utility beta token called the SRC-token ("source token") on the Solana blockchain. Srcful chose to develop on the Solana blockchain due to its speed, efficiency, and strong community. Solana has a successful history of powering major decentralized projects.
 
-The maximum supply of SRC is 250,000,000,000 tokens. These tokens are released gradually and initially allocated as rewards for beta testers and early adopters.
+The maximum supply of SRC is 250,000,000,000 tokens. These tokens are released gradually and allocated as rewards for beta testers and early adopters.
 
 :::note Beta phase rewards
 During the beta phase, active beta testers and early adopters will be rewarded a set amount of tokens monthly for their engagement in the project. Read more about this in the <a href="../Tokenomics/Distribution/">Tokenomics</a>.
 :::
 
-SRC-token is a utility token which plays a pivotal role in our vision of building a decentralized virtual power plant. SRC are rewarded to participants who contribute to the growth and development of Srcful. This growth is mainly measured by the successful integration of numerous Distributed Energy Resources (DERs) through the Srcful Energy Gateway. Once a critical mass of connected DERs is achieved, Srcful will begin offering a diverse range of energy services.
+## Post beta phase utility token
 
-To access services within the Srcful ecosystem, the SRC utility token is utilized, operating under a burn-and-mint equilibrium model. This model ensures a balanced and sustainable token economy. The range of energy services offered through Srcful includes:
+In the future, a new utility token will replace the SRC-token to facilitate access to a range of services within the Srcful ecosystem. This new token will operate under a burn-and-mint equilibrium model, ensuring a balanced and sustainable token economy. Participants will be rewarded for their contributions towards the integration of Distributed Energy Resources (DERs) through the Srcful Energy Gateway. Upon achieving a critical mass of connected DERs, Srcful will offer diverse energy services, including:
 
-For DER Owners:
-- Advanced visualization and enhanced data analytics for their energy resources.
-- Notifications for any performance deviations from expected levels.
-- Benchmarking tools to compare their installation's performance with that of other members.
-- Optimization of solar energy production in relation to electricity pricing and personal consumption.
-- A marketplace offering exclusive deals from various energy service providers.
+**For DER Owners:**
 
-For Energy Companies:
-- Ancillary services tailored to different countries, including the ability to control aggregated DERs.
-- Access to aggregated energy data and insights derived from the network of DERs.
-- Provision of Guarantee of Origin certificates, supporting the traceability of renewable energy sources.
+* Advanced visualization and analytics for monitoring energy resources.
+* Notifications for any performance deviations from expected levels.
+* Benchmarking tools to compare their installation's performance with that of other members.
+* Optimization of solar energy production in relation to electricity pricing and personal consumption.
+* A marketplace offering exclusive deals from various energy service providers.
+
+**For Energy Companies:**
+
+* Ancillary services tailored to different countries, including the ability to control aggregated DERs.
+* Access to aggregated energy data and insights derived from the network of DERs.
+* Provision of Guarantee of Origin certificates, supporting the traceability of renewable energy sources.
+
+These services will enhance the functionality and value of the future utility token within the Srcful ecosystem, promoting a more interconnected and efficient network of energy resources.
 
 
 <!-- The amount of SRC-tokens distributed to Energy Gateways depends on the value of their work to the overall network. To earn SRC-tokens, users must demonstrate that their distributed energy resources (DERs) are connected and produce green energy. This is called Proof-of-Source. DER owners can also earn SRC-tokens by allowing a flexibility service provider to use their DERs as a flexible resource, a process called Proof-of-Control. Both of these actions can be completed through the Srcful Energy Gateway. By providing Proof-of-Source and participating in Proof-of-Control, users can earn SRC-tokens as a reward.

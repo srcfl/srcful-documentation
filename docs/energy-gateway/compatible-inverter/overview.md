@@ -11,30 +11,34 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 ## List of compatible inverters
 
-_(Last updated 2024-04-08)_
+_(Last updated 2024-05-30)_
 
 We add inverters and update the table below continuously.
+
+✅ - Supported
+❌ - Not Supported
+🔜 - To be evaluated
 
 | Inverter    | Support for PoSRC | Support for PoCTRL | Status         | Link to Support              |
 | ----------- | ----------------- | ------------------ | -------------- | ---------------------------- |
 | Sungrow     | ✅                | Partial support    | Evaluating     | [View Details](sungrow.md)   |
-| Solaredge   | ✅                | ❌                 | Evaluating     | [View Details](solaredge.md) |
-| Huawei      | ✅                | ❌                 | Evaluating     | [View Details](huawei.md)    |
-| Deye        | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| Fronius     | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| SMA         | ✅                | ❌                 | Evaluating     | Coming soon                  |
-| Growatt     | ❌                | ❌                 | In Development | -                            |
-| GoodWe      | ❌                | ❌                 | In Development | -                            |
-| Ferroamp    | ❌                | ❌                 | Planned        | -                            |
-| Fox-Ess     | ❌                | ❌                 | Planned        | -                            |
-| Solis       | ❌                | ❌                 | Planned        | -                            |
-| Enphase     | ❌                | ❌                 | Planned        | -                            |
-| Homegrid    | ❌                | ❌                 | Planned        | -                            |
-| Sol-ark     | ❌                | ❌                 | Planned        | -                            |
-| Eg4         | ❌                | ❌                 | Planned        | -                            |
-| Sofar-solar | ❌                | ❌                 | Planned        | -                            |
-| Livoltek    | ❌                | ❌                 | Planned        | -                            |
-| Lenercom    | ❌                | ❌                 | Planned        | -                            |
+| Solaredge   | ✅                | 🔜                 | Evaluating     | [View Details](solaredge.md) |
+| Huawei      | ✅                | 🔜                 | Evaluating     | [View Details](huawei.md)    |
+| Deye        | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| Fronius     | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| SMA         | ✅                | 🔜                 | Evaluating     | Coming soon                  |
+| Growatt     | 🔜                | 🔜                 | In Development | -                            |
+| GoodWe      | 🔜                | 🔜                 | In Development | -                            |
+| Ferroamp    | 🔜                | 🔜                 | In Development | -                            |
+| Fox-Ess     | 🔜                | 🔜                 | Planned        | -                            |
+| Solis       | 🔜                | 🔜                 | Planned        | -                            |
+| Enphase     | 🔜                | 🔜                 | Planned        | -                            |
+| Homegrid    | 🔜                | 🔜                 | Planned        | -                            |
+| Sol-ark     | 🔜                | 🔜                 | Planned        | -                            |
+| Eg4         | 🔜                | 🔜                 | Planned        | -                            |
+| Sofar-solar | 🔜                | 🔜                 | Planned        | -                            |
+| Livoltek    | 🔜                | 🔜                 | Planned        | -                            |
+| Lenercom    | 🔜                | 🔜                 | Planned        | -                            |
 
 ## Can't find your specific inverter model?
 

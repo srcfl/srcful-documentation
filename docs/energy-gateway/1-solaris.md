@@ -48,7 +48,7 @@ The Srcful Energy Gateway works by connecting your DER to the Srcful network usi
 ## Srcful Energy Gateway Compability
 
 :::note
-The Srcful Energy Gateway is compatible with >50% of the inverters on the market.
+The Srcful Energy Gateway is compatible many well known inverter brands on the market. We are constantly working on adding support for more inverters.
 :::
 
 See our list of compatible inverters: [Compatible inverters](./compatible-inverter/overview.md)
@@ -73,7 +73,7 @@ If you need help with the Srcful Energy Gateway visit our community on Discord w
 
 Make sure to join us on Discord:
 
-<a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+<a class="button button--primary" href="https://discord.gg/srcful">Srcful Discord</a>
 
 ## Conclusion
 

@@ -14,7 +14,7 @@ Srcful primarily exists to accelerate and facilitate the expansion of renewable 
 **Our mission: Accelerate solar power.**
 
 ### How does it work?
-By connecting your solar inverter to our Energy Gateway, you will be rewarded for your verified green energy production. In a later stage, you will also be rewarded for letting us control your solar plant, to help stabilize the energy grid.
+By connecting your solar inverter or battery to our Energy Gateway, you will be rewarded for your verified green energy production. In a later stage, you will also be rewarded for letting us control your solar plant or battery to participate in different energy services, such as helping stabilize the energy grid.
 
 Our documentation covers everything from the Srcful Energy Gateway to Tokenomics and other important resources. It also contains the [Srcful Whitepaper](/whitepaper/), which comprehensively details the foundational principles, technological architecture, and strategic vision of Srcful.<br />
 
@@ -28,9 +28,9 @@ If you're new to Srcful, we recommend beginning your journey at the [Srcful Simp
 
 ## Explore the Energy Gateway
 
-Navigate through our [Gateway Documentation](/energy-gateway/) to enravel a wealth of information about the features of our Energy Gateway.<br />
+Navigate through our [Gateway Documentation](/energy-gateway/) to unravel a wealth of information about the features of our Energy Gateway.<br />
 
-The Energy Gateway is available to buy in [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway/) 
+The Energy Gateway Solaris Batch (beta usage) is available to buy in [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway/) 
 
 ## Support and Community
 
@@ -38,7 +38,7 @@ Join our vibrant community on Discord, where you can connect with fellow users, 
 
 All questions are welcomed, and our community is here to support you on your journey with Srcful.
 
-<a class="button button--primary" href="https://discordapp.com/invite/tux5qPDcWw">Srcful Discord</a>
+<a class="button button--primary" href="https://discord.gg/srcful">Srcful Discord</a>
 
 ## Collaborations and partnerships
 
@@ -46,7 +46,7 @@ Our ambition is to lead the development of the world's largest decentralized vir
 
 ### Do you have services that suit our members?
 
-We invite you to contact us at sales@srcful.io to arrange a meeting. We look forward to the opportunity to discuss potential collaboration and how we can collectively advance toward our shared objectives.
+We invite you to contact us at partnership@srcful.io to arrange a meeting. We look forward to the opportunity to discuss potential collaboration and how we can collectively advance toward our shared objectives. Read more at [srcful.io/partner](https://srcful.io/partner)
 
 <!-- New to Srcful?
 Start out at ["Srcful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Srcful and the possibilities of renewable energy!

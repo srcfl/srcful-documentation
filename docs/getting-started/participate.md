@@ -26,7 +26,7 @@ The maximum size of the DER that can be connected to the Srcful network is **100
 
 It is also important to have access to **Wi-Fi and power delivery near** the DER to ensure that the Energy Gateway can function properly and connect to the Srcful network. This will ensure that the data collected from the DER is accurate and that the validation process is reliable.
 
-Finally, to receive rewards for their green energy contributions through Proof-of-Source, DER owners must have a **Solana wallet**. This is necessary to receive SRC tokens as rewards, which can be used to participate in the energy marketplace.
+Finally, to receive rewards for their green energy contributions through Proof-of-Source, DER owners must have a **Solana wallet**. This is necessary to receive SRC beta-tokens as rewards, which can be used to participate in the energy marketplace.
 
 Overall, meeting these requirements will ensure that the Srcful Energy Gateway can function optimally and that DER owners can participate in the Srcful network, contribute to a more sustainable and equitable energy system, and earn rewards for their green energy contributions.
 
@@ -35,7 +35,7 @@ Overall, meeting these requirements will ensure that the Srcful Energy Gateway c
 You can also support the community surrounding Srcful by contributing to our open-source projects on Github, participating in discussions on our Discord server, and following us on Twitter to stay up-to-date with the latest news and developments. 
 
 - **Github:** [https://github.com/srcfl](https://github.com/srcfl)
-- **Discord:** [https://discord.gg/xQ4W7VhN4m](https://discordapp.com/invite/tux5qPDcWw)
-- **Twitter:** [https://twitter.com/SrcfulEnergy](https://twitter.com/srcful)
+- **Discord:** [https://discord.gg/srcful](https://discord.gg/srcful)
+- **Twitter:** [https://x.com/srcful](https://x.com/srcful)
 
-Whether you choose to get a Srcful Energy Gateway or support the community through Github, Discord, and Twitter, we're thrilled to have you on board as we work towards a more sustainable and decentralized energy system. Join us today and be a part of the energy revolution!
+Whether you choose to get a Srcful Energy Gateway or support the community through Github, Discord, or X, we're thrilled to have you on board as we work towards a more sustainable and decentralized energy system. Join us today and be a part of the energy revolution!

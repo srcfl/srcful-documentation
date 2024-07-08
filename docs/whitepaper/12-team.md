@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Srcful: Powering the Decentralized Energy Revolution
+# Vision
 
 We're living in the age of exponential growth for solar and batteries. It's not just fast—it's rocket-speed fast. But here's the thing: all this growth needs coordination. That's where we come in.
 

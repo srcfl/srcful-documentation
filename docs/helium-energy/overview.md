@@ -12,6 +12,13 @@ By enabling dual mining for existing compatible Helium Hotspots, allowing for bo
 
 Our proposal aim to leverage Helium’s decentralized model to create a Virtual Power Plant (VPP) from small-scale Distributed Energy Resources (DERs), empowering homeowners and expanding Helium’s market reach. This initiative aligns with global sustainability goals and promises significant economic benefits, positioning both Srcful and Helium at the forefront of the renewable energy revolution.
 
+## Srcful HIP Insights
+
+In addition to our HIP, we will continuously be releasing **HIP Insights**, with the purpose of even further describing and explaining our proposal, the markets we are tapping into, and the reasoning leading up to our decisions in our HIP.
+
+See our [**HIP Insights**](./insights/overview).
+
+
 ## Helium Community
 
 All Helium Improvement Proposals are openly discussed and voted on by the Helium community. This collaborative process ensures that each proposal is thoroughly vetted and reflects the collective input and consensus of the community. By participating in these discussions and votes, community members play a crucial role in shaping the future of the Helium network.

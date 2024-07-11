@@ -1,11 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Frequency Containment Reserve Markets
-
-## Frequency Containment Reserve markets
-
 
 In [HIP 128: Energy Subnetwork](https://github.com/helium/HIP/blob/main/0128-energy-subnetwork.md), we propose using the Energy Network as a mean to connect many small homeowner DERs into one or many VPPs to unlock new markets not accessible to small actors. This HIP-comment will deep dive into the legal and regulatory state with a focus on Europe. Europe is the market we know but it is our firm belief that similar regulations are in place, or will come into place, on other markets as well (this post will be updated with more markets at a later stage). 
 

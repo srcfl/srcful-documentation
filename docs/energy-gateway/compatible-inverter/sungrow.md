@@ -7,9 +7,9 @@ Keep in mind that you must ensure that communication via Modbus TCP/IP is enable
 :::
 
 
-✅ - Supported
-❌ - Not Supported
-🔜 - To be evaluated
+- ✅ - Supported
+- ❌ - Not Supported
+- 🔜 - To be evaluated
 
 | Model                           | Read       | Control    |
 | ------------------------------- |:----------:|:----------:|

@@ -1,4 +1,4 @@
-# SolarEdge
+# SMA
 
 :::info
 **Does your model support read? **
@@ -10,6 +10,7 @@ Keep in mind that you must ensure that communication via Modbus TCP/IP is enable
 - ❌ - Not Supported
 - 🔜 - To be evaluated
 
-| Model      | Read       | Control    |
-| ---------- |:----------:|:----------:|
-| SE3K-SE10K | ✅         | 🔜         |
+| Model                   | Read       | Control    |
+| ----------------------- |:----------:|:----------:|
+| STP10.0-3AV-40          | ✅         | 🔜         |
+

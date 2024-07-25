@@ -11,7 +11,7 @@ You will need a **compatible** inverter to connect your Energy Gateway.
 
 ## List of compatible inverters
 
-_(Last updated 2024-07-18)_
+_(Last updated 2024-07-25)_
 
 We add inverters and update the table below continuously.
 
@@ -19,14 +19,14 @@ We add inverters and update the table below continuously.
 - ❌ - Not Supported
 - 🔜 - To be evaluated
 
-| Inverter    | Read | Control         | Status         | Link to Support              |
+| Inverter    | Read | Control         | Status         | Compatible Models            |
 | ----------- | ---- | --------------- | -------------- | ---------------------------- |
 | Sungrow     | ✅   | Partial support | Evaluating     | [View Details](sungrow.md)   |
 | Solaredge   | ✅   | 🔜              | Evaluating     | [View Details](solaredge.md) |
 | Huawei      | ✅   | 🔜              | Evaluating     | [View Details](huawei.md)    |
 | Deye        | ✅   | 🔜              | Evaluating     | Coming soon                  |
-| Fronius     | ✅   | 🔜              | Evaluating     | Coming soon                  |
-| SMA         | ✅   | 🔜              | Evaluating     | Coming soon                  |
+| Fronius     | ✅   | 🔜              | Evaluating     | [View Details](fronius.md)   |
+| SMA         | ✅   | 🔜              | Evaluating     | [View Details](sma.md)       |
 | Ferroamp    | ✅   | 🔜              | Evaluating     | Coming soon                  |
 | Growatt     | 🔜   | 🔜              | In Development | -                            |
 | GoodWe      | 🔜   | 🔜              | In Development | -                            |

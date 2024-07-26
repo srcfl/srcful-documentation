@@ -64,7 +64,7 @@ const config = {
     ({
       algolia: {
         appId: '8SIKBTLLNP',
-        apiKey: '9b239989ba39ae1e39f9209791d06bf1',
+        apiKey: 'c4d3561f9cb3b381fb8a099a1e4ad219',
         indexName: 'srcful',
         debug: false
     },

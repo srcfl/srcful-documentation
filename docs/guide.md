@@ -38,19 +38,19 @@ sidebar_class_name: item1
 
 2. **Start by clicking the "Select Wallet"** button to link your Solana Wallet.
 
-![](../static/img/guide/step-1.png)
+![](../static/img/guide/step1.png)
 
 3. **Connect** your Solana Wallet.
 
-![](../static/img/guide/step-2.png)
+![](../static/img/guide/step2.png)
 
-4. **Start the pairing process** by clicking the hamburger menu and selecting "Onboard New Gateway".
+4. **Start the pairing process** by clicking "Onboard New Gateway" in the left sidebar.
 
-![](../static/img/guide/step-3.png)
+![](../static/img/guide/step3.png)
 
-5. **Finish the pairing process** by selecting your Energy Gateway in the Bluetooth menu that pops up in your browser.
+5. **Finish the pairing process** by selecting your Energy Gateway in the Bluetooth menu that pops up in your browser after clicking "Connect".
 
-![](../static/img/guide/step-4.png)
+![](../static/img/guide/step4.png)
 
 
 ## Configuration
@@ -64,28 +64,24 @@ sidebar_class_name: item1
 
 :::
 
-1. **Start by selecting your Wi-Fi network** in the dropdown menu, and enter your password, and click Submit. You will see it's IP Address when it has successfully connected:
+1. **Start by selecting your Wi-Fi network** in the dropdown menu, and enter your password, and click Submit. You will see a small pop-up message when credentials has been set:
 
-![](../static/img/guide/step-5.png)
+![](../static/img/guide/step5.png)
 
 
-2. **Enter your Solana Wallet-Address**, and click Submit: 
+2. **Enter your Solana Wallet-Address**, and click **Submit**: 
 
-![](../static/img/guide/step-6.png)
+![](../static/img/guide/step6.png)
 
-3. **Enter your Inverter information** and click Submit:
+3. **Select your inverter brand in the drop-down menu**, then enter your inverter information, or use the **Scan** function, then click **Submit**, you will see a small pop-up message once the inverter has been found and connected:
 
-![](../static/img/guide/step-7.png)
+![](../static/img/guide/step8.png)
 
 ## Location
 
-1. **Go to the location tab** in the side menu.
+1. **Set your location** by dropping a pin on the map, then press **Assert Location**.
 
-![](../static/img/guide/step-8.png)
-
-2. **Set your location** by entering your coordinates or click on the map, then press **Sign change**.
-
-![](../static/img/guide/step-9.png)
+![](../static/img/guide/step9.png)
 
 3. **Your Energy Gateway** should now be visible in the [**Srcful Explorer**](https://srcful.io)
 

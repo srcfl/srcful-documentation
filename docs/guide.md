@@ -40,7 +40,7 @@ sidebar_class_name: item1
 
 ![](../static/img/guide/step1.png)
 
-3. **Connect** your Solana Wallet.
+3. **Connect** your Solana Wallet, we recommend using **Phantom**.
 
 ![](../static/img/guide/step2.png)
 

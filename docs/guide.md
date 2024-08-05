@@ -58,7 +58,7 @@ sidebar_class_name: item1
 
 :::info
 
-- To find your inverter's IP address, please refer to your router admin page.
+- To find your inverter's IP address, please refer to your router admin page, or use the **Scan** function.
 
 - For other information regarding your inverter, please refer to the inverter documentation.
 

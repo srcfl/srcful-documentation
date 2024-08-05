@@ -62,12 +62,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-    //   algolia: {
-    //     appId: '8SIKBTLLNP',
-    //     apiKey: '9b239989ba39ae1e39f9209791d06bf1',
-    //     indexName: 'srcful',
-    //     debug: false
-    // },
+      algolia: {
+        appId: '8SIKBTLLNP',
+        apiKey: '9b239989ba39ae1e39f9209791d06bf1',
+        indexName: 'srcful',
+        debug: false
+    },
       // Replace with your project's social card
       image: 'img/social-card.png',
       navbar: {

@@ -13,6 +13,13 @@ sidebar_class_name: item1
 
 :::
 
+<br/>
+
+<div class="configure-video">
+    <iframe src="https://www.youtube.com/embed/3U-8tfRBY6g?si=_G290Uaygq71aTv1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+
 ## Getting started
 
 1. **Connect the Energy Gateway** to the internet using an Ethernet cable, and power it on by connecting the power cable.

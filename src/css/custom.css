@@ -72,3 +72,8 @@
   padding-right: 0.5rem;
   /* content: url(/static/img/button.svg); */
 }
+
+.configure-video iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}

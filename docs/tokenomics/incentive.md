@@ -31,7 +31,7 @@ Srcful's Tokenomics model ingeniously motivates participation in a decentralized
 
 Together, these mechanisms are poised to create a versatile and scalable market for green energy. They not only offer value to token holders but also are vital in democratizing access to energy.
 
-Srcful's incentive framework for integrating Distributed Energy Resources (DERs) with the decentralized energy grid involves two core elements: Proof-of-Source and Proof-of-Control. Proof-of-Source compensates DER owners for certifying their energy sources and establishing connectivity to the Srcful network. PoCTRL, an optional feature, allows Srcful to market the energy produced by the DERs on flexibility grid service platforms. In synergy, these features cultivate a more sustainable and decentralized energy system while furnishing additional incentives for DER ownership and engagement in the energy market.
+Sourceful's incentive framework for integrating Distributed Energy Resources (DERs) with the decentralized energy grid involves two core elements: Proof-of-Source and Proof-of-Control. Proof-of-Source compensates DER owners for certifying their energy sources and establishing connectivity to the Sourceful network. Proof-of-Control (PoCTRL), an optional feature, allows Sourceful to market the energy produced by the DERs on flexibility grid service platforms. In synergy, these features cultivate a more sustainable and decentralized energy system while furnishing additional incentives for DER ownership and engagement in the energy market.
 
 <!-- ![Distribution of SrcToken](./img/pos-poc-distribution.svg#gh-light-mode-only)![Distribution of SrcToken](./img/pos-poc-distribution-dark.svg#gh-dark-mode-only) -->
 

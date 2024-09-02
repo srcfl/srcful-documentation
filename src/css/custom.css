@@ -64,9 +64,9 @@
   justify-content: flex-start;
 } */
 
-.item1 a {
+/* .item1 a {
   color: green;
-}
+} */
 
 .item1 a::before {
   padding-right: 0.5rem;
@@ -76,4 +76,8 @@
 .configure-video iframe {
   aspect-ratio: 16 / 9;
   width: 100%;
+}
+
+#docusaurus_skipToContent_fallback > div > aside > div > div > nav > ul > li:nth-child(1) > a {
+  color: #ad9024;
 }

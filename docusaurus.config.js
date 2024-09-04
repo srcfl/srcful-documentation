@@ -74,8 +74,8 @@ const config = {
         title: 'SRCFUL DOCUMENTATION',
         logo: {
           alt: 'srcful - Building a sustainable future, together',
-          src: 'img/logo-black-transparent.svg',
-          srcDark: 'img/logo-white-transparent.svg'
+          src: 'img/logo-yellow-transparent.svg',
+          srcDark: 'img/logo-yellow-transparent.svg'
         },
         items: [
           {

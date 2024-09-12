@@ -42,7 +42,7 @@ Join our vibrant community on Discord, where you can connect with fellow users, 
 All questions are welcomed, and our community is here to support you on your journey with Srcful. We are also part of the Helium community, so you can find us on the Helium Discord as well.
 
 <a class="button button--primary" href="https://discord.gg/srcful">Srcful Discord</a>
-<a class="button button--primary" href="https://discord.com/invite/helium">Helium Discord</a>
+<a class="button button--primary" href="https://discord.com/invite/helium" style={{marginLeft:"10px"}}>Helium Discord</a>
 
 ## Collaborations and partnerships
 

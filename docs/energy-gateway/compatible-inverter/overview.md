@@ -21,6 +21,16 @@ Modbus SunSpec combines the Modbus communication protocol with the SunSpec data 
 Even if you don't see your specific DER model in our compatibility list below, it may still work with our Energy Gateway if it's SunSpec compliant.
 :::
 
+## Check Your DER's SunSpec Compatibility
+
+To verify if your DER implements the SunSpec standard:
+
+1. Visit the [SunSpec Certified Registry](https://sunspec.org/certified-registry/).
+2. Use the search function to find your DER manufacturer or model.
+3. Look for entries with the Certificate Type "SunSpec Modbus".
+
+If your DER is listed with a SunSpec Modbus certificate, it should be compatible with our Energy Gateway.
+
 ## List of explicitly supported DERs
 
 _(Last updated 2024-09-16)_

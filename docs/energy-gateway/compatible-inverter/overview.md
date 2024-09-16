@@ -21,8 +21,6 @@ Modbus SunSpec combines the Modbus communication protocol with the SunSpec data 
 Even if you don't see your specific DER model in our compatibility list below, it may still work with our Energy Gateway if it's SunSpec compliant.
 :::
 
-[Learn more about Modbus SunSpec compatibility](modbus-sunspec.md)
-
 ## List of explicitly supported DERs
 
 _(Last updated 2024-09-16)_

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /energy-gateway/compatible-der/
+slug: /energy-gateway/compatible-inverter/
 ---
 
 # Overview

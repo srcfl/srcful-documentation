@@ -21,7 +21,7 @@ By joining this beta, you will be awarded SRC Beta Tokens, **without** having to
 
 2. **Access the Application Form**
 
-   Fill out the beta application form [**here**](https://forms.gle/sMa5rmA3MvJa2GZW9).
+   Visit our [**beta application page**](https://beta.srcful.io/en-US), select Srcful's SolarEdge API-mining program and fill out the form.
 
 3. **Complete the Form**
 

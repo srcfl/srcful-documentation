@@ -69,7 +69,7 @@ const config = {
         debug: false
     },
       // Replace with your project's social card
-      image: 'img/social-card.png',
+      image: 'img/social-card-basic.png',
       navbar: {
         title: 'SRCFUL DOCUMENTATION',
         logo: {

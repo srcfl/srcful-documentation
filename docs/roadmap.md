@@ -5,7 +5,7 @@ sidebar_position: 11
 
 # Roadmap
 
-In this section of the documentation, you will find the Srcful Roadmap, a comprehensive overview of our current development initiatives and future plans. This roadmap is designed to give you a clear insight into the projects we are actively working on for the near future, as well as a preview of the strategic directions and innovations we envision for the longer term. 
+In this section of the documentation, you will find the Sourceful Roadmap, a comprehensive overview of our current development initiatives and future plans. This roadmap is designed to give you a clear insight into the projects we are actively working on for the near future, as well as a preview of the strategic directions and innovations we envision for the longer term. 
 
 By sharing our roadmap, we aim to maintain transparency with our users and stakeholders, ensuring that you stay informed about the developments we have on the horizon.
 

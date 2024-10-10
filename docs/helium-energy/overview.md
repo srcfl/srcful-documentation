@@ -6,13 +6,13 @@ sidebar_position: 1
 
 ## HIP 128: Energy Subnetwork
 
-Srcful has introduced a [**Helium Improvement Proposal**](https://github.com/helium/HIP/blob/main/0128-energy-subnetwork.md) (HIP) that aims to create **ENERGY**, a new subnetwork within the [Helium](https://www.helium.com/) ecosystem. This innovative subnetwork focuses on rewarding users who participate in solar power production and battery energy storage, enhancing the integration of renewable energy resources. 
+Sourceful has introduced a [**Helium Improvement Proposal**](https://github.com/helium/HIP/blob/main/0128-energy-subnetwork.md) (HIP) that aims to create **ENERGY**, a new subnetwork within the [Helium](https://www.helium.com/) ecosystem. This innovative subnetwork focuses on rewarding users who participate in solar power production and battery energy storage, enhancing the integration of renewable energy resources. 
 
 By enabling dual mining for existing compatible Helium Hotspots, allowing for both IOT and ENERGY rewards, the ENERGY subnetwork will utilize Helium’s IoT infrastructure to transfer vital sensor data, drive increased Data Credit (DC) burn, and contribute to grid stability.
 
-Our proposal aim to leverage Helium’s decentralized model to create a Virtual Power Plant (VPP) from small-scale Distributed Energy Resources (DERs), empowering homeowners and expanding Helium’s market reach. This initiative aligns with global sustainability goals and promises significant economic benefits, positioning both Srcful and Helium at the forefront of the renewable energy revolution.
+Our proposal aim to leverage Helium’s decentralized model to create a Virtual Power Plant (VPP) from small-scale Distributed Energy Resources (DERs), empowering homeowners and expanding Helium’s market reach. This initiative aligns with global sustainability goals and promises significant economic benefits, positioning both Sourceful and Helium at the forefront of the renewable energy revolution.
 
-## Srcful HIP Insights
+## Sourceful HIP Insights
 
 In addition to our HIP, we will continuously be releasing **HIP Insights**, with the purpose of even further describing and explaining our proposal, the markets we are tapping into, and the reasoning leading up to our decisions in our HIP.
 

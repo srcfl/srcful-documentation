@@ -8,7 +8,7 @@ sidebar_class_name: item1
 
 :::info Important
 
-- You will need a compatible inverter to connect your Energy Gateway. Please see our list of compatible inverters: https://docs.srcful.io/energy-gateway/compatible-inverter/
+- You will need a compatible inverter to connect your Energy Gateway. Please see our list of compatible inverters: https://docs.Sourceful.io/energy-gateway/compatible-inverter/
 - You will need a Solana Wallet to configure your Energy Gateway and to get beta token rewards. See our instructional video on how to set up Phantom: https://youtu.be/5G5H3nmAgwM
 
 :::
@@ -40,7 +40,7 @@ sidebar_class_name: item1
 
 :::
 
-1. **Visit https://app.srcful.io** to start pairing your Energy Gateway.
+1. **Visit https://app.Sourceful.io** to start pairing your Energy Gateway.
 
 
 2. **Start by clicking the "Select Wallet"** button to link your Solana Wallet.
@@ -90,7 +90,7 @@ sidebar_class_name: item1
 
 ![](../static/img/guide/step9.png)
 
-3. **Your Energy Gateway** should now be visible in the [**Srcful Explorer**](https://srcful.io)
+3. **Your Energy Gateway** should now be visible in the [**Sourceful Explorer**](https://Sourceful.io)
 
 ## Troubleshooting
 

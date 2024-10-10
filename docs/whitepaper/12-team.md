@@ -6,7 +6,7 @@ sidebar_position: 12
 
 We're living in the age of exponential growth for solar and batteries. It's not just fast—it's rocket-speed fast. But here's the thing: all this growth needs coordination. That's where we come in.
 
-At Srcful, we're not just riding the wave of renewable energy—we're steering it. Our mission? To accelerate the transition to a decentralized, renewable energy future. We're talking about a future where power isn't just clean, it's democratized.
+At Sourceful, we're not just riding the wave of renewable energy—we're steering it. Our mission? To accelerate the transition to a decentralized, renewable energy future. We're talking about a future where power isn't just clean, it's democratized.
 
 Here's what we see:
 1. Solar panels popping up everywhere, from rooftops to fields.
@@ -19,6 +19,6 @@ This isn't just about generating power—it's about empowering communities. We'r
 
 We're not tree-huggers, we're pragmatists. We see the numbers, we understand the tech, and we know that this is the smartest path forward. It's about creating abundance, driving innovation, and yes, saving the planet in the process.
 
-So, if you're ready to be part of the energy revolution, to own your power in more ways than one, you're in the right place. With Srcful, you're not just a consumer—you're a key player in the world's most exciting energy project.
+So, if you're ready to be part of the energy revolution, to own your power in more ways than one, you're in the right place. With Sourceful, you're not just a consumer—you're a key player in the world's most exciting energy project.
 
 Let's power up this future, together.

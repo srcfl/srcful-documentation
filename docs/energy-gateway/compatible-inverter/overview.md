@@ -66,4 +66,4 @@ We continuously add DERs and update the table below.
 
 If you can't find your DER in the table above, or if you're unsure about Modbus SunSpec compatibility, don't hesitate to reach out:
 
-<a class="button button--primary" href="https://discord.gg/srcful">Join Our Discord for Support</a>
+<a class="button button--primary" href="https://discord.gg/Sourceful">Join Our Discord for Support</a>

@@ -8,11 +8,11 @@ sidebar_position: 2
 ## Introduction
 
 Introduction
-Welcome to Srcful AB ("Srcful"), corporate identity number 559382-0458 (“we”, “our” and “us”), providers of the www.srcful.io website along with our other products and services. The privacy and security of our users are taken seriously. This Privacy Policy contains information on when and how we process your personal data and what rights you have when it comes to this data processing. 
+Welcome to Sourceful AB ("Sourceful"), corporate identity number 559382-0458 (“we”, “our” and “us”), providers of the www.Sourceful.io website along with our other products and services. The privacy and security of our users are taken seriously. This Privacy Policy contains information on when and how we process your personal data and what rights you have when it comes to this data processing. 
 
 ## Data controller
 
-Srcful is the data controller for the processing of your personal data and is responsible for ensuring that all processing is carried out in accordance with applicable law.
+Sourceful is the data controller for the processing of your personal data and is responsible for ensuring that all processing is carried out in accordance with applicable law.
 
 ## How we process your personal data and why
 
@@ -20,7 +20,7 @@ Srcful is the data controller for the processing of your personal data and is re
 
 | What processing we perform | What personal data we process | Our legal basis for the processing |
 |: - :|: - :|: - :|
-| <ul><li>Analyse how you use our website to improve our website and services. To do this we use our own analytic cookies and the analytic service from Google Analytics</li><li>The analytic service means that we place a random ID on your device to distinguish your device from other visitors and acknowledge patterns in how our website is used. We will however not know who you are</li><li>The personal data we collect will be used e.g. to optimize functions and to adapt the websites to suit our visitors</li></ul> | <ul><li>An encrypted version of your IP address which Srcful cannot connect to you as an individual</li><li>Information about your device/browser (which area in the country you use our website from and your screen resolution)</li><li>Information about your activities on the website</li><li>Other information Google has about you, e.g. information about from which site you found us</li></ul> | Consent (6.1 (a) GDPR)<br/><br/> *Your personal data will be processed based on your consent. You can withdraw such consent at any time by contacting us.<br/><br/> You can prevent Google Analytics from using your personal data by downloading and installing this browser [add on](https://tools.google.com/dlpage/gaoptout).*  |
+| <ul><li>Analyse how you use our website to improve our website and services. To do this we use our own analytic cookies and the analytic service from Google Analytics</li><li>The analytic service means that we place a random ID on your device to distinguish your device from other visitors and acknowledge patterns in how our website is used. We will however not know who you are</li><li>The personal data we collect will be used e.g. to optimize functions and to adapt the websites to suit our visitors</li></ul> | <ul><li>An encrypted version of your IP address which Sourceful cannot connect to you as an individual</li><li>Information about your device/browser (which area in the country you use our website from and your screen resolution)</li><li>Information about your activities on the website</li><li>Other information Google has about you, e.g. information about from which site you found us</li></ul> | Consent (6.1 (a) GDPR)<br/><br/> *Your personal data will be processed based on your consent. You can withdraw such consent at any time by contacting us.<br/><br/> You can prevent Google Analytics from using your personal data by downloading and installing this browser [add on](https://tools.google.com/dlpage/gaoptout).*  |
 
 :::info Storage
 Storage period: We will store your personal data for a period of twenty-six (26) months after your visit to our website. 
@@ -31,7 +31,7 @@ Google will continue to use your personal data for their own purposes and Google
 
 | What processing we perform | What personal data we process | Our legal basis for the processing | 
 |: - :|: - :|: - :|
-| <ul><li>Store your answer to our Notice of Interest form</li><li>Handle your request for information on when the Srcful Gateway is available for purchase</li></ul> | <ul><li>Name</li><li>Email address</li><li>Contact details</li></ul> | Legitimate interest. *<br/><br/>Your personal data will be processed based on our legitimate interest in reaching out to customers who have signed up for more information about Srcful.* |
+| <ul><li>Store your answer to our Notice of Interest form</li><li>Handle your request for information on when the Sourceful Gateway is available for purchase</li></ul> | <ul><li>Name</li><li>Email address</li><li>Contact details</li></ul> | Legitimate interest. *<br/><br/>Your personal data will be processed based on our legitimate interest in reaching out to customers who have signed up for more information about Sourceful.* |
 :::info Storage period
 The data is stored until your request is handled and one year thereafter.
 :::
@@ -86,18 +86,18 @@ We will store any document constituting accounting material and the personal dat
 For instance, in Sweden, this means that we will store your personal data for seven to eight years, i.e. until and including the seventh year after the end of the calendar year for the fiscal year to which the personal data relates.
 :::
 
-### To enable usage of the Srcful Energy Gateway and the receivement of SRC tokens
+### To enable usage of the Sourceful Energy Gateway and the receivement of SRC tokens
 
 | What processing we perform | What personal data we process | Our legal basis for the processing | 
 |: - :|: - :|: - :|
-| When linking your Solana wallet to the Srcful platform, we store your data | Solana public wallet address <br/><br/> *Your Solana public wallet address may in some cases be regarded as personal data.* | Legitimate interest. <br/><br/> *Your personal data will be processed based on our legitimate interest to connect you as a user to the Srcful Platform to ensure you can use the Srcful Energy Gateway.* |
+| When linking your Solana wallet to the Sourceful platform, we store your data | Solana public wallet address <br/><br/> *Your Solana public wallet address may in some cases be regarded as personal data.* | Legitimate interest. <br/><br/> *Your personal data will be processed based on our legitimate interest to connect you as a user to the Sourceful Platform to ensure you can use the Sourceful Energy Gateway.* |
 :::info Storage period 
 The data is stored for as long as your Solana Wallet is connected to the Scrful Platform. 
 :::
 
 ## Who can gain access to your personal data and why?
 
-Srcful will process your personal data. When a third party, such as our IT and system suppliers, processes your information on our behalf, we have signed a data processing agreement with them. This means that they are obliged to process the information securely, accurately, and confidentially.
+Sourceful will process your personal data. When a third party, such as our IT and system suppliers, processes your information on our behalf, we have signed a data processing agreement with them. This means that they are obliged to process the information securely, accurately, and confidentially.
 
 Our data processors are:
 - Google Workspace - cloud services.
@@ -161,4 +161,4 @@ You have the right to lodge a complaint with a supervisory authority. The superv
 
 ## Contact us
 
-If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@srcful.io.
+If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@Sourceful.io.

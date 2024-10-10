@@ -40,7 +40,7 @@ As a distributed energy resource (DER), such as a battery or solar PV system, yo
 
 ### Bidding
 
-To participate in bidding DERs onto the FCR markets, you must be a Balance Responsible Party (BRP). Soon, a new role called Balance Service Provider (BSP) will be introduced with a sole focus on grid balance. BRPs/BSPs have agreements with Technical Aggregators, like Srcful (referred to as Service Provider in the HIP), to ensure they have the necessary resources to bid in the FCR markets. These actors typically take a percentage of the revenue as part of their business model. The remaining income is passed on to the Technical Aggregator to distribute at will to DER owners (DER Host). 
+To participate in bidding DERs onto the FCR markets, you must be a Balance Responsible Party (BRP). Soon, a new role called Balance Service Provider (BSP) will be introduced with a sole focus on grid balance. BRPs/BSPs have agreements with Technical Aggregators, like Sourceful (referred to as Service Provider in the HIP), to ensure they have the necessary resources to bid in the FCR markets. These actors typically take a percentage of the revenue as part of their business model. The remaining income is passed on to the Technical Aggregator to distribute at will to DER owners (DER Host). 
 As an example, [here are BRPs registered at TenneT](https://www.tennet.eu/markets/balansverantwoordelijken-brps/brp-registry), one of Germanys TSOs. 
 
 ### Pricing

@@ -16,7 +16,7 @@
 }
 
 :root {
-  --ifm-color-primary: #ad9024;
+  --ifm-color-primary: #017E7A;
   --ifm-color-primary-dark: #9c8220;
   --ifm-color-primary-darker: #937a1f;
   --ifm-color-primary-darkest: #796519;
@@ -26,6 +26,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #6C5A17;
+  --custom-link-color: #017E7A;
 }
 
 :root h1,
@@ -40,7 +41,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #ad9024;
+  --ifm-color-primary: #FFF180;
   --ifm-color-primary-dark: #a88c23;
   --ifm-color-primary-darker: #a38722;
   --ifm-color-primary-darkest: #9a8020;
@@ -48,6 +49,7 @@
   --ifm-color-primary-lighter: #c7a629;
   --ifm-color-primary-lightest: #d6b53a;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --custom-link-color: #FFF180
 }
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
@@ -74,7 +76,7 @@
 }
 
 .item1 a, .item2 a {
-  color: #ad9024;
+  color: var(--custom-link-color);
 }
 
 .configure-video iframe {
@@ -83,5 +85,5 @@
 }
 
 #docusaurus_skipToContent_fallback > div > aside > div > div > nav > ul > li:nth-child(1) > a {
-  color: #ad9024;
+  color: var(--custom-link-color);
 }

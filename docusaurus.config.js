@@ -158,7 +158,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Srcful`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sourceful Labs`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -50,7 +50,7 @@ Our ambition is to lead the development of the world's largest decentralized vir
 
 ### Do you have services that suit our members?
 
-We invite you to contact us at partnership@Sourceful.io to arrange a meeting. We look forward to discussing potential collaborations and how we can collectively advance toward our shared objectives of creating a more sustainable and decentralized energy future. Read more at [Sourceful.io/partner](https://Sourceful.io/partner)
+We invite you to contact us at partnership@Sourceful.io to arrange a meeting. We look forward to discussing potential collaborations and how we can collectively advance toward our shared objectives of creating a more sustainable and decentralized energy future. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
 
 <!-- New to Sourceful?
 Start out at ["Sourceful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Sourceful and the possibilities of renewable energy!

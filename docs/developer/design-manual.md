@@ -2,30 +2,26 @@
 sidebar_position: 10
 ---
 
-import symbolGreenTransparent from './img/design/symbol/srcful-symbol-green-transparent.png';
-import symbolWhiteTransparent from './img/design/symbol/srcful-symbol-white-transparent.png';
-import symbolDarkTransparent from './img/design/symbol/srcful-symbol-dark-transparent.png';
-import symbolGoldTransparent from './img/design/symbol/srcful-symbol-gold-transparent.png';
-import symbolGoldDark from './img/design/symbol/srcful-symbol-gold-dark.png';
-import symbolGreenDark from './img/design/symbol/srcful-symbol-green-dark.png';
-import symbolWhiteDark from './img/design/symbol/srcful-symbol-white-dark.png';
-import symbolGoldLite from './img/design/symbol/srcful-symbol-gold-lite.png';
-import symbolGreenLite from './img/design/symbol/srcful-symbol-green-lite.png';
-import symbolDarkLite from './img/design/symbol/srcful-symbol-dark-lite.png';
-
-import logoGreenDarkTransparent from './img/design/logo/srcful-logo-green-dark-transparent.png';
-import logoDarkTransparent from './img/design/logo/srcful-logo-dark-transparent.png';
-import logoGoldDarkTransparent from './img/design/logo/srcful-logo-gold-dark-transparent.png';
-import logoGreenLiteTransparent from './img/design/logo/srcful-logo-green-lite-transparent.png';
-import logoLiteTransparent from './img/design/logo/srcful-logo-lite-transparent.png';
-import logoGoldLiteTransparent from './img/design/logo/srcful-logo-gold-lite-transparent.png';
-
-import logoGreenDark from './img/design/logo/srcful-logo-green-dark.png';
-import logoWhiteDark from './img/design/logo/srcful-logo-white-dark.png';
-import logoGoldDark from './img/design/logo/srcful-logo-gold-dark.png';
-import logoGreenLite from './img/design/logo/srcful-logo-green-lite.png';
-import logoDarkLite from './img/design/logo/srcful-logo-dark-lite.png';
-import logoGoldLite from './img/design/logo/srcful-logo-gold-lite.png';
+import boltDark from './img/design/thumbnails/Sourceful-Logo-Bolt-Dark.jpg';
+import boltGreen from './img/design/thumbnails/Sourceful-Logo-Bolt-Green.jpg';
+import boltLight from './img/design/thumbnails/Sourceful-Logo-Bolt-Light.jpg';
+import boltTeal from './img/design/thumbnails/Sourceful-Logo-Bolt-Teal.jpg';
+import boltYellow from './img/design/thumbnails/Sourceful-Logo-Bolt-Yellow.jpg';
+import roundelDark from './img/design/thumbnails/Sourceful-Logo-Roundel-Dark.jpg';
+import roundelGreen from './img/design/thumbnails/Sourceful-Logo-Roundel-Green.jpg';
+import roundelLight from './img/design/thumbnails/Sourceful-Logo-Roundel-Light.jpg';
+import roundelTeal from './img/design/thumbnails/Sourceful-Logo-Roundel-Teal.jpg';
+import roundelYellow from './img/design/thumbnails/Sourceful-Logo-Roundel-Yellow.jpg';
+import stackedDark from './img/design/thumbnails/Sourceful-Logo-Stacked-Dark.jpg';
+import stackedGreen from './img/design/thumbnails/Sourceful-Logo-Stacked-Green.jpg';
+import stackedLight from './img/design/thumbnails/Sourceful-Logo-Stacked-Light.jpg';
+import stackedTeal from './img/design/thumbnails/Sourceful-Logo-Stacked-Teal.jpg';
+import stackedYellow from './img/design/thumbnails/Sourceful-Logo-Stacked-Yellow.jpg';
+import wideDark from './img/design/thumbnails/Sourceful-Logo-Wide-Dark.jpg';
+import wideGreen from './img/design/thumbnails/Sourceful-Logo-Wide-Green.jpg';
+import wideLight from './img/design/thumbnails/Sourceful-Logo-Wide-Light.jpg';
+import wideTeal from './img/design/thumbnails/Sourceful-Logo-Wide-Teal.jpg';
+import wideYellow from './img/design/thumbnails/Sourceful-Logo-Wide-Yellow.jpg';
 
 import fredrikSittingTransparent from './img/photos/fredrik/fredrik-ahlgren-sitting-transparent-medium.png';
 import fredrikSittingBWTransparent from './img/photos/fredrik/fredrik-ahlgren-sitting-bw-transparent-medium.png';
@@ -50,37 +46,43 @@ Our design manual is the go-to resource for developers when creating visual and 
 
 Learn how to use our logo correctly and the rules that govern its use in all applications.
 
-| Transparent<br />Background | Dark<br />Background | Lite<br />Background    | Usage           |
-|-------------|------|---------|-----------------|
-|  <center><img src={logoGreenDarkTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-dark-transparent.svg), [.png](./img/design/logo/srcful-logo-green-dark-transparent.png) </center>  |   |<center><img src={logoGreenLite} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-lite.svg), [.png](./img/design/logo/srcful-logo-green-lite.png) </center> |On lite backgrounds (Default)            |
-|  <center><img src={logoDarkTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-dark-transparent.svg), [.png](./img/design/logo/srcful-logo-dark-transparent.png) </center>  | |<center><img src={logoDarkLite} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-dark-lite.svg), [.png](./img/design/logo/srcful-logo-dark-lite.png) </center> |  On lite backgrounds.            |
-|  <center><img src={logoGoldDarkTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-gold-dark-transparent.svg), [.png](./img/design/logo/srcful-logo-gold-dark-transparent.png) </center>  | |<center><img src={logoGoldLite} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-gold-lite.svg), [.png](./img/design/logo/srcful-logo-gold-lite.png) </center> | On lite backgrounds.            |
-|  <center><img src={logoGreenLiteTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-lite-transparent.svg), [.png](./img/design/logo/srcful-logo-green-lite-transparent.png) </center>  |<center><img src={logoGreenDark} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-green-dark.svg), [.png](./img/design/logo/srcful-logo-green-dark.png) </center> |    |  On dark backgrounds.  (Default)            |
-|  <center><img src={logoLiteTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-lite-transparent.svg), [.png](./img/design/logo/srcful-logo-lite-transparent.png) </center>  | <center><img src={logoWhiteDark} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-white-dark.svg), [.png](./img/design/logo/srcful-logo-white-dark.png) </center>|    |  On dark backgrounds.            |
-|  <center><img src={logoGoldLiteTransparent} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-gold-lite-transparent.svg), [.png](./img/design/logo/srcful-logo-gold-lite-transparent.png) </center>  | <center><img src={logoGoldDark} style={{width: 300}} /><br /> [.svg](./img/design/logo/srcful-logo-gold-dark.svg), [.png](./img/design/logo/srcful-logo-gold-dark.png) </center>|    |  On dark backgrounds.            |
-<a target="_blank" href={ require("./img/design/srcful-graphics.zip").default } download>Download .zip archive</a>
+### Dark Mode Logos
 
+| Light | Teal | Yellow |
+|-------|------|--------|
+| ![Bolt Light](./img/design/thumbnails/Sourceful-Logo-Bolt-Light.jpg) | ![Bolt Teal](./img/design/thumbnails/Sourceful-Logo-Bolt-Teal.jpg) | ![Bolt Yellow](./img/design/thumbnails/Sourceful-Logo-Bolt-Yellow.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Bolt-Light.svg), [PNG](./img/design/downloads/Sourceful-Logo-Bolt-Light.png) | [SVG](./img/design/downloads/Sourceful-Logo-Bolt-Teal.svg), [PNG](./img/design/downloads/Sourceful-Logo-Bolt-Teal.png) | [SVG](./img/design/downloads/Sourceful-Logo-Bolt-Yellow.svg), [PNG](./img/design/downloads/Sourceful-Logo-Bolt-Yellow.png) |
+| ![Roundel Light](./img/design/thumbnails/Sourceful-Logo-Roundel-Light.jpg) | ![Roundel Teal](./img/design/thumbnails/Sourceful-Logo-Roundel-Teal.jpg) | ![Roundel Yellow](./img/design/thumbnails/Sourceful-Logo-Roundel-Yellow.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Roundel-Light.svg), [PNG](./img/design/downloads/Sourceful-Logo-Roundel-Light.png) | [SVG](./img/design/downloads/Sourceful-Logo-Roundel-Teal.svg), [PNG](./img/design/downloads/Sourceful-Logo-Roundel-Teal.png) | [SVG](./img/design/downloads/Sourceful-Logo-Roundel-Yellow.svg), [PNG](./img/design/downloads/Sourceful-Logo-Roundel-Yellow.png) |
+| ![Stacked Light](./img/design/thumbnails/Sourceful-Logo-Stacked-Light.jpg) | ![Stacked Teal](./img/design/thumbnails/Sourceful-Logo-Stacked-Teal.jpg) | ![Stacked Yellow](./img/design/thumbnails/Sourceful-Logo-Stacked-Yellow.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Stacked-Light.svg), [PNG](./img/design/downloads/Sourceful-Logo-Stacked-Light.png) | [SVG](./img/design/downloads/Sourceful-Logo-Stacked-Teal.svg), [PNG](./img/design/downloads/Sourceful-Logo-Stacked-Teal.png) | [SVG](./img/design/downloads/Sourceful-Logo-Stacked-Yellow.svg), [PNG](./img/design/downloads/Sourceful-Logo-Stacked-Yellow.png) |
+| ![Wide Light](./img/design/thumbnails/Sourceful-Logo-Wide-Light.jpg) | ![Wide Teal](./img/design/thumbnails/Sourceful-Logo-Wide-Teal.jpg) | ![Wide Yellow](./img/design/thumbnails/Sourceful-Logo-Wide-Yellow.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Wide-Light.svg), [PNG](./img/design/downloads/Sourceful-Logo-Wide-Light.png) | [SVG](./img/design/downloads/Sourceful-Logo-Wide-Teal.svg), [PNG](./img/design/downloads/Sourceful-Logo-Wide-Teal.png) | [SVG](./img/design/downloads/Sourceful-Logo-Wide-Yellow.svg), [PNG](./img/design/downloads/Sourceful-Logo-Wide-Yellow.png) |
 
-## Symbol Guidelines
+### Light Mode Logos
 
-Learn how to use our logo correctly and the rules that govern its use in all applications.
+| Dark | Green |
+|------|-------|
+| ![Bolt Dark](./img/design/thumbnails/Sourceful-Logo-Bolt-Dark.jpg) | ![Bolt Green](./img/design/thumbnails/Sourceful-Logo-Bolt-Green.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Bolt-Dark.svg), [PNG](./img/design/downloads/Sourceful-Logo-Bolt-Dark.png) | [SVG](./img/design/downloads/Sourceful-Logo-Bolt-Green.svg), [PNG](./img/design/downloads/Sourceful-Logo-Bolt-Green.png) |
+| ![Roundel Dark](./img/design/thumbnails/Sourceful-Logo-Roundel-Dark.jpg) | ![Roundel Green](./img/design/thumbnails/Sourceful-Logo-Roundel-Green.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Roundel-Dark.svg), [PNG](./img/design/downloads/Sourceful-Logo-Roundel-Dark.png) | [SVG](./img/design/downloads/Sourceful-Logo-Roundel-Green.svg), [PNG](./img/design/downloads/Sourceful-Logo-Roundel-Green.png) |
+| ![Stacked Dark](./img/design/thumbnails/Sourceful-Logo-Stacked-Dark.jpg) | ![Stacked Green](./img/design/thumbnails/Sourceful-Logo-Stacked-Green.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Stacked-Dark.svg), [PNG](./img/design/downloads/Sourceful-Logo-Stacked-Dark.png) | [SVG](./img/design/downloads/Sourceful-Logo-Stacked-Green.svg), [PNG](./img/design/downloads/Sourceful-Logo-Stacked-Green.png) |
+| ![Wide Dark](./img/design/thumbnails/Sourceful-Logo-Wide-Dark.jpg) | ![Wide Green](./img/design/thumbnails/Sourceful-Logo-Wide-Green.jpg) |
+| [SVG](./img/design/downloads/Sourceful-Logo-Wide-Dark.svg), [PNG](./img/design/downloads/Sourceful-Logo-Wide-Dark.png) | [SVG](./img/design/downloads/Sourceful-Logo-Wide-Green.svg), [PNG](./img/design/downloads/Sourceful-Logo-Wide-Green.png) |
 
-| Transparent<br />Background | Dark<br />Background  | Lite<br />Background |Usage           |
-|--------------------------|----|-----------------------|-------------------|
-| <center><img src={symbolGreenTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-transparent.svg), [.png](./img/design/symbol/srcful-symbol-green-transparent.png) </center> | <center><img src={symbolGreenDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-dark.svg), [.png](./img/design/symbol/srcful-symbol-green-dark.png)  </center>  | <center><img src={symbolGreenLite} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-green-lite.svg), [.png](./img/design/symbol/srcful-symbol-green-lite.png)  </center>  |  Srcful Green (Default)            |
-| <center><img src={symbolWhiteTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-white-transparent.svg), [.png](./img/design/symbol/srcful-symbol-white-transparent.png)</center>| <center><img src={symbolWhiteDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-white-dark.svg), [.png](./img/design/symbol/srcful-symbol-white-dark.png)</center> | &nbsp; | Srcful White  |
-| <center><img src={symbolDarkTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-dark-transparent.svg), [.png](./img/design/symbol/srcful-symbol-dark-transparent.png)</center>| | <center><img src={symbolDarkLite} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-dark-lite.svg), [.png](./img/design/symbol/srcful-symbol-dark-lite.png)</center> |  Srcful Dark   |
-| <center><img src={symbolGoldTransparent} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-transparent.svg), [.png](./img/design/symbol/srcful-symbol-gold-transparent.png)</center>| <center><img src={symbolGoldDark} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-dark.svg), [.png](./img/design/symbol/srcful-symbol-gold-dark.png)</center> |<center><img src={symbolGoldLite} style={{width: 100}} /><br /> [.svg](./img/design/symbol/srcful-symbol-gold-lite.svg), [.png](./img/design/symbol/srcful-symbol-gold-lite.png)</center> |  Srcful Gold (Rare)  |
-<a target="_blank" href={ require("./img/design/srcful-graphics.zip").default } download>Download .zip archive</a>
+[Download .zip archive](./img/design/downloads/Sourceful-Logos.zip)
+
 
 ## Typography Rules
 
 Understand how to choose and use the right fonts in our designs, and their appropriate sizes and weights.
 
-| Example                                     | Name/Download                                | Usage           |
-|---------------------------------------------|----------------------------------------------|-----------------|
-| [The quick brown fox jumps over the lazy dog](https://fontsgeek.com/fonts/gilroy-light) | [Gilroy Light](./font/gilroy-light.woff2)    |  Headlines            |
-| [The quick brown fox jumps over the lazy dog](#) | [Glober](./font/glober.woff2)    |  Paragraphs            |
+| Name/Download                                | Usage           |
+|---------------------------------------------|----------------------------------------------|
+| [PolySans Median](https://www.wearegradient.net/typefaces/polysans-standard/)    |  Headlines            |
+| [Inter](https://fonts.google.com/specimen/Inter)    |  Paragraphs            |
 
 ## Color Scheme
 
@@ -88,24 +90,23 @@ Learn about our brand colors and how to use them consistently across all marketi
 
 | Example              | HEX     | RGB                | Usage           |
 |----------------------|---------|--------------------|-----------------|
-|![](./img/00BF63.png) | #00BF63 | RGB(0, 191, 990)   | Srcful Green    |
-|![](./img/FFFFFF.png) | #FFFFFF | RGB(255, 255, 255) | Srcful White    |
-|![](./img/AD9024.png) | #AD9024 | RGB(173, 144, 36)  | Srcful Gold     |
-|![](./img/112532.png) | #112532 | RGB(17, 37, 50)    | Srcful Dark     |
-|![](./img/E6E6E6.png) | #E6E6E6 | RGB(230, 230, 230) | Off white       |
-|![](./img/2E2E2E.png) | #2E2E2E | RGB(46, 46, 46)    | Dark grey       |
-|![](./img/6E6E6E.png) | #6E6E6E | RGB(110, 110, 110) | Light grey      |
+|![](./img/design/19213D.jpg) | #19213D | RGB(25, 33, 61)  | Dark Midnight Blue   |
+|![](./img/design/11321C.jpg) | #11321C | RGB(17, 50, 28) | Tranquility Green    |
+|![](./img/design/017E7A.jpg) | #017E7A | RGB(1, 126, 122) | Surfie Green   |
+|![](./img/design/00FF84.jpg) | #00FF84 | RGB(0, 255, 132)   | Energetic Teal   |
+|![](./img/design/FF7A00.jpg) | #FF7A00 | RGB(255, 122, 0) | Heat Wave      |
+|![](./img/design/FFE500.jpg) | #FFE500 | RGB(255, 229, 0)    | Golden Yellow     |
 
 ## Team
 
-| | Name | Role |  |
-|---|---|---|---|---|
-|  | Fredrik Ahlgren | CEO, co-founder | |
-|  | Tobias Ohlsson | CTO, co-founder | |
-|  | Viktor Olofsson| CFO, co-founder | |
-|  | Johan Leitet |CCC, co-founder | 
-|  | Nikas Emevi | co-founder|
-|  | David Mozart | co-founder |
+| Name | Role |
+|---|---|
+|  Fredrik Ahlgren | CEO, co-founder
+|  Tobias Ohlsson | CTO, co-founder
+|  Viktor Olofsson| CFO, co-founder
+|  Johan Leitet |CCC, co-founder
+|  Nikas Emevi | co-founder
+|  David Mozart | co-founder
 
 
 ## Fredrik Ahlgren, CEO

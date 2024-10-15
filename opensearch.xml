@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>srcful</ShortName>
-  <Description>Search srcful</Description>
+  <ShortName>Sourceful Documentation</ShortName>
+  <Description>Search Sourceful Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://docs.srcful.io/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://docs.srcful.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.srcful.io/opensearch.xml" />
-  <moz:SearchForm>https://docs.srcful.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.sourceful.energy/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.sourceful.energy/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.sourceful.energy/opensearch.xml" />
+  <moz:SearchForm>https://docs.sourceful.energy/</moz:SearchForm>
 </OpenSearchDescription>

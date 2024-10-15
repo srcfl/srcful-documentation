@@ -6,12 +6,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'srcful',
+  title: 'Sourceful Documentation',
   tagline: 'documentation',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.srcful.io',
+  url: 'https://docs.sourceful.energy',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'srcfl', // Usually your GitHub org/user name.
-  projectName: 'srcfl.github.io', // Usually your repo name.
+  projectName: 'srcfl-documentation', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
@@ -141,7 +141,7 @@ const config = {
             items: [
               {
                 label: 'Web',
-                href: 'https://srcful.io',
+                href: 'https://sourceful.energy',
               },
               {
                 label: 'Explorer',
@@ -149,11 +149,11 @@ const config = {
               },
               {
                 label: 'Terms of Services',
-                href: 'https://docs.srcful.io/srcful-terms/terms',
+                href: 'https://docs.sourceful.energy/srcful-terms/terms',
               },
               {
                 label: 'Privacy Policy',
-                href: 'https://docs.srcful.io/srcful-terms/privacy',
+                href: 'https://docs.sourceful.energy/srcful-terms/privacy',
               },
             ],
           },

@@ -111,7 +111,7 @@ Learn about our brand colors and how to use them consistently across all marketi
 
 ## Fredrik Ahlgren, CEO
 
-"Dr. Fredrik Ahlgren, co-founder and CEO of Srcful"
+"Dr. Fredrik Ahlgren, co-founder and CEO of Sourceful Labs"
 
 | Color<br />Transparent | Color<br />Solid | Black and White<br />Transparent | Black and White<br />Solid |
 |-------------|------|----|----|

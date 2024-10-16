@@ -8,7 +8,7 @@ sidebar_position: 2
 ## Introduction
 
 Introduction
-Welcome to Sourceful AB ("Sourceful"), corporate identity number 559382-0458 (“we”, “our” and “us”), providers of the www.Sourceful.io website along with our other products and services. The privacy and security of our users are taken seriously. This Privacy Policy contains information on when and how we process your personal data and what rights you have when it comes to this data processing. 
+Welcome to Sourceful Labs AB, corporate identity number 559382-0458 (“we”, “our” and “us”), providers of the www.sourceful.energy website along with our other products and services. The privacy and security of our users are taken seriously. This Privacy Policy contains information on when and how we process your personal data and what rights you have when it comes to this data processing. 
 
 ## Data controller
 

@@ -6,8 +6,6 @@ sidebar_position: 5
 
 ## Energy Gateway
 
-
-
 ## Explorer
 
 

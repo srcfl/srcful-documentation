@@ -35,7 +35,7 @@ Overall, meeting these requirements will ensure that the Sourceful Energy Gatewa
 You can also support the community surrounding Sourceful by contributing to our open-source projects on Github, participating in discussions on our Discord server, and following us on Twitter to stay up-to-date with the latest news and developments. 
 
 - **Github:** [https://github.com/srcfl](https://github.com/srcfl)
-- **Discord:** [https://discord.gg/Sourceful](https://discord.gg/srcful)
-- **Twitter:** [https://x.com/Sourceful](https://x.com/srcful)
+- **Discord:** [https://discord.gg/srcful](https://discord.gg/srcful)
+- **Twitter:** [https://x.com/srcful](https://x.com/srcful)
 
 Whether you choose to get a Sourceful Energy Gateway or support the community through Github, Discord, or X, we're thrilled to have you on board as we work towards a more sustainable and decentralized energy system. Join us today and be a part of the energy revolution!

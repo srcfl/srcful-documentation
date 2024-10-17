@@ -15,7 +15,7 @@ First of all, it's important to know that Sourceful Energy is all about clean an
 :::tip Did you know?
 "Sourceful" is pronounced like "Sourceful" with the emphasis on the first syllable.
 
-The name "Sourceful" is a play on the word "reSourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future. Additionally, the "Src" in "Sourceful" represents our devotion as developers to the src-folder, which is the heart of any software project. 
+The name "Sourceful" is a play on the word "reSourceful," reflecting the goal of the platform to enable individuals to take control of their energy resources and contribute to a more sustainable future. Additionally, the "Source" in "Sourceful" represents our devotion as developers to the src-folder, which is the heart of any software project. 
 :::
 
 Sourceful Energy is all about building a decentralized energy grid that’s sustainable, efficient, and fair for everyone. If you have solar panels on your roof or a home battery system, the Sourceful Energy Gateway lets you connect to our network. It tracks how much energy you produce and use, and you get rewarded for sharing this data and joining in on energy services. You'll get access to different marketplaces where you can play a role in making the power grid more stable. By connecting many small green energy sources like solar panels and batteries, we can work together to keep the grid balanced and prevent blackouts.

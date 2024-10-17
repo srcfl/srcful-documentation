@@ -90,7 +90,7 @@ sidebar_class_name: item1
 
 ![](../static/img/guide/step9.png)
 
-3. **Your Energy Gateway** should now be visible in the [**Sourceful Explorer**](https://Sourceful.io)
+3. **Your Energy Gateway** should now be visible in the [**Sourceful Explorer**](https://explorer.srcful.io)
 
 ## Troubleshooting
 

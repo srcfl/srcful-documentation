@@ -9,7 +9,7 @@ sidebar_position: 1
 
 ### 1. Background
 
-- These terms and conditions (the **“Terms and Conditions”**) govern the access to and use of the Sourceful website, platform, products, and other services provided by Sourceful (collectively, the “Services”), between the End User and Scrful AB (“Sourceful”).
+- These terms and conditions (the **“Terms and Conditions”**) govern the access to and use of the Sourceful website, platform, products, and other services provided by Sourceful (collectively, the “Services”), between the End User and Sourceful Labs AB.
 
 - The Services provides a blockchain-based service for management, measurement and distribution related to solar energy.
 
@@ -23,7 +23,7 @@ sidebar_position: 1
 
 - **“End User”** means the consumer that is using the Services in accordance with these Terms and Conditions.
 
-- **“Sourceful”** means Sourceful AB, reg. no 559382-0458.
+- **“Sourceful”** means Sourceful Labs AB, reg. no 559382-0458.
 
 - **“Intellectual Property Rights”** means all present and future rights, title, and interest whatsoever (whether legal or beneficial and whether registered or unregistered), in the copyright and in any design rights, trademarks, patents, rights or protections or similar to copyright (including all moral rights), topography rights, software programs, applications, database rights, know-how, trade names, trade secrets, inventions and other intangible proprietary information.
 

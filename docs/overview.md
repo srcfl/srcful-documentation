@@ -36,7 +36,6 @@ The Sourceful Energy Gateway is a user-friendly and innovative device designed t
 Join our Discord community to connect with other users and the Sourceful Team. Get help, share ideas, and join discussions about our energy network. It's the perfect place for real-time conversations and support.
 
 <a class="button button--primary" href="https://discord.gg/srcful">Sourceful Discord</a>
-<a class="button button--primary" href="https://discord.com/invite/helium" style={{marginLeft:"10px"}}>Helium Discord</a>
 
 ### Do you have services that suit our members?
 

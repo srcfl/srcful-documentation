@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Sourceful Documentation',
   tagline: 'documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
   url: 'https://docs.sourceful.energy',
@@ -69,7 +69,7 @@ const config = {
         debug: false
     },
       // Replace with your project's social card
-      image: 'img/social-card-new.png',
+      image: 'img/social-card-sourceful.png',
       navbar: {
         title: '',
         logo: {

@@ -21,7 +21,7 @@ By joining this beta, you will be awarded SRC Beta Tokens, **without** having to
 
 2. **Access the Application Form**
 
-   Visit our [**beta application page**](https://beta.Sourceful.io/en-US), select **Sourceful's SolarEdge API-mining program** and fill out the form.
+   Visit our [**beta application page**](https://sourceful.energy/beta), select **Sourceful's SolarEdge API-mining program** and fill out the form.
 
 3. **Complete the Form**
 

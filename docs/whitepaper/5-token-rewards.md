@@ -1,12 +1,12 @@
 ---
+
 sidebar_position: 5
 ---
 
-# SRC-token
+# Token Rewards
 
 ## Beta phase rewards
-During the beta phase, active beta testers and early adopters will be rewarded a set amount of tokens monthly for their engagement in the project. Read more about this in the <a href="../Tokenomics/Distribution/">Tokenomics</a>.
-:::
+During the beta phase, active beta testers and early adopters will be rewarded a set amount of tokens monthly for their engagement in the project. Read more about this in the <a href="../../tokenomics/rewards/">Tokenomics</a>.
 
 ## Post-Beta Phase: ENERGY Token
 

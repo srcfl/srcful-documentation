@@ -17,11 +17,11 @@ Sourceful is an innovative platform designed to accelerate and facilitate the ex
 ### How does it work?
 By connecting your solar inverter and or battery to our Energy Gateway, you'll be rewarded with ENERGY tokens. In the future, you'll also be rewarded for allowing control of your solar plant or battery to participate in grid stabilization and other smart energy services.
 
-We're currently in a beta phase, offering early adopters a unique opportunity to shape the future of decentralized energy. Beta participants will be rewarded as a recognition of their early involvement and contributions during the beta phase.
-
-Our documentation covers everything from the Sourceful Energy Gateway to reward structur and other important resources. It also contains the [Sourceful Whitepaper](/whitepaper/), which comprehensively details the foundational principles, technological architecture, and strategic vision of Sourceful.<br />
+We're currently in a beta phase, offering early adopters a unique opportunity to shape the future of decentralized energy. Beta participants will be rewarded as a recognition of their early involvement and contributions during the beta phase. 
 
 Join us in exploring the exciting possibilities of a smart, decentralized energy grid with Sourceful.
+
+<a class="button button--primary" href="https://sourceful.energy/beta">Join the Beta</a>
 
 ## Getting started: Sourceful Simplified
 

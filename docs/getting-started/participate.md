@@ -14,7 +14,7 @@ There are two primary ways to get involved with Sourceful and start participatin
 
 ## 1. Get a Sourceful Energy Gateway
 
-By getting a Sourceful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit our Hardware Vendor [RAKwireless store](https://store.rakwireless.com/products/Sourceful-energy-gateway) and acquire an Energy Gateway. 
+By getting a Sourceful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit our Hardware Vendor [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway) and acquire an Energy Gateway. 
 
 ### Requirements
 

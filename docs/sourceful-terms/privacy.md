@@ -161,4 +161,4 @@ You have the right to lodge a complaint with a supervisory authority. The superv
 
 ## Contact us
 
-If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@Sourceful.io.
+If you have any questions or if you wish to exercise any of your rights, do not hesitate to contact us at sales@sourceful-labs.com.

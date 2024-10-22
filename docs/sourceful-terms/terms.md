@@ -9,7 +9,7 @@ sidebar_position: 1
 
 ### 1. Background
 
-- These terms and conditions (the **“Terms and Conditions”**) govern the access to and use of the Sourceful website, platform, products, and other services provided by Sourceful (collectively, the “Services”), between the End User and Sourceful Labs AB.
+- These terms and conditions (the **“Terms and Conditions”**) govern the access to and use of the Sourceful website, platform, products, and other services provided by Sourceful Labs AB (collectively, the “Services”), between the End User and Sourceful Labs AB.
 
 - The Services provides a blockchain-based service for management, measurement and distribution related to solar energy.
 
@@ -77,7 +77,7 @@ sidebar_position: 1
 
 ### 10. Support
 
-- If you need help with the Services, visit our community on [Discord](https://discord.gg/YTUYVUqJ) where you can connect with us and other users and developers. Sourceful has no responsibility for any advice given by other users and developers.
+- If you need help with the Services, visit our community on [Discord](https://discord.gg/srcful) where you can connect with us and other users and developers. Sourceful has no responsibility for any advice given by other users and developers.
 
 - Sourceful has no obligation to provide support for the Services. 
 

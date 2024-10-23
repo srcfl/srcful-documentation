@@ -5,33 +5,23 @@ slug: /energy-gateway/
 
 # Introduction
 
-<div class="alert alert--primary" role="alert">
-<i>Solaris, a wondrous star nestled in the vastness of the Milky Way galaxy, resides about 4,000 light-years from Earth. Its luminosity illuminates the depths of space, beckoning us to consider the limitless potential for renewable energy in our universe. As we gaze upon its radiance, we are reminded of the urgency to embrace sustainable energy practices on Earth, to harness the power of the sun and all the natural resources available to us, and to continue our pursuit of a brighter, greener future.</i>
-</div><br />
+Introducing a revolutionary piece of hardware: The Sourceful Energy Gateway.
 
-The Sourceful Energy Gateway (batch #1: "Solaris") is a hardware device designed to connect Distributed Energy Resources (DERs) to the Sourceful network of gateways and is compatible with a growing number of inverters.
+## Product Overview
 
-The Sourceful Energy Gateway provides a digital identity to your Distributed Energy Resource (DER), enabling it to transact and prove its energy data on the blockchain. By connecting your DER to the Sourceful network using the Energy Gateway, you can participate in Proof-of-Source and soon to come, Proof-of-Control incentive models, as well as other decentralized energy applications such as ancillary services.
+The Sourceful Energy Gateway is a user-friendly and innovative device designed to connect Decentralized Energy Resources (DERs) such as solar plants and battery storage to Sourcefuls energy network. It enables users to participate in building a global virtual power plant (VPP) while earning rewards for their contributions.
 
-<!-- If you're interested in joining this exclusive group of early adopters, simply visit the link below and fill out the form to register your interest.
+## Key Features
 
-<a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a> -->
+- Get rewards for connecting and sharing data.
 
-## Features
+- Contribute to a decentralized, community-driven energy network
 
-The Sourceful Energy Gateway is a versatile device that offers the following features:
+- Visualize and compare your energy contributions
 
-- Support for major inverters: The gateway is compatible with major inverters, making it easy to integrate with existing DER installations using Modbus TCP.
+- Participate in grid stabilization and smart energy management (future features)
 
-- Rasberry Pi 4 based: The gateway is based on the popular Rasberry Pi platform, which provides high performance and relative low power consumption.
-
-- Wifi connectivity: The gateway supports Wifi connectivity, which allows it to connect to other devices and the internet.
-
-- Helium support: The gateway has Helium support, enabling it to connect to the Helium network for added connectivity options. (Not Solaris batch)
-
-- Secure communication: The gateway uses industry-standard security protocols to ensure that all communication between devices is secure and private.
-
-- Proof-of-Source and Proof-of-Control: The gateway will perform Proof-of-Source mechanism to ensure that energy transactions on the Sourceful network are secure and verified. Proof-of-Control is planned to be launced 2024.
+- Connect compatible solar inverters and batteries using a web application on your Android phone or laptop (iOS support coming in Q4 2024)
 
 ## How it works
 

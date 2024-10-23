@@ -23,13 +23,11 @@ Join us in exploring the exciting possibilities of a smart, decentralized energy
 
 <a class="button button--primary" href="https://sourceful.energy/beta">Join the Beta</a>
 
-## Getting started: Sourceful Simplified
-
-If you're new to Sourceful, we recommend beginning your journey at the [Sourceful Simplified](/simplified/) page. This section is designed to provide newcomers with an introduction to Sourceful.
-
 ## Explore the Energy Gateway
 
 Meet the Sourceful Energy Gateway - your solar panels' new best friend. This smart device quickly connects your solar plants or battery storage to our network through WiFi or Ethernet. Setup takes just minutes using our simple mobile app.
+
+<a class="button button--primary" href="https://sourceful.energy/beta">Buy an Energy Gateway</a>
 
 ## Support and Community
 

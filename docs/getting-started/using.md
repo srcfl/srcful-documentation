@@ -4,13 +4,12 @@ sidebar_position: 4
 
 # Using Sourceful
 
-## Sourceful: Driving Grid Efficiency and Homeowner Empowerment
-
 ### For Energy Companies and Grid Operators:
-Enhancing Grid Performance with Sourceful's Virtual Power Plant: 
+Enhancing Grid Performance with Sourceful's Virtual Power Plant and unified API for Distributed Energy Resources (DERs): 
 
-- **Ancillary Services:** We aggregate Distributed Energy Resources (DERs) like solar panels and batteries into a managed portfolio for trading and serving as frequency containment reserves.
-- **Aggregated Real-Time Solar Production Data:** Access comprehensive real-time data about solar production, crucial for operational planning and efficiency improvements.
+- **Ancillary Services:** We aggregate DERs like solar panels and batteries into a managed portfolio for trading and serving as frequency containment reserves.
+- **Unified API for DERs with our Developer Platform** 
+Sourceful offers a unified interface to connect solar plants and battery storage through either our Energy Gateway or manufacturers' existing APIs.
 
 ### For Homeowners:
 Sourceful will soon turn your home into a hub of energy efficiency and insight:

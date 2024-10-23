@@ -14,13 +14,9 @@ The Sourceful Energy Gateway is a user-friendly and innovative device designed t
 ## Key Features
 
 - Get rewards for connecting and sharing data.
-
 - Contribute to a decentralized, community-driven energy network
-
 - Visualize and compare your energy contributions
-
 - Participate in grid stabilization and smart energy management (future features)
-
 - Connect compatible solar inverters and batteries using a web application on your Android phone or laptop (iOS support coming in Q4 2024)
 
 ## How it works

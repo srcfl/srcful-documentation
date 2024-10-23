@@ -11,9 +11,6 @@ The Sourceful GraphQL API provides access to production data from various energy
 ### API Playground
 For testing and experimenting with queries, you can visit the [API Playground](https://api.srcful.dev/playground). This tool allows you to execute queries interactively and inspect results, making it easier to translate queries into your application code.
 
-### API Endpoint
-**Base URL**: `https://api.srcful.dev/`
-
 ## Authentication
 Currently, authentication is not required for basic access, but we plan to add authentication mechanisms in future iterations.
 

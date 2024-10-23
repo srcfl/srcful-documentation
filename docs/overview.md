@@ -10,7 +10,7 @@ slug: /
 
 ### What is Sourceful? 
 
-Sourceful is an innovative platform designed to accelerate and facilitate the expansion of renewable energy sources. Our mission is to build the world's largest decentralized virtual power plant (VPP) by connecting Distributed Energy Resources (sush as solar plants and battery storage) into a unified, decentralized network.
+Sourceful is an innovative energy network designed to accelerate and cordinate the expansion of renewable energy sources. Our mission is to build the world's largest decentralized virtual power plant (VPP) by connecting Distributed Energy Resources (sush as solar plants and battery storage).
 
 **Our mission: Accelerate solar power and stabilize the energy grid.**
 
@@ -29,7 +29,7 @@ If you're new to Sourceful, we recommend beginning your journey at the [Sourcefu
 
 ## Explore the Energy Gateway
 
-The Sourceful Energy Gateway is a user-friendly and innovative device designed to connect Distributed Energy Resources (DERs) such as solar plants and battery storage to Sourceful's energy network. This smart gateway seamlessly integrates solar panels and batteries into your home network via WiFi or Ethernet, a process that can be completed in minutes using a simple mobile app.
+Meet the Sourceful Energy Gateway - your solar panels' new best friend. This smart device quickly connects your solar plants or battery storage to our network through WiFi or Ethernet. Setup takes just minutes using our simple mobile app.
 
 ## Support and Community
 
@@ -39,7 +39,7 @@ Join our Discord community to connect with other users and the Sourceful Team. G
 
 ### Do you have services that suit our members?
 
-Want to work with us? Email partnership@Sourceful.io to set up a meeting. Let's talk about how we can build a greener, more decentralized energy future together. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
+Want to work with us? Email partnership@Sourceful.io to set up a meeting. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
 
 <!-- New to Sourceful?
 Start out at ["Sourceful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Sourceful and the possibilities of renewable energy!

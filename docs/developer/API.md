@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /developer/
 ---
 
-# Sourceful GraphQL API Documentation
+# API Documentation
 
 ## Overview
-The Sourceful API provides access to production data from various energy assets. It is designed to be flexible, allowing users to query the data in various resolutions and time frames. This documentation explains how to interact with the API using GraphQL.
+The Sourceful GraphQL API provides access to production data from various energy assets. It is designed to be flexible, allowing users to query the data in various resolutions and time frames. This documentation explains how to interact with the API using GraphQL.
 
 ### API Playground
 For testing and experimenting with queries, you can visit the [API Playground](https://api.srcful.dev/playground). This tool allows you to execute queries interactively and inspect results, making it easier to translate queries into your application code.

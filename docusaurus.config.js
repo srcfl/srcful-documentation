@@ -9,6 +9,12 @@ const config = {
   title: 'Sourceful Documentation',
   tagline: 'documentation',
   favicon: 'img/favicon.svg',
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap',
+      type: 'text/css',
+    },
+  ],
 
   // Set the production url of your site here
   url: 'https://docs.sourceful.energy',

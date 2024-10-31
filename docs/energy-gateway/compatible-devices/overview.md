@@ -1,13 +1,9 @@
 ---
 sidebar_position: 1
-slug: /energy-gateway/compatible-inverter/
+slug: /energy-gateway/compatible-devices/
 ---
 
 # Overview
-
-:::warning
-This page will move to the [compatible devices](/energy-gateway/compatible-devices/) section in the future.
-:::
 
 :::info
 You will need a **compatible** DER (Distributed Energy Resource) to connect your Energy Gateway.

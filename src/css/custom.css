@@ -80,3 +80,9 @@
 #docusaurus_skipToContent_fallback > div > aside > div > div > nav > ul > li:nth-child(1) > a {
   color: var(--custom-link-color);
 }
+
+/* hide inverter-devices */
+
+.hidden-section {
+  display: none;
+}

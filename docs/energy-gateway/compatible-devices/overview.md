@@ -9,27 +9,9 @@ slug: /energy-gateway/compatible-devices/
 You will need a **compatible** Inverter to connect your Energy Gateway.
 :::
 
-## Modbus SunSpec Support
-
-Good news for many Inverter owners! Our Energy Gateway supports Inverters that implement the Modbus SunSpec standard. This means:
-
-**Our Energy Gateway is compatible with all Inverters that conform to the Modbus SunSpec standard.**
-
-Modbus SunSpec combines the Modbus communication protocol with the SunSpec data model standard. This combination is widely adopted by Inverter manufacturers. Our support for Modbus SunSpec significantly expands the range of compatible devices beyond our explicitly listed Inverter brands.
-
 :::tip
 Even if you don't see your specific Inverter model in our compatibility list below, it may still work with our Energy Gateway if it's SunSpec compliant.
 :::
-
-## Check Your Inverter's SunSpec Compatibility
-
-To verify if your Inverter implements the SunSpec standard:
-
-1. Visit the [SunSpec Certified Registry](https://sunspec.org/certified-registry/).
-2. Use the search function to find your Inverter manufacturer or model.
-3. Look for entries with the Certificate Type "SunSpec Modbus".
-
-If your Inverter is listed with a SunSpec Modbus certificate, it should be compatible with our Energy Gateway.
 
 ## List of explicitly supported Inverters
 
@@ -71,6 +53,12 @@ We continuously add Inverters and update the table below.
 - 🔄 Planned: Control features are planned
 - 📋 Evaluating: Device is under evaluation
 - 🔍 Untested: Should work if SunSpec compatible, but not yet tested
+
+## Modbus SunSpec Support
+
+**Our Energy Gateway is compatible with all Inverters that conform to the Modbus SunSpec standard.**
+
+Modbus SunSpec combines the Modbus communication protocol with the SunSpec data model standard. This combination is widely adopted by Inverter manufacturers. Our support for Modbus SunSpec significantly expands the range of compatible devices beyond our explicitly listed Inverter brands. So if you can't find your specific Inverter model in the table above, it may still work with our Energy Gateway if it's SunSpec compliant.
 
 ## Can't find your specific Inverter model?
 

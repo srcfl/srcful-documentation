@@ -48,12 +48,12 @@ We continuously add Inverters and update the table below.
 | ferroamp      | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | [Guide](#)          |
 | APsystems     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | [Guide](#)          |
 | Enphase       | 📋 Evaluating | 🔄 Planned     | Local API               | Ethernet/Wi-Fi          | [Guide](enphase.md) |
-| Solplanet     | ☑️ Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
-| Kostal        | ☑️ Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet                | -                   |
-| ABB           | ☑️ Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485/Ethernet         | -                   |
-| Schneider     | ☑️ Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
-| Solis         | ☑️ Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Sol-ark       | ☑️ Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
+| Solplanet     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
+| Kostal        | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet                | -                   |
+| ABB           | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485/Ethernet         | -                   |
+| Schneider     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
+| Solis         | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
+| Sol-ark       | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
 | Growatt       | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
 | GoodWe        | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
 | Fox-Ess       | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |

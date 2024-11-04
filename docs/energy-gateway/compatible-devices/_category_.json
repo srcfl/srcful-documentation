@@ -1,4 +1,6 @@
 {
   "label": "Compatible Devices",
-  "position": 2
+  "position": 2,
+  "className": "hidden-section"
+
 }

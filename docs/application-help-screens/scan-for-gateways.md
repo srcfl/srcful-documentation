@@ -7,11 +7,10 @@ sidebar_position: 2
 ## Enabling Bluetooth Pairing Mode
 
 1. **Locate the Pairing Button**
-   - Find the small button on the side of your gateway
-   - It's located next to the usb-c power port
+   - Find the small button on the side of your gateway located next to the USB-C power port
 
 2. **Activate Pairing Mode**
-   - Press the button
+   - Double click the button in **quick** succession
    - The gateway is now in Bluetooth pairing mode for 3 minutes
 
 

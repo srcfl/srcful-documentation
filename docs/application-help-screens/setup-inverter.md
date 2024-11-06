@@ -59,9 +59,9 @@ The inverter setup is a crucial step that enables your gateway to communicate wi
 - Custom: Check inverter manual
 
 ### Device Addresses
-- Single inverter: Usually 1
+- Single inverter: Usually 0 or 1
 - Multiple inverters: 1-247
-- Check inverter documentation
+- Check inverter documentation or
 
 ## Troubleshooting
 

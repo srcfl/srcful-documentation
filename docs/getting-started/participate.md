@@ -12,11 +12,11 @@ See the list of currently compatible inverters: [Compatible Inverters](https://d
 
 There are a few ways to get involved with Sourceful and start participating in the energy revolution at this stage:
 
-<a class="button button--primary" href="https://sourceful.energy/beta">Click here to find out how</a>
+<a class="button button--primary" href="https://sourceful.energy/store">Click here to find out how</a>
 
 ## Get a Sourceful Energy Gateway
 
-By getting a Sourceful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit our Hardware Vendor [RAKwireless store](https://store.rakwireless.com/products/srcful-energy-gateway) and acquire an Energy Gateway. 
+By getting a Sourceful Energy Gateway, you can start validating green energy from your Distributed Energy Resource (DER) and earning tokens for contributing to the decentralized energy grid. To get started, visit our [Store](https://sourceful.energy/store) 
 
 ### Requirements
 

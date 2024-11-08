@@ -18,6 +18,62 @@ In a gesture of appreciation and recognition for the active beta testers and ear
 During this phase, the pool of beta tokens will be set at **10 million Beta Points**. 
 
 Beta testers will share this pool and be rewarded based on their uptime for the previous month. Each beta tester's share of the beta reward pool will be proportional to their individual uptime relative to the total uptime of all beta testers.
+
+### Gateway Types and Point Multipliers
+We have three different types of gateways, each with its own point multiplier:
+
+#### 1. Validated Gateways (2x multiplier)
+* These are gateways with verified links (e.g. SolarEdge API)
+* For example: 10 days of activity = 20 points
+
+#### 2. Hardware Gateways (1x multiplier)
+* These are standard hardware gateways
+* For example: 10 days of activity = 10 points
+
+#### 3. API Gateways (0.15x multiplier)
+* These are SolarEdge API connections
+* For example: 10 days of activity = 1.5 points
+
+### How Rewards Are Calculated
+The process works in three main steps:
+
+#### Step 1: Tracking Activity
+* We track each gateway's activity daily
+* A gateway can earn points for up to 15 days of activity
+* Each day of activity counts as one base point
+
+#### Step 2: Calculating Points
+* We take the number of active days for each gateway
+* We multiply the days by the gateway's type multiplier
+* For example:
+  * A Validated gateway active for 10 days: 10 days × 2.0 = 20 points
+  * A Hardware gateway active for 10 days: 10 days × 1.0 = 10 points
+  * An API gateway active for 10 days: 10 days × 0.15 = 1.5 points
+
+#### Step 3: Distributing Rewards
+* We add up all points from all gateways to get the total points
+* Each gateway's share of the 10 million SRC is calculated as:
+  * `(Gateway's Points ÷ Total Points) × 10,000,000 SRC`
+
+### Example
+Let's say we have three gateways that were active for 10 days each:
+1. Validated Gateway: 20 points
+2. Hardware Gateway: 10 points
+3. API Gateway: 1.5 points
+
+**Total Points:** 31.5 points
+
+Their rewards would be:
+* Validated Gateway: (20 ÷ 31.5) × 10,000,000 = 6,349,206 SRC
+* Hardware Gateway: (10 ÷ 31.5) × 10,000,000 = 3,174,603 SRC
+* API Gateway: (1.5 ÷ 31.5) × 10,000,000 = 476,191 SRC
+
+## Important Notes
+* Gateways in test mode are not eligible for rewards
+* SolarEdge API gateways must have a valid H3 index to be eligible
+* The maximum number of days that count toward rewards is 15
+* All rewards are calculated based on the total pool of eligible gateways during the distribution period
+
 ### Distribution schedule
 
 Tokens will be distributed on a set date every month during the beta phase (2024).

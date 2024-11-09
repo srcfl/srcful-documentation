@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Setup Guide: Dual Mining Beta'
+sidebar_label: "Setup Guide: Dual Mining Beta"
 sidebar_position: 1
 sidebar_class_name: item1
 ---
@@ -31,7 +31,7 @@ Registered DIY gateways can also be flashed with this firmware.
 
 ## Download Firmware
 
-The firmware image can be downloaded from [this link](https://drive.google.com/file/d/1htflaEc_TirxVub1eGe4Q2SRN-CiB7zp/view?usp=sharing).
+The firmware image can be downloaded from [this link](https://drive.google.com/file/d/1Jv1jPbNRn3IJghMI1Bg4wdSl4eNz-soD/view?usp=sharing).
 
 ## Step-by-Step Flashing Guide
 

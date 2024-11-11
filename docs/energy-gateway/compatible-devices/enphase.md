@@ -1,6 +1,14 @@
 # Enphase
 
-To get started with Enphase, you need to generate an API token. You can generate a token by:
+There are two ways to configure the Sourceful Energy Gateway to work with Enphase devices. Either using `Enphase credentials` or using an `Enphase Access Token`.
+
+## Enphase Credentials
+
+To onboard your Enphase using credentials, provide your Enphase `username`, `password`, and IQ Gateway `serial number` in the [**Configurator**](https://app.srcful.io). These credentials are only used once to generate an Access Token for authentication. For security, we do not store your credentials - only the generated Access Token is saved.
+
+## Enphase Access Token
+
+To onboard your Enphase, you need to generate an API token. You can generate a token by:
 
 1. Navigating to the [Enphase Portal](https://entrez.enphaseenergy.com/)
 2. Login with your Enphase account credentials
@@ -10,7 +18,6 @@ To get started with Enphase, you need to generate an API token. You can generate
 6. Click on "Generate Access Token"
 7. Copy the token to your clipboard
 
-The generated token will be valid for:
+## Access Token Expiration
 
-- 12 months for homeowner accounts
-- 12 hours for installer accounts
+Enphase Access Tokens expire after 12 months for homeowner accounts and 12 hours for installer accounts. Make sure to generate a token using the System Owner account to get the longest expiry time (12 months).

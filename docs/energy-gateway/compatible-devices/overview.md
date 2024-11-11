@@ -15,7 +15,7 @@ Even if you don't see your specific Inverter model in our compatibility list bel
 
 ## List of explicitly supported Inverters
 
-_(Last updated 2024-11-04)_
+_(Last updated 2024-11-11)_
 
 We continuously add Inverters and update the table below.
 
@@ -29,7 +29,7 @@ We continuously add Inverters and update the table below.
 | SMA           | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](#)          |
 | ferroamp      | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | [Guide](#)          |
 | APsystems     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | [Guide](#)          |
-| Enphase       | 📋 Evaluating | 🔄 Planned     | Local API               | Ethernet/Wi-Fi          | [Guide](enphase.md) |
+| Enphase       | ✅ Evaluating | 🔄 Planned     | Local API               | Ethernet/Wi-Fi          | [Guide](enphase.md) |
 | Solplanet     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
 | Kostal        | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet                | -                   |
 | ABB           | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485/Ethernet         | -                   |

@@ -37,7 +37,7 @@ If your DER is listed with a SunSpec Modbus certificate, it should be compatible
 
 ## List of explicitly supported DERs
 
-_(Last updated 2024-09-16)_
+_(Last updated 2024-11-11)_
 
 We continuously add DERs and update the table below.
 
@@ -50,15 +50,16 @@ We continuously add DERs and update the table below.
 | Sungrow     | ✅   | Partial support | Evaluating     | [View Details](sungrow.md)   |
 | Solaredge   | ✅   | 🔜              | Evaluating     | [View Details](solaredge.md) |
 | Huawei      | ✅   | 🔜              | Evaluating     | [View Details](huawei.md)    |
-| Deye        | ✅   | 🔜              | Evaluating     | Coming soon                  |
 | Fronius     | ✅   | 🔜              | Evaluating     | [View Details](fronius.md)   |
 | SMA         | ✅   | 🔜              | Evaluating     | [View Details](sma.md)       |
+| Enphase     | ✅   | 🔜              | Evaluating     | [View Details](enphase.md)   |
+| APsystems   | ✅   | 🔜              | Evaluating     | Coming soon                  |
 | Ferroamp    | ✅   | 🔜              | Evaluating     | Coming soon                  |
+| Deye        | ✅   | 🔜              | Evaluating     | Coming soon                  |
 | Growatt     | 🔜   | 🔜              | In Development | -                            |
 | GoodWe      | 🔜   | 🔜              | In Development | -                            |
 | Fox-Ess     | 🔜   | 🔜              | Planned        | -                            |
 | Solis       | 🔜   | 🔜              | Planned        | -                            |
-| Enphase     | 🔜   | 🔜              | Planned        | -                            |
 | Homegrid    | 🔜   | 🔜              | Planned        | -                            |
 | Sol-ark     | 🔜   | 🔜              | Planned        | -                            |
 | Eg4         | 🔜   | 🔜              | Planned        | -                            |

@@ -5,17 +5,14 @@ slug: /energy-gateway/compatible-devices/
 
 # Overview
 
-:::info
-You will need a **compatible** Inverter to connect your Energy Gateway.
-:::
-
 :::tip
 Even if you don't see your specific Inverter model in our compatibility list below, it may still work with our Energy Gateway if it's SunSpec compliant.
 :::
 
 ## List of explicitly supported Inverters
-
 _(Last updated 2024-11-11)_
+
+You will need a compatible Inverter to connect your Energy Gateway.
 
 We continuously add Inverters and update the table below.
 

@@ -1,4 +1,5 @@
 {
-    "label": "Compatible Inverters",
-    "position": 2
+  "label": "Compatible Inverters",
+  "position": 2,
+  "className": "hidden-section"
 }

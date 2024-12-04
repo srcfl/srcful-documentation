@@ -20,7 +20,7 @@ We continuously add Inverters and update the table below.
 | Inverter Make | Read Status   | Control Status | Protocol                | Communication Interface | Getting Started     |
 | ------------- | ------------- | -------------- | ----------------------- | ----------------------- | ------------------- |
 | Sungrow       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |
-| Solaredge     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |
+| Solaredge     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](solaredge.md)       |
 | Huawei        | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..       |
 | Deye          | ✅ Ready      | 🔄 Planned     | Modbus TCP (SolarmanV5) | Wi-Fi                   | Coming soon..       |
 | Fronius       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |

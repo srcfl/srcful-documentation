@@ -15,7 +15,7 @@ Sourceful is an innovative energy network designed to accelerate and cordinate t
 **Our mission: Accelerate solar power and stabilize the energy grid.**
 
 ### How does it work?
-By connecting your solar inverter and or battery to our Energy Gateway, you'll be rewarded with ENERGY tokens. In the future, you'll also be rewarded for allowing control of your solar plant or battery to participate in grid stabilization and other smart energy services.
+By connecting your solar inverter, battery or energy meter to our Energy Gateway, you'll be rewarded with ENERGY tokens. In the future, you'll also be rewarded for allowing control of your solar plant or battery to participate in grid stabilization and other smart energy services.
 
 We're currently in a beta phase, offering early adopters a unique opportunity to shape the future of decentralized energy. Beta participants will be rewarded as a recognition of their early involvement and contributions during the beta phase. 
 
@@ -25,7 +25,7 @@ Join us in exploring the exciting possibilities of a smart, decentralized energy
 
 ## Explore the Energy Gateway
 
-Meet the Sourceful Energy Gateway - your solar panels' new best friend. This smart device quickly connects your solar plants or battery storage to our network through WiFi or Ethernet. Setup takes just minutes using our simple mobile app.
+Meet the Sourceful Energy Gateway - your solar panels' new best friend. This smart device quickly connects your solar plants, battery storage and energy meter to our network through WiFi or Ethernet. Setup takes just minutes using our simple mobile app.
 
 <a class="button button--primary" href="https://sourceful.energy/beta">Buy an Energy Gateway</a>
 

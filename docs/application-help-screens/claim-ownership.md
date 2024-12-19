@@ -11,7 +11,7 @@ sidebar_position: 4
 ## What Happens When You Claim Ownership
 
 When you claim ownership of a gateway:
-- The gateway is permanently linked to your Solana wallet
+- The gateway is permanently linked to your Solana Wallet or Sourceful account
 - You become eligible for rewards and incentives
 - You gain access to gateway configuration options
 
@@ -60,3 +60,5 @@ If you:
 Please contact support through our Discord channel before proceeding.
 
 > Remember: Take your time to verify all details. This is a crucial step that cannot be easily reversed.
+
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

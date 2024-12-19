@@ -48,14 +48,13 @@ A reliable alternative that provides:
 2. **Configuration**
    - Select "Use Ethernet connection"
    - No additional setup required
-   - Click "Continue to Inverter Setup"
+   - Click "Continue"
 
 ## Troubleshooting
 
 ### WiFi Issues
 - Verify your WiFi password
 - Check signal strength
-- Ensure 2.4GHz network compatibility
 - Restart your router if needed
 
 ### Ethernet Issues
@@ -71,6 +70,6 @@ A reliable alternative that provides:
 After successful connection:
 - Gateway will download updates
 - Connection will be verified
-- You'll proceed to inverter setup
 
-Need more help? Contact support through our Discord channel.
+
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

@@ -44,3 +44,5 @@ Accurate location data is crucial for your Energy Gateway's operation:
 - The location is verified and stored on the blockchain for transparency
 
 > For optimal performance and accurate energy forecasting, please ensure the pin is placed exactly where your solar installation is located.
+
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

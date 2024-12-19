@@ -94,3 +94,6 @@ If you:
 Contact our support team through Discord or email.
 
 > Note: Keep your inverter manual handy during setup. Some manufacturers have specific requirements or settings that need to be enabled.
+
+
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

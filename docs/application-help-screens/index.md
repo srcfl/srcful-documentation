@@ -15,7 +15,6 @@ This guide will help you get your gateway up and running quickly and securely.
 - Your Energy Gateway device
 - Power supply (included)
 - A Router with an Ethernet port (if wanting to connect via Ethernet)
-- A mobile phone or computer for configuration
 
 ## Connection Steps
 
@@ -72,3 +71,5 @@ After the initial setup:
 - Follow the app's instructions to complete the process
 
 > Note: Do not disconnect power or network during the firmware update process as this could interrupt critical setup procedures.
+
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

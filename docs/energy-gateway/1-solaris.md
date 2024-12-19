@@ -37,7 +37,7 @@ The Sourceful Energy Gateway works by connecting your DER to the Sourceful netwo
 The Sourceful Energy Gateway is compatible many well known inverter brands on the market. We are constantly working on adding support for more inverters.
 :::
 
-See our list of compatible inverters: [Compatible inverters](./compatible-inverter/overview.md)
+See our list of compatible devices: [Compatible devices](./compatible-devices/overview.md)
 
 <!-- ## Sourceful Energy Gateway Compatibility Chart
 

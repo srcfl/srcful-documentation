@@ -9,7 +9,7 @@ sidebar_class_name: item1
 :::warningImportant
 If you are flashing a **RAK V2** originally purchased as a **Helium Hotspot**, you must provide us with the Serial ID and Public Key of your Energy Gateway once you have flashed the Dual Mining image. You can find both of these in the [**Configurator**](https://app.srcful.io) once you have flashed the image **as per the instructions below**.
 
-Please open a ticket on our Discord or send an email to **joakim@sourceful-labs.com** to have your Energy Gateway onboarded.
+Please open a ticket on our Discord or send an email to **support@sourceful-labs.com** to have your Energy Gateway onboarded.
 
 **NOTE:** This does **not** apply to those who have purchased a **Sourceful Dual Miner** from RAK.
 :::

@@ -9,6 +9,22 @@ slug: /energy-gateway/compatible-devices/
 Even if you don't see your specific Inverter model in our compatibility list below, it may still work with our Energy Gateway if it's SunSpec compliant.
 :::
 
+## List of explicitly supported Energy Meters
+_(Last updated 2024-12-19)_
+
+Currenty we only support smart meters via the P1 protocol, e.g. connected to your smart utility meter via the HAN port. Please refer to your utility company for details regarding your specific meter.
+
+Any P1 meter that supports telnet shoud be compatible. Please let us know if you have tried one out.
+
+| Meter Make                                                                               | Status        |  Protocol                | 
+| ------------------------------------------------------------------------------------------- | ------------- |  ----------------------- | 
+| [Currently One](https://currently.one/)                                                     | ✅ Ready      |  Telnet                  |
+| Jemac P1                                                                                    | ✅ Ready      |  REST                    |
+| [Smart Meter WiFi Gateway](https://smartgateways.nl/en/product/smart-meter-wifi-gateway/)   | ✅ Ready      |  Telnet                  |
+| [Home Wizard P1 Meter](https://www.homewizard.com/p1-meter/)                                | 🔄  Planned   |  REST                    |
+
+The compatibility may also depend on the actual utility meter and what version of the P1 protocol it uses. If you have tried something that does not seem to work please let us know and we will add it if possible.
+
 ## List of explicitly supported Inverters
 
 _(Last updated 2024-11-27)_

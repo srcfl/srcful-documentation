@@ -42,7 +42,7 @@ If your gateway doesn't appear:
    - If no LEDs are lit, check the power connection
    - Try unplugging and reconnecting power
 
-> Note: Pairing mode times out after 2 minutes. If needed, press the button again to reactivate pairing mode.
+> Note: Pairing mode times out after 3 minutes. If needed, press the button again to reactivate pairing mode.
 
 ## Next Steps
 
@@ -51,4 +51,4 @@ After successful connection:
 - Keep your phone near the gateway during configuration
 - Follow the on-screen instructions to complete setup
 
-Need more help? Contact support through our Discord channel or email.
+> Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

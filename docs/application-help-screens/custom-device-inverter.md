@@ -31,7 +31,7 @@ If your inverter brand isn't listed or you're using a SunSpec-compliant device:
 2. Select "Unknown" if you want to try a custom configuration
 
 ## Need Help?
-- Check our [compatibility guide](https://docs.sourceful.io/energy-gateway/compatible-inverter/) for a full list of supported models
+- Check our [compatibility guide](/energy-gateway/compatible-inverter/) for a full list of supported models
 
 _Note: Support for additional inverter brands is continuously being added._
 

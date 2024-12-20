@@ -37,7 +37,7 @@ Join our Discord community to connect with other users and the Sourceful Team. G
 
 ### Do you have services that suit our members?
 
-Want to work with us? Email partnership@Sourceful.io to set up a meeting. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
+Want to work with us? Email partnership@sourceful.energy to set up a meeting. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
 
 <!-- New to Sourceful?
 Start out at ["Sourceful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Sourceful and the possibilities of renewable energy!

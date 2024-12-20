@@ -109,7 +109,7 @@ sidebar_position: 1
 
 - The End User may terminate the Service at any time by disconnecting the gateway from the Service.
 
-- The End User may also terminate the Service by contacting Sourceful at sales@Sourceful.io.
+- The End User may also terminate the Service by contacting Sourceful at sales@sourceful.energy.
 
 - For avoidance of doubt, the End User are not rewarded utility tokens following termination.
 
@@ -147,13 +147,13 @@ any code and/or software, not expressly authorized by Blizzard, that can be used
 
 - Any amendments or updates to the Terms and Conditions agreed between the Parties must be made in writing.
 
-- For questions or concerns about the Services, please contact Sourceful at info@Sourceful.io.
+- For questions or concerns about the Services, please contact Sourceful at [info@sourceful.energy](mailto:info@sourceful.energy).
 
 ### 19. Law and Dispute Resolution
 
 - These Terms and Conditions shall be governed by the substantive law of Sweden, without regard to its principles and rules on conflict of laws.
 
-- For questions or complaints about the Product (as defined in Appendix 1 – Terms of Purchase below), please contact us at info@Sourceful.io.  The Purchaser may also file complaints to The National Board for Consumer Disputes (ARN) or general courts.
+- For questions or complaints about the Product (as defined in Appendix 1 – Terms of Purchase below), please contact us at [info@sourceful.energy](mailto:info@sourceful.energy).  The Purchaser may also file complaints to The National Board for Consumer Disputes (ARN) or general courts.
 
 <!-- </details> -->
 
@@ -196,7 +196,7 @@ any code and/or software, not expressly authorized by Blizzard, that can be used
 
 ### 6. Notice 
 
-- For questions or concerns about the Product, please contact Sourceful at info@Sourceful.io.
+- For questions or concerns about the Product, please contact Sourceful at [info@sourceful.energy](mailto:info@sourceful.energy).
 
 ### 7. Limitation of liability 
 

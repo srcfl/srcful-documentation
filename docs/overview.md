@@ -1,49 +1,81 @@
+
 ---
 sidebar_label: "Overview"
 sidebar_position: 1
 slug: /
 ---
 
-# Sourceful Documentation
+# Sourceful Energy Documentation
 
-## Participate in shaping the future of energy with Sourceful
+## The Future of Energy is Connected
 
-### What is Sourceful? 
+The global energy transition faces a critical challenge. As millions of solar panels and batteries are deployed worldwide, our electrical grids struggle to maintain stability. The problem isn't a lack of renewable energy - it's that these distributed energy resources remain disconnected and uncoordinated.
+Sourceful Energy is creating the missing layer in the energy revolution - the world's first self-orchestrating energy network that transforms isolated energy assets into the backbone of tomorrow's grid.
 
-Sourceful is an innovative energy network designed to accelerate and cordinate the expansion of renewable energy sources. Our mission is to build the world's largest decentralized virtual power plant (VPP) by connecting Distributed Energy Resources (sush as solar plants and battery storage).
+## 
 
-**Our mission: Accelerate solar power and stabilize the energy grid.**
 
-### How does it work?
-By connecting your solar inverter, battery or energy meter to our Energy Gateway, you'll be rewarded with ENERGY tokens. In the future, you'll also be rewarded for allowing control of your solar plant or battery to participate in grid stabilization and other smart energy services.
+### How Sourceful Energy Works
 
-We're currently in a beta phase, offering early adopters a unique opportunity to shape the future of decentralized energy. Beta participants will be rewarded as a recognition of their early involvement and contributions during the beta phase. 
+We make it remarkably simple to connect and coordinate distributed energy resources:
 
-Join us in exploring the exciting possibilities of a smart, decentralized energy grid with Sourceful.
+- Connect Your Energy Assets
+    - Use our mobile app for direct device connections
+    - Link through manufacturer cloud APIs
+    - Install an Energy Gateway
+    - Connect your utility meter
+
+- Validate & Participate
+    - Multi-source data validation ensures network integrity
+    - Automatic participation in grid services
+    - Earn rewards for your contribution
+    - Monitor your impact in real-time
+
+- Join the Energy Revolution
+    - Help stabilize the grid
+    - Accelerate renewable energy adoption
+    - Earn rewards for participation
+    - Own part of the network's future
+
+### Why Sourceful Matters
+
+Traditional grids weren't designed for millions of distributed energy resources. As solar adoption accelerates, grid stability becomes increasingly challenging. Sourceful creates the essential coordination layer that makes the renewable energy transition possible.
+
+Our breakthrough technology enables:
+
+- Universal connectivity for any energy asset
+- Automated grid services participation
+- Validated, secure network operations
+- Community ownership through tokenization
+
+### Join the Network
+
+Ready to be part of the energy revolution?
 
 <a class="button button--primary" href="https://sourceful.energy/beta">Join the Beta</a>
 
-## Explore the Energy Gateway
+- For Solar & Battery Owners
+    - Download our mobile app
+    - Check device compatibility
+    - Learn about rewards
 
-Meet the Sourceful Energy Gateway - your solar panels' new best friend. This smart device quickly connects your solar plants, battery storage and energy meter to our network through WiFi or Ethernet. Setup takes just minutes using our simple mobile app.
+- For Developers & Partners
+    - Explore our API documentation
+    - View integration guides
+    - Contact partnerships
 
-<a class="button button--primary" href="https://sourceful.energy/beta">Buy an Energy Gateway</a>
+- For Energy Market Participants
+    - Learn about market opportunities
+    - Review technical specifications
+    - Schedule a consultation
 
-## Support and Community
 
-Join our Discord community to connect with other users and the Sourceful Team. Get help, share ideas, and join discussions about our energy network. It's the perfect place for real-time conversations and support.
+### Join our active community:
 
-<a class="button button--primary" href="https://discord.gg/srcful">Sourceful Discord</a>
+- Discord Community <a class="button button--primary" href="https://discord.gg/srcful">Sourceful Discord</a>
+- X Updates
+- Monthly Newsletter
 
-### Do you have services that suit our members?
 
-Want to work with us? Email partnership@sourceful.energy to set up a meeting. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
+Want to work with us? Send us an email at partnership@Sourceful.io to set up a meeting. Read more at [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
 
-<!-- New to Sourceful?
-Start out at ["Sourceful Simplified"](/simplified/). After that, you are ready to read our [whitepaper](/whitepaper/) which will make you learn more about the innovative technology behind Sourceful and the possibilities of renewable energy!
-
-We are committed to sustainability and ensuring that our users have a seamless experience, which is why we provide detailed troubleshooting and FAQs to address any issues that may arise.
-
-Join us in exploring the exciting possibilities of a smart, decentralized grid with Sourceful. -->
-
-<!-- <a class="button button--primary" href="https://forms.gle/nAdpEi4oCuNeBHto9">Sign up on our Notice of Interest</a> -->

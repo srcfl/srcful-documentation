@@ -40,7 +40,7 @@ sidebar_class_name: item1
 
 :::
 
-1. **Visit https://app.srcful.io** to start pairing your Energy Gateway.
+1. **Visit https://app.sourceful.energy** to download the Sourceful app or use our web configurator.
 
 
 2. **Start by clicking the "Select Wallet"** button to link your Solana Wallet.
@@ -90,7 +90,7 @@ sidebar_class_name: item1
 
 ![](../static/img/guide/step9.png)
 
-3. **Your Energy Gateway** should now be visible in the [**Sourceful Explorer**](https://explorer.srcful.io)
+3. **Your Energy Gateway** should now be visible in the [**Sourceful Explorer**](https://explorer.sourceful.energy)
 
 ## Troubleshooting
 

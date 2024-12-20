@@ -95,7 +95,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://explorer.srcful.io',
+            href: 'https://explorer.sourceful.energy',
             label: 'Explorer',
             position: 'right',
           },
@@ -151,7 +151,7 @@ const config = {
               },
               {
                 label: 'Explorer',
-                href: 'https://explorer.srcful.io',
+                href: 'https://explorer.sourceful.energy',
               },
               {
                 label: 'Terms of Services',

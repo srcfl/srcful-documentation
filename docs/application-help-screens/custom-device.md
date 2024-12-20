@@ -26,6 +26,6 @@ Make sure you have:
 ## Need Help?
 If you need help finding your inverter information or enabling Modbus TCP:
 - Check your inverter's user manual
-- Visit our [compatibility guide](https://docs.sourceful.io/energy-gateway/compatible-inverter/)
+- Visit our [compatibility guide](/energy-gateway/compatible-inverter/)
 
 > Need more help? Please contact our support at [sourceful.energy/support](https://sourceful.energy/support) or browse trough our documentation at [docs.sourceful.energy](https://docs.sourceful.energy)

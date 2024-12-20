@@ -48,33 +48,33 @@ Our breakthrough technology enables:
 ## Getting Started
 
 ### For Solar & Battery Owners
-1. Download our mobile app
-2. Check device compatibility
-3. Learn about rewards
+1. Download our mobile app [Sourceful Energy](https://sourceful.energy/)
+2. Check device compatibility [Device Compatibility](https://docs.sourceful.energy/getting-started/participate/)
+3. Learn about rewards [Rewards](https://sourceful.energy/rewards)
 
 ### For Developers & Partners
-1. Explore our API documentation
-2. View integration guides
-3. Contact partnerships team
+1. Explore our API documentation [API Documentation](https://docs.sourceful.energy/api-reference)
+2. View integration guides [Integration Guides](https://docs.sourceful.energy/integration-guides)
+3. Contact partnerships team [Partnerships](https://sourceful.energy/partnerships)
 
 ### For Energy Market Participants
 1. Learn about market opportunities
 2. Review technical specifications
-3. Schedule a consultation
+3. Schedule a consultation reaching out to our partnerships team
 
 ## Join Our Community
 
 <div class="button-container">
-    <a class="button button--primary" href="https://sourceful.energy/beta">Join the Beta</a>
+    <a class="button button--primary" href="https://sourceful.energy/beta">Join Sourceful Energy</a>
 </div>
 
 ### Connect With Us
-- [Join our Discord](https://discord.gg/srcful)
-- Follow us on X
-- Subscribe to our Monthly Newsletter
+- Join our [Discord](https://discord.gg/srcful) community
+- Follow us on X [https://x.com/srcful](https://x.com/srcful)
+- Subscribe to our Monthly Newsletter on our website [Sourceful Energy](https://sourceful.energy/)
 
 ### Contact
 Looking to partner with us? 
-- Email: partnership@sourceful-labs.com
-- More info: [Sourceful.energy/partnerships](https://sourceful.energy/partnerships)
+- Email: [partnership@sourceful-labs.com](mailto:partnership@sourceful-labs.com)
+- More info: [Partnerships](https://sourceful.energy/partnerships)
 

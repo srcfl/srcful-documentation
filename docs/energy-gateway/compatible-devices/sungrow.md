@@ -6,6 +6,12 @@ The following guide describes how to configure the `Modbus TCP` settings for Sun
 
 Sungrow inverters come with `Modbus TCP` enabled by default. No additional configuration is required to use this feature.
 
+# Prerequities
+
+- A network connection by either:
+  - An Ethernet cable connected to the `LAN port` on the inverter
+  - Wireless connection with the `WiNet-S dongle` (the LAN port on the dongle does **NOT** work for Modbus)
+
 ## Verification
 
 If you need to verify functionality:

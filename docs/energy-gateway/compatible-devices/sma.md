@@ -32,12 +32,15 @@ Choose one of these connection methods:
 1. Open web browser
 2. Enter appropriate `IP` address based on connection method
 3. Log in as `Installer`
-4. Select `Edit Parameters`
+4. Navigate to `Device Parameters`
+5. Select `Edit Parameters`
 
 ### Modbus Setup
 
 1. Navigate to `Modbus` settings
 2. Enable the Modbus feature
+3. Enable `TCP server`
+4. Leave the port as `502`
 
 ### Grid Connection Configuration
 

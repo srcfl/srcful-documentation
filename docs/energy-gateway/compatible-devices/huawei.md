@@ -6,7 +6,9 @@ The following guide describes how to configure the `Modbus TCP` settings for Hua
 
 ### Hardware Requirements
 
-- Mobile device with `Android 4.0` or later
+- Mobile device
+  - iPhone with `iOS 10.0` or later
+  - Android with `Android 4.0` or later
 - Huawei `SDongle`
 - Internet connectivity
 - `WiFi` capability

@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - Huawei Inverter
+# Huawei
 
 The following guide describes how to configure the `Modbus TCP` settings for Huawei inverters and how to test the connection.
 

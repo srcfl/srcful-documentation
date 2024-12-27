@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - Sungrow Inverter
+# Sungrow
 
 The following guide describes how to configure the `Modbus TCP` settings for Sungrow inverters and how to test the connection.
 

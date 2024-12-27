@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - SMA Inverter
+# SMA
 
 The following guide describes how to configure the `Modbus TCP` settings for SMA inverters and how to test the connection.
 

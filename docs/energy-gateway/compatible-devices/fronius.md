@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - Fronius Inverters
+# Fronius
 
 Fronius inverters can be configured for `Modbus TCP` in two different ways, depending on your model. This guide covers both standard Fronius inverters with `Datalogger` and `GEN24` models.
 

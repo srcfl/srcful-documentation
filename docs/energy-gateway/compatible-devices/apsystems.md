@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - APsystems ECU
+# APsystems ECU
 
 ## Communication Setup Overview
 

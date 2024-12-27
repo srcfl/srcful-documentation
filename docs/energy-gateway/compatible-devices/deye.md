@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - Deye Inverter
+# Deye
 
 The following guide describes how to configure the `Modbus TCP` settings for Deye inverters and how to test the connection.
 

@@ -1,4 +1,4 @@
-# Modbus TCP Configuration - SolarEdge Inverter
+# SolarEdge
 
 The following guide describes how to configure the `Modbus TCP` settings for SolarEdge inverters and how to test the connection.
 

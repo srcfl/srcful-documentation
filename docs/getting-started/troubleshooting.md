@@ -6,10 +6,34 @@ sidebar_position: 5
 
 ## Energy Gateway
 
+---
+
+### Why Can't I Detect My Inverter During Network Scan?
+1. **Are Your Devices on the Same Network?**
+   - Verify that your Energy Gateway and inverter are online and connected to the same local network.
+2. **Is communication over Modbus TCP activated ?**
+   - Some inverter brands allow you to enable Modbus TCP directly through device settings (read inverter manual).
+   - For other brands, you may need to contact your local installer to open communication via Modbus TCP for third-party access.
+   - If you want to verify that it's activated, we've created a simple guide that you can access 
+    <a class="button button--primary" href="https://github.com/srcfl/egw-getting-started/blob/main/test_con.md">Read the guide</a>
+
+3. **Have you tried power cycling both the Energy Gateway and inverter?**
+   - Unplug both devices, wait 30 seconds, then reconnect them (inverter first, then gateway).
+4. **Running the latest firmware versions?**
+   - For the Energy Gateway:
+     1. Ensure the device is connected to your network via Ethernet cable
+     2. Restart the gateway
+     3. Wait for approximately 10 minutes
+     4. The gateway will automatically download and install the latest firmware
+    
+---
+
 ### How do I know if Modbus TCP is activated on my inverter?
 Start by reading your inverter's manual to check if it supports Modbus TCP communication. You can also call your local installer to ask. Typically, the installer has the authorization to activate Modbus TCP if you have an inverter that supports it. If you want to verify that it's activated, we've created a simple guide that you can access 
 
 <a class="button button--primary" href="https://github.com/srcfl/egw-getting-started/blob/main/test_con.md">Read the guide</a>
+
+---
 
 ### How to setup a Solana wallet (like Phantom) and use for gateway onboarding?
 

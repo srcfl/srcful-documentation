@@ -1,8 +1,3 @@
----
-sidebar_position: 2
-comment: moved in Patch 1.1.1
----
-
 # Connecting to Your Gateway
 
 ## Enabling Bluetooth Pairing Mode

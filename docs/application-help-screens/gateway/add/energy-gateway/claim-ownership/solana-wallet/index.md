@@ -1,8 +1,3 @@
----
-sidebar_position: 4
-comment: moved in Patch 1.1.1
----
-
 # Claiming Gateway Ownership
 
 ## Important Notice

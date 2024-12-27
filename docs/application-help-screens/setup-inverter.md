@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+comment: obsolete in Patch 1.1.1
 ---
 
 # Inverter Setup Guide

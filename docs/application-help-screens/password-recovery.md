@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+comment: moved in Patch 1.1.1
 ---
 
 # Recover an account

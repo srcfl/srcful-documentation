@@ -1,8 +1,3 @@
----
-sidebar_position: 3
-comment: moved in Patch 1.1.1
----
-
 # Network Setup Guide
 
 ## Connection Options

@@ -1,7 +1,3 @@
----
-sidebar_position: 5
-comment: moved in Patch 1.1.1
----
 # Choosing Your Integration Method
 
 ## Energy Gateway

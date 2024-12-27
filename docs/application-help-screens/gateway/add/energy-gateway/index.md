@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-comment: moved in Patch 1.1.1
----
-
 # Getting Started with Your Energy Gateway
 
 ## Initial Setup

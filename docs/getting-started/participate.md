@@ -7,7 +7,7 @@ sidebar_position: 2
 :::infoImportant
 You will need a compatible device to be able to connect your Energy Gateway. 
 
-See the list of currently compatible devices: [Compatible Inverters](https://docs.sourceful.energy/energy-gateway/compatible-devices/)
+See the list of currently compatible devices: [Compatible Devices](https://docs.sourceful.energy/energy-gateway/compatible-devices/)
 :::
 
 There are a few ways to get involved with Sourceful and start participating in the energy revolution at this stage:

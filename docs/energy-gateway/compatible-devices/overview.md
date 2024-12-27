@@ -10,18 +10,19 @@ Even if you don't see your specific Inverter model in our compatibility list bel
 :::
 
 ## List of explicitly supported Energy Meters
-_(Last updated 2024-12-19)_
+
+_(Last updated 2024-12-27)_
 
 Currenty we only support smart meters via the P1 protocol, e.g. connected to your smart utility meter via the HAN port. Please refer to your utility company for details regarding your specific meter.
 
 Any P1 meter that supports telnet shoud be compatible. Please let us know if you have tried one out.
 
-| Meter Make                                                                               | Status        |  Protocol                | 
-| ------------------------------------------------------------------------------------------- | ------------- |  ----------------------- | 
-| [Currently One](https://currently.one/)                                                     | ✅ Ready      |  Telnet                  |
-| Jemac P1                                                                                    | ✅ Ready      |  REST                    |
-| [Smart Meter WiFi Gateway](https://smartgateways.nl/en/product/smart-meter-wifi-gateway/)   | ✅ Ready      |  Telnet                  |
-| [Home Wizard P1 Meter](https://www.homewizard.com/p1-meter/)                                | 🔄  Planned   |  REST                    |
+| Meter Make                                                                                | Status     | Protocol |
+| ----------------------------------------------------------------------------------------- | ---------- | -------- |
+| [Currently One](https://currently.one/)                                                   | ✅ Ready   | Telnet   |
+| Jemac P1                                                                                  | ✅ Ready   | REST     |
+| [Smart Meter WiFi Gateway](https://smartgateways.nl/en/product/smart-meter-wifi-gateway/) | ✅ Ready   | Telnet   |
+| [Home Wizard P1 Meter](https://www.homewizard.com/p1-meter/)                              | 🔄 Planned | REST     |
 
 The compatibility may also depend on the actual utility meter and what version of the P1 protocol it uses. If you have tried something that does not seem to work please let us know and we will add it if possible.
 
@@ -33,32 +34,32 @@ You will need a compatible Inverter to connect your Energy Gateway.
 
 We continuously add Inverters and update the table below.
 
-| Inverter Make | Read Status   | Control Status | Protocol                | Communication Interface | Getting Started     |
-| ------------- | ------------- | -------------- | ----------------------- | ----------------------- | ------------------- |
-| Sungrow       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |
-| Solaredge     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](solaredge.md)       |
-| Huawei        | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..       |
-| Deye          | ✅ Ready      | 🔄 Planned     | Modbus TCP (SolarmanV5) | Wi-Fi                   | Coming soon..       |
-| Fronius       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |
-| SMA           | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | Coming soon..       |
-| ferroamp      | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..       |
-| APsystems     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | Coming soon..       |
-| Enphase       | ✅ Ready      | 🔄 Planned     | Local API               | Ethernet/Wi-Fi          | [Guide](enphase.md) |
-| Sofar-solar   | ✅ Evaluating | 🔄 Planned     | Modbus TCP              | RS-485                  | Coming soon..       |
-| Growatt       | ✅ Evaluating | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..       |
-| Solplanet     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
-| Kostal        | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet                | -                   |
-| ABB           | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485/Ethernet         | -                   |
-| Schneider     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                   |
-| Solis         | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Sol-ark       | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| GoodWe        | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Fox-Ess       | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Eg4           | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Livoltek      | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Lenercom      | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| Delta         | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
-| SAJ           | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                   |
+| Inverter Make | Read Status   | Control Status | Protocol                | Communication Interface | Getting Started       |
+| ------------- | ------------- | -------------- | ----------------------- | ----------------------- | --------------------- |
+| Sungrow       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](sungrow.md)   |
+| Solaredge     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](solaredge.md) |
+| Huawei        | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | [Guide](huawei.md)    |
+| Deye          | ✅ Ready      | 🔄 Planned     | Modbus TCP (SolarmanV5) | Wi-Fi                   | [Guide](deye.md)      |
+| Fronius       | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](fronius.md)   |
+| SMA           | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet/Wi-Fi          | [Guide](sma.md)       |
+| ferroamp      | ✅ Ready      | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..         |
+| APsystems     | ✅ Ready      | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | [Guide](apsystems.md) |
+| Enphase       | ✅ Ready      | 🔄 Planned     | Local API               | Ethernet/Wi-Fi          | [Guide](enphase.md)   |
+| Sofar-solar   | ✅ Evaluating | 🔄 Planned     | Modbus TCP              | RS-485                  | Coming soon..         |
+| Growatt       | ✅ Evaluating | 🔄 Planned     | Modbus TCP              | Ethernet/Wi-Fi          | Coming soon..         |
+| Solplanet     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                     |
+| Kostal        | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | Ethernet                | -                     |
+| ABB           | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485/Ethernet         | -                     |
+| Schneider     | 🔍 Untested   | 🔄 Planned     | Modbus TCP (SunSpec)    | RS-485                  | -                     |
+| Solis         | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Sol-ark       | 🔍 Untested   | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| GoodWe        | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Fox-Ess       | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Eg4           | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Livoltek      | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Lenercom      | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| Delta         | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
+| SAJ           | 🔄 Planned    | 🔄 Planned     | TBD                     | TBD                     | -                     |
 
 ### Status Legend
 

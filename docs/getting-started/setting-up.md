@@ -18,5 +18,3 @@ Getting started with Sourceful is easy! Simply download our app to begin your en
 2. **Follow the in-app setup guide** to connect your devices, securely share yur energy data, earn rewards and unlock access to innovative energy services.
 
 **Note:** *When setting up your inverter, ensure Modbus TCP (or similar communication protocols) is activated. While some manufacturers allow you to enable this yourself, others require you to contact your local installer to activate communication with the Energy Gateway.*
-
-Have questions? Join our Discord community where you can get help and connect with other users [Sourceful Energy Discord]([https://discord.gg/srcful)

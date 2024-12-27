@@ -11,9 +11,9 @@ Start by reading your inverter's manual to check if it supports Modbus TCP commu
 
 <a class="button button--primary" href="https://github.com/srcfl/egw-getting-started/blob/main/test_con.md">Read the guide</a>
 
-## How to setup a Solana wallet (like Phantom) and use for gateway onboarding?
+### How to setup a Solana wallet (like Phantom) and use for gateway onboarding?
 
-### Video instruction
+#### Video instruction
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5G5H3nmAgwM?si=zn74TWmNqChvup_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Setting up a Solana wallet is a simple process that can be completed in a few steps:

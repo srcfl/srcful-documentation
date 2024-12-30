@@ -99,6 +99,11 @@ const config = {
             label: 'Explorer',
             position: 'right',
           },
+          {
+            href: 'https://support.sourceful.energy',
+            label: 'Support',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -121,10 +126,6 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/srcful',
-              },
-              {
                 label: 'Discord',
                 href: 'https://discord.gg/srcful',
               },
@@ -139,6 +140,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/srcfl',
+              },
+              {
+                label: 'Support',
+                href: 'https://support.sourceful.energy',
               },
             ],
           },

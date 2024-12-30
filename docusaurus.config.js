@@ -171,6 +171,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    
 };
 
 module.exports = config;

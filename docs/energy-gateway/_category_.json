@@ -1,4 +1,5 @@
 {
   "label": "Sourceful Energy Gateway",
-  "position": 4
+  "position": 4,
+  "className": "hidden-section"
 }

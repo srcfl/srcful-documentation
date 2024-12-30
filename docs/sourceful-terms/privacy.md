@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Privacy Policy'
 sidebar_position: 2
+pagination_next: null
 ---
 
 # Privacy Policy

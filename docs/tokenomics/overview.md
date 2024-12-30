@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /tokenomics/
 title: Introduction
+pagination_prev: null
 ---
 
 # The tokenomic of Sourceful

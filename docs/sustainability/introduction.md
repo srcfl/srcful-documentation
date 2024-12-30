@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /sustainability/
 title: Introduction
+pagination_prev: null
 ---
 
 # Sustainability at Sourceful

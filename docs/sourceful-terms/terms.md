@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Terms and Conditions'
 sidebar_position: 1
+pagination_prev: null
 ---
 
 # Terms and Conditions

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: /whitepaper/
+pagination_prev: null
 ---
 
 # Executive Summary

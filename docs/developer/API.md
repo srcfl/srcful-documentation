@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: /developer/
+pagination_prev: null
 ---
 
 # API Documentation

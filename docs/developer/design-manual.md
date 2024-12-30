@@ -1,5 +1,6 @@
 ---
 sidebar_position: 10
+pagination_next: null
 ---
 
 import boltDark from './img/design/thumbnails/Sourceful-Logo-Bolt-Dark.jpg';
@@ -104,7 +105,7 @@ Learn about our brand colors and how to use them consistently across all marketi
 |  Fredrik Ahlgren | CEO, co-founder
 |  Tobias Ohlsson | CTO, co-founder
 |  Viktor Olofsson| CFO, co-founder
-|  Johan Leitet |CCC, co-founder
+|  Johan Leitet | co-founder
 |  Nikas Emevi | co-founder
 |  David Mozart | co-founder
 

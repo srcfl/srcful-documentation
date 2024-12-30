@@ -1,5 +1,6 @@
 ---
 sidebar_position: 20
+pagination_next: null
 ---
 
 # Blockchain and Crypto

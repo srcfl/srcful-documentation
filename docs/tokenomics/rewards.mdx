@@ -16,26 +16,45 @@ Please note that Sourceful is still in Beta and pre-token launch.
 
 In a gesture of appreciation and recognition for the active beta testers and early adopters, who have actively engaged in the earliest stages of the project, Sourceful has implemented a beta rewards program.
 
+### Daily Rewards
+**Daily rewards are planned to start 10th January 2025**
+
+During this phase, the daily rewards pool is **20 million Beta Points / 30**. This means the amount of Beta Points payed per 30 days remain the same.
+
+Beta testers will share this pool and be rewarded based on having DERs online during the day and the Gateway Types and Point Multipliers:
+
+### DER Types and Point Multipliers
+We have three different types of distributed energy resources (DERs), each with its own point multiplier:
+
+#### 1. Validated DER (2x multiplier)
+* These are DERs with verified links (e.g. SolarEdge inverter validated with SolarEdge API)
+
+#### 2. Hardware DER (1x multiplier)
+* These are standard hardware gateways (e.g inverter, p1 meter)
+
+#### 3. API DER (0.15x multiplier)
+* These are SolarEdge API connections
+
+### How Daily Rewards Are Calculated
+
+* We track each DER's activity during the day.
+* A minimum of 25 valid datapoints need to be sent to be eligible for the daily rewards 
+* We add the DER scores based on tje type multiplier
+* We add up all points from all DERs to get the total points for the day
+* Each DERs share of the daily BP allocation is calculated as:
+  * `(DER's Points ÷ Total Points) × 20,000,000 BP / 30`
+
+Note that if a gateway has several DERs connected it is rewarded for each DER
+
+
+### Monthly beta rewards
+**The last payout of monthly beta rewards is 8th January 2025**
+
 During this phase, the pool of beta tokens is currently set at **20 million Beta Points** (BP). 
 
-Beta testers will share this pool and be rewarded based on their uptime for the previous month. Each beta tester's share of the beta reward pool will be proportional to their individual uptime relative to the total uptime of all beta testers.
+Beta testers will share this pool and be rewarded based on their DER uptime for the previous month. Each beta tester's share of the beta reward pool will be proportional to their individual uptime relative to the total uptime of all beta testers.
 
-### Gateway Types and Point Multipliers
-We have three different types of gateways, each with its own point multiplier:
-
-#### 1. Validated Gateways (2x multiplier)
-* These are gateways with verified links (e.g. SolarEdge API)
-* For example: 10 days of activity = 20 points
-
-#### 2. Hardware Gateways (1x multiplier)
-* These are standard hardware gateways
-* For example: 10 days of activity = 10 points
-
-#### 3. API Gateways (0.15x multiplier)
-* These are SolarEdge API connections
-* For example: 10 days of activity = 1.5 points
-
-### How Rewards Are Calculated
+### How Monthly Rewards Are Calculated
 The process works in three main steps:
 
 #### Step 1: Tracking Activity

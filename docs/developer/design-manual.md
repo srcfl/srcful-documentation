@@ -85,9 +85,9 @@ Learn about our brand colors and how to use them consistently across all marketi
 
 | Name | Role |
 |---|---|
-|  Fredrik Ahlgren | CEO, co-founder
-|  Tobias Ohlsson | CTO, co-founder
-|  Viktor Olofsson| CFO, co-founder
+|  Fredrik Ahlgren | CEO, Co-founder
+|  Tobias Ohlsson | CTO, Co-founder
+|  Viktor Olofsson| CFO, Co-founder
 |  Johan Leitet | Co-founder
 |  Nikas Emevi | Co-founder
 |  David Mozart | Co-founder

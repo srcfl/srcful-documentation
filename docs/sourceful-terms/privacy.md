@@ -57,6 +57,13 @@ The data is stored for as long as necessary to provide the hardware device in ac
 We retain the new inverter IP after a scan, along with previously obtained information such as the inverter port, type, address, and, in some cases, the serial number
 :::
 
+### To collect and process electricity consumption data through the Zap device
+| What processing we perform | What personal data we process | Our legal basis for the processing |
+|: - :|: - :|: - :|
+| <ul><li>Collect and process real-time electricity consumption data from your electricity meter through the Zap device</li></ul> | <ul><li>Real-time electricity consumption data</li><li>Timestamp of measurements</li><li>Device identifier</li><li>Meter readings and consumption patterns</li></ul> | Performance of contract (Article 6.1(b) GDPR).<br/><br/> *The processing is necessary for providing the service you have contracted us for through the Zap device.* |
+:::info Storage period
+The data is stored for as long as you are using the Zap device and service, and for a period of 36 months thereafter for technical support and service improvement purposes.
+:::
 
 ### To handle refunds in accordance with consumer legislation
 

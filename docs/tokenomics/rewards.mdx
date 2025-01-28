@@ -33,12 +33,13 @@ We have three different types of distributed energy resources (DERs), each with 
 * These are standard hardware gateways (e.g inverter, p1 meter)
 
 #### 3. API DER (0.15x multiplier)
-* These are SolarEdge API connections
+* These are SolarEdge & Huawei API connections
 
 ### How Daily Rewards Are Calculated
 
 * We track each DER's activity during the day.
 * A minimum of 25 valid datapoints need to be sent to be eligible for the daily rewards 
+* For PV/Solar DERs atleast some production during the day is required
 * We add the DER scores based on tje type multiplier
 * We add up all points from all DERs to get the total points for the day
 * Each DERs share of the daily BP allocation is calculated as:

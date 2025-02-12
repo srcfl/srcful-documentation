@@ -4,7 +4,7 @@ slug: /developer/hardware
 pagination_prev: null
 ---
 
-# Overview
+# Hardware Guide
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). Document is under development.
 
 ## Basics

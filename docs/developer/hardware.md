@@ -86,14 +86,41 @@ mutation {
 ```
 
 ### Location
+The location for a gatway is important from a validity standppint. The netwok relies on accurate positions of resources, to e.g. know that a resource is part of a particular area.
 
+Setting the location for a gatway is based on a signature from the owning wallet (see Inception above). The gateway itself is not part of this per se, and can thus be handled in different ways. The Sourceful Energy App offer setting the location of a device for all gateways a wallet has been paired with.
 
-## App integration
-The gateway can offer a REST endoint for easy Sourceful Energy App integration.
+## User Experience
+The user experience of onboarding can vary depending on the level of integration desired. Basically it is up to each gateway firmware to provde the means for:
 
+1. Network connectivity - most devices would need some kind of network access e.g. wifi credentials.
+2. Inception
+3. Location (Optional)
 
-# Data Ingress
-Devices send data to the network using a signed JSON Web token (jwt) format. You can read more about the format specification here: https://jwt.io/introduction
+### Local Interface
+This in the simplest form this is handled via the gateway itself, via a local interface. This can be handled by the gateway itself e.g. via an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are however modules for most popular web frameworks that can handle this seamlessly. In the simplest case the user will need to copy paste the wallet public key into the local interface. Depending on needs the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN network to do visualizations etc.
+
+### Bespoke App
+For a more non-technical user experience a bespoke app that communicates with the gatweway may be developed.
+
+### Sourceful Energy App
+The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the network. Using the SEA the user can always set location of an owned gateway. The SEA also offers network connectivity, and inception integration of the gateway, but this requires additional functionality in the gateway firmware.
+
+### Network Connectivity
+TODO: Describe the how wifi can be provisioned in the app, e.g. qr code, default network ssid, and/or ble?
+
+## Inception
+The gateway should expose a REST endpoint that accepts the wallet public key. This endpoint should be accessible via ble or local network access via mdns.
+
+```
+POST api/initialize
+{
+  "wallet":"public_key"
+}
+```
+
+# SEN Data Ingress
+Devices send data to the SEN using a signed JSON Web token (jwt) format. You can read more about the format specification here: https://jwt.io/introduction, frequency of sending is 10 seconds, but may be more seldom. 
 
 In particular data ingested using signed JWTs (not encrypted) via https. I.e. standard safe https transport is used to perform end to end encryption of the data.
 

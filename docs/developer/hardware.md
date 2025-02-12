@@ -12,14 +12,14 @@ While there are many types of devices that can be connected to the SEN they are 
 The firmware for the Sourceful Energy Gateway is open source and can serve as a generic reference implementation: https://github.com/srcfl/srcful-gateway/
 
 ## Basics
-A gateway needs to be identifiable and provide a public key. Gateway id and public key needs to be registered with SEN before the gateway is usable. Internally a gateway needs to maintain the private key connected to the shared public key and sign data using it.
+A gateway needs to be identifiable and provide a public key. Gateway id and public key needs to be registered with SEN before the gateway is usable. Internally a gateway needs to maintain the private key and sign data.
 
 All hardware devices will need to be audited and tested before a granted access to the network and public release.
 
 # Cryptographic Implementation Guide
 
 ## Overview
-Our system uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographic operations, implemented in two ways:
+The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographic operations, implemented in two ways:
 1. Hardware-based using ATECC608A/B secure elements
 2. Software-based e.g. using Python's `ecdsa` library
 

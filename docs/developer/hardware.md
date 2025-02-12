@@ -88,7 +88,7 @@ mutation {
 ### Location
 The location for a gatway is important from a validity standppint. The netwok relies on accurate positions of resources, to e.g. know that a resource is part of a particular area.
 
-Setting the location for a gatway is based on a signature from the owning wallet (see Inception above). The gateway itself is not part of this per se, and can thus be handled in different ways. The Sourceful Energy App offer setting the location of a device for all gateways a wallet has been paired with.
+Setting the location for a gatway is based on a signature from the owning wallet (see Inception above). The gateway hardware/keys are not part of this, and this part can thus be handled in different ways. The Sourceful Energy App offer setting the location of a device for all gateways a wallet has been paired with.
 
 ## User Experience
 The user experience of onboarding can vary depending on the level of integration desired. Basically it is up to each gateway firmware to provde the means for:
@@ -98,7 +98,7 @@ The user experience of onboarding can vary depending on the level of integration
 3. Location (Optional)
 
 ### Local Interface
-This in the simplest form this is handled via the gateway itself, via a local interface. This can be handled by the gateway itself e.g. via an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are however modules for most popular web frameworks that can handle this seamlessly. In the simplest case the user will need to copy paste the wallet public key into the local interface. Depending on needs the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN network to do visualizations etc.
+This in the simplest form this is handled via the gateway itself, via a local interface e.g. an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are however modules for most popular web frameworks that can handle this seamlessly. In the simplest case the user will need to copy paste the wallet public key into the local interface. Depending on needs the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN network to do visualizations etc.
 
 ### Bespoke App
 For a more non-technical user experience a bespoke app that communicates with the gatweway may be developed.
@@ -122,7 +122,7 @@ POST api/initialize
 # SEN Data Ingress
 Devices send data to the SEN using a signed JSON Web token (jwt) format. You can read more about the format specification here: https://jwt.io/introduction, frequency of sending is 10 seconds, but may be more seldom. 
 
-In particular data ingested using signed JWTs (not encrypted) via https. I.e. standard safe https transport is used to perform end to end encryption of the data.
+In particular data is ingested using signed JWTs (not encrypted) via https. I.e. standard safe https transport is used to perform end to end encryption of the data.
 
 ## header
 The header consists of the standard fields plus extra protocol specific fields.

@@ -5,10 +5,14 @@ pagination_prev: null
 ---
 
 # Hardware Guide
-This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). Document is under development.
+This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is for firmware compatibility. Document is under development.
+
+While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more special e.g. a p1 meter and some are more generic in nature e.g. the Sourceful Energy Gateway.
+
+The firmware for the Sourceful Energy Gateway is open source and can serve as a generic reference implementation: https://github.com/srcfl/srcful-gateway/
 
 ## Basics
-A device needs to be identifiable and provide a public key. Device id and public key needs to be registered with SEN before the device is usable. Internally a device needs to maintain the private key connected to the shared public key and sign data using it.
+A gateway needs to be identifiable and provide a public key. Gateway id and public key needs to be registered with SEN before the gateway is usable. Internally a gateway needs to maintain the private key connected to the shared public key and sign data using it.
 
 All hardware devices will need to be audited and tested before a granted access to the network and public release.
 
@@ -62,6 +66,31 @@ except:
 # public_key_hex = "your_public_key_hex_here"
 # vk = VerifyingKey.from_string(bytes.fromhex(public_key_hex), curve=SECP256k1)
 ```
+
+## SEN Onboarding
+Before a gateway is usable on the SEN it must be tied to a wallet public key (inception), eg. the users wallet, and get a correct physical location.
+
+### Inception
+The gateway must accept the wallet public key and add its own id and a cryptographic signature. the gateway then initializes the device in the SEN API.
+
+When the gateway is tied to a wallet further calls to the SEN API will fail. 
+
+```grapql
+mutation {
+      gatewayInception {
+        initialize(gatewayInitialization:{idAndWallet:"gateway_id:wallet_public_key", signature:"signature_of_idAndWallet"}) {
+          initialized
+        }
+      }
+    }
+```
+
+### Location
+
+
+## App integration
+The gateway can offer a REST endoint for easy Sourceful Energy App integration.
+
 
 # Data Ingress
 Devices send data to the network using a signed JSON Web token (jwt) format. You can read more about the format specification here: https://jwt.io/introduction

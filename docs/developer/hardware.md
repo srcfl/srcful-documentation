@@ -25,7 +25,7 @@ The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographi
 
 ## Core Specifications
 - **Algorithm**: ECDSA
-- **Curve**: SECP256k1 
+- **Curve**: SECP256r1 
 - **Key Sizes**: 
   - Private Key: 32 bytes (256 bits)
   - Public Key: 64 bytes (x,y coordinates, 32 bytes each)
@@ -35,36 +35,67 @@ The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographi
 If a software keys are used it is imperative that the private key is stored in a secure way. The private key must not be stored in plain text in files, code nor as environment variables.
 ### Python Example
 ```python
-# Example of ECDSA key generation and usage with Python's ecdsa library
-from ecdsa import SigningKey, VerifyingKey, SECP256k1
+mport json
+import base64
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import ec, utils
 
-# Generate a new private key (32 bytes)
-sk = SigningKey.generate(curve=SECP256k1)
-print(f"Private key: {sk.to_string().hex()}")
+def base64url_encode(data: bytes) -> str:
+    return base64.urlsafe_b64encode(data).rstrip(b'=').decode('utf-8')
 
-# Get the corresponding public key (64 bytes: x,y coordinates)
-vk = sk.get_verifying_key()
-print(f"Public key: {vk.to_string().hex()}")
+# Generate a new private key
+private_key = ec.generate_private_key(ec.SECP256R1())
+public_key = private_key.public_key()
 
-# Sign a message
-message = b"Hello, World!"
-signature = sk.sign(message)
-print(f"Signature: {signature.hex()}")
+# Get the private key number
+private_numbers = private_key.private_numbers()
+private_key_hex = f"{private_numbers.private_value:064x}"
+print(f"Private key: {private_key_hex}")
 
-# Verify the signature
-try:
-    is_valid = vk.verify(signature, message)
-    print("Signature verified successfully")
-except:
-    print("Signature verification failed")
+# Get the public key coordinates
+public_numbers = public_key.public_numbers()
+public_key_hex = f"{public_numbers.x:064x}{public_numbers.y:064x}"
+print(f"Public key: {public_key_hex}")
 
-# Example of loading an existing private key (if needed)
-# private_key_hex = "your_private_key_hex_here"
-# sk = SigningKey.from_string(bytes.fromhex(private_key_hex), curve=SECP256k1)
+# Create a JWT
+header = {
+    "alg": "ES256",
+    "typ": "JWT",
+    "device": "test123",
+    "opr": "testing"
+}
 
-# Example of loading an existing public key (if needed)
-# public_key_hex = "your_public_key_hex_here"
-# vk = VerifyingKey.from_string(bytes.fromhex(public_key_hex), curve=SECP256k1)
+payload = {
+    "message": "Hello, World!",
+    "timestamp": 1234567890
+}
+
+# Encode header and payload
+header_b64 = base64url_encode(json.dumps(header).encode())
+payload_b64 = base64url_encode(json.dumps(payload).encode())
+
+# Create message to sign
+message = f"{header_b64}.{payload_b64}".encode()
+
+# Hash the message
+digest = hashes.Hash(hashes.SHA256())
+digest.update(message)
+message_hash = digest.finalize()
+
+# Sign the message
+signature = private_key.sign(
+    message_hash,
+    ec.ECDSA(utils.Prehashed(hashes.SHA256()))
+)
+
+# Convert DER signature to raw R,S format
+r, s = utils.decode_dss_signature(signature)
+signature_bytes = r.to_bytes(32, byteorder='big') + s.to_bytes(32, byteorder='big')
+signature_b64 = base64url_encode(signature_bytes)
+
+# Create final JWT
+jwt = f"{header_b64}.{payload_b64}.{signature_b64}"
+print(f"\nGenerated JWT:\n{jwt}")
 ```
 
 ## SEN Onboarding

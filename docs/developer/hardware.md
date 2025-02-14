@@ -16,6 +16,16 @@ A gateway needs to be identifiable and provide a public key. Gateway id and publ
 
 All hardware devices will need to be audited and tested before a granted access to the network and public release.
 
+## Example
+There is an ESP32 example project under development at: https://github.com/srcfl/srcful-esp32-example
+
+This example shows:
+- Handling of cryptographic keys in software
+- Construction and signing of data JWTs
+- Construction and signing of Inception message
+- Important REST endpoints for onboarding (under construction)
+- Safe storage of private key (TODO)
+
 # Cryptographic Implementation Guide
 
 ## Overview

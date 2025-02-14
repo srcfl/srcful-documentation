@@ -16,7 +16,8 @@ A gateway needs to be identifiable and provide a public key. Gateway id and publ
 
 All hardware devices will need to be audited and tested before a granted access to the network and public release.
 
-## Example
+## Examples
+### ESP32
 There is an ESP32 example project under development at: https://github.com/srcfl/srcful-esp32-example
 
 This example shows:
@@ -26,9 +27,14 @@ This example shows:
 - Important REST endpoints for onboarding (under construction)
 - Safe storage of private key (TODO)
 
-# Cryptographic Implementation Guide
+### Sourceful Energy Gateway Firmware
+While in development the full firmware of the Sourceful Energy Gateway is open source and can work as a reference implementation. This firmware is suitable for micro computers such as raspberry pi 4+ that can run containerized applications.
 
-## Overview
+You find the project here: https://github.com/srcfl/srcful-gateway
+
+# Cryptographic Implementation Guide
+The SEN relies on cryptographic signatures to validate the source of data, ownership of gateways etc.
+
 The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographic operations, implemented in two ways:
 1. Hardware-based using ATECC608A/B secure elements
 2. Software-based e.g. using Python's `ecdsa` library
@@ -109,7 +115,9 @@ print(f"\nGenerated JWT:\n{jwt}")
 ```
 
 ## SEN Onboarding
-Before a gateway is usable on the SEN it must be tied to a wallet public key (inception), eg. the users wallet, and get a correct physical location.
+Gateway id and public key needs to be registered with SEN before the gateway is usable. Basically the id and public key is submitted to the network and then registered. In the future this procedure will be automated through the developer platform and developer APIs.
+
+Before a gateway is usable on the SEN it must be tied to a wallet public key (inception), eg. the users wallet, and finally be given a correct physical location.
 
 ### Inception
 The gateway must accept the wallet public key and add its own id and a cryptographic signature. the gateway then initializes the device in the SEN API.
@@ -145,7 +153,7 @@ This in the simplest form this is handled via the gateway itself, via a local in
 For a more non-technical user experience a bespoke app that communicates with the gatweway may be developed.
 
 ### Sourceful Energy App
-The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the network. Using the SEA the user can always set location of an owned gateway. The SEA also offers network connectivity, and inception integration of the gateway, but this requires additional functionality in the gateway firmware.
+The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the network. Using the SEA the user can always set location of an owned gateway. The SEA also offers network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware.
 
 ### Network Connectivity
 TODO: Describe the how wifi can be provisioned in the app, e.g. qr code, default network ssid, and/or ble?

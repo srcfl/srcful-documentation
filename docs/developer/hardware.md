@@ -169,7 +169,7 @@ POST api/initialize
 ```
 
 # SEN Data Ingress
-Devices send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. 
+Gateways send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. You may send several data packages in the same payload of the JWT but the data needs to be from the same energy resource for each JWT. E.g. if a gateway is connected to both an inverter and a meter the data from the inverter needs to be sent in one JWT (with optionally many datapoints) and data from the meter in another JWT (with optionally many datapoints). 
 
 In particular, data is ingested using signed JWTs (not encrypted) via HTTPS. I.e., standard safe HTTPS transport is used to perform end-to-end encryption of the data.
 

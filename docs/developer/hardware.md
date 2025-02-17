@@ -7,14 +7,14 @@ pagination_prev: null
 # Hardware Guide
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is for firmware compatibility. Document is under development.
 
-While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more special e.g. a p1 meter and some are more generic in nature e.g. the Sourceful Energy Gateway.
+While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more special, e.g., a p1 meter and some are more generic in nature, e.g., the Sourceful Energy Gateway.
 
 The firmware for the Sourceful Energy Gateway is open source and can serve as a generic reference implementation: https://github.com/srcfl/srcful-gateway/
 
 ## Basics
 A gateway needs to be identifiable and provide a public key. Gateway id and public key needs to be registered with SEN before the gateway is usable. Internally a gateway needs to maintain the private key and sign data.
 
-All hardware devices will need to be audited and tested before a granted access to the network and public release.
+All hardware devices will need to be audited and tested before granted access to the network and public release.
 
 ## Examples
 ### ESP32
@@ -37,7 +37,7 @@ The SEN relies on cryptographic signatures to validate the source of data, owner
 
 The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographic operations, implemented in two ways:
 1. Hardware-based using ATECC608A/B secure elements
-2. Software-based e.g. using Python's `ecdsa` library
+2. Software-based, e.g., using Python's `ecdsa` library
 
 ## Core Specifications
 - **Algorithm**: ECDSA
@@ -46,12 +46,12 @@ The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographi
   - Private Key: 32 bytes (256 bits)
   - Public Key: 64 bytes (x,y coordinates, 32 bytes each)
 
-
 ## Software Implementation
-If a software keys are used it is imperative that the private key is stored in a secure way. The private key must not be stored in plain text in files, code nor as environment variables.
+If software keys are used it is imperative that the private key is stored in a secure way. The private key must not be stored in plain text in files, code nor as environment variables.
+
 ### Python Example
 ```python
-mport json
+import json
 import base64
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec, utils
@@ -115,16 +115,16 @@ print(f"\nGenerated JWT:\n{jwt}")
 ```
 
 ## SEN Onboarding
-Gateway id and public key needs to be registered with SEN before the gateway is usable. Basically the id and public key is submitted to the network and then registered. In the future this procedure will be automated through the developer platform and developer APIs.
+Gateway id and public key needs to be registered with SEN before the gateway is usable. Basically, the id and public key is submitted to the network and then registered. In the future, this procedure will be automated through the developer platform and developer APIs.
 
-Before a gateway is usable on the SEN it must be tied to a wallet public key (inception), eg. the users wallet, and finally be given a correct physical location.
+Before a gateway is usable on the SEN, it must be tied to a wallet public key (inception), e.g., the user's wallet, and finally be given a correct physical location.
 
 ### Inception
-The gateway must accept the wallet public key and add its own id and a cryptographic signature. the gateway then initializes the device in the SEN API.
+The gateway must accept the wallet public key and add its own id and a cryptographic signature. The gateway then initializes the device in the SEN API.
 
-When the gateway is tied to a wallet further calls to the SEN API will fail. 
+When the gateway is tied to a wallet, further calls to the SEN API will fail.
 
-```grapql
+```graphql
 mutation {
       gatewayInception {
         initialize(gatewayInitialization:{idAndWallet:"gateway_id:wallet_public_key", signature:"signature_of_idAndWallet"}) {
@@ -135,31 +135,31 @@ mutation {
 ```
 
 ### Location
-The location for a gatway is important from a validity standppint. The netwok relies on accurate positions of resources, to e.g. know that a resource is part of a particular area.
+The location for a gateway is important from a standpoint of validity. The Network relies on accurate positions of resources, to e.g., know that a resource is part of a particular area.
 
-Setting the location for a gatway is based on a signature from the owning wallet (see Inception above). The gateway hardware/keys are not part of this, and this part can thus be handled in different ways. The Sourceful Energy App offer setting the location of a device for all gateways a wallet has been paired with.
+Setting the location for a gateway is based on a signature from the owning wallet (see Inception above). The gateway hardware/keys are not part of this, and this part can thus be handled in different ways. The Sourceful Energy App offers setting the location of a device for all gateways a wallet has been paired with.
 
 ## User Experience
-The user experience of onboarding can vary depending on the level of integration desired. Basically it is up to each gateway firmware to provde the means for:
+The user experience of onboarding can vary depending on the level of integration desired. Basically, it is up to each gateway firmware to provide the means for:
 
-1. Network connectivity - most devices would need some kind of network access e.g. wifi credentials.
+1. Network connectivity - most devices would need some kind of Network access, e.g., WiFi credentials
 2. Inception
 3. Location (Optional)
 
 ### Local Interface
-This in the simplest form this is handled via the gateway itself, via a local interface e.g. an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are however modules for most popular web frameworks that can handle this seamlessly. In the simplest case the user will need to copy paste the wallet public key into the local interface. Depending on needs the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN network to do visualizations etc.
+In the simplest form, this is handled via the gateway itself, via a local interface, e.g., an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are, however, modules for most popular web frameworks that can handle this seamlessly. In the simplest case, the user will need to copy paste the wallet public key into the local interface. Depending on needs, the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN Network to do visualizations etc.
 
 ### Bespoke App
-For a more non-technical user experience a bespoke app that communicates with the gatweway may be developed.
+For a more non-technical user experience, a bespoke App that communicates with the gateway may be developed.
 
 ### Sourceful Energy App
-The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the network. Using the SEA the user can always set location of an owned gateway. The SEA also offers network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware.
+The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the Network. Using the SEA, the user can always set location of an owned gateway. The SEA also offers Network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware.
 
 ### Network Connectivity
-TODO: Describe the how wifi can be provisioned in the app, e.g. qr code, default network ssid, and/or ble?
+TODO: Describe how WiFi can be provisioned in the App, e.g., QR code, default Network SSID, and/or BLE?
 
 ## Inception
-The gateway should expose a REST endpoint that accepts the wallet public key. This endpoint should be accessible via ble or local network access via mdns.
+The gateway should expose a REST endpoint that accepts the wallet public key. This endpoint should be accessible via BLE or local Network access via mDNS.
 
 ```
 POST api/initialize
@@ -169,30 +169,28 @@ POST api/initialize
 ```
 
 # SEN Data Ingress
-Devices send data to the SEN using a signed JSON Web token (jwt) format. You can read more about the format specification here: https://jwt.io/introduction, frequency of sending is 10 seconds, but may be more seldom. 
+Devices send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. 
 
-In particular data is ingested using signed JWTs (not encrypted) via https. I.e. standard safe https transport is used to perform end to end encryption of the data.
+In particular, data is ingested using signed JWTs (not encrypted) via HTTPS. I.e., standard safe HTTPS transport is used to perform end-to-end encryption of the data.
 
-## header
-The header consists of the standard fields plus extra protocol specific fields.
+## Header
+The header consists of the standard fields plus extra protocol-specific fields.
 
 ```json
 {
     "alg": "ES256",    
     "typ": "JWT",
     "device": "device_id",
-    "opr": "testing"
-    "licence": "device licence key"
-    "developer": "developer licence key"
-    "model": "model string"
+    "opr": "testing",
+    "licence": "device licence key",
+    "developer": "developer licence key",
+    "model": "model string",
     "dtype": "payload datatype specifics",
     "sn": "data serial number"
-    
 }
 ```
 
-### energy meter header example
-
+### Energy Meter Header Example
 ```json
 {
   "alg": "ES256",
@@ -205,13 +203,12 @@ The header consists of the standard fields plus extra protocol specific fields.
 }
 ```
 
-One note is that technically the `ES256K` algorithim is used. that is ECDSA using SECP256k1 curve and SHA-256 and not ECDSA using P-256 curve and SHA-256
+One note is that technically the `ES256R` algorithm/curve is used, that is ECDSA using SECP256r1 curve and SHA-256 and not ECDSA using P-256 curve and SHA-256.
 
-## payload
-The body consists of the data the device sends, this data consists of one or more timestamped json objects. This is not generally standardized at this point. Timestamps are always in UTC.
+## Payload
+The body consists of the data the device sends, this data consists of one or more timestamped JSON objects. This is not generally standardized at this point. Timestamps are always in UTC.
 
-### energy meter payload example
-
+### Energy Meter Payload Example
 ```json
 {
   "1739352916813": {
@@ -251,11 +248,9 @@ The body consists of the data the device sends, this data consists of one or mor
 }
 ```
 
-
-## signature
+## Signature
 The signature is the signature generated by the device private key that can be verified by the public key.
 
-### Full signed jwt energy meter example
+### Full Signed JWT Energy Meter Example
 ```
-eyJhbGciOiAiRVMyNTYiLCAidHlwIjogIkpXVCIsICJkZXZpY2UiOiAiMDEyMzc1MmNlYjc0MWY2ZWVlIiwgIm9wciI6ICJwcm9kdWN0aW9uIiwgIm1vZGVsIjogInAxaG9tZXdpemFyZCIsICJkdHlwZSI6ICJwMV90ZWxuZXRfanNvbiIsICJzbiI6ICJMR0Y1RTM2MCJ9.eyIxNzM5MzUyOTE2ODEzIjogeyJzZXJpYWxfbnVtYmVyIjogIkxHRjVFMzYwIiwgInJvd3MiOiBbIjAtMDoxLjAuMCgyNTAyMTIxMDM1MTBXKSIsICIxLTA6MS44LjAoMDAwMTA5NjguMTMyKmtXaCkiLCAiMS0wOjIuOC4wKDAwMDAwMDAwLjAwMCprV2gpIiwgIjEtMDozLjguMCgwMDAwMDAwNS4xNTEqa1ZBcmgpIiwgIjEtMDo0LjguMCgwMDAwMjEwOS43ODEqa1ZBcmgpIiwgIjEtMDoxLjcuMCgwMDAwLjI1MyprVykiLCAiMS0wOjIuNy4wKDAwMDAuMDAwKmtXKSIsICIxLTA6My43LjAoMDAwMC4wMDAqa1ZBcikiLCAiMS0wOjQuNy4wKDAwMDAuMDg0KmtWQXIpIiwgIjEtMDoyMS43LjAoMDAwMC4wNjQqa1cpIiwgIjEtMDoyMi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDo0MS43LjAoMDAwMC4xNjEqa1cpIiwgIjEtMDo0Mi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDo2MS43LjAoMDAwMC4wMjgqa1cpIiwgIjEtMDo2Mi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDoyMy43LjAoMDAwMC4wMDAqa1ZBcikiLCAiMS0wOjI0LjcuMCgwMDAwLjAwMCprVkFyKSIsICIxLTA6NDMuNy4wKDAwMDAuMDAwKmtWQXIpIiwgIjEtMDo0NC43LjAoMDAwMC4wNTIqa1ZBcikiLCAiMS0wOjYzLjcuMCgwMDAwLjAwMCprVkFyKSIsICIxLTA6NjQuNy4wKDAwMDAuMDMyKmtWQXIpIiwgIjEtMDozMi43LjAoMjMzLjYqVikiLCAiMS0wOjUyLjcuMCgyMzMuMCpWKSIsICIxLTA6NzIuNy4wKDIzMi45KlYpIiwgIjEtMDozMS43LjAoMDAwLjIqQSkiLCAiMS0wOjUxLjcuMCgwMDAuNypBKSIsICIxLTA6NzEuNy4wKDAwMC4xKkEpIiwgIiEwRTc4Il0sICJjaGVja3N1bSI6ICIwRTc4In19.F_qZ21yRA3CPLhFYPojJ0mHA9NI5pdMOdQ5bdk35ENh3dkyA14S9UqILK8KhZVxeegfQSGjS5gHle3BKBm14cw
-```
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogIkpXVCIsICJkZXZpY2UiOiAiMDEyMzc1MmNlYjc0MWY2ZWVlIiwgIm9wciI6ICJwcm9kdWN0aW9uIiwgIm1vZGVsIjogInAxaG9tZXdpemFyZCIsICJkdHlwZSI6ICJwMV90ZWxuZXRfanNvbiIsICJzbiI6ICJMR0Y1RTM2MCJ9.eyIxNzM5MzUyOTE2ODEzIjogeyJzZXJpYWxfbnVtYmVyIjogIkxHRjVFMzYwIiwgInJvd3MiOiBbIjAtMDoxLjAuMCgyNTAyMTIxMDM1MTBXKSIsICIxLTA6MS44LjAoMDAwMTA5NjguMTMyKmtXaCkiLCAiMS0wOjIuOC4wKDAwMDAwMDAwLjAwMCprV2gpIiwgIjEtMDozLjguMCgwMDAwMDAwNS4xNTEqa1ZBcmgpIiwgIjEtMDo0LjguMCgwMDAwMjEwOS43ODEqa1ZBcmgpIiwgIjEtMDoxLjcuMCgwMDAwLjI1MyprVykiLCAiMS0wOjIuNy4wKDAwMDAuMDAwKmtXKSIsICIxLTA6My43LjAoMDAwMC4wMDAqa1ZBcikiLCAiMS0wOjQuNy4wKDAwMDAuMDg0KmtWQXIpIiwgIjEtMDoyMS43LjAoMDAwMC4wNjQqa1cpIiwgIjEtMDoyMi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDo0MS43LjAoMDAwMC4xNjEqa1cpIiwgIjEtMDo0Mi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDo2MS43LjAoMDAwMC4wMjgqa1cpIiwgIjEtMDo2Mi43LjAoMDAwMC4wMDAqa1cpIiwgIjEtMDoyMy43LjAoMDAwMC4wMDAqa1ZBcikiLCAiMS0wOjI0LjcuMCgwMDAwLjAwMCprVkFyKSIsICIxLTA6NDMuNy4wKDAwMDAuMDAwKmtWQXIpIiwgIjEtMDo0NC43LjAoM

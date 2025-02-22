@@ -24,6 +24,7 @@ This example shows:
 - Handling of cryptographic keys in software
 - Construction and signing of data JWTs
 - Construction and signing of Inception message
+- BLE message protocol
 - Important REST endpoints for onboarding (under construction)
 - Safe storage of private key (TODO)
 
@@ -207,7 +208,38 @@ sequenceDiagram
 ```
 
 ### Network Connectivity
-TODO: Describe how WiFi can be provisioned in the App, e.g., QR code, default Network SSID, and/or BLE?
+Wifi provisioning is done using a few endpoints `GET api/wifi`, `POST api/wifi` and 'GET api/wifi/scan`. We reccomend that the gateway performs a network scan when entering its configuration mode. There is no call to scan per unless the user initiates it.
+
+The wifi provisioning process looks like this:
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant C as Client
+    participant G as Gateway
+    
+    C->>G: GET api/wifi
+    G-->>C: SSIDs list & current connection status
+    C->>U: Display available networks
+
+    opt User requests refresh
+        U->>C: Scan for networks
+        C->>G: GET api/wifi/scan
+        G-->>C: Scanning...
+        Note over G: Perform WiFi scan
+        G-->>C: Available networks
+        C->>U: Display updated networks
+    end
+
+    U->>C: Select network & provide password
+
+    C->>G: POST api/wifi (ssid, password)
+    Note over G: Attempt connection
+    G-->>C: Connection status
+
+    C->>G: GET api/wifi
+    G-->>C: Connected: selected SSID
+    C->>U: Display connection success
+```
 
 ## Inception
 The gateway should expose a REST endpoint that accepts the wallet public key. This endpoint should be accessible via BLE or local Network access via mDNS.

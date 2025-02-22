@@ -142,9 +142,10 @@ Setting the location for a gateway is based on a signature from the owning walle
 ## User Experience
 The user experience of onboarding can vary depending on the level of integration desired. Basically, it is up to each gateway firmware to provide the means for:
 
-1. Network connectivity - most devices would need some kind of Network access, e.g., WiFi credentials
-2. Inception
-3. Location (Optional)
+ - Network connectivity - most devices would need some kind of Network access, e.g., WiFi credentials
+ - Inception/Initialisation
+ - Location (Optional)
+
 
 ### Local Interface
 In the simplest form, this is handled via the gateway itself, via a local interface, e.g., an internal webpage. This may be sufficient for a deeply technical product, possibly with other complex configuration of connected devices etc. The main caveat for a unified user experience in this case is the integration of the wallet key. There are, however, modules for most popular web frameworks that can handle this seamlessly. In the simplest case, the user will need to copy paste the wallet public key into the local interface. Depending on needs, the local interface can be as advanced as needed and provide a full user experience by utilizing the data egress of the SEN Network to do visualizations etc.
@@ -153,7 +154,9 @@ In the simplest form, this is handled via the gateway itself, via a local interf
 For a more non-technical user experience, a bespoke App that communicates with the gateway may be developed.
 
 ### Sourceful Energy App
-The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the Network. Using the SEA, the user can always set location of an owned gateway. The SEA also offers Network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware. There are two basic ways to connect the client and the gateway for onboarding, soft ap or ble. We recoomend ble for a smoother user experience and compatibility with web apps.
+The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the Network. Using the SEA, the user can always set location of an owned gateway. The SEA also offers Network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware. There are two basic ways to connect the client and the gateway for onboarding, soft ap or BLE. We recoomend ble for a smoother user experience and compatibility with web apps.
+
+Wifi provisioning is an optional step and is placed last. The SEA does not require the gateway to have internet connectivity to be onboarded to the network per se (but it would obviously need to send data to the network at some point to be useful). Low spec devices can therefore do the onboarding using e.g. BLE only, no messages needs to be sent from the gateway to the backend during this process. The advantage is that the gateway does not need to maintain e.g. BLE stack and SSL Certificates at the same time. In essence the gateway can become operational after it has a wifi connection and BLE has been stoped.
 
 Onboarding via BLE looks like this:
 

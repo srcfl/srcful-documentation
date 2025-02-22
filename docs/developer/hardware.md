@@ -4,7 +4,7 @@ slug: /developer/hardware
 pagination_prev: null
 ---
 
-# Hardware Guide
+# Hardware/Firmware Guide
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is for firmware compatibility. Document is under development.
 
 While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more special, e.g., a p1 meter and some are more generic in nature, e.g., the Sourceful Energy Gateway.
@@ -32,7 +32,7 @@ While in development the full firmware of the Sourceful Energy Gateway is open s
 
 You find the project here: https://github.com/srcfl/srcful-gateway
 
-# Cryptographic Implementation Guide
+# Cryptographic Implementation
 The SEN relies on cryptographic signatures to validate the source of data, ownership of gateways etc.
 
 The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographic operations, implemented in two ways:
@@ -153,7 +153,55 @@ In the simplest form, this is handled via the gateway itself, via a local interf
 For a more non-technical user experience, a bespoke App that communicates with the gateway may be developed.
 
 ### Sourceful Energy App
-The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the Network. Using the SEA, the user can always set location of an owned gateway. The SEA also offers Network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware.
+The onboarding may be integrated into the Sourceful Energy App (SEA) for a seamless experience into the Network. Using the SEA, the user can always set location of an owned gateway. The SEA also offers Network connectivity, inception integration of the gateway, and a walletless mode (for users that do not have a separate crypto wallet) but this requires additional functionality in the gateway firmware. There are two basic ways to connect the client and the gateway for onboarding, soft ap or ble. We recoomend ble for a smoother user experience and compatibility with web apps.
+
+Onboarding via BLE looks like this:
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant C as Client
+    participant G as Gateway
+    participant B as Backend
+
+    U->>G: Enable Config Mode
+    U->>C: Onboard Gateway
+
+    C->>G: Connect via BLE
+
+    C->>G: GET api/crypto
+    G-->>C: serial & public key
+    C->>U: Display serial & public key
+
+    U->>C: Claim gateway
+    C->>B: Check gateway status (serial)
+    B-->>C: Return gateway info (exists, wallet, location)
+
+    U->>C: Request gateway registration
+    C->>G: POST api/initialize (wallet public key)
+    G-->>C: Return wallet, ID, gateway signature
+
+    C->>B: Initialize gateway (wallet, ID, signature)
+    B-->>C: Confirmation
+
+    U->>C: Provide gateway location
+    C->>U: Request location message signature
+    U-->>C: location message wallet signature
+
+    C->>B: Set gateway location (location message)
+    B-->>C: Location confirmed
+
+    Note over U,B: WiFi Provisioning Process
+
+    U->>C: Complete onboarding
+    C->>G: POST api/ble/stop
+    G-->>C: Status OK
+    Note over G: Optionally Disable BLE & exit config mode
+    C->>G: BLE Disconnect
+
+    C->>U: Request credentials signature
+    U-->>C: Sign gateway credentials
+```
 
 ### Network Connectivity
 TODO: Describe how WiFi can be provisioned in the App, e.g., QR code, default Network SSID, and/or BLE?

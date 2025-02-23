@@ -39,6 +39,14 @@ const config = {
     locales: ['en'],
   },
 
+  // Add markdown config for mermaid
+  markdown: {
+    mermaid: true,
+  },
+
+  // Add mermaid theme
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',
@@ -50,7 +58,6 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-     
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -68,12 +75,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Add mermaid config to themeConfig
+      mermaid: {
+        theme: {light: 'neutral', dark: 'dark'},
+      },
       algolia: {
         appId: '8SIKBTLLNP',
         apiKey: '9b239989ba39ae1e39f9209791d06bf1',
         indexName: 'srcful',
         debug: false
-    },
+      },
       // Replace with your project's social card
       image: 'img/social-card-sourceful.png',
       navbar: {
@@ -176,7 +187,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    
 };
 
 module.exports = config;

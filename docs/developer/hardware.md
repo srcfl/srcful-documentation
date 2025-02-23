@@ -18,7 +18,7 @@ All hardware devices will need to be audited and tested before granted access to
 
 ## Examples
 ### ESP32
-There is an ESP32 example project under development at: https://github.com/srcfl/srcful-esp32-example
+There is an ESP32 example project under development at: https://github.com/srcfl/srcful-esp32-firmware-example
 
 This example shows:
 - Handling of cryptographic keys in software

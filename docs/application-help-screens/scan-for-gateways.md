@@ -25,8 +25,8 @@ Once in pairing mode:
 
 If your gateway doesn't appear:
 1. **Check Pairing Mode**
-   - Make sure the blue LED is blinking
-   - Try activating pairing mode again if it's not
+   - Click the button in **quick** succession several times
+   - After powering the gateway pairing mode is active for some time without the need for clicking the button.
 
 2. **Check Phone Settings**
    - Ensure Bluetooth is enabled on your phone

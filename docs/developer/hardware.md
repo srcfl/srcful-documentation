@@ -249,7 +249,34 @@ POST api/initialize
 {
   "wallet":"public_key"
 }
+
+returns:
+{
+  "idAndWallet": "gateway_id:wallet",
+  "signature": "the signature of the idAndWallet string"
+}
 ```
+
+# Wallet Recovery
+For gateways that are integrated into the SEA there is a need for an account recovery flow. The purpose is for users to be able to recover their account (wallet private key) if it has been created in the SEA (this is naturally not possible for external wallets such as Phantom). The user will need their recovery key and acces to a gateway they have connected to the wallet. From the gateways perspective this is rather simple, all that is needed is an enpoint that can create a signature based on a message. This endpoint should be accessible via BLE or local Network access via mDNS.
+
+```
+POST api/crypto/sign
+{
+  "message":"optional message string"
+  "timestamp":"optional timestamp string"
+}
+
+returns:
+{
+  "message": "[message|]nonce|timestamp ( UTC Y-m-dTH:M:SZ)|serial",
+  "sign": "the signature of the returned message string"},
+}
+
+```
+
+Note that if the message is not supplied there should not be a leading `|` included. The message can also not contain the `|` character. If the timestamp is not supplied in the request it should be added in the format sepecified. The reason for being able to inject the timestamp is that some gateways may not have a valid time at the point of recovery.
+
 
 # SEN Data Ingress
 Gateways send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. You may send several data packages in the same payload of the JWT but the data needs to be from the same energy resource for each JWT. E.g. if a gateway is connected to both an inverter and a meter the data from the inverter needs to be sent in one JWT (with optionally many datapoints) and data from the meter in another JWT (with optionally many datapoints). 

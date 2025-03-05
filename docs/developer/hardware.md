@@ -246,8 +246,6 @@ The following endpoints need to be implemented to support onboarding in the SEA.
 
 ## Table of Contents
 - [WiFi Configuration](#wifi-configuration)
-- [System Information](#system-information)
-- [WiFi Reset](#wifi-reset)
 - [Crypto Information](#crypto-information)
 - [WiFi Status](#wifi-status)
 - [WiFi Scan](#wifi-scan)
@@ -295,56 +293,6 @@ Configure WiFi credentials for the device.
 {
   "status": "error",
   "message": "Failed to connect with provided credentials"
-}
-```
-
----
-
-## System Information
-
-Get system information about the device.
-
-**Endpoint:** `/api/system/info`  
-**Method:** `GET`  
-**Content Type:** `application/json`
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "deviceId": "DEVICE_SERIAL_NUMBER",
-  "heap": 123456,
-  "cpuFreq": 240,
-  "flashSize": 4194304,
-  "sdkVersion": "ESP-IDF v4.4",
-  "publicKey": "PUBLIC_KEY_HEX",
-  "wifiStatus": "connected",
-  "localIP": "192.168.1.100",
-  "ssid": "NETWORK_NAME",
-  "rssi": -65
-}
-```
-
-If not connected to WiFi, the response will exclude localIP, ssid, and rssi, and wifiStatus will be "disconnected".
-
----
-
-## WiFi Reset
-
-Reset WiFi configuration and start AP mode.
-
-**Endpoint:** `/api/wifi/reset`  
-**Method:** `POST`  
-**Content Type:** `application/json`
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "status": "success",
-  "message": "WiFi reset successful"
 }
 ```
 

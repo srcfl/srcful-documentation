@@ -249,7 +249,6 @@ The following endpoints need to be implemented to support onboarding in the SEA.
 - [System Information](#system-information)
 - [WiFi Reset](#wifi-reset)
 - [Crypto Information](#crypto-information)
-- [Name Information](#name-information)
 - [WiFi Status](#wifi-status)
 - [WiFi Scan](#wifi-scan)
 - [Initialize](#initialize)

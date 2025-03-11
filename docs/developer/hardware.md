@@ -244,7 +244,7 @@ sequenceDiagram
 # Local API Endpoints
 The following endpoints need to be implemented to support onboarding in the SEA.
 
-## Table of Contents
+## REST Endpoints
 - [WiFi Configuration](#wifi-configuration)
 - [Crypto Information](#crypto-information)
 - [WiFi Status](#wifi-status)
@@ -429,9 +429,9 @@ Schedule BLE service to stop.
 
 ## Crypto Sign
 
-Sign data using the device's private key.
+Sign a message using the device's private key.
 
-## Wallet Recovery
+### Wallet Recovery
 For gateways that are integrated into the SEA there is a need for a wallet recovery flow. The purpose is for users to be able to recover their wallet private key if it has been created in the SEA (this is naturally not possible for external wallets such as Phantom). The user will need their recovery key and acces to a gateway they have connected to the wallet. From the gateways perspective this is rather simple, all that is needed is an enpoint that can create a signature based on a message. This endpoint should be accessible via BLE or local Network access via mDNS.
 
 The gateway would need to be put in eg. a mode that enables bluetooth, and the `ble/stop` message will be sent when the flow has finished and the gateway can resume normal operations.
@@ -443,10 +443,10 @@ The gateway would need to be put in eg. a mode that enables bluetooth, and the `
 
 ### Request Parameters
 
-| Parameter | Type     | Required | Description                                            |
-|-----------|----------|----------|--------------------------------------------------------|
-| message   | string   | No       | Message to sign (must not contain `|` characters)      |
-| timestamp | string   | No       | Timestamp to use (must not contain `|` characters)     |
+| Parameter | Type     | Required | Description                                                                      |
+|-----------|----------|----------|----------------------------------------------------------------------------------|
+| message   | string   | No       | Message to sign (must not contain "|" characters)                                |
+| timestamp | string   | No       | Timestamp to use should be in UTC Y-m-dTH:M:SZ format eg 2025-01-17T18:20:12Z    |
 
 ### Response
 
@@ -457,8 +457,8 @@ The gateway would need to be put in eg. a mode that enables bluetooth, and the `
   "sign": "SIGNATURE_HEX"
 }
 ```
-
-**Note:** If no message is provided, the resulting message format will be `NONCE|TIMESTAMP|SERIAL` (without the leading pipe character).
+If timestamp is not provided the device time will be used. This can be a problem if the device does not have the correct time, i.e. it has not established the correct time using e.g. NTP yet. In such cases a caller can inject the time instead.
+**Note:** If no message is provided, the resulting message format will be `NONCE|TIMESTAMP|SERIAL` (without a leading pipe character).
 
 #### Error (400 Bad Request) - When message contains pipe characters
 ```json

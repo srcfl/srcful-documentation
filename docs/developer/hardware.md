@@ -445,7 +445,7 @@ The gateway would need to be put in eg. a mode that enables bluetooth, and the `
 
 | Parameter | Type     | Required | Description                                                                      |
 |-----------|----------|----------|----------------------------------------------------------------------------------|
-| message   | string   | No       | Message to sign (must not contain "|" characters)                                |
+| message   | string   | No       | Message to sign (must not contain \| (pipe) characters)                           |
 | timestamp | string   | No       | Timestamp to use should be in UTC Y-m-dTH:M:SZ format eg 2025-01-17T18:20:12Z    |
 
 ### Response

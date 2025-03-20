@@ -7,6 +7,6 @@ pagination_prev: null
 # Sourceful Energy Developer Documentation
 See the below pages for detailed information regarding different development related topics.
 
-* [Hardware/Firmware guide](hardware) 
-* [API guide](apiData) 
-* [Design guide](design-manual) 
+* [Hardware/Firmware guide](./hardware) 
+* [API guide](./apiData) 
+* [Design guide](./design-manual) 

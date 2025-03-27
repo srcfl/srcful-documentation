@@ -123,7 +123,7 @@ Before a gateway is usable on the SEN, it must be tied to a wallet public key (i
 ### Inception
 The gateway must accept the wallet public key and add its own id and a cryptographic signature. The gateway then initializes the device in the SEN API.
 
-When the gateway is tied to a wallet, further calls to the SEN API will fail.
+When the gateway is tied to a wallet, further calls to this endpoint in the the SEN API will fail.
 
 ```graphql
 mutation {
@@ -181,11 +181,11 @@ sequenceDiagram
     C->>B: Check gateway status (serial)
     B-->>C: Return gateway info (exists, wallet, location)
 
-    U->>C: Request gateway registration
-    C->>G: POST api/initialize (wallet public key)
-    G-->>C: Return wallet, ID, gateway signature
+    U->>C: Request gateway registration message
+    C->>G: POST api/crypto/sign (wallet public key, timestamp)
+    G-->>C: Return gateway message and signature
 
-    C->>B: Initialize gateway (wallet, ID, signature)
+    C->>B: Initialize gateway (gateway message, signature)
     B-->>C: Confirmation
 
     U->>C: Provide gateway location
@@ -245,58 +245,14 @@ sequenceDiagram
 The following endpoints need to be implemented to support onboarding in the SEA.
 
 ## REST Endpoints
-- [WiFi Configuration](#wifi-configuration)
 - [Crypto Information](#crypto-information)
-- [WiFi Status](#wifi-status)
-- [WiFi Scan](#wifi-scan)
-- [Initialize](#initialize)
-- [BLE Stop](#ble-stop)
 - [Crypto Sign](#crypto-sign)
+- [WiFi Status](#wifi-status)
+- [WiFi Configuration](#wifi-configuration)
+- [WiFi Scan](#wifi-scan)
+- [BLE Stop](#ble-stop)
 
----
 
-## WiFi Configuration
-
-Configure WiFi credentials for the device.
-
-**Endpoint:** `/api/wifi`  
-**Method:** `POST`  
-**Content Type:** `application/json`
-
-### Request Parameters
-
-| Parameter | Type     | Required | Description              |
-|-----------|----------|----------|--------------------------|
-| ssid      | string   | Yes      | WiFi network name        |
-| psk       | string   | Yes      | WiFi password            |
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "status": "success",
-  "message": "WiFi credentials updated and connected"
-}
-```
-
-#### Error (400 Bad Request)
-```json
-{
-  "status": "error",
-  "message": "Missing credentials"
-}
-```
-
-#### Error (500 Internal Server Error)
-```json
-{
-  "status": "error",
-  "message": "Failed to connect with provided credentials"
-}
-```
-
----
 
 ## Crypto Information
 
@@ -316,116 +272,6 @@ Get cryptographic information about the device.
   "publicKey": "PUBLIC_KEY_HEX"
 }
 ```
-
----
-
-## WiFi Status
-
-Get current WiFi connection status and available networks.
-
-**Endpoint:** `/api/wifi`  
-**Method:** `GET`  
-**Content Type:** `application/json`
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "ssids": [
-    "Network1",
-    "Network2",
-    "Network3"
-  ],
-  "connected": "CONNECTED_NETWORK_NAME"
-}
-```
-
-If not connected to any WiFi network, the "connected" field will be null.
-
----
-
-## WiFi Scan
-
-Initiate an asynchronous WiFi network scan.
-
-**Endpoint:** `/api/wifi/scan`  
-**Method:** `GET`  
-**Content Type:** `application/json`
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "status": "scan initiated"
-}
-```
-
----
-
-## Initialize
-
-Create a message and signature for pairing a wallet with the gateway
----
-
-**Endpoint:** `/api/initialize`  
-**Method:** `POST`  
-**Content Type:** `application/json`
-
-### Request Parameters
-
-| Parameter | Type     | Required | Description              |
-|-----------|----------|----------|--------------------------|
-| wallet    | string   | Yes      | Wallet address           |
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "idAndWallet": "DEVICE_SERIAL:WALLET_ADDRESS",
-  "signature": "SIGNATURE_HEX"
-}
-```
-
-#### Error (400 Bad Request)
-```json
-{
-  "status": "error",
-  "message": "Invalid JSON or missing wallet"
-}
-```
-
----
-
-## BLE Stop
-
-Schedule BLE service to stop.
-
-**Endpoint:** `/api/ble/stop`  
-**Method:** `POST`  
-**Content Type:** `application/json`
-
-### Response
-
-#### Success (200 OK)
-```json
-{
-  "status": "success",
-  "message": "BLE shutdown scheduled"
-}
-```
-
-#### Error (400 Bad Request) - When BLE not enabled
-```json
-{
-  "status": "error",
-  "message": "BLE not enabled"
-}
-```
-
----
 
 ## Crypto Sign
 
@@ -476,7 +322,117 @@ If timestamp is not provided the device time will be used. This can be a problem
 }
 ```
 
----
+
+## WiFi Status
+
+Get current WiFi connection status and available networks.
+
+**Endpoint:** `/api/wifi`  
+**Method:** `GET`  
+**Content Type:** `application/json`
+
+### Response
+
+#### Success (200 OK)
+```json
+{
+  "ssids": [
+    "Network1",
+    "Network2",
+    "Network3"
+  ],
+  "connected": "CONNECTED_NETWORK_NAME"
+}
+```
+
+If not connected to any WiFi network, the "connected" field will be null.
+
+## WiFi Configuration
+
+Configure WiFi credentials for the device.
+
+**Endpoint:** `/api/wifi`  
+**Method:** `POST`  
+**Content Type:** `application/json`
+
+### Request Parameters
+
+| Parameter | Type     | Required | Description              |
+|-----------|----------|----------|--------------------------|
+| ssid      | string   | Yes      | WiFi network name        |
+| psk       | string   | Yes      | WiFi password            |
+
+### Response
+
+#### Success (200 OK)
+```json
+{
+  "status": "success",
+  "message": "WiFi credentials updated and connected"
+}
+```
+
+#### Error (400 Bad Request)
+```json
+{
+  "status": "error",
+  "message": "Missing credentials"
+}
+```
+
+#### Error (500 Internal Server Error)
+```json
+{
+  "status": "error",
+  "message": "Failed to connect with provided credentials"
+}
+```
+
+
+## WiFi Scan
+
+Initiate an asynchronous WiFi network scan.
+
+**Endpoint:** `/api/wifi/scan`  
+**Method:** `GET`  
+**Content Type:** `application/json`
+
+### Response
+
+#### Success (200 OK)
+```json
+{
+  "status": "scan initiated"
+}
+```
+
+
+## BLE Stop
+
+Schedule BLE service to stop.
+
+**Endpoint:** `/api/ble/stop`  
+**Method:** `POST`  
+**Content Type:** `application/json`
+
+### Response
+
+#### Success (200 OK)
+```json
+{
+  "status": "success",
+  "message": "BLE shutdown scheduled"
+}
+```
+
+#### Error (400 Bad Request) - When BLE not enabled
+```json
+{
+  "status": "error",
+  "message": "BLE not enabled"
+}
+```
+
 
 ## Authentication
 

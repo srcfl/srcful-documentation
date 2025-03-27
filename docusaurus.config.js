@@ -3,6 +3,9 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,6 +16,12 @@ const config = {
     {
       href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap',
       type: 'text/css',
+    },
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
     },
   ],
 
@@ -54,10 +63,15 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/',  
+          routeBasePath: '/',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+            
         },
         blog: {
           showReadingTime: true,
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

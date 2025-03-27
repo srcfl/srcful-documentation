@@ -1,0 +1,73 @@
+---
+sidebar_position: 3
+pagination_next: null
+---
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Points System Framework
+
+The Sourceful DER Network points system is designed to incentivize participation, ensure data quality, and promote network growth through a carefully balanced reward mechanism. This document outlines our approach to creating a fair, sybil-resistant points allocation system that evolves with network maturity. This system will evolve and change based on network needs and goals.
+
+## System Evolution
+
+Our points system is being implemented in distinct phases to accommodate network growth and changing priorities:
+
+1. **Beta Phase** (Current): Establishing core incentives for early adopters
+2. **Transition Phase**: Introducing advanced mathematical models while maintaining continuity
+3. **Enhanced System**: Implementing comprehensive framework with advanced anti-gaming protections
+4. **Advanced Framework**: Integrating multi-dimensional metrics with dynamic weighting
+
+## Conceptual Framework
+
+The enhanced points system is built on three foundational pillars that balance immediate needs with long-term objectives:
+
+### Mathematical Foundation
+
+For any participant *u* at time *t*, points are allocated according to:
+
+$$Points(u, t) = \alpha_t \sum_{i=1}^{N_G} G_i^u(t) + \beta_t \sum_{j=1}^{N_Q} Q_j^u(t) + \gamma_t \sum_{k=1}^{N_S} S_k^u(t)$$
+
+Where:
+- $G_i^u(t)$ represents growth-oriented metrics
+- $Q_j^u(t)$ represents quality-oriented metrics
+- $S_k^u(t)$ represents sustainability-oriented metrics
+- $\alpha_t, \beta_t, \gamma_t$ are time-dependent weighting coefficients
+
+This formulation allows us to gradually shift emphasis from growth to quality and sustainability as the network matures, with:
+- $\alpha_t \approx 1$ in early phases
+- $\beta_t$ and $\gamma_t$ increasing over time
+
+### Sybil Resistance
+
+Our system incorporates mathematical protections against sybil attacks through strategic application of aggregation and dampening:
+
+$$Score(u, t) = f\left(\sum_{i \in D^u(t)} M(i) \times N(i, t)\right)$$
+
+Where:
+- $D^u(t)$ is the set of all devices connected by participant *u*
+- $M(i)$ is a multiplier based on device characteristics
+- $N(i, t)$ is a contribution measure for device *i* during period *t*
+- $f(\cdot)$ is our chosen dampening function
+
+This approach ensures that:
+$$f\left(\sum_{i} x_i\right) < \sum_{i} f(x_i)$$
+
+Making artificial fragmentation of contributions mathematically disadvantageous.
+
+## Validation Framework
+
+The system includes a validation multiplier that rewards verified data sources, balancing between:
+
+- Incentivizing third-party verification
+- Maintaining accessibility for diverse participation
+- Creating appropriate differentiation based on data quality
+
+## Daily Allocation Mechanism
+
+Points are distributed from a fixed daily pool using a proportional allocation:
+
+$$Reward(u, t) = \frac{Score(u, t)}{\sum_{u' \in U} Score(u', t)} \times DailyPool$$
+
+This ensures consistent total distribution while dynamically adjusting individual allocations based on relative contributions.

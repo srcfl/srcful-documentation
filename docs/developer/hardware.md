@@ -7,7 +7,7 @@ pagination_prev: null
 # Hardware/Firmware Guide
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is for firmware compatibility. Document is under development.
 
-While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more special, e.g., a p1 meter and some are more generic in nature, e.g., the Sourceful Energy Gateway.
+While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more specialized, e.g., a p1 reader (that essentially acts as a gateway to a smart energy meter) and some are more generic in nature, e.g., the Sourceful Energy Gateway.
 
 The firmware for the Sourceful Energy Gateway is open source and can serve as a generic reference implementation: https://github.com/srcfl/srcful-gateway/
 

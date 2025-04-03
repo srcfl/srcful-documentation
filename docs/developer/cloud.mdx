@@ -105,7 +105,7 @@ Sourceful Energy develops and hosts a specific integration module within SEN tha
 graph LR
     A[Energy Device] --> B(Partner Cloud Platform);
     B -- Exposes API --> B;
-    C(SEN Custom Integration Module) -- 1 Request Data (via API Call) --> B;
+    C(SEN Custom Integration Module) -- 1 Request Data --> B;
     B -- 2 Return Data --> C;
     C -- 3 Process Data --> D(Sourceful Energy Network);
 

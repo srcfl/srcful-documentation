@@ -50,6 +50,16 @@ Nothing in this section shall exclude liability for gross negligence, willful mi
 
 The User may disable active control at any time via their account settings or by contacting Sourceful. Sourceful will terminate active control within a reasonable period following receipt of such notice.
 
+#### 3B. Incentives and Gift Cards (Beta Programs)
+
+From time to time, Sourceful may offer voluntary participation in beta programs or other early access programs. In connection with such programs, Sourceful may distribute gift cards, digital rewards, or similar incentives as a gesture of appreciation and to encourage participation that supports product testing and service improvement.
+
+These incentives are provided at Sourceful’s sole discretion, without guarantee or obligation. They do not constitute payment, wages, or compensation for services rendered, and may be subject to local tax laws and reporting requirements, which the User is solely responsible for complying with.
+
+Participation in a beta or incentive program does not create any contractual obligation between the User and Sourceful beyond what is expressly stated in these Terms and Conditions.
+
+Sourceful makes no guarantees as to the availability, value, or continued offering of such incentives and reserves the right to modify or discontinue them at any time without prior notice.
+
 ### 4. New versions
 
 - Sourceful are entitled to update, upgrade and modify the Services at all times. Significant changes will, in Sourceful’s discretion, be communicated to the End User directly or by notice on Sourceful’s website.

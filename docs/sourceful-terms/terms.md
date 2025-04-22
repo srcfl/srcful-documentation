@@ -38,6 +38,18 @@ pagination_prev: null
 
 - Purchases of hardware products sold by Sourceful are subject to Appendix 1 (**Terms of Purchase**) to these Terms and Conditions.
 
+#### 3A. Active Control of Energy Systems (Optional)
+
+For users who explicitly enable the active control feature for their energy systems, the following terms apply:
+
+By activating Sourceful's active control service, the User grants Sourceful Labs AB (“Sourceful”) the right to remotely control and optimize the User’s battery systems, solar installations, and other energy-related equipment connected to the Sourceful platform. The purpose of this control is to improve energy efficiency, reduce costs, and support grid or community-level energy services.
+
+Sourceful agrees to perform such control using reasonable skill and care, in accordance with applicable industry standards. However, to the maximum extent permitted by applicable law, Sourceful disclaims all liability for any indirect, incidental, or consequential damages arising from or related to the control of the User’s system. This includes, but is not limited to, shortened equipment lifespan, loss of revenue, missed savings opportunities, or malfunction due to third-party hardware or network issues.
+
+Nothing in this section shall exclude liability for gross negligence, willful misconduct, or other liability which cannot be excluded under mandatory applicable law.
+
+The User may disable active control at any time via their account settings or by contacting Sourceful. Sourceful will terminate active control within a reasonable period following receipt of such notice.
+
 ### 4. New versions
 
 - Sourceful are entitled to update, upgrade and modify the Services at all times. Significant changes will, in Sourceful’s discretion, be communicated to the End User directly or by notice on Sourceful’s website.

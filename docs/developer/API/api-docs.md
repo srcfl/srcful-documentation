@@ -4,7 +4,7 @@ slug: /developer/api
 pagination_prev: null
 ---
 
-# Sourceful GraphQL API
+# GraphQL API
 
 ## Overview
 

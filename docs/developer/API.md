@@ -150,6 +150,87 @@ The `resolution` parameter accepts these formats:
 - `"1h"` - Hourly intervals
 - `"1d"` - Daily intervals
 
+## Example Python Code
+The below example shows how programmatically query for data.
+```python
+import requests
+import json
+
+GRAPHQL_ENDPOINT = "https://api.srcful.dev/"
+GW_ID = "Your Gateway ID"  # Replace with your actual gateway ID
+
+def fetch_battery_data():
+    """
+    Fetches battery data (latest and historical) from the backend API.
+    """
+    print("Fetching battery data...")
+
+    # Construct the GraphQL query
+    query = f"""
+    {{
+      derData {{
+        battery(gwId: "{GW_ID}") {{
+          latest {{
+            ts
+            power
+            soc
+          }}
+          historical(
+            start: "2025-04-01T00:00:00Z",
+            stop: "2025-04-03T23:59:59Z",
+            resolution: "15m"
+          ) {{
+            ts
+            power
+            soc
+          }}
+        }}
+      }}
+    }}
+    """
+
+    # Prepare the request payload
+    graphql_request_payload = {
+        "query": query
+    }
+
+    # Send the request to the backend
+    try:
+        print(f"Sending request to backend: {GRAPHQL_ENDPOINT}")
+        response = requests.post(
+            GRAPHQL_ENDPOINT,
+            json=graphql_request_payload,
+            headers={'Content-Type': 'application/json'},
+            timeout=30 
+        )
+        response.raise_for_status() 
+
+        # Print the response
+        print(f"Backend Status Code: {response.status_code}")
+        response_data = response.json()
+        print("Backend Response:")
+        print(json.dumps(response_data, indent=2))
+
+        # Check for GraphQL errors
+        if 'errors' in response_data:
+            print("\n--- GraphQL Errors ---")
+            for error in response_data['errors']:
+                print(f"- {error.get('message', 'Unknown error')}")
+            print("----------------------")
+        elif 'data' in response_data:
+            print("\nBattery Data:")
+            print(json.dumps(response_data['data'], indent=2))
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending request to backend: {e}")
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON response from backend: {response.text}")
+
+# --- Main Execution ---
+if __name__ == "__main__":
+    fetch_battery_data()
+```
+
 ## Authentication
 
 Currently, authentication is not required for basic access. We plan to implement JWT-based authentication in future releases to enable secure access to private data streams.

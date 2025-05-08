@@ -6,20 +6,21 @@ title: MCP Integration (AI)
 
 # MCP Integration for Sourceful GraphQL API
 
-## What is MCP?
+## Overview
 
-MCP (Model Control Protocol) is a standardized interface that allows AI assistants to interact with external services and APIs in a secure, controlled manner. For the Sourceful API, MCP provides a seamless way to query your energy data using natural language instead of writing GraphQL queries manually.
-It's also a great way to learn about the API and how it can be utilized.
+Model Control Protocol (MCP) provides a standardized interface enabling AI assistants to interact securely with the Sourceful GraphQL API. This integration allows users to query energy data using natural language, eliminating the need to manually write GraphQL queries.
 
-At the time of writing this only works using Claude.
+MCP serves as both an efficient way to access your data and an educational tool for understanding the API's capabilities.
 
-### Installation
+**Note:** Currently, this integration is compatible exclusively with Claude AI through the Desktop application.
 
-To use the MCP server you at the time of writing you most use Claude and and the Desktop version.
+## Installation
 
-Follow this installation guide but use the configuration below instead:  [Installation guide](https://modelcontextprotocol.io/quickstart/user)
+To implement the MCP server:
 
-
+1. Install Claude Desktop application
+2. Follow the [official MCP installation guide](https://modelcontextprotocol.io/quickstart/user)
+3. Use the following configuration instead of the default:
 
 ```json
 {
@@ -36,44 +37,42 @@ Follow this installation guide but use the configuration below instead:  [Instal
 }
 ```
 
-Remember that after modifing the configuration file the application needs to be restarted.
+**Important:** Restart the application after modifying the configuration file to apply changes.
 
-## Using MCP with AI Assistants
+## Implementation
 
-Once you've configured MCP, you can use it with query your energy data using natural language. The AI will automatically translate your requests into the appropriate GraphQL queries.
+Once configured, the MCP integration enables:
 
+- Translation of natural language requests into appropriate GraphQL queries
+- Secure execution of those queries against the Sourceful API
+- Return of formatted results in a conversational context
 
-## Example Prompts for AI Assistants
-
-Here are some example prompts you can use with an AI assistant that's connected to the Sourceful API via MCP:
+## Example Queries
 
 ### Basic Data Retrieval
-
 ```
 Show me the current solar production for gateway 01233d032a7c838bee.
 ```
 
 ### Historical Analysis
-
 ```
-Compare the battery state of charge between May 1th and May 4th, 2025 for gateway
-01233d032a7c838bee. Show me the data in 1-hour intervals.
+Compare the battery state of charge between May 1 and May 4, 2025 for gateway
+01233d032a7c838bee. Display data in 1-hour intervals.
 ```
 
 ### Energy Consumption Patterns
-
 ```
-Analyse the energy consumption of the DER em-LbRKeSP5xXYCnD2s3fyAXAZ8vW6DbZ8YoiR1C5OZt48O8Moe6nIuVqIpJ 
-from May 1th and May 2th, 2025. Try to come to cocuconclusions about the phase power distrubution.
+Analyze the energy consumption of DER em-LbRKeSP5xXYCnD2s3fyAXAZ8vW6DbZ8YoiR1C5OZt48O8Moe6nIuVqIpJ 
+from May 1 to May 2, 2025. Provide insights on phase power distribution.
 ```
 
-## How It Works
+## Technical Process
 
-When you send a prompt to an AI assistant with MCP access:
+The MCP integration follows this workflow:
 
-1. The AI interprets your natural language request
-2. It translates your request into a valid GraphQL using a Introspection query for the Sourceful API
-3. MCP executes the query and returns the data to the AI
-4. The AI formats and explains the results in a human-readable way
+1. The AI interprets natural language requests
+2. Requests are translated into valid GraphQL queries using API introspection
+3. MCP securely executes the queries against the Sourceful API endpoint
+4. Results are formatted and presented with appropriate context and explanations
 
-This process eliminates the need to write complex GraphQL queries yourself and makes your energy data accessible through conversation.
+This streamlined process eliminates technical barriers to accessing your energy data, making it accessible through natural conversation.

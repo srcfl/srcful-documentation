@@ -36,14 +36,46 @@ Our API gives you access to multiple energy data sources through a unified inter
 | Battery | Battery storage systems | State of charge (%), Power flow (kW) |
 | Energy Meter | Grid tie consumption/export | Consumption (kW), Delivery (kW), Phase data |
 
+In general, data can be queried on a per gateway or specific DER basis. Use the [API Playground](https://api.srcful.dev/playground) for the most recent documentation and queries.
+
 ## Example Queries
 
-### Real-time Solar Production
+### List gateway DERS
+```graphql
+{
+  gateway {
+    gateway(id: "your-gateway-id") {
+      ders {
+        type
+        sn
+      }
+    }
+  }
+}
+```
+
+### Real-time Solar Production for a gateway
 
 ```graphql
 {
   derData {
     solar(gwId: "your-gateway-id") {
+      latest {
+        ts
+        power  # Current power in kW
+      }
+      today   # Total generation today in kWh
+    }
+  }
+}
+```
+
+### Real-time Solar Production for a solar DER
+
+```graphql
+{
+  derData {
+    solar(sn: "your-der-serial-number") {
       latest {
         ts
         power  # Current power in kW
@@ -66,8 +98,8 @@ Our API gives you access to multiple energy data sources through a unified inter
         soc    # State of charge percentage
       }
       historical(
-        start: "2023-06-01T00:00:00Z",
-        stop: "2023-06-01T23:59:59Z",
+       start: "2025-04-01T00:00:00Z",
+        stop: "2025-05-01T23:59:59Z",
         resolution: "15m"
       ) {
         ts
@@ -86,13 +118,14 @@ Our API gives you access to multiple energy data sources through a unified inter
   derData {
     energyMeter(gwId: "your-gateway-id") {
       latest {
+        ts
         consumption  # Grid power consumed (kW)
         delivery     # Power exported to grid (kW)
         consumptionL1
         consumptionL2
         consumptionL3
       }
-      daily(start: "2023-06-01", stop: "2023-06-07") {
+      daily(start: "2025-04-01", stop: "2025-05-01") {
         ts
         consumption
         delivery

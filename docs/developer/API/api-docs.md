@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /developer/api
+slug: /developer/api/docs
 pagination_prev: null
 ---
 

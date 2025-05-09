@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /developer/mcp-ai
+slug: /developer/api/mcp-ai
 title: MCP Integration (AI)
 ---
 

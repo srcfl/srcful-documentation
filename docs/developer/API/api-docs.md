@@ -19,6 +19,28 @@ curl -X POST \
   -d '{"query": "{ derData { solar(gwId: \"your-gateway-id\") { latest { ts power } } } }"}' \
   https://api.srcful.dev
 ```
+## Keys and Identifiers
+
+The GraphQL API uses several different identifiers to access data from distributed energy resources (DERs). Understanding these identifiers is crucial for effectively querying the API and retrieving the correct data.
+
+### The Gateway Concept
+In the Sourceful ecosystem, all data access is managed through the concept of gateways. A gateway is any device or service that collects and transmits data from energy resources to the Sourceful platform.
+
+### Key Identifier Types
+
+| Identifier | Format | Description | Used In |
+|------------|--------|-------------|---------|
+| Gateway ID (`gwId`) | String (e.g., "012307e4843d412cee") | Unique identifier for a device | Querys where the full context of the device/gateway is used |
+| DER Serial Number (`sn`) | String (e.g., "pv-JgpMp...JhRP") | Hashed/encoded identifier for a specific DER, have a prefix in the start (e.g., em-, pv-) that shows the type of DER it represents | Used to query data from a specific device in the network |
+| Raw Serial Number (`rawSn`) | String | Actual serial number of the physical device (only available via authentication) | Limited use |
+| Device Reference (`devRef`) | String | Reference to connect multiple DERs to the same physical device | Used to know the physical connection between DERs |
+
+#### Understanding the Relationship Between IDs
+
+1. A Device/Gateway (gwId) can have multiple DERs connected to it
+2. Each DER has a unique Serial Number (sn)
+3. Multiple DERs may reference the same physical device via devRef
+4. The rawSn is the actual hardware serial number (only available to authenticated users)
 
 ### API Playground & Gateway Explorer
 
@@ -231,6 +253,3 @@ if __name__ == "__main__":
     fetch_battery_data()
 ```
 
-## Authentication
-
-Currently, authentication is not required for basic access. We plan to implement JWT-based authentication in future releases to enable secure access to private data streams.

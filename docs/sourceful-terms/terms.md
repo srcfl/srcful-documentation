@@ -52,13 +52,15 @@ The User may disable active control at any time via their account settings or by
 
 #### 3B. Incentives and Gift Cards (Beta Programs)
 
-From time to time, Sourceful may offer voluntary participation in beta programs or other early access programs. In connection with such programs, Sourceful may distribute gift cards, digital rewards, or similar incentives as a gesture of appreciation and to encourage participation that supports product testing and service improvement.
+Sourceful may, from time to time, invite End Users to voluntarily participate in early access programs, beta programs, or similar initiatives (collectively, "Beta Programs"). Participation in Beta Programs offers End Users the opportunity to test new or developing features and services before general release, and to contribute valuable feedback and user data that supports product development and service improvement.
 
-These incentives are provided at Sourceful’s sole discretion, without guarantee or obligation. They do not constitute payment, wages, or compensation for services rendered, and may be subject to local tax laws and reporting requirements, which the User is solely responsible for complying with.
+In connection with such Beta Programs, Sourceful may, at its sole discretion and as a gesture of appreciation for the End User's contribution to development, offer various incentives. These incentives may include, but are not limited to, gift cards, digital rewards, or financial contributions. Such financial contributions may be recurring for a defined period, in which case this will be clearly stated in the specific terms for the relevant Beta Program. The exact values, duration, and conditions for receiving incentives will be communicated to participating End Users as part of the terms for the individual Beta Program.
 
-Participation in a beta or incentive program does not create any contractual obligation between the User and Sourceful beyond what is expressly stated in these Terms and Conditions.
+Important: Incentives provided under Beta Programs are not intended as, and shall not be interpreted as, payment, wages, or compensation for services rendered. They are designed solely as an acknowledgment of an End User's voluntary participation and contribution to the development and improvement of Sourceful's offerings. The End User is solely responsible for understanding and complying with any and all applicable local tax laws and reporting requirements related to any incentives received. Sourceful assumes no liability for the End User's tax obligations.
 
-Sourceful makes no guarantees as to the availability, value, or continued offering of such incentives and reserves the right to modify or discontinue them at any time without prior notice.
+Participation in a Beta Program, including the receipt of any incentives, does not create any contractual obligation between the End User and Sourceful beyond what is expressly stated in these Terms and Conditions and the specific terms for the relevant Beta Program.
+
+Sourceful reserves the right, at its sole discretion, to define, modify, or discontinue any Beta Program or associated incentives at any time and without prior notice. Sourceful makes no guarantees regarding the availability, specific value, or continued offering of any incentive. Continued payment of incentives is contingent upon the End User's ongoing adherence to the specific Beta Program terms and these Terms and Conditions, including providing agreed-upon feedback and maintaining the connected gateway and its data transmission. In the event of the End User's failure to comply with these terms, or if participation in the Beta Program is terminated for any reason, the right to further incentives ceases immediately.
 
 ### 4. New versions
 

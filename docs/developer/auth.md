@@ -33,7 +33,7 @@ sequenceDiagram
     participant API as Sourceful Energy API
     
     Note over EA: Generate private key<br/>(remains in EA)
-    EA->>BF: POST /api/auth with delegatedKey (public key only)
+    EA->>BF: POST /api/auth with delegatedKey (public key only) and attrubutes object
     BF->>EA: Return session_id and session_url
     
     Note over EA: Generate deep link or QR code
@@ -58,7 +58,7 @@ sequenceDiagram
 
 ## Session Lifecycle
 
-1. **Session Creation**: External application generates a private key and sends its public key to Bifrost
+1. **Session Creation**: External application generates a private key and sends its public key and an attributes object to Bifrost 
 2. **Session Validity**: Sessions are valid for a maximum of 3 minutes
 3. **User Approval**: During this time, the user must approve the session in SEA
 4. **Token Issuance**: Upon approval, a signed JWT is returned to the external application
@@ -83,14 +83,20 @@ JWT tokens issued by Bifrost follow this structure:
   "expiration": "2025-04-28T20:50:41Z",
   "issuer": "Bygcy876b3bsjMvvhZxghvs3EyR5y6a7vpvAp5D62n2w",
   "delegatedKey": "AWyXK19172kDydraqvqo1sAHpEBmPC81yxWsGFnShQbc"
+  "attributes": {"nonce":"abc123", "name":"Test Application", "permissions":{...}}
 }
 ```
 
 Where:
 - **issuer**: The user's public key whose corresponding private key signs the JWT in SEA
 - **delegatedKey**: The public key of the external application whose generated private key can be used to sign messages
+- **attributes**: Additional attributes that describe the token, currently `name`, `nonce`, and `permissions` are supporte by the SEA and API Backend. Permissions are of particular interest and are documented in its own section, but basically describe what the token is allowed to do with defined resources. The `nonce` attribute is added by bifrost automatically.
 
 In an application it makes sense to show the issuer public key so the user understands what wallet is logged in, but at the same time make it clear that this is a JTW token based authentication. It does not make sense to show the delegatedKey as this is only used internally in the application and JWT token. Also note that the expiration time can be changed, as of now the default time to live is 12h.
+
+### Permissions
+TODO: Document the permissions here.
+
 
 ### Future Enhancements
 
@@ -162,6 +168,7 @@ Retrieves the current state of a session.
     "delegatedKey": "5LubpwhZzwkKW49a2b5GwfFJdep1xtMDsuVeMGeBvJfx",
     "expiresAt": 1619654400,
     "token": "eyJhbGciOiJFZDI1NTE5IiwidHlwIjoiSldUIn0..."
+    "attributes": {...}
   }
   ```
 
@@ -187,7 +194,7 @@ sequenceDiagram
     participant SEA as Sourceful Energy App
     
     EA->>EA: Generate key pair<br/>(private key stays in EA)
-    EA->>BF: POST /api/auth<br/>{ delegatedKey: "public_key" }
+    EA->>BF: POST /api/auth<br/>{ delegatedKey: "public_key", attributes: {name: "Test Application"} }
     BF->>EA: { session_id: "xyz123", session_url: "..." }
     
     EA->>EA: Generate QR code/deep link

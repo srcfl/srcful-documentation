@@ -64,7 +64,7 @@ sequenceDiagram
 4. **Token Issuance**: Upon approval, a signed JWT is returned to the external application
 5. **API Access**: The JWT can then be used for authentication with the Sourceful Energy API
 
-## JWT Token Structure
+## JWT Delegate Token Structure
 
 JWT tokens issued by Bifrost follow this structure:
 
@@ -92,7 +92,7 @@ Where:
 - **delegatedKey**: The public key of the external application whose generated private key can be used to sign messages
 - **attributes**: Additional attributes that describe the token, currently `name`, `nonce`, and `permissions` are supporte by the SEA and API Backend. Permissions are of particular interest and are documented in its own section, but basically describe what the token is allowed to do with defined resources. The `nonce` attribute is added by bifrost automatically.
 
-In an application it makes sense to show the issuer public key so the user understands what wallet is logged in, but at the same time make it clear that this is a JTW token based authentication. It does not make sense to show the delegatedKey as this is only used internally in the application and JWT token. Also note that the expiration time can be changed, as of now the default time to live is 12h.
+In an application it makes sense to show the issuer public key so the user understands what wallet is logged in, but at the same time make it clear that this is a delegatge token based authentication. It does not make sense to show the delegatedKey as this is only used internally in the application and JWT token. Also note that the expiration time can be changed, as of now the default time to live is 12h.
 
 ### Permissions
 TODO: Document the permissions here.
@@ -222,3 +222,45 @@ The full OpenAPI documentation is available at:
 ```
 https://bifrost.srcful.dev/docs
 ```
+
+## Token Renewal
+Below is a proposal and not yet implemented.
+
+In general the delegateToken is short lived and cannot be renewed without involving signing byt the issuer wallet. This would require a user interaction in general. This poses a problem for usability in some applications and problems when working with automations and integrations that are long lived.
+
+A delegate token can be marked for renewal (has renew: true, and nonce set in the attributes'). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This delegate token has the following structure:
+
+### JWT Renew Token Structure
+
+JWT tokens issued by Bifrost follow this structure:
+
+**Header**:
+```json
+{
+  "alg": "Ed25519",
+  "typ": "JWT"
+  "styp": "renew"
+}
+```
+
+**Payload**:
+```json
+{
+  "delegate": the original delegate token jwt (signed by the issuer)
+  "cert": the renew cert token (signed by bifrost)
+}
+```
+
+Where:
+- **delegate**: The original delegate token signed by the issuer. Importantly this token contains the permissions, nonce and delegateKey
+- **cert**: The certificate token signed by bifrost. Importantly it contains new created and expiration times as well as the nonce of the original delegate token and a bifrost key id.
+
+A client application will periodically ask Bifrost for a new certificate token and build its own renew token based on this. This can then be used in the backend API calls according to the permissions of the original token. If the original token is revoked by the user, bifrost will not issue a new certificate.
+
+Validation of a renew token follows the steps:
+1. Extract the delegate token and certificate tokens.
+2. Ensure valid signatures of the delegate delegate token and certificate tokens (fetch the public key from Bifrost using the keyId in the certificate token).
+3. Ensure valid signature of renew token (use delegateKey from delegate token)
+4. Ensure certificate token is not expired and that nonce is the same in the certificate and the delegate token
+5. The renew token is now valid and continued validation of message and permissions can be done.
+

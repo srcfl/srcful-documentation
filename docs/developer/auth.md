@@ -228,11 +228,11 @@ Below is a proposal and not yet implemented.
 
 In general the delegateToken is short lived and cannot be renewed without involving signing byt the issuer wallet. This would require a user interaction in general. This poses a problem for usability in some applications and problems when working with automations and integrations that are long lived.
 
-A delegate token can be marked for renewal (has renew: true, and nonce set in the attributes'). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This delegate token has the following structure:
+A delegate token can be marked for renewal (has renew: true, and nonce set in the attributes'). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This renew token has the following structure:
 
 ### JWT Renew Token Structure
 
-JWT tokens issued by Bifrost follow this structure:
+JWT renew tokens follow this structure:
 
 **Header**:
 ```json
@@ -254,6 +254,8 @@ JWT tokens issued by Bifrost follow this structure:
 Where:
 - **delegate**: The original delegate token signed by the issuer. Importantly this token contains the permissions, nonce and delegateKey
 - **cert**: The certificate token signed by bifrost. Importantly it contains new created and expiration times as well as the nonce of the original delegate token and a bifrost key id.
+
+Note the subtype (styp) in the header is set to renew.
 
 A client application will periodically ask Bifrost for a new certificate token and build its own renew token based on this. This can then be used in the backend API calls according to the permissions of the original token. If the original token is revoked by the user, bifrost will not issue a new certificate.
 

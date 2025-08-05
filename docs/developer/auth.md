@@ -239,7 +239,7 @@ JWT renew tokens follow this structure:
 {
   "alg": "Ed25519",
   "typ": "JWT"
-  "styp": "renew"
+  "tkt": "renew"
 }
 ```
 
@@ -259,9 +259,37 @@ Note the subtype (styp) in the header is set to renew.
 
 A client application will periodically ask Bifrost for a new certificate token and build its own renew token based on this. This can then be used in the backend API calls according to the permissions of the original token. If the original token is revoked by the user, bifrost will not issue a new certificate.
 
+### JWT Renew Certificate Structure
+Bifrost creates the renew certificate and signs it with its internal private key.
+**Header**:
+```json
+{
+  "alg": "Ed25519",
+  "typ": "JWT"
+  "tkt": "renewcrt"
+}
+```
+
+**Payload**:
+```json
+{
+  "iss": "7f3a9b2e",
+  "iat": "2025-04-28T08:50:41Z",
+  "exp": "2025-04-28T09:10:41Z",
+  "tnonce": "gxM4TS1jlMXrn8WZYiT2sa6KTj5OykpyyVREsztJmm4",
+  "delegatedKey": "CQLXd4Py9PENcUQbKZyeiipzzoVrcF8WntzARH9Pvv98",
+  "nonce": "b88b45e1-fc5a-4cb1-b689-0d8f7f4cba04"
+}
+```
+Where:
+- **iss**: The id of the public key in Bifrost
+- **tnonce**: The delegate token nonce as specified in attributes.nonce
+- **delegatedKey**: The delegated key as specified in the delegate token
+
+### Validation
 Validation of a renew token follows the steps:
 1. Extract the delegate token and certificate tokens.
-2. Ensure valid signatures of the delegate delegate token and certificate tokens (fetch the public key from Bifrost using the keyId in the certificate token).
+2. Ensure valid signatures of the delegate token and certificate tokens (fetch the public key from Bifrost using the keyId in the certificate token).
 3. Ensure valid signature of renew token (use delegateKey from delegate token)
 4. Ensure certificate token is not expired and that nonce is the same in the certificate and the delegate token
 5. The renew token is now valid and continued validation of message and permissions can be done.

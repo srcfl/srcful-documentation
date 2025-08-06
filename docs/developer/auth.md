@@ -274,8 +274,8 @@ Bifrost creates the renew certificate and signs it with its internal private key
 ```json
 {
   "iss": "7f3a9b2e",
-  "iat": "2025-04-28T08:50:41Z",
-  "exp": "2025-04-28T09:10:41Z",
+  "created": "2025-04-28T08:50:41Z",
+  "expiration": "2025-04-28T09:10:41Z",
   "tnonce": "gxM4TS1jlMXrn8WZYiT2sa6KTj5OykpyyVREsztJmm4",
   "delegatedKey": "CQLXd4Py9PENcUQbKZyeiipzzoVrcF8WntzARH9Pvv98",
   "nonce": "b88b45e1-fc5a-4cb1-b689-0d8f7f4cba04"

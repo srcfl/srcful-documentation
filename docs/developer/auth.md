@@ -224,11 +224,9 @@ https://bifrost.srcful.dev/docs
 ```
 
 ## Token Renewal
-Below is a proposal and not yet implemented.
+In general the delegate token is short lived and cannot be renewed without involving signing by the issuer wallet in general this involves a user interaction. This poses a problem for usability in some applications and problems when working with automations and integrations that are long lived.
 
-In general the delegateToken is short lived and cannot be renewed without involving signing byt the issuer wallet. This would require a user interaction in general. This poses a problem for usability in some applications and problems when working with automations and integrations that are long lived.
-
-A delegate token can be marked for renewal (has renew: true, and nonce set in the attributes'). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This renew token has the following structure:
+A delegate token can be marked for renewal (has `renew`: true, in the attributes). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This renew token has the following structure:
 
 ### JWT Renew Token Structure
 
@@ -252,7 +250,6 @@ JWT renew tokens follow this structure:
 ```
 
 Where:
-- **delegate**: The original delegate token signed by the issuer. Importantly this token contains the permissions, nonce and delegateKey
 - **cert**: The certificate token signed by bifrost. Importantly it contains new created and expiration times as well as the nonce of the original delegate token and a bifrost key id.
 
 Note the subtype (styp) in the header is set to renew.
@@ -276,21 +273,21 @@ Bifrost creates the renew certificate and signs it with its internal private key
   "iss": "7f3a9b2e",
   "created": "2025-04-28T08:50:41Z",
   "expiration": "2025-04-28T09:10:41Z",
-  "tnonce": "gxM4TS1jlMXrn8WZYiT2sa6KTj5OykpyyVREsztJmm4",
-  "delegatedKey": "CQLXd4Py9PENcUQbKZyeiipzzoVrcF8WntzARH9Pvv98",
+ **dtoken**: The original delegate token signed by the issuer
   "nonce": "b88b45e1-fc5a-4cb1-b689-0d8f7f4cba04"
 }
 ```
 Where:
 - **iss**: The id of the public key in Bifrost
-- **tnonce**: The delegate token nonce as specified in attributes.nonce
-- **delegatedKey**: The delegated key as specified in the delegate token
+- **dToken**: The original delegate token signed by the issuer. Importantly this token contains the permissions, renewable and delegateKey
 
 ### Validation
 Validation of a renew token follows the steps:
-1. Extract the delegate token and certificate tokens.
-2. Ensure valid signatures of the delegate token and certificate tokens (fetch the public key from Bifrost using the keyId in the certificate token).
-3. Ensure valid signature of renew token (use delegateKey from delegate token)
-4. Ensure certificate token is not expired and that nonce is the same in the certificate and the delegate token
-5. The renew token is now valid and continued validation of message and permissions can be done.
+1. Extract the certificate tokens.
+2. Ensure valid signatures the certificate token (fetch the public key from Bifrost using the keyId in the certificate token).
+3. Check expiration of the certificate token
+4. Extract the delegate token (dtoken attribute)
+5. Ensure valid signature of the dtoken (issuer attribute public key)
+6. Ensure valid signature of renew token (use delegateKey from delegate token)
+8. The renew token is now valid and continued validation of message and permissions can be done.
 

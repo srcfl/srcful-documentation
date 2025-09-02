@@ -4,11 +4,24 @@ slug: /developer/data_models
 pagination_prev: null
 ---
 
-# Data Models Developer Guide
+# Data Models
 
 ## Overview
 
 Sourceful uses a standardized data model structure for Distributed Energy Resources (DER) data collection. The system supports three main device types: photovoltaic (PV) systems, battery storage systems, and meters. Each device type inherits from a common base structure while adding device-specific fields.
+
+* [Base Structure](#base-structure)
+    * [DERData Root Structure](#derdata-root-structure)
+    * [Inheritance Model](#inheritance-model)
+* [Units and Conventions](#units-and-conventions)
+    * [Units](#units)
+    * [Sign Conventions](#sign-conventions)
+* [Device Types](#device-types)
+    * [BaseDeviceData](#basedevicedata)
+    * [PV Data Model](#pv-data-model)
+    * [Battery Data Model](#battery-data-model)
+    * [Meter Data Model](#meter-data-model)
+* [Field Naming Convention](#field-naming-convention)
 
 ## Base Structure
 
@@ -179,3 +192,12 @@ Grid meter data with import/export and phase-level measurements:
 | `L3_W`            | W    | float     | L3 Phase Power                          |
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
+
+## Field Naming Convention
+
+The flattened structure uses snake_case naming while preserving proper unit casing:
+
+- **Units preserved**: `W`, `V`, `A`, `Hz`, `C`, `Wh`, `s`
+- **Hierarchical paths flattened**: `MPPT1.V` → `mppt1_V`, `L1.A` → `L1_A`
+- **Compound fields**: `SoC.nom.fract` → `SoC_nom_fract`
+- **Energy paths**: `total.export.Wh` → `total_export_Wh`

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 slug: /developer/price_api
 pagination_prev: null
 ---

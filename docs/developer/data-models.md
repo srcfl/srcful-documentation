@@ -6,7 +6,7 @@ pagination_prev: null
 
 # Data Models
 
-Sourceful uses a standardized data model structure for Distributed Energy Resources (DER) data collection. The system supports three main device types: photovoltaic (PV) systems, battery storage systems, and meters. Each device type inherits from a common base structure while adding device-specific fields.
+Sourceful uses a standardized data model structure for Distributed Energy Resources (DER) data collection. The system supports three main device types: photovoltaic (PV) systems, battery storage systems (Home Batteries and EV Batteries), and meters. Each device type inherits from a common base structure while adding device-specific fields.
 
 * [Base Structure](#base-structure)
     * [DERData Root Structure](#derdata-root-structure)

@@ -193,11 +193,4 @@ Grid meter data with import/export and phase-level measurements:
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
 
-## Field Naming Convention
 
-The flattened structure uses snake_case naming while preserving proper unit casing:
-
-- **Units preserved**: `W`, `V`, `A`, `Hz`, `C`, `Wh`, `s`
-- **Hierarchical paths flattened**: `MPPT1.V` → `mppt1_V`, `L1.A` → `L1_A`
-- **Compound fields**: `SoC.nom.fract` → `SoC_nom_fract`
-- **Energy paths**: `total.export.Wh` → `total_export_Wh`

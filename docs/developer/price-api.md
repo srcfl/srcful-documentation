@@ -6,24 +6,24 @@ pagination_prev: null
 
 # Price API Developer Guide
 
+
 * [Price API Developer Guide](#price-api-developer-guide)
-   * [Overview](#overview)
    * [Base URL](#base-url)
-   * [Endpoints](#endpoints)
+   * [Electricity Prices](#electricity-prices)
       * [Get Electricity Prices](#get-electricity-prices)
          * [Default Provider](#default-provider)
          * [Specific Provider](#specific-provider)
       * [List Supported Areas](#list-supported-areas)
       * [List Available Providers](#list-available-providers)
-      * [Power Tariffs](#power-tariffs)
-         * [List Power Tariff Providers](#list-power-tariff-providers)
-         * [Get Tariff Information](#get-tariff-information)
-         * [Get Pricing Rules](#get-pricing-rules)
-         * [Calculate Power Price](#calculate-power-price)
-      * [Health Check](#health-check)
-   * [Supported Areas](#supported-areas)
-   * [Error Responses](#error-responses)
-   * [Data Availability](#data-availability)
+      * [Supported Areas](#supported-areas)
+      * [Data Availability](#data-availability)
+      * [Error Responses](#error-responses)
+   * [Power Tariffs](#power-tariffs)
+      * [List Power Tariff Providers](#list-power-tariff-providers)
+      * [Get Tariff Information](#get-tariff-information)
+      * [Get Pricing Rules](#get-pricing-rules)
+      * [Calculate Power Price](#calculate-power-price)
+   * [Health Check](#health-check)
 
 REST API for accessing electricity prices from multiple providers. Returns today's prices and day-ahead prices (available after 11:00 UTC) in either raw XML format or unified JSON format.
 
@@ -41,7 +41,7 @@ Authentication is configurable. When enabled, include JWT token in requests:
 Authorization: Bearer <your-jwt-token>
 ``` -->
 
-## Endpoints
+## Electricity Prices
 
 For an interactive Swagger UI, visit [https://mainnet.srcful.dev/price/api](https://mainnet.srcful.dev/price/api).
 
@@ -138,7 +138,42 @@ GET /price/providers
 }
 ```
 
-### Power Tariffs
+### Supported Areas
+
+Currently supports 55+ European electricity market areas including:
+
+**Countries:** AT, BE, BG, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IT, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI, SK, TR
+
+**Bidding Zones:** DK1, DK2, NO1-NO5, SE1-SE4
+
+### Data Availability
+
+- **Today's prices**: Available immediately
+- **Day-ahead prices**: Available after 11:00 UTC for the next day
+
+### Error Responses
+
+**Area Not Supported:**
+
+```json
+{
+  "detail": "Area 'XX' not supported"
+}
+```
+
+**No Data Available:**
+
+```json
+{
+  "error": "No data available",
+  "area": "SE4",
+  "provider": "entsoe",
+  "message": "No matching data found",
+  "status": "no_data"
+}
+```
+
+## Power Tariffs
 
 #### List Power Tariff Providers
 
@@ -253,7 +288,7 @@ curl "https://mainnet.srcful.dev/price/power-tariff/goteborg_energi/calculate?ti
 }
 ```
 
-### Health Check
+## Health Check
 
 ```http
 GET /price/health
@@ -268,38 +303,3 @@ GET /price/health
   "providers": ["entsoe"]
 }
 ```
-
-## Supported Areas
-
-Currently supports 55+ European electricity market areas including:
-
-**Countries:** AT, BE, BG, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IT, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI, SK, TR
-
-**Bidding Zones:** DK1, DK2, NO1-NO5, SE1-SE4
-
-## Error Responses
-
-**Area Not Supported:**
-
-```json
-{
-  "detail": "Area 'XX' not supported"
-}
-```
-
-**No Data Available:**
-
-```json
-{
-  "error": "No data available",
-  "area": "SE4",
-  "provider": "entsoe",
-  "message": "No matching data found",
-  "status": "no_data"
-}
-```
-
-## Data Availability
-
-- **Today's prices**: Available immediately
-- **Day-ahead prices**: Available after 11:00 UTC for the next day

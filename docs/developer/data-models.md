@@ -37,7 +37,7 @@ All device types inherit from `BaseDeviceData`:
 
 ```json
 {
-  "type": "Device",
+  "type": "pv",
   "make": "Deye", 
   "timestamp": 1755701251122,
   "read_time_ms": 42
@@ -78,8 +78,8 @@ Common fields shared by all device types:
 | -------------- | ------------ | --------- | --------------------------------------------- |
 | `type`         | -            | string    | Object type ("pv", "battery", "meter")        |
 | `make`         | -            | string    | Manufacturer/brand name (optional)            |
-| `timestamp`    | milliseconds | integer   | Timestamp of reading start (optional)         |
-| `read_time_ms` | milliseconds | integer   | Time taken to complete the reading (optional) |
+| `timestamp`    | milliseconds | integer   | Timestamp of reading start                    |
+| `read_time_ms` | milliseconds | integer   | Time taken to complete the reading            |
 
 ### PV Data Model
 

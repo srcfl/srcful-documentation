@@ -231,11 +231,11 @@ GET /price/tariffs/providers
     "successful_providers": 39,
     "last_aggregation": "2025-09-16T08:01:43.147581",
     "providers": {
-      "mjolby_kraftnat": {
-        "count": 2,
+      "tekniska_verken": {
+        "count": 65,
         "company_info": {
-          "id": "mjolby_kraftnat",
-          "name": "Mjölby Kraftnät AB"
+          "id": "tekniska_verken",
+          "name": "Tekniska Verken"
         }
       }
     }
@@ -288,12 +288,12 @@ GET /price/tariffs/{provider_id}
 
 **Parameters:**
 
-- `provider_id` (required): Provider identifier (e.g., `mjolby_kraftnat`, `bergs_tingslags_elektriska`)
+- `provider_id` (required): Provider identifier (e.g., `tekniska_verken`, `bergs_tingslags_elektriska`)
 
 **Example:**
 
 ```bash
-curl "https://mainnet.srcful.dev/price/tariffs/mjolby_kraftnat"
+curl "https://mainnet.srcful.dev/price/tariffs/tekniska_verken"
 ```
 
 **Response:**
@@ -301,22 +301,22 @@ curl "https://mainnet.srcful.dev/price/tariffs/mjolby_kraftnat"
 ```json
 {
   "provider": {
-    "id": "mjolby_kraftnat",
-    "name": "Mjölby Kraftnät AB"
+    "id": "tekniska_verken",
+    "name": "Tekniska Verken"
   },
   "statistics": {
-    "power_tariff_count": 2,
+    "power_tariff_count": 65,
     "status": "success",
-    "last_update": "2025-09-16T08:01:43.147581"
+    "last_update": "2025-09-16T08:32:32.576563"
   },
   "power_tariffs": [
     {
-      "id": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
-      "name": "Standard 16A",
-      "description": "Standard tariff med enhetlig elöverföring dygnet runt...",
-      "product": "Standard 16A",
-      "companyName": "Mjölby Kraftnät AB",
-      "provider": "mjolby_kraftnat"
+      "id": "ae65838c-9d69-4a54-87f7-dd2a60e7fc9a",
+      "name": "Prislista 16A standard",
+      "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2025/",
+      "product": "Konsumtionsabonnemang 16-63 A",
+      "companyName": "Tekniska verken Linköping Nät AB",
+      "provider": "tekniska_verken"
     }
   ]
 }
@@ -335,7 +335,7 @@ GET /price/tariffs/tariff/{tariff_id}
 **Example:**
 
 ```bash
-curl "https://mainnet.srcful.dev/price/tariffs/tariff/a1b2c3d4-e5f6-4789-a012-3456789abcde"
+curl "https://mainnet.srcful.dev/price/tariffs/tariff/ae65838c-9d69-4a54-87f7-dd2a60e7fc9a"
 ```
 
 **Response:**
@@ -343,24 +343,25 @@ curl "https://mainnet.srcful.dev/price/tariffs/tariff/a1b2c3d4-e5f6-4789-a012-34
 ```json
 {
   "tariff": {
-    "id": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
-    "name": "Mini 16A",
-    "description": "Mini 16A tariff för Bergs Tingslags Elektriska AB...",
-    "product": "Mini 16A",
-    "companyName": "Bergs Tingslags Elektriska AB",
+    "id": "ae65838c-9d69-4a54-87f7-dd2a60e7fc9a",
+    "name": "Prislista 16A standard",
+    "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2025/",
+    "product": "Konsumtionsabonnemang 16-63 A",
+    "companyName": "Tekniska verken Linköping Nät AB",
     "direction": "consumption",
     "timeZone": "Europe/Stockholm",
-    "lastUpdated": "2025-10-01T00:00:00Z",
+    "lastUpdated": "2025-03-14T08:50:33.7433959+00:00",
     "validPeriod": {
-      "fromIncluding": "2025-10-01"
+      "fromIncluding": "2025-01-01",
+      "toExcluding": "2026-01-01"
     },
     "billingPeriod": "P1M",
     "fixedPrice": {
       "components": [
         {
-          "name": "Fast avgift Mini 16A",
-          "priceExVat": 135.47,
-          "priceIncVat": 169.58,
+          "name": "Abonnemangsavgift 16A standard",
+          "priceExVat": 128,
+          "priceIncVat": 160,
           "currency": "SEK",
           "pricedPeriod": "P1M"
         }
@@ -369,9 +370,9 @@ curl "https://mainnet.srcful.dev/price/tariffs/tariff/a1b2c3d4-e5f6-4789-a012-34
     "energyPrice": {
       "components": [
         {
-          "name": "Överföringsavgift",
-          "priceExVat": 0.02,
-          "priceIncVat": 0.025,
+          "name": "Överföringsavgift (heldag)",
+          "priceExVat": 0.1144,
+          "priceIncVat": 0.143,
           "currency": "SEK",
           "pricedPeriod": "kWh"
         }
@@ -380,10 +381,10 @@ curl "https://mainnet.srcful.dev/price/tariffs/tariff/a1b2c3d4-e5f6-4789-a012-34
     "powerPrice": {
       "components": [
         {
-          "name": "Höglasteffekt vinter",
-          "description": "Höglast: vardagar 06–21 under december–februari",
-          "priceExVat": 150,
-          "priceIncVat": 187.5,
+          "name": "Sommar (heldag)",
+          "description": "",
+          "priceExVat": 17.6,
+          "priceIncVat": 22,
           "currency": "SEK",
           "pricedPeriod": "kW"
         }
@@ -423,34 +424,44 @@ GET /price/tariffs/tariff/{tariff_id}/fixedPrice/{datetime_str}
 **Example:**
 
 ```bash
-curl "https://mainnet.srcful.dev/price/tariffs/tariff/a1b2c3d4-e5f6-4789-a012-3456789abcde/powerPrice/2025-01-15T10:30:00"
+curl "https://mainnet.srcful.dev/price/tariffs/tariff/ae65838c-9d69-4a54-87f7-dd2a60e7fc9a/powerPrice/2025-01-15T10:30:00"
 ```
 
 **Response:**
 
 ```json
 {
-  "id": "f6a7b8c9-d0e1-4234-f567-89abcdef0123",
+  "id": "93859d3a-825b-427b-891e-1b46d2d2ff42",
+  "name": "Effektavgift standard",
+  "description": "",
+  "costFunction": "sum(peak(c)*price(c))",
+  "unit": "kW",
   "components": [
     {
-      "id": "b8c9d0e1-f2a3-4456-1789-abcdef012345",
-      "reference": "low_load",
-      "name": "Låglasteffekt",
-      "description": "Låglast: övrig tid utanför höglast (mars–nov, samt alla tider utanför 06–21)",
-      "priceExVat": 50,
-      "priceIncVat": 62.5,
-      "currency": "SEK",
-      "pricedPeriod": "kW",
+      "id": "1ec9cd13-070e-48d5-8f0c-3618fc68d768",
+      "name": "Vinter (heldag)",
+      "description": "",
+      "type": "peak",
+      "reference": "winter_fullday#1",
+      "price": {
+        "priceExVat": 34.4,
+        "priceIncVat": 43,
+        "currency": "SEK"
+      },
+      "validPeriod": {
+        "fromIncluding": "2025-01-01",
+        "toExcluding": "2025-04-01"
+      },
       "peakIdentificationSettings": {
-        "peakFunction": "peak(all_time)",
-        "peakIdentificationPeriod": "P1M",
+        "peakFunction": "peak(base)",
+        "peakIdentificationPeriod": "P1D",
         "peakDuration": "PT1H",
-        "numberOfPeaksForAverageCalculation": 1
+        "numberOfPeaksForAverageCalculation": 5
       }
     }
   ],
   "datetime": "2025-01-15T10:30:00",
-  "tariff_id": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
+  "tariff_id": "ae65838c-9d69-4a54-87f7-dd2a60e7fc9a",
   "price_type": "powerPrice"
 }
 ```

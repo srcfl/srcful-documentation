@@ -5,7 +5,7 @@ pagination_prev: null
 ---
 # Bifrost Authentication Service
 
-Bifrost is an authentication service that enables secure communication between external applications and the Sourceful Energy App (SEA). It serves as a bridge that facilitates safe authentication without requiring users to install external wallets on multiple devices.
+Bifrost is an authentication service that enables secure communication between external applications and the Sourceful Energy App (SEA). It serves as a bridge that facilitates safe authentication without requiring users to install external wallets on multiple devices. Basically Bifrost allows exchange of a delegation token that gives the token owner permission to access some of the users resources.
 
 > **Security by Design**: Bifrost only handles public keys, never private keys. All private keys remain securely within either the SEA or the external application, ensuring that sensitive cryptographic material is never exposed to the bridge service.
 
@@ -61,7 +61,7 @@ sequenceDiagram
 1. **Session Creation**: External application generates a private key and sends its public key and an attributes object to Bifrost 
 2. **Session Validity**: Sessions are valid for a maximum of 3 minutes
 3. **User Approval**: During this time, the user must approve the session in SEA
-4. **Token Issuance**: Upon approval, a signed JWT is returned to the external application
+4. **Token Issuance**: Upon approval, a JWT signed by the user is returned to the external application
 5. **API Access**: The JWT can then be used for authentication with the Sourceful Energy API
 
 ## JWT Delegate Token Structure
@@ -88,19 +88,15 @@ JWT tokens issued by Bifrost follow this structure:
 ```
 
 Where:
-- **issuer**: The user's public key whose corresponding private key signs the JWT in SEA
-- **delegatedKey**: The public key of the external application whose generated private key can be used to sign messages
-- **attributes**: Additional attributes that describe the token, currently `name`, `nonce`, and `permissions` are supporte by the SEA and API Backend. Permissions are of particular interest and are documented in its own section, but basically describe what the token is allowed to do with defined resources. The `nonce` attribute is added by bifrost automatically.
+- **issuer**: The user's public key whose corresponding private key signs the JWT in SEA in base58 format
+- **delegatedKey**: The public key of the external application whose generated private key can be used to sign messages in base58 format
+- **attributes**: Additional attributes that describe the token, currently `name`, `nonce`, and `permissions` are supporte by the SEA and API Backend. Permissions are of particular interest and are documented in its own section, but basically describe what the token is allowed to do with defined resources. The `nonce` attribute is added by Bifrost automatically and must NOT be changed in the token exchange.
 
 In an application it makes sense to show the issuer public key so the user understands what wallet is logged in, but at the same time make it clear that this is a delegatge token based authentication. It does not make sense to show the delegatedKey as this is only used internally in the application and JWT token. Also note that the expiration time can be changed, as of now the default time to live is 12h.
 
 ### Permissions
 TODO: Document the permissions here.
 
-
-### Future Enhancements
-
-The JWT structure allows for extensibility. In future versions, additional fields can be added to the payload to provide fine-grained access rights, enabling more nuanced permission controls. The time to live can also be customized by either the protocl or the user in future versions.
 
 ## Security Considerations
 
@@ -133,6 +129,7 @@ To mitigate these risks, Bifrost implements:
    - External application's private key remains in the external application
    - User's private key remains in the SEA
    - Bifrost only handles public keys and signed tokens
+5. **No tokens Saved**: Bifrost does only save metadata regarding the delegate token, not the token itself. It is the responsibility of the external application to maintain its delegate token and private key.
 
 ## API Endpoints
 
@@ -146,6 +143,7 @@ Creates a new authentication session for key exchange between an external applic
   ```json
   {
     "delegatedKey": "5LubpwhZzwkKW49a2b5GwfFJdep1xtMDsuVeMGeBvJfx"
+    "attributes": {...}
   }
   ```
 - **Response**:
@@ -223,12 +221,15 @@ The full OpenAPI documentation is available at:
 https://bifrost.srcful.dev/docs
 ```
 
+The Bifrost endpoints requires authentication in the form of a token. See the Bifrost documentation above for details.  
+
 ## Token Renewal
-In general the delegate token is short lived and cannot be renewed without involving signing by the issuer wallet in general this involves a user interaction. This poses a problem for usability in some applications and problems when working with automations and integrations that are long lived.
+In general the delegate token is short lived and cannot be renewed without involving signing by the issuer wallet in this ofteninvolves a user interaction. This poses a problem for usability in some applications and issues when working with automations and integrations that are long lived.
 
 A delegate token can be marked for renewal (has `renew`: true, in the attributes). In this case an application can ask bifrost for a renewal certificate. This certificate allows the client (as identified by the delegateKey) to create it's own delegateToken. This renew token has the following structure:
 
 ### JWT Renew Token Structure
+This is a token that is built by the client application and basically consists of a renew certificate token.
 
 JWT renew tokens follow this structure:
 
@@ -244,15 +245,14 @@ JWT renew tokens follow this structure:
 **Payload**:
 ```json
 {
-  "delegate": the original delegate token jwt (signed by the issuer)
-  "cert": the renew cert token (signed by bifrost)
+  "cert": "the renew cert token in base64 (signed by bifrost)"
 }
 ```
 
 Where:
 - **cert**: The certificate token signed by bifrost. Importantly it contains new created and expiration times as well as the nonce of the original delegate token and a bifrost key id.
 
-Note the subtype (styp) in the header is set to renew.
+Note the subtype (`styp`) in the header is set to `renew`.
 
 A client application will periodically ask Bifrost for a new certificate token and build its own renew token based on this. This can then be used in the backend API calls according to the permissions of the original token. If the original token is revoked by the user, bifrost will not issue a new certificate.
 
@@ -273,7 +273,7 @@ Bifrost creates the renew certificate and signs it with its internal private key
   "iss": "7f3a9b2e",
   "created": "2025-04-28T08:50:41Z",
   "expiration": "2025-04-28T09:10:41Z",
- **dtoken**: The original delegate token signed by the issuer
+  "dtoken": "The original delegate token signed by the issuer in base64"
   "nonce": "b88b45e1-fc5a-4cb1-b689-0d8f7f4cba04"
 }
 ```

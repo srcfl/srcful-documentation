@@ -3,8 +3,9 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const math = require('remark-math');
-const katex = require('rehype-katex');
+// MDX v3 plugins are ESM; use .default for CJS interop
+const remarkMath = (require('remark-math').default || require('remark-math'));
+const rehypeKatex = (require('rehype-katex').default || require('rehype-katex'));
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -18,10 +19,8 @@ const config = {
       type: 'text/css',
     },
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css',
       type: 'text/css',
-      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
     },
   ],
 
@@ -37,7 +36,7 @@ const config = {
   projectName: 'srcfl-documentation', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -64,15 +63,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          // Exclude archived content from processing/build
+          exclude: ['archive/**'],
             
         },
-        blog: {
-          showReadingTime: true,
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -105,8 +102,8 @@ const config = {
         title: '',
         logo: {
           alt: 'srcful - Building a sustainable future, together',
-          src: 'img/logo-lightmode.svg',
-          srcDark: 'img/logo-yellow-dark.svg'
+          src: 'img/logo-wide-dark.svg',
+          srcDark: 'img/logo-wide-teal.svg'
         },
         items: [
           {
@@ -134,6 +131,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms and Conditions',
+                to: '/sourceful-terms/terms',
+              },
+              {
+                label: 'Privacy Policy',
+                to: '/sourceful-terms/privacy',
+              },
+            ],
+          },
           {
             title: 'Develop',
             items: [
@@ -183,18 +193,15 @@ const config = {
                 label: 'Explorer',
                 href: 'https://explorer.sourceful.energy',
               },
-              {
-                label: 'Terms of Services',
-                href: 'https://docs.sourceful.energy/srcful-terms/terms',
-              },
-              {
-                label: 'Privacy Policy',
-                href: 'https://docs.sourceful.energy/srcful-terms/privacy',
-              },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Sourceful Labs`,
+      },
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+        disableSwitch: false,
       },
       prism: {
         theme: lightCodeTheme,

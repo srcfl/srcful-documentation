@@ -4,16 +4,17 @@ slug: /developer
 pagination_prev: null
 ---
 
-# Sourceful Energy Developer Documentation
+# Developer Overview
 
-See the below pages for detailed information regarding different development related topics.
+Build on the Grid Intelligence Layer with permissioned access to energy data, pricing, and control primitives. Start here:
 
-- [Core Principles](/developer/core-principles.md)
-- [Hardware/Firmware guide](/developer/hardware.md)
-- [Data API guide](/developer/api/docs)
-- [Design guide](/developer/design-manual.md)
-- [EMS guide](/developer/ems.md)
-- [Price API guide](/developer/price-api.md)
-- [Data Models](/developer/data-models.md)
+- [Authentication & Permissioning](/developer/auth)
+- [GraphQL API (Data)](/developer/api/docs)
+- [Price API](/developer/price-api)
+- [Data Models](/developer/data-models)
+- [EMS & Control](/developer/ems)
+- [Hardware/Firmware](/developer/hardware)
+- [Design Manual (UI/brand)](/developer/design-manual)
+- [Zap for Developers](/developer/zap)
 
-Join our [Discord developer channel](https://discord.com/channels/1050323986271182849/1353716684258676788)
+Community: https://discord.gg/srcful

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /developer/price_api
+slug: /developer/price-api
 pagination_prev: null
 ---
 
@@ -74,7 +74,7 @@ curl "https://mainnet.srcful.dev/price/electricity/SE4"
   "area": "SE4",
   "area_name": "Sweden",
   "currency": "EUR",
-  "unit": "MWH",
+  "unit": "MWh",
   "resolution": "PT60M",
   "timezone": "UTC",
   "prices": [
@@ -222,7 +222,7 @@ GET /price/tariffs/providers
   "apiVersion": "0.2.0",
   "implementationVersion": "1.0.0",
   "lastUpdated": "2025-09-16T08:08:06.626356",
-  "operator": "Srcful Energy",
+  "operator": "Sourceful Energy",
   "timeZone": "Europe/Stockholm",
   "identityProviderUrl": null,
   "aggregation": {

@@ -19,9 +19,10 @@ pagination_prev: null
    * [Power Tariffs API](#power-tariffs-api)
       * [Base URL](#tariffs-base-url)
       * [Documentation](#tariffs-documentation)
+      * [Get Tariffs by Location](#get-tariffs-by-location)
       * [List DSO Providers](#list-dso-providers)
-      * [Get Tariff Information](#get-tariff-information)
       * [Get Power Tariffs](#get-power-tariffs)
+      * [Get Tariff Information](#get-tariff-information)
       * [Datetime-Based Pricing](#datetime-based-pricing)
    * [Health Checks](#health-checks)
 
@@ -58,20 +59,20 @@ GET /price/electricity/{area}
 
 **Parameters:**
 
-- `area` (required): Two-letter country code (e.g., `SE`, `FR`, `NO`) or area code (e.g., `SE4`, `DK2`)
+- `area` (required): Area code (e.g., `SE3`, `SE4`, `DK2`, `NO1`)
 - `date` (optional): Specific date for historical prices (format: `YYYY-MM-DD`)
 
 **Example:**
 
 ```bash
-curl "https://mainnet.srcful.dev/price/electricity/SE4"
+curl "https://mainnet.srcful.dev/price/electricity/SE3"
 ```
 
 **Response:**
 
 ```json
 {
-  "area": "SE4",
+  "area": "SE3",
   "area_name": "Sweden",
   "currency": "EUR",
   "unit": "MWH",
@@ -79,30 +80,32 @@ curl "https://mainnet.srcful.dev/price/electricity/SE4"
   "timezone": "UTC",
   "prices": [
     {
-      "datetime": "2025-09-15T22:00:00+00:00",
-      "price": -0.01
+      "datetime": "2025-09-24T22:00:00+00:00",
+      "price": 65.47
     },
     {
-      "datetime": "2025-09-15T23:00:00+00:00",
-      "price": 0.03
+      "datetime": "2025-09-24T23:00:00+00:00",
+      "price": 61.54
     }
   ],
   "metadata": {
     "provider": "ENTSO-E Transparency Platform",
     "data_source": "entsoe",
-    "fetched_at": "2025-09-16T08:07:11.673484+00:00",
-    "start_time": "2025-09-15T22:00:00+00:00",
-    "last_updated": "2025-09-16T07:53:44.393980+00:00",
-    "total_points": 24,
+    "fetched_at": "2025-09-25T14:08:59.939610+00:00",
+    "start_time": "2025-09-24T22:00:00+00:00",
+    "last_updated": "2025-09-25T13:43:46.488747+00:00",
+    "total_points": 48,
     "cached": true
   }
 }
 ```
 
+
+
 **Historical Prices:**
 
 ```bash
-curl "https://mainnet.srcful.dev/price/electricity/SE4?date=2025-01-01"
+curl "https://mainnet.srcful.dev/price/electricity/SE3?date=2025-01-01"
 ```
 
 ### List Supported Areas
@@ -117,20 +120,20 @@ GET /price/electricity/areas
 {
   "areas": [
     {
-      "name": "SE4",
+      "area": "SE3",
       "country": "Sweden",
-      "code": "10Y1001A1001A47J"
+      "code": "10Y1001A1001A46L"
     },
     {
-      "name": "AT",
+      "area": "AT",
       "country": "Austria",
       "code": "10YAT-APG------L"
     }
   ],
-  "count": 42,
+  "count": 39,
   "metadata": {
     "provider": "ENTSO-E Transparency Platform",
-    "fetched_at": "2025-09-16T08:07:24.733636+00:00"
+    "fetched_at": "2025-09-25T14:12:03.690167+00:00"
   }
 }
 ```
@@ -150,8 +153,8 @@ GET /price/electricity/
   "description": "European electricity spot prices from ENTSO-E Transparency Platform",
   "compliance": "ENTSO-E Transparency Platform",
   "statistics": {
-    "total_areas": 42,
-    "last_updated": "2025-09-16T08:06:44.171390+00:00"
+    "total_areas": 39,
+    "last_updated": "2025-09-25T14:08:47.049913+00:00"
   },
   "endpoints": [
     {
@@ -163,6 +166,11 @@ GET /price/electricity/
       "method": "GET",
       "path": "/price/electricity/{area}",
       "summary": "Get cached spot prices for specific area"
+    },
+    {
+      "method": "GET",
+      "path": "/price/electricity/areas",
+      "summary": "List all supported electricity market areas"
     }
   ],
   "documentation": {
@@ -174,7 +182,7 @@ GET /price/electricity/
 
 ### Supported Areas
 
-Currently supports 42 European electricity market areas including:
+Currently supports 39 European electricity market areas including:
 
 **Countries:** AT, BE, BG, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IT, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI, SK, TR
 
@@ -182,13 +190,14 @@ Currently supports 42 European electricity market areas including:
 
 ### Data Availability
 
-- **Today's prices**: Available immediately from cache
+- **Current prices**: Up to 48 hourly data points (today + tomorrow)
 - **Day-ahead prices**: Available after 11:00 UTC for the next day
 - **Historical prices**: Available using `?date=YYYY-MM-DD` parameter
 - **Caching**: Prices fetched daily at 11:00 UTC and cached for performance
 - **Resolution**: Hourly prices (PT60M) in UTC timezone
 - **Currency**: EUR (Euro) for all areas
 - **Unit**: MWH (Megawatt hours)
+
 
 ## Power Tariffs API
 
@@ -208,6 +217,52 @@ For interactive Swagger UI, visit [https://mainnet.srcful.dev/price/tariffs/docs
 
 Alternative ReDoc documentation: [https://mainnet.srcful.dev/price/tariffs/redoc](https://mainnet.srcful.dev/price/tariffs/redoc)
 
+### Get Tariffs by Location
+
+```http
+GET /price/tariffs/lookup?lon={longitude}&lat={latitude}
+```
+
+**Parameters:**
+
+- `lon` (required): Longitude coordinate
+- `lat` (required): Latitude coordinate
+
+**Example:**
+
+```bash
+curl "https://mainnet.srcful.dev/price/tariffs/lookup?lon=15.627251745859262&lat=58.4043017359851"
+```
+
+**Response:**
+
+```json
+{
+  "lat": 58.4043017359851,
+  "lon": 15.627251745859262,
+  "area": "SE3",
+  "tariff_provider_id": "tekniska_verken",
+  "count_total": 59,
+  "last_update": "2025-09-25T15:05:35.165813",
+  "tariffs": [
+    {
+      "id": "20be3a86-0ffd-4efd-9157-217e2bbae427",
+      "name": "Prislista Lägenhet 16-25A säkringsabonnemang",
+      "description": "Säkringsabonnemang lägenhet och 1-fas",
+      "product": "net.lnk.cons.fuse.lgh",
+      "company": "Tekniska verken Linköping Nät AB"
+    },
+    {
+      "id": "ef4b088e-1c8d-4e30-b83a-8d1e85d07d15",
+      "name": "Prislista 16A standard",
+      "description": "Konsumtionsabonnemang 16-63 A",
+      "product": "net.lnk.cons.std.16A",
+      "company": "Tekniska verken Linköping Nät AB"
+    }
+  ]
+}
+```
+
 ### List DSO Providers
 
 ```http
@@ -221,27 +276,36 @@ GET /price/tariffs/providers
   "name": "Eltariff API - Multi-DSO Aggregator",
   "apiVersion": "0.2.0",
   "implementationVersion": "1.0.0",
-  "lastUpdated": "2025-09-16T08:08:06.626356",
+  "lastUpdated": "2025-09-25T15:17:26.122654",
   "operator": "Srcful Energy",
   "timeZone": "Europe/Stockholm",
   "identityProviderUrl": null,
-  "aggregation": {
-    "total_tariffs": 200,
-    "total_providers": 39,
-    "successful_providers": 39,
-    "last_aggregation": "2025-09-16T08:01:43.147581",
-    "providers": {
-      "tekniska_verken": {
-        "count": 65,
-        "company_info": {
-          "id": "tekniska_verken",
-          "name": "Tekniska Verken"
-        }
-      }
+  "total_tariffs": 194,
+  "total_providers": 39,
+  "successful_providers": 39,
+  "last_aggregation": "2025-09-25T15:05:35.165813",
+  "providers": [
+    {
+      "id": "goteborg_energi",
+      "name": "Goteborg Energi",
+      "tariff_count": 6
+    },
+    {
+      "id": "tekniska_verken",
+      "name": "Tekniska Verken",
+      "tariff_count": 59
+    },
+    {
+      "id": "bergs_tingslags_elektriska",
+      "name": "Bergs Tingslags Elektriska AB",
+      "tariff_count": 7
     }
-  }
+  ],
+  "errors": null
 }
 ```
+
+*Note: Response shows first 3 providers. Complete response includes all 39 DSO providers.*
 
 ### Tariffs API Overview
 
@@ -258,10 +322,15 @@ GET /price/tariffs/
   "description": "Aggregates electricity grid power tariffs from multiple Swedish DSOs",
   "compliance": "Eltariff-API v0.2.0 (RISE Research Institutes)",
   "statistics": {
-    "total_tariffs": 200,
-    "total_providers": 38
+    "total_tariffs": 194,
+    "total_providers": 39
   },
   "endpoints": [
+    {
+      "method": "GET",
+      "path": "/price/tariffs/lookup",
+      "summary": "Get tariffs by geographic coordinates"
+    },
     {
       "method": "GET",
       "path": "/price/tariffs/{provider_id}",
@@ -300,21 +369,25 @@ curl "https://mainnet.srcful.dev/price/tariffs/tekniska_verken"
 
 ```json
 {
-  "provider": {
-    "id": "tekniska_verken",
-    "name": "Tekniska Verken"
-  },
-  "statistics": {
-    "power_tariff_count": 65,
-    "status": "success",
-    "last_update": "2025-09-16T08:32:32.576563"
-  },
+  "id": "tekniska_verken",
+  "name": "Tekniska Verken",
+  "power_tariff_count": 59,
+  "status": "success",
+  "last_update": "2025-09-25T14:51:07.912777",
   "power_tariffs": [
     {
-      "id": "ae65838c-9d69-4a54-87f7-dd2a60e7fc9a",
+      "id": "20be3a86-0ffd-4efd-9157-217e2bbae427",
+      "name": "Prislista Lägenhet 16-25A säkringsabonnemang",
+      "description": "Säkringsabonnemang lägenhet och 1-fas",
+      "product": "net.lnk.cons.fuse.lgh",
+      "companyName": "Tekniska verken Linköping Nät AB",
+      "provider": "tekniska_verken"
+    },
+    {
+      "id": "ef4b088e-1c8d-4e30-b83a-8d1e85d07d15",
       "name": "Prislista 16A standard",
-      "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2025/",
-      "product": "Konsumtionsabonnemang 16-63 A",
+      "description": "Konsumtionsabonnemang 16-63 A",
+      "product": "net.lnk.cons.std.16A",
       "companyName": "Tekniska verken Linköping Nät AB",
       "provider": "tekniska_verken"
     }
@@ -468,7 +541,8 @@ curl "https://mainnet.srcful.dev/price/tariffs/tariff/ae65838c-9d69-4a54-87f7-dd
 
 **Current Statistics:**
 
-- **200 power tariffs** from **39 DSO providers**
+- **194 power tariffs** from **39 DSO providers**
+- **Geographic lookup** - Find tariffs and electricity areas by coordinates
 - **Static data providers** - JSON files automatically scanned every 60 seconds
 - **Compliance** - Full Eltariff-API v0.2.0 standard implementation
 - **Time Zone** - Europe/Stockholm for all Swedish DSO data

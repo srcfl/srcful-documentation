@@ -109,9 +109,9 @@ The math is always a sum. Engineers don't need to remember which channels are "s
 
 This formulation is not arbitrary; it is **energy conservation** applied at the Site boundary. The Site is treated as a **thermodynamic control volume**:
 
-$$
-\Delta E_\text{PCC} = \sum_i \Delta E_i
-$$
+```
+ΔE_PCC = Σ ΔE_i
+```
 
 The equation says: whatever crosses into or out of the Site must add up. Energy cannot vanish; it only changes form or direction. By always summing with plus signs and encoding direction in the sign of each term, we are directly enforcing conservation of energy in software.
 

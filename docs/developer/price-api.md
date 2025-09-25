@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /developer/price_api
+slug: /developer/price-api
 pagination_prev: null
 ---
 
@@ -75,7 +75,7 @@ curl "https://mainnet.srcful.dev/price/electricity/SE3"
   "area": "SE3",
   "area_name": "Sweden",
   "currency": "EUR",
-  "unit": "MWH",
+  "unit": "MWh",
   "resolution": "PT60M",
   "timezone": "UTC",
   "prices": [
@@ -276,8 +276,8 @@ GET /price/tariffs/providers
   "name": "Eltariff API - Multi-DSO Aggregator",
   "apiVersion": "0.2.0",
   "implementationVersion": "1.0.0",
-  "lastUpdated": "2025-09-25T15:17:26.122654",
-  "operator": "Srcful Energy",
+  "lastUpdated": "2025-09-16T08:08:06.626356",
+  "operator": "Sourceful Energy",
   "timeZone": "Europe/Stockholm",
   "identityProviderUrl": null,
   "total_tariffs": 194,

@@ -5,22 +5,22 @@ pagination_prev: null
 ---
 
 # Hardware/Firmware Guide
-This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is for firmware compatibility. Document is under development.
+This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is firmware compatibility. Document is under development.
 
-While there are many types of devices that can be connected to the SEN they are all regarded as gateways in the SEN, the gateway is then responsible for collecting data and controlling one or several energy resources. Some gateways are more specialized, e.g., a p1 reader (that essentially acts as a gateway to a smart energy meter) and some are more generic in nature, e.g., the Sourceful Energy Gateway.
+While there are many types of devices that can be connected to the SEN, they are all regarded as gateways in the SEN. The gateway is responsible for collecting data and controlling one or several energy resources. Some gateways are specialized (e.g., a P1 reader that acts as a gateway to a smart energy meter) and some are more generic (e.g., the Sourceful Energy Gateway).
 
-The firmwares for boath the Sourceful Energy Gateway and Sourceful Energy Zap are open source and can serve as a generic reference implementations:
+The firmware for both the Sourceful Energy Gateway and Sourceful Energy Zap is open source and can serve as reference implementations:
  - https://github.com/srcfl/srcful-gateway
  - https://github.com/srcfl/srcful-zap-firmware
 
 ## Basics
-A gateway needs to be identifiable and provide a public key. Gateway id and public key needs to be registered with SEN before the gateway is usable. Internally a gateway needs to maintain the private key and sign data.
+A gateway needs to be identifiable and provide a public key. Gateway ID and public key need to be registered with SEN before the gateway is usable. Internally a gateway must maintain the private key and sign data.
 
 All hardware devices will need to be audited and tested before granted access to the network and public release.
 
 ## Examples
 ### ESP32
-The Sourceful Energy Zap an ESP32 project (p1 smart energy meter reader) under development at: https://github.com/srcfl/srcful-zap-firmware
+The Sourceful Energy Zap is an ESP32 project (P1 smart energy meter reader) under development at: https://github.com/srcfl/srcful-zap-firmware
 
 It shows:
 - Handling of cryptographic keys in software
@@ -30,7 +30,7 @@ It shows:
 - Important REST endpoints for onboarding
 
 ### Sourceful Energy Gateway Firmware
-While in development the full firmware of the Sourceful Energy Gateway is open source and can work as a reference implementation. This firmware is suitable for micro computers such as raspberry pi 4+ that can run containerized applications.
+While in development, the full firmware of the Sourceful Energy Gateway is open source and can work as a reference implementation. This firmware is suitable for micro‑computers such as Raspberry Pi 4+ that can run containerized applications.
 
 You find the project here: https://github.com/srcfl/srcful-gateway
 
@@ -49,7 +49,7 @@ The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographi
   - Public Key: 64 bytes (x,y coordinates, 32 bytes each)
 
 ## Software Implementation
-If software keys are used it is imperative that the private key is stored on the device itself. The private key must not be stored in plain text in files, code nor as environment variables. If a private key is regarded as compromized by the netwowk it's corresponding public key will be banned in the SEN potentially resulting in loss of rewards and other negative effects.
+If software keys are used it is imperative that the private key is stored on the device itself. The private key must not be stored in plain text in files, code, nor as environment variables. If a private key is regarded as compromised by the network its corresponding public key will be banned in the SEN, potentially resulting in loss of rewards and other negative effects.
 
 ### Python Example
 ```python

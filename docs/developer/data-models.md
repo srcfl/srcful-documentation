@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /developer/data_models
+slug: /developer/data-models
 pagination_prev: null
 ---
 
@@ -190,5 +190,4 @@ Grid meter data with import/export and phase-level measurements:
 | `L3_W`            | W    | float     | L3 Phase Power                          |
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
-
 

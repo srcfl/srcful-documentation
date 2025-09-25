@@ -80,14 +80,3 @@ Learn about our brand colors and how to use them consistently across all marketi
 |![](./img/design/2F4A66.jpg) | #2F4A66 | RGB(47, 74, 102)  | Air Force Blue   |
 |![](./img/design/017E7A.jpg) | #017E7A | RGB(1, 126, 122) | Surfie Green   |
 |![](./img/design/00FF84.jpg) | #00FF84 | RGB(0, 255, 132)   | Energetic Teal   |
-
-## Team
-
-| Name | Role |
-|---|---|
-|  Fredrik Ahlgren | CEO, co-founder
-|  Tobias Ohlsson | CTO, co-founder
-|  Viktor Olofsson| CFO, co-founder
-|  Johan Leitet | Co-founder
-|  Nikas Emevi | Co-founder
-|  David Mozart | Co-founder

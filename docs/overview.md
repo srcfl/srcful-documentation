@@ -6,18 +6,35 @@ pagination_prev: null
 slug: /
 ---
 
-# Sourceful Energy Developer Documentation
+# Sourceful Energy — Developer Overview
 
-:::tip Looking for guides and support?
-Visit our dedicated support portal at **[support.sourceful.energy](https://support.sourceful.energy/)**
-
-Our support portal provides:
-- User guides and tutorials
-- Device compatibility lists
-- Troubleshooting help
-- FAQ and knowledge base
+:::tip Support
+For product setup and troubleshooting, visit **[support.sourceful.energy](https://support.sourceful.energy/)**. This page focuses on developer concepts and integration paths.
 :::
 
-## Overview
+## What is Sourceful?
 
-Sourceful Energy is building the world's first self-orchestrating energy network. This documentation focuses on technical implementations and API integrations for developers.
+Sourceful activates the Grid Intelligence Layer — a coordination platform for distributed energy resources (DERs). We provide permissioned data access, control primitives, and pricing intelligence so you can build applications that read, predict, and act across the edge of the grid.
+
+## The Connector (Zap)
+
+Zap is our Connector — the base of the hardware layer. It anchors trustworthy, high‑fidelity telemetry and supports smart‑meter P1/HAN and additional edge integrations over time. Zap enables data for APIs, optimization, and flexibility participation. Installation lives in the support portal; developers consume the resulting streams and resources via APIs.
+
+## Core capabilities
+- Permissioning: OAuth‑style “Connect with Sourceful” for user‑granted scopes (read meter data, share tariffs, participate in programs).
+- Data: near‑real‑time telemetry, historical reads, and tariff/price intelligence (see Price API).
+- Control & Coordination: primitives for optimization, EMS integrations, and flexibility/VPP participation where available.
+
+## Key concepts
+- Assets & Sites: modeled resources (meters, EVs, PV, storage) tied to locations.
+- Streams & Events: time‑series readings and change notifications.
+- Tariffs & Prices: locality‑aware pricing for forecasting and dispatch decisions.
+- Permissions: user‑granted scopes governing API access and actions.
+
+## Developer entry points
+- Authentication & scopes: see `/developer/auth.md` and `/developer/core-principles.md`.
+- Data models: see `/developer/data-models.md`.
+- Price & tariffs: see `/developer/price-api.md`.
+- EMS & control: see `/developer/ems.md` and `/developer/hardware.md`.
+
+Proceed to the Developer section (`/developer/`) to start building.

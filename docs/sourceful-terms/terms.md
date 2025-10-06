@@ -209,7 +209,7 @@ Violation of this Section may result in immediate suspension or termination of a
 
 - These Terms constitute the entire agreement between the Parties with respect to the Services and supersede all prior understandings or communications, whether oral or written.  
 
-- Sourceful reserves the right to amend or update these Terms at its discretion. Any material changes will be communicated at least sixty (60) days in advance. If you do not accept the updated Terms, you may terminate your Subscription before the new Terms take effect.  
+- Sourceful reserves the right to amend or update these Terms at its discretion. Any material changes will be communicated at least 30 days in advance. If you do not accept the updated Terms, you may terminate your Subscription before the new Terms take effect.  
 
 - Any amendments or updates agreed specifically between the Parties must be made in writing.  
 

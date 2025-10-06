@@ -4,63 +4,99 @@ sidebar_position: 1
 pagination_prev: null
 ---
 
-# Terms and Conditions
+# Sourceful Energy – Terms and Conditions
 
+**Effective Date:** 2025-10-15 
+**Last Updated:** 2025-10-06  
+**Company:** Sourceful Labs AB (reg. no. 559382-0458)  
+**Brand:** Sourceful Energy  
+**Website:** [https://sourceful.energy](https://sourceful.energy)
 <!-- <details><summary>Click here to read the <b>Terms and Conditions</b></summary> -->
 
-### 1. Background
+## 1. Background
 
-- These terms and conditions (the **“Terms and Conditions”**) govern the access to and use of the Sourceful website, platform, products, and other services provided by Sourceful Labs AB (collectively, the “Services”), between the End User and Sourceful Labs AB.
+These Terms and Conditions (the **“Terms”**) govern the access to and use of the Sourceful Energy platform, mobile application, hardware devices, and related services (collectively, the **“Services”**) provided by Sourceful Labs AB (**“Sourceful”**, **“we”**, **“us”**, or **“our”**) to individual consumers (**“End Users”**, **“Users”**, or **“you”**).
 
-- The Services provides a blockchain-based service for management, measurement and distribution related to solar energy.
+By creating an account, subscribing to the Services, or using any part of them, you agree to be bound by these Terms.
 
-- By using the Services, the End User agrees and consents to being bound by the Terms and Conditions set out herein. 
+The Services provide an integrated energy management platform that enables monitoring, optimization, and automation of distributed energy resources (DERs), including but not limited to solar panels, batteries, and electric vehicles.  
+The Services include access to the Sourceful mobile app and one (1) Zap device, which is provided at no additional cost as part of your subscription and remains yours to keep after activation.
 
-### 2. Definitions
+---
 
-- Definitions shall, irrespectively of whether used in singular or plural, in definite or indefinite form, have the defined meaning as set out below in this Section 2 when used with a capital initial letter.
+## 2. Definitions
 
-- **“Confidential Information”** means all information of any nature (whether oral, written, electronic or any other form) disclosed by either Party before or after the effective date of the Terms and Conditions relating to the disclosing Party, to its business, technology, partners, affiliates, customers and/or suppliers and irrespective of whether such information is retained in the form in which it was provided to the other Party or is contained or reflected in notes or other documents prepared by the disclosing Party.
+- **Agreement** – these Terms and any additional policies or appendices referenced herein.  
+- **End User / User** – a natural person subscribing to or using the Services for personal, non-commercial purposes.  
+- **Zap** – the Sourceful Energy hardware device provided as part of a Subscription, enabling energy data collection and control.  
+- **Subscription** – the ongoing paid plan granting access to the Sourceful Services, including the app and associated features.  
+- **Reservation Fee** – a payment made to join a paid waitlist for upcoming Sourceful products, such as the V2X Charger.  
+- **V2X Charger** – the Sourceful Energy bi-directional charger (vehicle-to-home/grid) offered as a separate, installed product.  
+- **Intellectual Property Rights** – all rights relating to copyrights, trademarks, patents, designs, trade secrets, software, and related intangible assets.  
+- **Party / Parties** – collectively or individually, Sourceful and the End User.
 
-- **“End User”** means the consumer that is using the Services in accordance with these Terms and Conditions.
+---
 
-- **“Sourceful”** means Sourceful Labs AB, reg. no 559382-0458.
+## 3. Use of the Services
 
-- **“Intellectual Property Rights”** means all present and future rights, title, and interest whatsoever (whether legal or beneficial and whether registered or unregistered), in the copyright and in any design rights, trademarks, patents, rights or protections or similar to copyright (including all moral rights), topography rights, software programs, applications, database rights, know-how, trade names, trade secrets, inventions and other intangible proprietary information.
+The Services are intended solely for private residential energy management.  
+The End User agrees to use the Services in compliance with these Terms and all applicable laws.
 
-- **“Party”** means Sourceful and the End User respectively and “Parties” means Sourceful and the End User jointly.
+As part of the Subscription, Sourceful provides the End User with a Zap device, which enables energy monitoring and connectivity.  
+The Zap is provided free of charge upon activation and becomes the permanent property of the End User once delivered and activated.  
+The End User owns the physical device but acknowledges that the firmware, software, and platform integrations remain the intellectual property of Sourceful.
 
-- **“Services”** means the Sourceful website, platform, products, and other services provided by Sourceful to the End User. For the avoidance of doubt, third-party services or applications that are contracted directly between the End User and the third-party provider are not included in the Services.
+Sourceful retains ownership of the underlying software and digital infrastructure that enable the Services.  
+The End User may not modify, reverse engineer, or interfere with the operation of the platform or firmware.
 
-### 3. General
+### 3A. Subscription Terms
 
-- These Terms and Conditions govern the End User’s use of the Services developed and maintained by Sourceful, solely for purposes in accordance with the Terms and Conditions.
+1. **Scope**  
+   The Sourceful Subscription provides access to the Sourceful app and connected platform, including data analytics, energy insights, and optional control functions.
 
-- Purchases of hardware products sold by Sourceful are subject to Appendix 1 (**Terms of Purchase**) to these Terms and Conditions.
+2. **Fees and Billing**  
+   Subscription fees are billed in advance on a monthly or annual basis, depending on the plan selected.  
+   Sourceful may adjust pricing with at least thirty (30) days’ prior notice.
 
-#### 3A. Active Control of Energy Systems (Optional)
+3. **Termination by User**  
+   You may cancel your Subscription at any time. Termination takes effect at the end of the current billing period.  
+   Cancellation does not affect your ownership of the Zap device.
 
-For users who explicitly enable the active control feature for their energy systems, the following terms apply:
+4. **Termination by Sourceful**  
+   Sourceful may suspend or terminate access to the Services with thirty (30) days’ notice, or immediately in the event of material breach.
 
-By activating Sourceful's active control service, the User grants Sourceful Labs AB (“Sourceful”) the right to remotely control and optimize the User’s battery systems, solar installations, and other energy-related equipment connected to the Sourceful platform. The purpose of this control is to improve energy efficiency, reduce costs, and support grid or community-level energy services.
+5. **Free or Trial Periods**  
+   Any free trial or promotional period is subject to these Terms. Unless cancelled before the trial ends, billing will automatically continue under the selected plan.
 
-Sourceful agrees to perform such control using reasonable skill and care, in accordance with applicable industry standards. However, to the maximum extent permitted by applicable law, Sourceful disclaims all liability for any indirect, incidental, or consequential damages arising from or related to the control of the User’s system. This includes, but is not limited to, shortened equipment lifespan, loss of revenue, missed savings opportunities, or malfunction due to third-party hardware or network issues.
+---
 
-Nothing in this section shall exclude liability for gross negligence, willful misconduct, or other liability which cannot be excluded under mandatory applicable law.
+### 3B. Active Control of Energy Systems (Optional)
 
-The User may disable active control at any time via their account settings or by contacting Sourceful. Sourceful will terminate active control within a reasonable period following receipt of such notice.
+By enabling Sourceful’s **Active Control** feature, you authorize Sourceful to remotely optimize connected devices such as batteries, EV chargers, or inverters to improve energy efficiency and cost savings.
 
-#### 3B. Incentives and Gift Cards (Beta Programs)
+Sourceful will perform such control with reasonable skill and care but disclaims liability for indirect or consequential damages except as required by law.  
+You may disable this feature at any time via the app or by contacting Sourceful.
 
-Sourceful may, from time to time, invite End Users to voluntarily participate in early access programs, beta programs, or similar initiatives (collectively, "Beta Programs"). Participation in Beta Programs offers End Users the opportunity to test new or developing features and services before general release, and to contribute valuable feedback and user data that supports product development and service improvement.
+---
 
-In connection with such Beta Programs, Sourceful may, at its sole discretion and as a gesture of appreciation for the End User's contribution to development, offer various incentives. These incentives may include, but are not limited to, gift cards, digital rewards, or financial contributions. Such financial contributions may be recurring for a defined period, in which case this will be clearly stated in the specific terms for the relevant Beta Program. The exact values, duration, and conditions for receiving incentives will be communicated to participating End Users as part of the terms for the individual Beta Program.
+### 3C. Incentives and Beta Programs
 
-Important: Incentives provided under Beta Programs are not intended as, and shall not be interpreted as, payment, wages, or compensation for services rendered. They are designed solely as an acknowledgment of an End User's voluntary participation and contribution to the development and improvement of Sourceful's offerings. The End User is solely responsible for understanding and complying with any and all applicable local tax laws and reporting requirements related to any incentives received. Sourceful assumes no liability for the End User's tax obligations.
+Participation in beta, pilot, or early-access programs is voluntary.  
+Incentives or rewards offered under such programs are discretionary, non-transferable, and not intended as compensation.  
+Sourceful may amend or discontinue such programs at any time.
 
-Participation in a Beta Program, including the receipt of any incentives, does not create any contractual obligation between the End User and Sourceful beyond what is expressly stated in these Terms and Conditions and the specific terms for the relevant Beta Program.
+---
 
-Sourceful reserves the right, at its sole discretion, to define, modify, or discontinue any Beta Program or associated incentives at any time and without prior notice. Sourceful makes no guarantees regarding the availability, specific value, or continued offering of any incentive. Continued payment of incentives is contingent upon the End User's ongoing adherence to the specific Beta Program terms and these Terms and Conditions, including providing agreed-upon feedback and maintaining the connected gateway and its data transmission. In the event of the End User's failure to comply with these terms, or if participation in the Beta Program is terminated for any reason, the right to further incentives ceases immediately.
+### 3D. Waitlist and Pre-Purchase Programs
+
+1. Sourceful may offer free or paid waitlists for upcoming products, including the V2X Charger.  
+2. Joining a paid waitlist requires payment of a **non-refundable Reservation Fee**, the amount of which will be clearly stated at registration.  
+3. The Reservation Fee secures a position in line for the opportunity to purchase the product once available and will be **credited toward the final purchase price** if you complete the order.  
+4. The Reservation Fee is **non-refundable** under all circumstances **except** if Sourceful cancels or permanently discontinues the relevant product or waitlist program, in which case the Reservation Fee will be refunded in full.  
+5. Waitlist positions and Reservation Fees are personal and non-transferable.  
+6. Joining a waitlist does not constitute a binding purchase agreement for either Party.
+
+---
 
 ### 4. New versions
 
@@ -70,41 +106,35 @@ Sourceful reserves the right, at its sole discretion, to define, modify, or disc
 
 - The End User acknowledges and agrees that Sourceful may stop providing and/or modify the Services (or any features within the Services) to the End User or to other users at Sourceful’s sole discretion, subject to thirty (30) days’ prior notice to the End User. 
 
+---
+
 ### 5. No warranty
 
 - Except as expressly specified herein, the Services is provided “as is” and “as available” without warranty of any kind, whether express or implied. Sourceful does not warrant that the Services will be compatible with any End User material or data or otherwise meet the End User´s requirements, or that operation will be uninterrupted or error-free.
 
 - Sourceful does not warrant that the output or result of using the Services will be correct, error-free or otherwise meet the End User’s requirements. 
 
-### 6. Utility tokens
+## 6. Limitation of Liability
 
-- By linking a Solana wallet to the Service, connecting the gateway to the Service and making electricity available to the network operators through the Service, the End User can be rewarded with utility tokens as described on the Sourceful website. Neither the End User nor Sourceful are entitled to any other rewards or compensation for using or providing the Services, unless explicitly set out in these Terms and Conditions.
+To the fullest extent permitted by law, Sourceful is not liable for indirect or consequential losses, including loss of data, income, or savings. Nothing in these Terms limits liability for gross negligence, willful misconduct, or consumer rights under mandatory law.
 
-### 7. Limitation of Liability
+---
 
-- The End User assumes the entire risk of using the Services. 
-
-- Sourceful is under no circumstances liable for indirect damages, special damages, consequential damages including, but not limited to, loss of profits or loss of data, which may result from the use of the Services. 
-
-- If End User’s material, data, methodologies, software, information and/or equipment provided by End User to Sourceful or used by End User in connection with the Services is held or is reasonably believed by Sourceful to infringe any third party right, Sourceful shall have a right to cease using such information and suspend the End User’s access to and use of the Services and to request that the End User remove or delete such information stored or processed on the Services. Should End User fail to remove or delete such information stored or processed on the Services within ten (10) days’ from receiving notice thereof, Sourceful shall have a right to remove or delete such information. 
-
-- 7.1, 7.2 and 7.3 apply to the maximum extent permitted by applicable mandatory law.
-
-### 8. Misuse of the Service
+## 7. Misuse of the Service
 
 - Sourceful reserves the right to, in its sole discretion, deactivate, suspend or terminate the End User’s access to the Service and right to receive any future utility tokens through the Service, in the event Sourceful has reason to believe that the End User is misusing the Service in any way. Misuse of the Service shall include, but not be limited to, attempting to or misrepresenting, distorting or falsifying the input or output from the energy gateway or otherwise by conducting any fraudulent or illegal activity.
 
 - In the event Sourceful has suspended an End User suspected of conducting activities described in Section 8.1 above, the End User access to the Service and right to receive tokens may be reinstated by validating that its has not used the Service in violation with the Agreement. The process for validation of the End User’s conduct is described on the Sourceful website. However, Sourceful reserves the right to assess each individual situation and in its sole discretion determine when and if an End User can be reinstated.
 
-### 9. Indemnification
+## 8. Indemnification
 
 - To the maximum extent permitted by applicable mandatory law, the End User agrees to defend, indemnify and hold harmless Sourceful from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys’ fees) relating to (i) any non-compliance by the End User with these Terms and Conditions, (ii) any violation of applicable law, including but not limited to, infringement of any third party right relating to the End User’s use of the Services in violation with these Terms and Conditions, or (iii) a suspension of the End User’s access to or use of the Services or a deletion of the End User’s information. 
 
-### 10. Support
+## 9. Support
+If you need help with the Services, please contact our support team at [support@sourceful.energy](mailto:support@sourceful.energy).  
+Additional contact information and service details are available on our website at [https://sourceful.energy](https://sourceful.energy).
 
-- If you need help with the Services, visit our community on [Discord](https://discord.gg/srcful) where you can connect with us and other users and developers. Sourceful has no responsibility for any advice given by other users and developers.
-
-- Sourceful has no obligation to provide support for the Services. 
+Sourceful provides customer support for active users of the Services and will make reasonable efforts to assist with technical issues, troubleshooting, and general inquiries during normal business hours.
 
 ### 11. Grant of Use
 
@@ -114,130 +144,121 @@ Sourceful reserves the right, at its sole discretion, to define, modify, or disc
 
 - Any third-party tools or software included in the Services may also be subject to separate license agreement with such third party. Sourceful is not liable for any third-party tools or software or the End User’s use thereof. 
 
-### 12. Intellectual Property Rights
+## 12. Intellectual Property Rights
 
-- The title to and ownership of, and all Intellectual Property Rights, including but not limited to copyright, and all other rights to, the Services (or the copy of the Services or the medium on which the Services has been delivered) shall remain with Sourceful, (or its third-party licensors, as applicable). Thus, these Terms and Conditions do not imply that any other rights are granted to the End User other than the right to use the Services solely for the End User’s internal use as set out in these Terms and Conditions.
+- All title, ownership, and Intellectual Property Rights in and to the Services, including but not limited to software, firmware, design, interfaces, graphics, documentation, trademarks, and trade names, remain the exclusive property of Sourceful (or its third-party licensors, as applicable).
 
-- Nothing in these Terms and Conditions shall imply a right for the End User to use any of Sourceful’s trade names, trademarks, service marks, logos, domain names, or other Intellectual Property Rights owned by Sourceful (or its third-party licensors, as applicable).
+- These Terms grant the End User a limited, non-exclusive, non-transferable right to use the Services for personal purposes in accordance with these Terms. No ownership or other intellectual property rights are transferred or licensed beyond what is expressly stated herein.
 
-- Sourceful has released the source code to the software used to facilitate the Services as open-source software under the MIT license. The End User is free to download and use, further develop and create derivative versions of the software in accordance with the terms set out in the MIT license.
+- Nothing in these Terms shall be construed as granting the End User any right to use Sourceful’s trade names, trademarks, service marks, logos, domain names, or other proprietary identifiers, except as required for normal access to and use of the Services.
 
-### 13. Personal Data
+- The End User may not copy, modify, distribute, reverse-engineer, decompile, or create derivative works based on any part of the Services or underlying technology, except where such restriction is prohibited by applicable law.
 
-- Sourceful will process personal data in accordance with our Privacy Policy. Please find our Privacy Policy.
+## 13. Personal Data
 
-### 14. Consumers' right to rescind from the Agreement
+Sourceful processes personal data in accordance with its **Privacy Policy** (see website). Account creation and authentication are provided via **Privy**. Data from the app and Zap is used to deliver, maintain, and improve the Services and may be shared with trusted partners under confidentiality and GDPR compliance.
 
-- If the End User is a consumer, as defined under applicable law, the End User has a right to rescind from the Agreement within fourteen (14) days from registering for the Services and through the registration entering into the Agreement with Sourceful.
+---
 
-### 15. Termination and Consequences of Termination
+## 14. Right of Withdrawal (Consumers)
 
-- The End User may terminate the Service at any time by disconnecting the gateway from the Service.
+You have the right to withdraw from your Subscription within fourteen (14) days of activation, unless the Services have already been initiated (e.g., by connecting the Zap or accessing the app). To exercise your right of withdrawal, contact Sourceful at [support@sourceful.energy](mailto:support@sourceful.energy).
 
-- The End User may also terminate the Service by contacting Sourceful at sales@sourceful.energy.
+---
 
-- For avoidance of doubt, the End User are not rewarded utility tokens following termination.
+## 15. Termination and Consequences of Termination
 
-- Sourceful may terminate the Agreement at any time without cause by disconnecting the gateway from the Service.
+Either Party may terminate the Agreement in accordance with Section 3A. Termination of the Subscription does **not** affect your ownership of the Zap device.
 
-### 16. Confidentiality
+---
 
-- Each Party shall maintain strict confidentiality and shall not disclose to any third party any Confidential Information which comes into that Party’s possession and shall not use Confidential Information without prior written permission by the other Party. This provision shall not, however, apply to information or material, which is, or becomes, public knowledge by means other than by breach by a Party to this section and to the extent Confidential Information must be disclosed due to applicable law, stock exchange regulations or by order of a court or a government agency or authority, provided that the disclosing Party promptly gives notice to the other Party of such obligation of disclosure. 
+## 16. Confidentiality
 
-- Each Party shall ensure that requisite confidentiality agreements are entered into with the respective Party’s employees and representatives to bind all such personnel to adherence with the abovementioned confidentiality undertaking.
+Both Parties shall keep non-public information confidential, except where disclosure is required by law, regulation, or court/authority order.
 
-### 17. Limitations
-Sourceful may suspend or revoke your license to use the Service, or parts, components and/or single features thereof, if you violate, or assist others in violating, the license limitations set forth below. You agree that you will not, in whole or in part or under any circumstances, do the following:
+---
 
-Derivative Works: Copy or reproduce (except as provided in Section 1.B.), translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on or related to the Service.
+## 17. Limitations of Use
 
-Cheating: Create, use, offer, promote, advertise, make available and/or distribute the following or assist therein:
+Sourceful may suspend, restrict, or terminate your access to the Services, or specific components or features thereof, if you violate these Terms or applicable law.
 
-cheats; i.e. methods not expressly authorized by Sourceful (whether accomplished using hardware, software, a combination thereof, or otherwise), influencing and/or facilitating fraudulent behavior, including exploits of any bugs.
+You agree that you will not, in whole or in part or under any circumstances:
 
-bots; i.e. any code and/or software, not expressly authorized by Sourceful, that allows the automated control of a Service, or any other feature of the Service, e.g. simulation of data used by the Service;
+1. **Copy or Derivative Works**  
+   Copy, reproduce, translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on any part of the Services, except as expressly permitted by law.
 
-hacks; i.e. accessing or modifying the software of the Service in any manner not expressly authorized by Sourceful; and/or
+2. **Unauthorized Access or Manipulation**  
+   Access or attempt to access the Services or related systems in any manner not expressly authorized by Sourceful, including through interference, data scraping, spoofing, or circumvention of technical protection measures.
 
-any code and/or software, not expressly authorized by Blizzard, that can be used in connection with the Service and/or any component or feature thereof which changes and/or facilitates use of fraudulent data or other functionality;
+3. **Automation or Data Simulation**  
+   Use, create, distribute, or promote any code, script, or software that automates interaction with the Services, simulates energy data, or manipulates results, unless expressly approved in writing by Sourceful.
 
-### 18. Miscellaneous
+4. **Fraud or Misrepresentation**  
+   Provide false, misleading, or manipulated information, or attempt to exploit or misuse any features or integrations of the Services.
 
-- The End User may not sell, assign, or transfer any of its obligations and/or rights under these Terms and Conditions without the prior written consent of Sourceful.
+5. **Third-Party Rights**  
+   Use the Services in a way that infringes the intellectual property or other rights of Sourceful or any third party.
 
-- These Terms and Conditions supersede all prior agreements and understandings (whether written or oral) between the Parties with respect to the subject matter hereof.
+Violation of this Section may result in immediate suspension or termination of access, without prejudice to any other legal remedies available to Sourceful.
 
-- Sourceful reserves the right to amend and update the Terms and Conditions at its own discretion. Sourceful shall inform the End User of any amendments of material importance to the Terms and Conditions no later than sixty (60) days prior to the change coming into effect. Any amendments or updates to the Terms and Conditions entitles the consumer to terminate the Terms and Conditions. 
+---
 
+## 18. Miscellaneous
 
-- Any amendments or updates to the Terms and Conditions agreed between the Parties must be made in writing.
+- The End User may not sell, assign, or transfer any of its rights or obligations under these Terms without Sourceful’s prior written consent.  
+
+- These Terms constitute the entire agreement between the Parties with respect to the Services and supersede all prior understandings or communications, whether oral or written.  
+
+- Sourceful reserves the right to amend or update these Terms at its discretion. Any material changes will be communicated at least sixty (60) days in advance. If you do not accept the updated Terms, you may terminate your Subscription before the new Terms take effect.  
+
+- Any amendments or updates agreed specifically between the Parties must be made in writing.  
 
 - For questions or concerns about the Services, please contact Sourceful at [info@sourceful.energy](mailto:info@sourceful.energy).
 
-### 19. Law and Dispute Resolution
+---
 
-- These Terms and Conditions shall be governed by the substantive law of Sweden, without regard to its principles and rules on conflict of laws.
+## 19. Governing Law and Dispute Resolution
 
-- For questions or complaints about the Product (as defined in Appendix 1 – Terms of Purchase below), please contact us at [info@sourceful.energy](mailto:info@sourceful.energy).  The Purchaser may also file complaints to The National Board for Consumer Disputes (ARN) or general courts.
+These Terms are governed by the substantive laws of Sweden, without regard to conflict-of-law principles.
 
-<!-- </details> -->
+Disputes shall primarily be resolved through negotiation between the Parties.  
+Consumers may also contact the **National Board for Consumer Disputes (ARN)** or bring an action before the general courts of Sweden.
 
-<!-- <details><summary>Click here to read <b>Appendix 1 - Terms of Purchase</b></summary> -->
+---
 
-## Appendix 1 - Terms of Purchase
+## Appendix 1 – Hardware Terms (Zap Device)
 
 ### 1. Applicability
+These Hardware Terms supplement the Terms and Conditions and apply to the Zap device provided as part of the Sourceful Subscription.
 
-- These terms of purchase (the **“Terms of Purchase”**) supplement the Terms and Conditions and shall apply when the parties (the Purchaser and Sourceful) have agreed in writing or have otherwise entered into an agreement according to which the Terms of Purchase apply. 
+If there is any conflict between these Hardware Terms and the main Terms, these Hardware Terms shall prevail with respect to the Zap device. All other provisions of the Terms remain in effect.
 
-- In the event of conflict between these Terms of Purchase and the Terms and Conditions, these Terms of Purchase shall take precedence in relation to purchases of hardware from Sourceful. All other provisions of the Terms and Conditions shall remain in effect.
+### 2. Ownership
+Upon delivery and activation, the Zap becomes the permanent property of the End User.  
+The End User owns the physical hardware; however, all embedded software, firmware, and related intellectual property remain the property of Sourceful.
 
-### 2. Definitions
+### 3. Use
+The Zap is intended for private residential use in conjunction with the Sourceful platform and app.  
+The End User may not resell, modify, tamper with, or use the device in a manner that interferes with Sourceful’s systems or data integrity.
 
-- Definitions shall, irrespectively of whether used in singular or plural, in definite or indefinite form, have the defined meaning as set out below in this Section 2 when used with a capital initial letter. The definitions set out in the Terms and Conditions shall also apply.
+### 4. Warranty
+Sourceful provides a two (2)-year warranty covering manufacturing defects from the date of delivery.  
+The warranty does not cover damage caused by misuse, improper installation, unauthorized modification, accidents, or external electrical faults.  
+Warranty service may involve repair or replacement at Sourceful’s discretion.
 
-- **“Agreement”** shall mean every individual agreement between the Purchaser and Sourceful regarding the sale and purchase of Products. These Terms of Purchase shall constitute an integral part of any such Agreement.
+### 5. Firmware Updates
+Sourceful may remotely update firmware to maintain security, compatibility, and functionality.  
+Such updates may be required for continued operation of the Services.
 
-- **“Product(s)”** shall mean the components which Sourceful undertakes to sell to the Purchaser, and which are set forth in detail in an Agreement.
+### 6. Limitation of Liability
+To the extent permitted by law, Sourceful shall not be liable for indirect or consequential losses, including but not limited to loss of data, profit, or savings, arising from use or malfunction of the Zap.
 
+### 7. Force Majeure
+If an event beyond Sourceful’s reasonable control (including, but not limited to, acts of nature, supply chain disruption, or regulatory intervention) prevents or materially hinders performance, Sourceful shall be entitled to a reasonable extension of time and relief from liability.  
+If such event persists for more than six (6) months, the End User may terminate the Agreement without further obligation.
 
-- **“Purchaser”** means the consumer entering into the Agreement with Sourceful.
+### 8. Support and Contact
+For questions, technical assistance, or warranty claims regarding the Zap device, please contact  
+**Sourceful Support** – [support@sourceful.energy](mailto:support@sourceful.energy)
 
-### 3. Prices and Payment
-
-- The price of the purchase shall be set to the price which Sourceful applies at the time of receiving the order from the Purchaser, unless the Parties have expressly agreed otherwise. Unless otherwise expressly agreed, the prices are set exclusive of VAT and other public charges, which shall be paid by the Purchaser.
-
-- Unless otherwise agreed in writing between the Parties, payment shall be made in SEK within thirty (30) days of the purchase. In the event of the Purchaser’s delay with such payment, Sourceful shall be entitled to interest in accordance with the Swedish Interest Act (1975:635).
-
-### 4. Delivery and delivery time
-
-- Sourceful shall deliver the Product to the Purchaser within thirty (30) days after entering the Agreement, unless otherwise agreed. 
-
-### 5. Consumers' right to rescind from the Agreement
-
-- The Purchaser has a right to rescind from the Agreement within fourteen (14) days from delivery. The Purchaser shall notify Sourceful of its decision to rescind from the Agreement in accordance with section 6 below. 
-
-- When the Purchaser has connected the Product to the Purchaser’s solar panels and initiated the use of the Services with the Product, the chip inside Product is irreversibly coded to the Purchaser. As such, the Product has been fully delivered and utilized by the Purchaser upon the Purchaser’s connection to the Product. The Purchaser’s right to rescind from the Purchase with Sourceful does not include Products that cannot be restored once the Purchaser has connected to it, Sourceful undertakes to specifically informer and request the End User’s approval in relation to the exemption from the right to rescind from the purchase in connection with the sale of the physical product. 
-
-### 6. Notice 
-
-- For questions or concerns about the Product, please contact Sourceful at [info@sourceful.energy](mailto:info@sourceful.energy).
-
-### 7. Limitation of liability 
-
-- The End User assumes the entire risk of using the Products. 
-
-- Sourceful is under no circumstances liable for direct damages, indirect damages, special damages, consequential damages including, but not limited to, loss of profits or loss of data, which may result from the use of the Product. 
-
-- For information on product safety, please refer to the manufacturer’s terms and conditions. These are provided together with the product.
-
-- 7.1 and 7.2 applies to the maximum extent permitted by mandatory law.
-
-### 8. Grounds of relief
-
-- A circumstance which prevents or substantially obstructs the performance of Sourceful’s undertakings under the Agreement, and which Sourceful could not dispose of, and defects or delays in deliveries from sub-suppliers caused by the above-mentioned circumstances, shall constitute grounds for relief which entitles Sourceful to appropriate time extensions and relief of liability from conditional fines and other sanctions. Sourceful shall notify the Purchaser in writing without unreasonable delay from the day Sourceful realized or ought to have realized the grounds for relief.
-
-- The Purchaser shall be entitled to withdraw from the Agreement if the performance of the Agreement is delayed for more than six months due to a circumstance set out in 8.1.
-
-<!-- </details> -->
 

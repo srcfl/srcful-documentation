@@ -19,8 +19,9 @@ These Terms and Conditions (the **“Terms”**) govern the access to and use of
 
 By creating an account, subscribing to the Services, or using any part of them, you agree to be bound by these Terms.
 
-The Services provide an integrated energy management platform that enables monitoring, optimization, and automation of distributed energy resources (DERs), including but not limited to solar panels, batteries, and electric vehicles.  
-The Services include access to the Sourceful mobile app and one (1) Zap device, which is provided at no additional cost as part of your subscription and remains yours to keep after activation.
+The Services provide an integrated energy management platform that enables monitoring, optimization, and automation of distributed energy resources (DERs), including but not limited to solar panels, batteries, and electric vehicles.
+
+The Zap is a standalone product available for purchase and is fully functional without a subscription. It provides real-time energy monitoring and local data access. Optional subscription plans are available separately for additional features and functionality.
 
 ---
 
@@ -28,8 +29,9 @@ The Services include access to the Sourceful mobile app and one (1) Zap device, 
 
 - **Agreement** – these Terms and any additional policies or appendices referenced herein.  
 - **End User / User** – a natural person subscribing to or using the Services for personal, non-commercial purposes.  
-- **Zap** – the Sourceful Energy hardware device provided as part of a Subscription, enabling energy data collection and control.  
-- **Subscription** – the ongoing paid plan granting access to the Sourceful Services, including the app and associated features.  
+- **Zap** – the Sourceful Energy hardware device available for purchase, enabling energy monitoring and local data access. The device is functional without 
+a subscription. 
+- **Subscription** – an optional paid plan that provides access to additional features beyond the base functionality included with the Zap device.  
 - **Reservation Fee** – a payment made to join a paid waitlist for upcoming Sourceful products, such as the V2X Charger.  
 - **V2X Charger** – the Sourceful Energy bi-directional charger (vehicle-to-home/grid) offered as a separate, installed product.  
 - **Intellectual Property Rights** – all rights relating to copyrights, trademarks, patents, designs, trade secrets, software, and related intangible assets.  
@@ -39,38 +41,49 @@ The Services include access to the Sourceful mobile app and one (1) Zap device, 
 
 ## 3. Use of the Services
 
-The Services are intended solely for private residential energy management.  
-The End User agrees to use the Services in compliance with these Terms and all applicable laws.
+The Services are intended for private residential energy management and consist of (i) the Zap hardware device, and (ii) the Sourceful mobile application and 
+cloud platform. The Zap device is purchased separately and becomes your property upon delivery. The device includes embedded firmware and software that remain the intellectual 
+property of Sourceful. You may not modify, reverse engineer, or interfere with the operation of the firmware or platform integrations.
 
-As part of the Subscription, Sourceful provides the End User with a Zap device, which enables energy monitoring and connectivity.  
-The Zap is provided free of charge upon activation and becomes the permanent property of the End User once delivered and activated.  
-The End User owns the physical device but acknowledges that the firmware, software, and platform integrations remain the intellectual property of Sourceful.
+The Sourceful application provides a free base tier of functionality that works with the Zap device. Additional features are available through optional paid 
+subscription plans.
 
-Sourceful retains ownership of the underlying software and digital infrastructure that enable the Services.  
-The End User may not modify, reverse engineer, or interfere with the operation of the platform or firmware.
+### 3A. Purchase of Zap Device
 
-### 3A. Subscription Terms
+1. **Purchase and Ownership**  
+   The Zap device is sold as a one-time purchase. Upon payment and delivery, ownership transfers to you. The purchase is subject to Swedish consumer purchase law (konsumentköplagen).
 
-1. **Scope**  
-   The Sourceful Subscription provides access to the Sourceful app and connected platform, including data analytics, energy insights, and optional control functions.
+2. **Right of Withdrawal**  
+   You have a 30-day right of withdrawal from the date of delivery. To exercise this right, contact Sourceful at support@sourceful.energy. The device must be returned in resalable condition. Upon receipt of the returned device, the purchase price will be refunded in full.
 
-2. **Fees and Billing**  
-   Subscription fees are billed in advance on a monthly or annual basis, depending on the plan selected.  
-   Sourceful may adjust pricing with at least thirty (30) days’ prior notice.
+3. **Delivery**  
+   Delivery times and shipping costs (if any) are specified at the time of purchase. Risk passes to you upon delivery.
 
-3. **Termination by User**  
-   You may cancel your Subscription at any time. Termination takes effect at the end of the current billing period.  
-   Cancellation does not affect your ownership of the Zap device.
-
-4. **Termination by Sourceful**  
-   Sourceful may suspend or terminate access to the Services with thirty (30) days’ notice, or immediately in the event of material breach.
-
-5. **Free or Trial Periods**  
-   Any free trial or promotional period is subject to these Terms. Unless cancelled before the trial ends, billing will automatically continue under the selected plan.
+4. **Self-Installation**  
+   The Zap is designed for self-installation. Installation instructions are provided with the device and in the Sourceful app.
 
 ---
 
-### 3B. Active Control of Energy Systems (Optional)
+### 3B. Subscription Terms (Optional)
+
+1. **Scope**  
+   The Subscription provides access to additional features in the Sourceful app beyond the free base tier, including advanced control and coordination functionality.
+
+2. **Fees and Billing**  
+   Subscription fees are billed in advance on a monthly or annual basis. Sourceful may adjust pricing with at least thirty (30) days' prior notice.
+
+3. **Termination by User**  
+   You may cancel your Subscription at any time through the app or website. Termination takes effect at the end of the current billing period. Cancellation does not affect your ownership or use of the Zap device or access to the free tier features.
+
+4. **Termination by Sourceful**  
+   Sourceful may terminate a Subscription with thirty (30) days' notice, or immediately in the event of material breach of these Terms.
+
+5. **Free Tier Access**  
+   Termination or absence of a Subscription does not affect your access to the free tier functionality of the Sourceful platform.
+
+---
+
+### 3C. Active Control of Energy Systems (Optional)
 
 By enabling Sourceful’s **Active Control** feature, you authorize Sourceful to remotely optimize connected devices such as batteries, EV chargers, or inverters to improve energy efficiency and cost savings.
 
@@ -79,7 +92,7 @@ You may disable this feature at any time via the app or by contacting Sourceful.
 
 ---
 
-### 3C. Incentives and Beta Programs
+### 3D. Incentives and Beta Programs
 
 Participation in beta, pilot, or early-access programs is voluntary.  
 Incentives or rewards offered under such programs are discretionary, non-transferable, and not intended as compensation.  
@@ -87,7 +100,7 @@ Sourceful may amend or discontinue such programs at any time.
 
 ---
 
-### 3D. Waitlist and Pre-Purchase Programs
+### 3E. Waitlist and Pre-Purchase Programs
 
 1. Sourceful may offer free or paid waitlists for upcoming products, including the V2X Charger.  
 2. Joining a paid waitlist requires payment of a **non-refundable Reservation Fee**, the amount of which will be clearly stated at registration.  
@@ -100,23 +113,41 @@ Sourceful may amend or discontinue such programs at any time.
 
 ### 4. New versions
 
-- Sourceful are entitled to update, upgrade and modify the Services at all times. Significant changes will, in Sourceful’s discretion, be communicated to the End User directly or by notice on Sourceful’s website.
+- Sourceful is entitled to update, upgrade, and modify the cloud-based Services and application features at all times. Significant changes will, in Sourceful's discretion, be communicated to the End User directly or by notice on Sourceful's website.
 
 - These Terms and Conditions apply to updates, upgrades and supplements to the original Services, unless Sourceful provides other terms along with the update, upgrade or supplement.
 
-- The End User acknowledges and agrees that Sourceful may stop providing and/or modify the Services (or any features within the Services) to the End User or to other users at Sourceful’s sole discretion, subject to thirty (30) days’ prior notice to the End User. 
+- The End User acknowledges and agrees that Sourceful may stop providing and/or modify cloud-based Services or app features at Sourceful's sole discretion, subject to thirty (30) days' prior notice to the End User. Such modifications do not affect the local functionality of the Zap device.
 
 ---
 
-### 5. No warranty
+### 5. Disclaimer of Warranty (Cloud Services and Software)
 
-- Except as expressly specified herein, the Services is provided “as is” and “as available” without warranty of any kind, whether express or implied. Sourceful does not warrant that the Services will be compatible with any End User material or data or otherwise meet the End User´s requirements, or that operation will be uninterrupted or error-free.
+- Except as expressly specified in Appendix 1 (Hardware Warranty), the cloud-based Services and software are provided "as is" and "as available" without warranty 
+  of any kind, whether express or implied. Sourceful does not warrant that the Services will be compatible with any End User material or data or otherwise meet the End User's requirements, or that operation will be uninterrupted or error-free.
 
-- Sourceful does not warrant that the output or result of using the Services will be correct, error-free or otherwise meet the End User’s requirements. 
+- Sourceful does not warrant that the output or result of using the Services will be correct, error-free or otherwise meet the End User's requirements.
+
+- For warranty terms relating to the Zap hardware device, see Appendix 1, Section 4.
 
 ## 6. Limitation of Liability
 
 To the fullest extent permitted by law, Sourceful is not liable for indirect or consequential losses, including loss of data, income, or savings. Nothing in these Terms limits liability for gross negligence, willful misconduct, or consumer rights under mandatory law.
+
+## 6A. Defects and Complaints (Consumer Purchases)
+
+If the Zap device is defective or does not conform to the purchase agreement, you have the right to remedies under Swedish consumer purchase law (konsumentköplagen).
+
+You must notify Sourceful of any defect within a reasonable time after discovery. Contact support@sourceful.energy with a description of the issue.
+
+Available remedies, in order of priority:
+1. **Repair or replacement** - Sourceful will remedy the defect through repair or replacement at no cost to you.
+2. **Price reduction** - If repair or replacement cannot be carried out within a reasonable time, you may claim a proportionate price reduction.
+3. **Cancellation** - If the defect is material and remedies above are not available, you may cancel the purchase and receive a full refund.
+
+This right to complain applies for defects that existed at the time of delivery, even if discovered later. Claims may be made within three (3) years from delivery.
+
+These rights are in addition to any commercial warranty provided by Sourceful.
 
 ---
 
@@ -124,7 +155,7 @@ To the fullest extent permitted by law, Sourceful is not liable for indirect or 
 
 - Sourceful reserves the right to, in its sole discretion, deactivate, suspend or terminate the End User’s access to the Service and right to receive any future utility tokens through the Service, in the event Sourceful has reason to believe that the End User is misusing the Service in any way. Misuse of the Service shall include, but not be limited to, attempting to or misrepresenting, distorting or falsifying the input or output from the energy gateway or otherwise by conducting any fraudulent or illegal activity.
 
-- In the event Sourceful has suspended an End User suspected of conducting activities described in Section 8.1 above, the End User access to the Service and right to receive tokens may be reinstated by validating that its has not used the Service in violation with the Agreement. The process for validation of the End User’s conduct is described on the Sourceful website. However, Sourceful reserves the right to assess each individual situation and in its sole discretion determine when and if an End User can be reinstated.
+- In the event Sourceful has suspended an End User suspected of conducting activities described above, the End User's access to the Service and right to receive tokens may be reinstated by validating that they have not used the Service in violation with the Agreement. The process for validation of the End User's conduct is described on the Sourceful website. However, Sourceful reserves the right to assess each individual situation and in its sole discretion determine when and if an End User can be reinstated.
 
 ## 8. Indemnification
 
@@ -160,16 +191,24 @@ Sourceful processes personal data in accordance with its **Privacy Policy** (see
 
 ---
 
-## 14. Right of Withdrawal (Consumers)
+## 14. Right of Withdrawal
 
-You have the right to withdraw from your Subscription within fourteen (14) days of activation, unless the Services have already been initiated (e.g., by connecting the Zap or accessing the app). To exercise your right of withdrawal, contact Sourceful at [support@sourceful.energy](mailto:support@sourceful.energy).
+**For Zap Device Purchase:**  
+Your right of withdrawal is governed by Section 3A above. You have 30 days from delivery to return the device for a full refund.
 
+**For Subscription Services:**  
+Under Swedish distance selling regulations (distansavtalslagen), you have 14 days to withdraw from a subscription. However, if you have actively begun using the subscription features during this period, the right of withdrawal may no longer apply.
+
+To exercise any right of withdrawal, contact support@sourceful.energy.
 ---
 
 ## 15. Termination and Consequences of Termination
 
-Either Party may terminate the Agreement in accordance with Section 3A. Termination of the Subscription does **not** affect your ownership of the Zap device.
+Subscription services may be terminated by either Party in accordance with Section 3B. 
 
+Termination of the Subscription does not affect your ownership of the Zap device or access to the free tier functionality.
+
+Your purchase of the Zap device is a completed transaction and cannot be "terminated," but you may exercise your right of withdrawal under Section 3A within 30 days of delivery, or make a complaint regarding defects under Section 6A.
 ---
 
 ## 16. Confidentiality
@@ -229,7 +268,7 @@ Consumers may also contact the **National Board for Consumer Disputes (ARN)** or
 ## Appendix 1 – Hardware Terms (Zap Device)
 
 ### 1. Applicability
-These Hardware Terms supplement the Terms and Conditions and apply to the Zap device provided as part of the Sourceful Subscription.
+These Hardware Terms supplement the Terms and Conditions and apply to the Zap device sold as a standalone product.
 
 If there is any conflict between these Hardware Terms and the main Terms, these Hardware Terms shall prevail with respect to the Zap device. All other provisions of the Terms remain in effect.
 
@@ -242,9 +281,25 @@ The Zap is intended for private residential use in conjunction with the Sourcefu
 The End User may not resell, modify, tamper with, or use the device in a manner that interferes with Sourceful’s systems or data integrity.
 
 ### 4. Warranty
-Sourceful provides a two (2)-year warranty covering manufacturing defects from the date of delivery.  
-The warranty does not cover damage caused by misuse, improper installation, unauthorized modification, accidents, or external electrical faults.  
-Warranty service may involve repair or replacement at Sourceful’s discretion.
+Sourceful provides a two (2)-year commercial warranty covering manufacturing defects from the date of delivery.
+
+The warranty covers:
+- Manufacturing defects in materials or workmanship
+- Malfunctions under normal use according to instructions
+
+The warranty does not cover:
+- Damage caused by misuse, improper installation, or unauthorized modification
+- Normal wear and tear
+- Damage from accidents, lightning, power surges, or other external electrical events
+- Defects arising after unauthorized repair attempts
+
+Warranty service may involve repair or replacement at Sourceful's discretion. 
+If repair or replacement is not possible, a refund may be offered.
+
+**Important**: This commercial warranty does not limit your statutory rights 
+under Swedish consumer purchase law (konsumentköplagen). If the device is 
+defective, you may choose to invoke either this warranty or your statutory 
+rights under Section 6A.
 
 ### 5. Firmware Updates
 Sourceful may remotely update firmware to maintain security, compatibility, and functionality.  

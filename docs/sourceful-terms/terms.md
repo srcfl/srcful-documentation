@@ -6,8 +6,8 @@ pagination_prev: null
 
 # Sourceful Energy – Terms and Conditions
 
-**Effective Date:** 2025-10-15 
-**Last Updated:** 2025-10-06  
+**Effective Date:** 2025-10-30 
+**Last Updated:** 2025-10-30
 **Company:** Sourceful Labs AB (reg. no. 559382-0458)  
 **Brand:** Sourceful Energy  
 **Website:** [https://sourceful.energy](https://sourceful.energy)

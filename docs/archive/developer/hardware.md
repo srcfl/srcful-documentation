@@ -1,17 +1,22 @@
 ---
-sidebar_position: 3
-slug: /developer/hardware
+sidebar_position: 2
+slug: /archive/developer/hardware
 pagination_prev: null
 ---
 
-# Hardware/Firmware Guide
+# Hardware/Firmware Guide (Legacy)
+
+:::warning Legacy Documentation
+This document is archived and describes the legacy Sourceful Energy Gateway and the open-source P1 reader firmware for the Zap. The Zap is now a universal connector with closed-source firmware supporting P1 ports, Modbus TCP, Modbus RTU, MQTT, and more. For current development guidance, please refer to the [Zap Developer Documentation](/developer/zap-for-developers).
+:::
+
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is firmware compatibility. Document is under development.
 
 While there are many types of devices that can be connected to the SEN, they are all regarded as gateways in the SEN. The gateway is responsible for collecting data and controlling one or several energy resources. Some gateways are specialized (e.g., a P1 reader that acts as a gateway to a smart energy meter) and some are more generic (e.g., the Sourceful Energy Gateway).
 
 The firmware for both the Sourceful Energy Gateway and Sourceful Energy Zap is open source and can serve as reference implementations:
- - https://github.com/srcfl/srcful-gateway
- - https://github.com/srcfl/srcful-zap-firmware
+ - https://github.com/srcfl/srcful-gateway (archived)
+ - https://github.com/srcfl/srcful-zap-firmware (legacy open-source P1 reader firmware)
 
 ## Basics
 A gateway needs to be identifiable and provide a public key. Gateway ID and public key need to be registered with SEN before the gateway is usable. Internally a gateway must maintain the private key and sign data.
@@ -43,8 +48,8 @@ The SEN uses ECDSA (Elliptic Curve Digital Signature Algorithm) for cryptographi
 
 ## Core Specifications
 - **Algorithm**: ECDSA
-- **Curve**: SECP256r1 
-- **Key Sizes**: 
+- **Curve**: SECP256r1
+- **Key Sizes**:
   - Private Key: 32 bytes (256 bits)
   - Public Key: 64 bytes (x,y coordinates, 32 bytes each)
 
@@ -217,7 +222,7 @@ sequenceDiagram
     participant U as User
     participant C as Client
     participant G as Gateway
-    
+
     C->>G: GET api/wifi
     G-->>C: SSIDs list & current connection status
     C->>U: Display available networks
@@ -259,8 +264,8 @@ The following endpoints need to be implemented to support onboarding in the SEA.
 
 Get cryptographic information about the device.
 
-**Endpoint:** `/api/crypto`  
-**Method:** `GET`  
+**Endpoint:** `/api/crypto`
+**Method:** `GET`
 **Content Type:** `application/json`
 
 ### Response
@@ -284,8 +289,8 @@ For gateways that are integrated into the SEA there is a need for a wallet recov
 The gateway would need to be put in eg. a mode that enables bluetooth, and the `ble/stop` message will be sent when the flow has finished and the gateway can resume normal operations.
 
 
-**Endpoint:** `/api/crypto/sign`  
-**Method:** `POST`  
+**Endpoint:** `/api/crypto/sign`
+**Method:** `POST`
 **Content Type:** `application/json`
 
 ### Request Parameters
@@ -328,8 +333,8 @@ If timestamp is not provided the device time will be used. This can be a problem
 
 Get current WiFi connection status and available networks.
 
-**Endpoint:** `/api/wifi`  
-**Method:** `GET`  
+**Endpoint:** `/api/wifi`
+**Method:** `GET`
 **Content Type:** `application/json`
 
 ### Response
@@ -352,8 +357,8 @@ If not connected to any WiFi network, the "connected" field will be null.
 
 Configure WiFi credentials for the device.
 
-**Endpoint:** `/api/wifi`  
-**Method:** `POST`  
+**Endpoint:** `/api/wifi`
+**Method:** `POST`
 **Content Type:** `application/json`
 
 ### Request Parameters
@@ -394,8 +399,8 @@ Configure WiFi credentials for the device.
 
 Initiate an asynchronous WiFi network scan.
 
-**Endpoint:** `/api/wifi/scan`  
-**Method:** `GET`  
+**Endpoint:** `/api/wifi/scan`
+**Method:** `GET`
 **Content Type:** `application/json`
 
 ### Response
@@ -412,8 +417,8 @@ Initiate an asynchronous WiFi network scan.
 
 Schedule BLE service to stop.
 
-**Endpoint:** `/api/ble/stop`  
-**Method:** `POST`  
+**Endpoint:** `/api/ble/stop`
+**Method:** `POST`
 **Content Type:** `application/json`
 
 ### Response
@@ -441,17 +446,17 @@ None of these endpoints require authentication. The device is designed to be acc
 
 ## Format of Responses
 
-Responses are in JSON format with appropriate HTTP status codes. 
+Responses are in JSON format with appropriate HTTP status codes.
 
 ## Additional Notes
 
 - These endpoints can be accessed both via HTTP and BLE interfaces
 - BLE interfaces use a custom protocol to map these endpoints to BLE characteristics
-- For timestamp formatting, the format is `YYYY-MM-DDThh:mm:ssZ` (UTC time) 
+- For timestamp formatting, the format is `YYYY-MM-DDThh:mm:ssZ` (UTC time)
 
 
 # SEN Data Ingress
-Gateways send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. You may send several data packages in the same payload of the JWT but the data needs to be from the same energy resource for each JWT. E.g. if a gateway is connected to both an inverter and a meter the data from the inverter needs to be sent in one JWT (with optionally many datapoints) and data from the meter in another JWT (with optionally many datapoints). 
+Gateways send data to the SEN using a signed JSON Web Token (JWT) format. You can read more about the format specification here: https://jwt.io/introduction. Frequency of sending is 10 seconds, but may be more seldom. You may send several data packages in the same payload of the JWT but the data needs to be from the same energy resource for each JWT. E.g. if a gateway is connected to both an inverter and a meter the data from the inverter needs to be sent in one JWT (with optionally many datapoints) and data from the meter in another JWT (with optionally many datapoints).
 
 In particular, data is ingested using signed JWTs (not encrypted) via HTTPS. I.e., standard safe HTTPS transport is used to perform end-to-end encryption of the data.
 
@@ -460,7 +465,7 @@ The header consists of the standard fields plus extra protocol-specific fields.
 
 ```json
 {
-    "alg": "ES256",    
+    "alg": "ES256",
     "typ": "JWT",
     "device": "device_id",
     "opr": "testing",

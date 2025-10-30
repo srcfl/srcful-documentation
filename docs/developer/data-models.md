@@ -6,7 +6,106 @@ pagination_prev: null
 
 # Data Models
 
-Sourceful uses a standardized data model structure for Distributed Energy Resources (DER) data collection. The system supports three main device types: photovoltaic (PV) systems, battery storage systems (Home Batteries and EV Batteries), and meters. Each device type inherits from a common base structure while adding device-specific fields.
+This document describes Sourceful's data model architecture, covering both the logical hierarchy of resources and the telemetry data structures for distributed energy resources.
+
+## Platform Hierarchy
+
+Sourceful organizes energy resources in a four-level hierarchy:
+
+### 1. WALLET → 2. SITE → 3. DEVICE → 4. DER
+
+### WALLET (Permission Layer)
+
+The **Wallet** is the top-level authentication and authorization entity. It represents:
+- User identity and ownership
+- Permission boundaries (OAuth-style scopes)
+- Access control for all resources beneath it
+- The entity that grants or revokes access to applications
+
+A Wallet can own multiple Sites. See [Authentication & Permissioning](/developer/auth) for details on OAuth-style access patterns.
+
+### SITE (Logical Grouping)
+
+A **Site** represents a complete energy system - everything "behind the meter":
+- The logical boundary for EMS optimization
+- Typically corresponds to a physical location (home, building, facility)
+- Contains all energy resources at that location
+- The level where energy flows are balanced and optimized
+
+**Example Site composition:**
+- Grid connection point (meter)
+- Solar panels (PV)
+- Battery storage
+- EV charger
+- Hybrid inverter
+- Heat pump
+
+The Site concept is crucial because energy optimization happens at this level - you're optimizing the whole system, not individual devices in isolation.
+
+### DEVICE (Physical Connection Point)
+
+A **Device** represents the physical hardware you communicate with and control:
+- The actual communication endpoint (Modbus address, MQTT client, P1 port)
+- Often the electrical connection point
+- What the Zap directly talks to via protocols
+
+**Examples:**
+- Hybrid inverter (Modbus-TCP device)
+- EV charger (MQTT device)
+- Smart meter (P1 device)
+- Battery management system (Modbus-RTU device)
+
+One Device may expose multiple DERs (see below).
+
+### DER (Distributed Energy Resource)
+
+A **DER** is the logical representation of an energy resource or function:
+- What the energy system "sees" and models
+- The unit of energy generation, storage, or consumption
+- Can be a physical component or a logical representation
+
+**Important concept:** DERs are often representations of capabilities "under" a Device, not always directly controllable entities.
+
+**Example: Hybrid Inverter**
+- **DEVICE**: The inverter itself (communication/control point via Modbus)
+- **DER #1**: Solar PV (generation capability)
+- **DER #2**: Battery (storage capability)
+- **DER #3**: Grid connection (import/export capability)
+
+You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (PV, battery). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
+
+**DER Types:**
+- **PV (Photovoltaic)**: Solar generation
+- **Battery**: Energy storage
+- **Meter**: Grid import/export measurement
+- **EV**: Vehicle-to-grid capable electric vehicle
+- **Flexible Load**: Controllable consumption (heat pumps, HVAC, etc.)
+
+## Hierarchy Example
+
+```
+WALLET: user_abc123
+  └─ SITE: home_main_street
+      ├─ DEVICE: hybrid_inverter_01 (Modbus-TCP)
+      │   ├─ DER: pv_rooftop (Solar PV)
+      │   └─ DER: battery_01 (Home Battery)
+      ├─ DEVICE: ev_charger_01 (MQTT)
+      │   └─ DER: ev_tesla_model3 (EV Battery)
+      └─ DEVICE: smart_meter_01 (P1)
+          └─ DER: grid_meter (Meter)
+```
+
+In this example:
+- The hybrid inverter is one physical device, but exposes two DER capabilities
+- Each Device may use a different protocol
+- The Site optimizes across all DERs as a coordinated system
+- The Wallet controls access permissions for the entire hierarchy
+
+---
+
+## Telemetry Data Models
+
+The following sections describe the standardized telemetry data structures for DER types. Each DER type inherits from a common base structure while adding resource-specific fields.
 
 * [Base Structure](#base-structure)
     * [DERData Root Structure](#derdata-root-structure)
@@ -19,7 +118,6 @@ Sourceful uses a standardized data model structure for Distributed Energy Resour
     * [PV Data Model](#pv-data-model)
     * [Battery Data Model](#battery-data-model)
     * [Meter Data Model](#meter-data-model)
-* [Field Naming Convention](#field-naming-convention)
 
 ## Base Structure
 

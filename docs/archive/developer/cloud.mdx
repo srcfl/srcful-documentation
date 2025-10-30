@@ -1,10 +1,14 @@
 ---
-sidebar_position: 3
-slug: /developer/cloud
+sidebar_position: 1
+slug: /archive/developer/cloud
 pagination_prev: null
 ---
 
 # Cloud-to-Cloud Integration with the Sourceful Energy Network (SEN)
+
+:::warning Legacy Documentation
+This document is archived and may contain outdated information. It describes the legacy cloud-to-cloud integration methods that were used with the Sourceful Energy Gateway. For current development guidance, please refer to the [Zap Developer Documentation](/developer/zap-for-developers).
+:::
 
 ## Introduction
 
@@ -12,7 +16,7 @@ This document outlines the methods for integrating third-party cloud platforms w
 
 This integration pattern assumes that device data (e.g., from inverters, batteries, meters) is already successfully reporting to your existing cloud infrastructure. The focus here is on the subsequent step: forwarding this data reliably and securely to the SEN.
 
-The core security mechanism relies on signed JSON Web Tokens (JWTs), similar to the process used by hardware gateways directly connected to SEN. For background on the JWT structure and signing process, refer to the [Hardware Gateway Firmware Documentation](https://docs.sourceful.energy/developer/hardware).
+The core security mechanism relies on signed JSON Web Tokens (JWTs), similar to the process used by hardware gateways directly connected to SEN. For background on the JWT structure and signing process, refer to the [Hardware Gateway Firmware Documentation](/archive/developer/hardware).
 
 **Overall Data Flow:**
 
@@ -146,4 +150,4 @@ Integrating a partner cloud with SEN involves securely transmitting device data 
 3.  Implement the necessary components (JWT signing, API endpoints, onboarding process).
 4.  Be aware that current integrations focus on data ingress only.
 
-Refer to the [Hardware Gateway Firmware Documentation](https://docs.sourceful.energy/developer/hardware) for details on the expected JWT format and signing algorithms. For specific API endpoints and setup procedures, please coordinate directly with the Sourceful Energy team.
+Refer to the [Hardware Gateway Firmware Documentation](/archive/developer/hardware) for details on the expected JWT format and signing algorithms. For specific API endpoints and setup procedures, please coordinate directly with the Sourceful Energy team.

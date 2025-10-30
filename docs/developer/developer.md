@@ -13,8 +13,9 @@ Build on the Grid Intelligence Layer with permissioned access to energy data, pr
 - [Price API](/developer/price-api)
 - [Data Models](/developer/data-models)
 - [EMS & Control](/developer/ems)
-- [Hardware/Firmware](/developer/hardware)
+- [Zap for Developers](/developer/zap-for-developers)
+- [Hardware Setup](/developer/hardware) - Firmware flashing and device preparation
 - [Design Manual (UI/brand)](/developer/design-manual)
-- [Zap for Developers](/developer/zap)
+- [Legacy Developer Documentation](/archive/developer) - Archived docs for Sourceful Energy Gateway and legacy systems
 
 Community: https://discord.gg/srcful

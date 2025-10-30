@@ -35,6 +35,6 @@ Zap is our Connector — the base of the hardware layer. It anchors trustworthy,
 - Authentication & scopes: see `/developer/auth.md` and `/developer/core-principles.md`.
 - Data models: see `/developer/data-models.md`.
 - Price & tariffs: see `/developer/price-api.md`.
-- EMS & control: see `/developer/ems.md` and `/developer/hardware.md`.
+- EMS & control: see `/developer/ems.md` and `/developer/zap-for-developers.md`.
 
 Proceed to the Developer section (`/developer/`) to start building.

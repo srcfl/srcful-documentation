@@ -200,6 +200,7 @@ Your right of withdrawal is governed by Section 3A above. You have 30 days from 
 Under Swedish distance selling regulations (distansavtalslagen), you have 14 days to withdraw from a subscription. However, if you have actively begun using the subscription features during this period, the right of withdrawal may no longer apply.
 
 To exercise any right of withdrawal, contact support@sourceful.energy.
+
 ---
 
 ## 15. Termination and Consequences of Termination
@@ -209,6 +210,7 @@ Subscription services may be terminated by either Party in accordance with Secti
 Termination of the Subscription does not affect your ownership of the Zap device or access to the free tier functionality.
 
 Your purchase of the Zap device is a completed transaction and cannot be "terminated," but you may exercise your right of withdrawal under Section 3A within 30 days of delivery, or make a complaint regarding defects under Section 6A.
+
 ---
 
 ## 16. Confidentiality

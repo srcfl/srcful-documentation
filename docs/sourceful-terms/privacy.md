@@ -61,3 +61,30 @@ The data is stored for as long as you are using the Zap device and service, and 
 | What processing we perform | What personal data we process | Our legal basis for the processing |
 |:---:|:---:|:---:|
 | Execute remote optimization and automation of your connected energy devices (e.g., batteries, EV chargers, or inverters) to improve energy efficiency and cost savings, as requested by you when enabling the feature (**Active Control**). | Device status (e.g., charge level, set points)<br/>Control commands and execution logs<br/>Real-time energy consumption/production data used for optimization | Performance of contract (Article 6.1(b)
+
+### Analytics and Marketing Technologies
+We use various analytics and marketing tools to understand how visitors interact with our website, improve our services, and deliver relevant advertising. These tools collect and process data as described below.
+
+**Meta (Facebook) Pixel**
+We use Meta Pixel to measure the effectiveness of our advertising campaigns and understand how visitors interact with our website after viewing our ads on Facebook and Instagram. Meta Pixel collects information about your visit, including pages viewed, actions taken, and device information. This data helps us optimize our advertising and show you relevant content about our energy solutions.
+Meta processes this data in accordance with their privacy policy. You can control how Meta uses your data for advertising purposes through your Facebook Ad Preferences.
+
+**TikTok Pixel**
+We use TikTok Pixel to measure and optimize our advertising campaigns on TikTok. The pixel collects data about your website activity, which helps us understand campaign performance and reach relevant audiences. TikTok may combine this data with information from your TikTok account to personalize advertising.
+You can manage your TikTok advertising preferences through your TikTok account settings.
+
+**LinkedIn Insight Tag**
+We use LinkedIn Insight Tag to track conversions from our LinkedIn advertising campaigns, gain insights about our website visitors, and build targeted audiences for future campaigns. The tag collects data about your visit, including pages viewed and actions taken.
+LinkedIn members can control how their data is used for advertising in their LinkedIn account settings. Non-members can opt out through LinkedIn's guest controls.
+
+**Reddit Pixel**
+We use Reddit Pixel to measure the effectiveness of our advertising on Reddit and understand how Reddit users interact with our website. The pixel collects information about your browsing activity, including pages viewed, actions taken, and conversion events. This helps us optimize our Reddit advertising campaigns and reach relevant communities interested in energy technology.
+Reddit may match this data with your Reddit account to provide personalized advertising. You can control your Reddit advertising preferences through your Reddit account settings or opt out of personalized advertising at www.reddit.com/personalization.
+
+**HubSpot**
+We use HubSpot as our customer relationship management (CRM) and marketing automation platform. HubSpot helps us manage communications, track customer interactions, and analyze website behavior. Data collected includes contact information you provide, pages you visit, emails you open, and forms you complete.
+HubSpot processes this data on our behalf and stores it securely within the European Economic Area where possible.
+
+**Microsoft Clarity**
+We use Microsoft Clarity to understand how visitors use our website through session recordings and heatmaps. Clarity collects information about how you interact with our site, including mouse movements, clicks, and scrolling behavior. This helps us identify usability issues and improve the user experience.
+Microsoft Clarity does not collect personally identifiable information in session recordings. Data is processed in accordance with Microsoft's privacy policy.

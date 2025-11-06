@@ -17,6 +17,7 @@ Sourceful organizes energy resources in a four-level hierarchy:
 ### WALLET (Permission Layer)
 
 The **Wallet** is the top-level authentication and authorization entity. It represents:
+
 - User identity and ownership
 - Permission boundaries (OAuth-style scopes)
 - Access control for all resources beneath it
@@ -27,12 +28,14 @@ A Wallet can own multiple Sites. See [Authentication & Permissioning](/developer
 ### SITE (Logical Grouping)
 
 A **Site** represents a complete energy system - everything "behind the meter":
+
 - The logical boundary for EMS optimization
 - Typically corresponds to a physical location (home, building, facility)
 - Contains all energy resources at that location
 - The level where energy flows are balanced and optimized
 
 **Example Site composition:**
+
 - Grid connection point (meter)
 - Solar panels (PV)
 - Battery storage
@@ -45,11 +48,13 @@ The Site concept is crucial because energy optimization happens at this level - 
 ### DEVICE (Physical Connection Point)
 
 A **Device** represents the physical hardware you communicate with and control:
+
 - The actual communication endpoint (Modbus address, MQTT client, P1 port)
 - Often the electrical connection point
 - What the Zap directly talks to via protocols
 
 **Examples:**
+
 - Hybrid inverter (Modbus-TCP device)
 - EV charger (MQTT device)
 - Smart meter (P1 device)
@@ -60,6 +65,7 @@ One Device may expose multiple DERs (see below).
 ### DER (Distributed Energy Resource)
 
 A **DER** is the logical representation of an energy resource or function:
+
 - What the energy system "sees" and models
 - The unit of energy generation, storage, or consumption
 - Can be a physical component or a logical representation
@@ -67,6 +73,7 @@ A **DER** is the logical representation of an energy resource or function:
 **Important concept:** DERs are often representations of capabilities "under" a Device, not always directly controllable entities.
 
 **Example: Hybrid Inverter**
+
 - **DEVICE**: The inverter itself (communication/control point via Modbus)
 - **DER #1**: Solar PV (generation capability)
 - **DER #2**: Battery (storage capability)
@@ -75,6 +82,7 @@ A **DER** is the logical representation of an energy resource or function:
 You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (PV, battery). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
 
 **DER Types:**
+
 - **PV (Photovoltaic)**: Solar generation
 - **Battery**: Energy storage
 - **Meter**: Grid import/export measurement
@@ -96,6 +104,7 @@ WALLET: user_abc123
 ```
 
 In this example:
+
 - The hybrid inverter is one physical device, but exposes two DER capabilities
 - Each Device may use a different protocol
 - The Site optimizes across all DERs as a coordinated system
@@ -107,17 +116,17 @@ In this example:
 
 The following sections describe the standardized telemetry data structures for DER types. Each DER type inherits from a common base structure while adding resource-specific fields.
 
-* [Base Structure](#base-structure)
-    * [DERData Root Structure](#derdata-root-structure)
-    * [Inheritance Model](#inheritance-model)
-* [Units and Conventions](#units-and-conventions)
-    * [Units](#units)
-    * [Sign Conventions](#sign-conventions)
-* [Device Types](#device-types)
-    * [BaseDeviceData](#basedevicedata)
-    * [PV Data Model](#pv-data-model)
-    * [Battery Data Model](#battery-data-model)
-    * [Meter Data Model](#meter-data-model)
+- [Base Structure](#base-structure)
+  - [DERData Root Structure](#derdata-root-structure)
+  - [Inheritance Model](#inheritance-model)
+- [Units and Conventions](#units-and-conventions)
+  - [Units](#units)
+  - [Sign Conventions](#sign-conventions)
+- [Device Types](#device-types)
+  - [BaseDeviceData](#basedevicedata)
+  - [PV Data Model](#pv-data-model)
+  - [Battery Data Model](#battery-data-model)
+  - [Meter Data Model](#meter-data-model)
 
 ## Base Structure
 
@@ -126,7 +135,7 @@ The following sections describe the standardized telemetry data structures for D
 The root data structure can contain up to three subsystems:
 
 - **pv**: Photovoltaic system data
-- **battery**: Battery storage system data  
+- **battery**: Battery storage system data
 - **meter**: Meter data
 
 ### Inheritance Model
@@ -136,7 +145,7 @@ All device types inherit from `BaseDeviceData`:
 ```json
 {
   "type": "pv",
-  "make": "Deye", 
+  "make": "Deye",
   "timestamp": 1755701251122,
   "read_time_ms": 42
 }
@@ -172,12 +181,12 @@ All measurements use base SI units:
 
 Common fields shared by all device types:
 
-| Field          | Unit         | Data Type | Description                                   |
-| -------------- | ------------ | --------- | --------------------------------------------- |
-| `type`         | -            | string    | Object type ("pv", "battery", "meter")        |
-| `make`         | -            | string    | Manufacturer/brand name (optional)            |
-| `timestamp`    | milliseconds | integer   | Timestamp of reading start                    |
-| `read_time_ms` | milliseconds | integer   | Time taken to complete the reading            |
+| Field          | Unit         | Data Type | Description                            |
+| -------------- | ------------ | --------- | -------------------------------------- |
+| `type`         | -            | string    | Object type ("pv", "battery", "meter") |
+| `make`         | -            | string    | Manufacturer/brand name (optional)     |
+| `timestamp`    | milliseconds | integer   | Timestamp of reading start             |
+| `read_time_ms` | milliseconds | integer   | Time taken to complete the reading     |
 
 ### PV Data Model
 
@@ -190,6 +199,8 @@ Photovoltaic system data with solar generation metrics:
   "type": "pv",
   "make": "Deye",
   "W": -1500,
+  "lower_limit_W": -3000,
+  "upper_limit_W": 0,
   "rated_power_W": 3000,
   "mppt1_V": 400,
   "mppt1_A": -3.75,
@@ -202,16 +213,18 @@ Photovoltaic system data with solar generation metrics:
 
 **Fields:**
 
-| Field                 | Unit | Data Type | Description                            |
-| --------------------- | ---- | --------- | -------------------------------------- |
-| `W`                   | W    | float     | Power Generation (always negative) |
-| `rated_power_W`       | W    | float     | System Rated Power                     |
-| `mppt1_V`             | V    | float     | MPPT1 Voltage                          |
-| `mppt1_A`             | A    | float     | MPPT1 Current                          |
-| `mppt2_V`             | V    | float     | MPPT2 Voltage                          |
-| `mppt2_A`             | A    | float     | MPPT2 Current                          |
-| `heatsink_C`          | °C   | float     | Inverter Temperature                   |
-| `total_generation_Wh` | Wh   | integer   | Total Energy Generated                 |
+| Field                 | Unit | Data Type | Description                                                     |
+| --------------------- | ---- | --------- | --------------------------------------------------------------- |
+| `W`                   | W    | integer   | Power Generation (always negative)                              |
+| `lower_limit_W`       | W    | integer   | Most-negative PV power (typically the instantaneous power `W`)  |
+| `upper_limit_W`       | W    | integer   | Least-negative PV power (typically the instantaneous power `W`) |
+| `rated_power_W`       | W    | integer   | System Rated Power                                              |
+| `mppt1_V`             | V    | float     | MPPT1 Voltage                                                   |
+| `mppt1_A`             | A    | float     | MPPT1 Current                                                   |
+| `mppt2_V`             | V    | float     | MPPT2 Voltage                                                   |
+| `mppt2_A`             | A    | float     | MPPT2 Current                                                   |
+| `heatsink_C`          | °C   | float     | Inverter Temperature                                            |
+| `total_generation_Wh` | Wh   | integer   | Total Energy Generated                                          |
 
 ### Battery Data Model
 
@@ -224,6 +237,8 @@ Battery storage system data with charge/discharge metrics:
   "type": "battery",
   "make": "Tesla",
   "W": 500,
+  "lower_limit_W": -4500,
+  "upper_limit_W": 5000,
   "A": 10.5,
   "V": 48.2,
   "SoC_nom_fract": 0.75,
@@ -235,15 +250,19 @@ Battery storage system data with charge/discharge metrics:
 
 **Fields:**
 
-| Field                | Unit     | Data Type | Description                          |
-| -------------------- | -------- | --------- | ------------------------------------ |
-| `W`                  | W        | float     | Active Power (+ charge, - discharge) |
-| `A`                  | A        | float     | Current (+ charge, - discharge)      |
-| `V`                  | V        | float     | Voltage                              |
-| `SoC_nom_fract`      | fraction | float     | State of Charge (0.0-1.0)            |
-| `heatsink_C`         | °C       | float     | Battery Temperature                  |
-| `total_charge_Wh`    | Wh       | integer   | Total Energy Charged                 |
-| `total_discharge_Wh` | Wh       | integer   | Total Energy Discharged              |
+| Field                | Unit     | Data Type | Description                                                                                             |
+| -------------------- | -------- | --------- | ------------------------------------------------------------------------------------------------------- |
+| `W`                  | W        | integer   | Active Power (+ charge, - discharge)                                                                    |
+| `lower_limit_W`      | W        | integer   | Most-negative allowable discharge power (headroom limited by inverter capacity minus current PV output) |
+| `upper_limit_W`      | W        | integer   | Most-positive allowable charge power                                                                    |
+| `A`                  | A        | float     | Current (+ charge, - discharge)                                                                         |
+| `V`                  | V        | float     | Voltage                                                                                                 |
+| `SoC_nom_fract`      | fraction | float     | State of Charge (0.0-1.0)                                                                               |
+| `heatsink_C`         | °C       | float     | Battery Temperature                                                                                     |
+| `total_charge_Wh`    | Wh       | integer   | Total Energy Charged                                                                                    |
+| `total_discharge_Wh` | Wh       | integer   | Total Energy Discharged                                                                                 |
+
+Battery discharge limits respect the shared inverter capacity. The available discharge headroom equals the inverter's nameplate rating minus the instantaneous PV output. For example, on an 8 kW hybrid inverter with 5 kW of PV generation online, the remaining 3 kW can be delivered by the battery (`lower_limit_W = -3000`). When state of charge falls below protection thresholds, the limit is clamped to 0 W.
 
 ### Meter Data Model
 
@@ -275,7 +294,7 @@ Grid meter data with import/export and phase-level measurements:
 
 | Field             | Unit | Data Type | Description                             |
 | ----------------- | ---- | --------- | --------------------------------------- |
-| `W`               | W    | float     | Total Active Power (+ import, - export) |
+| `W`               | W    | integer   | Total Active Power (+ import, - export) |
 | `Hz`              | Hz   | float     | Grid Frequency                          |
 | `L1_V`            | V    | float     | L1 Phase Voltage                        |
 | `L1_A`            | A    | float     | L1 Phase Current                        |
@@ -288,4 +307,3 @@ Grid meter data with import/export and phase-level measurements:
 | `L3_W`            | W    | float     | L3 Phase Power                          |
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
-

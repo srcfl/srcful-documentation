@@ -321,8 +321,8 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
   "timestamp": 1731573040000,
   "read_time_ms": 42,
   "W": 6400,
-  "lower_limit_W": -11000,
-  "upper_limit_W": 11000,
+  "lower_limit_W": [-11000],
+  "upper_limit_W": [11000],
   "L1_V": 228.03,
   "L1_A": 9.228,
   "L1_W": 2104,
@@ -352,8 +352,8 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | Field                | Unit      | Data Type | Description                                                                 |
 |----------------------|-----------|-----------|-----------------------------------------------------------------------------|
 | `W`                  | W         | integer   | Active Power (+ charge/import to vehicle, - discharge/export from vehicle) |
-| `lower_limit_W`      | W         | integer   | Most-negative allowable power (e.g., -11000 for V2G discharge capability; 0 for uni-directional chargers without discharge support) |
-| `upper_limit_W`      | W         | integer   | Most-positive allowable power (e.g., 11000 for max charge)                 |
+| `lower_limit_W`      | W         | [integer]*   | Most-negative allowable powers (e.g., -11000 for V2G discharge capability; 0 for uni-directional chargers without discharge support) |
+| `upper_limit_W`      | W         | [integer]*   | Most-positive allowable powers (e.g., 11000 for max charge)                 |
 | `L1_V`               | V         | float     | L1 Phase Voltage                                                            |
 | `L1_A`               | A         | float     | L1 Phase Current                                                            |
 | `L1_W`               | W         | float     | L1 Phase Power (computed as V * A)                                          |
@@ -375,6 +375,8 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)     |
 | `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
 | `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
+
+* Array of limit values. This can be used to specfy intervals of limits. E.g. a v2g charger that can discharge with -5000 to -500, and charge with 500 to 5000 would be specified as `lower_limit_W=[-5000, 0, 500]` and `upper_limit_W=[-500, 0, 5000]`. Note that these two arrays need to have matching pairs.
 
 ### Implications for EMS and Optimization
 

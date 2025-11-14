@@ -86,7 +86,7 @@ You control the **Device** (inverter), but you represent its capabilities as sep
 - **PV (Photovoltaic)**: Solar generation
 - **Battery**: Energy storage
 - **Meter**: Grid import/export measurement
-- **EV**: Vehicle-to-grid capable electric vehicle
+- **Charger**: EV charger (uni- or bi-directional)
 - **Flexible Load**: Controllable consumption (heat pumps, HVAC, etc.)
 
 ## Hierarchy Example
@@ -98,7 +98,7 @@ WALLET: user_abc123
       │   ├─ DER: pv_rooftop (Solar PV)
       │   └─ DER: battery_01 (Home Battery)
       ├─ DEVICE: ev_charger_01 (MQTT)
-      │   └─ DER: ev_tesla_model3 (EV Battery)
+      │   └─ DER: tesla_model3 (Charger)
       └─ DEVICE: smart_meter_01 (P1)
           └─ DER: grid_meter (Meter)
 ```
@@ -307,3 +307,91 @@ Grid meter data with import/export and phase-level measurements:
 | `L3_W`            | W    | float     | L3 Phase Power                          |
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
+
+### Charger Data Model
+
+EV charger data with charge/discharge metrics and phase-level measurements. This DER type represents the charger's capability as a flexible load/source (uni- or bi-directional), with optional vehicle-specific attributes.
+
+**Example:**
+
+```json
+{
+  "type": "charger",
+  "make": "Ambibox",
+  "timestamp": 1731573040000,
+  "read_time_ms": 42,
+  "W": 6400,
+  "lower_limit_W": -11000,
+  "upper_limit_W": 11000,
+  "L1_V": 228.03,
+  "L1_A": 9.228,
+  "L1_W": 2104,
+  "L2_V": 227.92,
+  "L2_A": 9.333,
+  "L2_W": 2127,
+  "L3_V": 227.62,
+  "L3_A": 9.444,
+  "L3_W": 2150,
+  "offered_A": 10.0,
+  "connected": true,
+  "charging": true,
+  "vehicle_id": "my_tesla_model3",
+  "vehicle_capacity_Wh": 75000,
+  "vehicle_SoC_fract": 0.65,
+  "SoC_source": "vehicle",
+  "capacity_source": "user",
+  "total_import_Wh": 3623394,
+  "total_export_Wh": 12000,
+  "session_import_Wh": 15200,
+  "session_export_Wh": 0
+}
+```
+
+**Fields:**
+
+| Field                | Unit      | Data Type | Description                                                                 |
+|----------------------|-----------|-----------|-----------------------------------------------------------------------------|
+| `W`                  | W         | integer   | Active Power (+ charge/import to vehicle, - discharge/export from vehicle) |
+| `lower_limit_W`      | W         | integer   | Most-negative allowable power (e.g., -11000 for V2G discharge capability; 0 for uni-directional chargers without discharge support) |
+| `upper_limit_W`      | W         | integer   | Most-positive allowable power (e.g., 11000 for max charge)                 |
+| `L1_V`               | V         | float     | L1 Phase Voltage                                                            |
+| `L1_A`               | A         | float     | L1 Phase Current                                                            |
+| `L1_W`               | W         | float     | L1 Phase Power (computed as V * A)                                          |
+| `L2_V`               | V         | float     | L2 Phase Voltage                                                            |
+| `L2_A`               | A         | float     | L2 Phase Current                                                            |
+| `L2_W`               | W         | float     | L2 Phase Power (computed as V * A)                                          |
+| `L3_V`               | V         | float     | L3 Phase Voltage                                                            |
+| `L3_A`               | A         | float     | L3 Phase Current                                                            |
+| `L3_W`               | W         | float     | L3 Phase Power (computed as V * A)                                          |
+| `offered_A`          | A         | float     | Current offered by charger (from OCPP)                                      |
+| `connected`          | -         | boolean   | Is a vehicle connected?                                                     |
+| `charging`           | -         | boolean   | Is active charging/discharging occurring?                                   |
+| `vehicle_id`         | -         | string, optional | User-supplied or detected vehicle reference (null if unknown)        |
+| `vehicle_capacity_Wh`| Wh        | integer, optional | Vehicle battery capacity (null if unknown)                           |
+| `vehicle_SoC_fract`  | fraction  | float, optional | State of Charge (0.0-1.0, null if unknown)                            |
+| `SoC_source`         | -         | string, optional | Data source ("vehicle", "estimated", "manual", "unknown")     |
+| `capacity_source`    | -         | string, optional | Data source ("vehicle", "user", "default")                      |
+| `total_import_Wh`    | Wh        | integer   | Total Energy Imported (lifetime charge energy)                              |
+| `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)     |
+| `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
+| `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
+
+### Implications for EMS and Optimization
+
+- **Control (realtime)**: EMS uses only W, lower_limit_W, upper_limit_W – it works regardless of data quality. If connected: false, clamp limits to 0. For phase balancing, use phase-data directly (e.g., to avoid overload on one phase). For chargers with V2G support (e.g., Ambibox), lower_limit can go negative – great for grid stabilization. For uni-directional chargers, lower_limit is 0.
+
+- **Optimization (planning)**: This is where it gets interesting. If SoC and capacity are null/unknown, fallback to defaults (e.g., 60 kWh, start-SoC 0.3) and run conservatively: Optimize only based on limits, without long-term planning (e.g., "charge max now if spot price low, but no SoC-prediction"). With rich data (Ambibox/ISO 15118), full steam ahead: Calculate remaining Wh to full (capacity * (1 - SoC)), schedule discharge for peak hours. Estimation works ok for simple cases: At connect, set initial_SoC (user/default), update with session_import_Wh / capacity – but as you said, ignore losses initially (add 10% factor later). If the user charges elsewhere, reset at reconnect via user prompt.
+
+- **Hierarchy-fit**: DEVICE becomes the charger's comm-point (OCPP/MQTT), DER is "charger". Fits perfectly with your example – SITE optimizes charger-DER alongside battery/PV. No need for sub-DERs.
+
+### Thoughts on UX and Defaults for Launch
+
+For December (V2X-launch), prioritize minimal viable: Run with Alt A (automatic + override) – it's user-friendly without being annoying. At connect (detect via OCPP):
+
+1. If Ambibox/ISO 15118: Pull SoC/capacity auto.
+
+2. Otherwise: Prompt "Car connected on charger X. Is it your [last/default car]? Yes/No" – choose from registry.
+
+3. Override: Always button for manual SoC/input.
+
+Defaults: 60 kWh capacity (average EV), 0.3 initial SoC (typical "low" level). For optimization, if unknown: Assume infinite capacity (no SoC-clamp) or conservative (plan for 20 kWh flex). That's enough for launch – accurate SoC is nice-to-have for advanced optimization, but realtime control (limits) is must-have. You can A/B-test API integrations (Tesla/Volvo) post-launch to automate more – e/acc-style, iterate fast.

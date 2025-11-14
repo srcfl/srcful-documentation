@@ -199,8 +199,6 @@ Photovoltaic system data with solar generation metrics:
   "type": "pv",
   "make": "Deye",
   "W": -1500,
-  "lower_limit_W": -1500,
-  "upper_limit_W": -1500,
   "rated_power_W": 3000,
   "mppt1_V": 400,
   "mppt1_A": -3.75,
@@ -216,8 +214,6 @@ Photovoltaic system data with solar generation metrics:
 | Field                 | Unit | Data Type | Description                                                     |
 | --------------------- | ---- | --------- | --------------------------------------------------------------- |
 | `W`                   | W    | integer   | Power Generation (always negative)                              |
-| `lower_limit_W`       | W    | integer   | Most-negative PV power (typically the instantaneous power `W`)  |
-| `upper_limit_W`       | W    | integer   | Least-negative PV power (typically the instantaneous power `W`) |
 | `rated_power_W`       | W    | integer   | System Rated Power                                              |
 | `mppt1_V`             | V    | float     | MPPT1 Voltage                                                   |
 | `mppt1_A`             | A    | float     | MPPT1 Current                                                   |
@@ -237,8 +233,6 @@ Battery storage system data with charge/discharge metrics:
   "type": "battery",
   "make": "Tesla",
   "W": 500,
-  "lower_limit_W": -4500,
-  "upper_limit_W": 5000,
   "A": 10.5,
   "V": 48.2,
   "SoC_nom_fract": 0.75,
@@ -253,16 +247,12 @@ Battery storage system data with charge/discharge metrics:
 | Field                | Unit     | Data Type | Description                                                                                             |
 | -------------------- | -------- | --------- | ------------------------------------------------------------------------------------------------------- |
 | `W`                  | W        | integer   | Active Power (+ charge, - discharge)                                                                    |
-| `lower_limit_W`      | W        | integer   | Most-negative allowable discharge power (headroom limited by inverter capacity minus current PV output) |
-| `upper_limit_W`      | W        | integer   | Most-positive allowable charge power                                                                    |
 | `A`                  | A        | float     | Current (+ charge, - discharge)                                                                         |
 | `V`                  | V        | float     | Voltage                                                                                                 |
 | `SoC_nom_fract`      | fraction | float     | State of Charge (0.0-1.0)                                                                               |
 | `heatsink_C`         | °C       | float     | Battery Temperature                                                                                     |
 | `total_charge_Wh`    | Wh       | integer   | Total Energy Charged                                                                                    |
 | `total_discharge_Wh` | Wh       | integer   | Total Energy Discharged                                                                                 |
-
-Battery discharge limits respect the shared inverter capacity. The available discharge headroom equals the inverter's nameplate rating minus the instantaneous PV output. For example, on an 8 kW hybrid inverter with 5 kW of PV generation online, the remaining 3 kW can be delivered by the battery (`lower_limit_W = -3000`). When state of charge falls below protection thresholds, the limit is clamped to 0 W.
 
 ### Meter Data Model
 
@@ -321,8 +311,6 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
   "timestamp": 1731573040000,
   "read_time_ms": 42,
   "W": 6400,
-  "lower_limit_W": [-11000],
-  "upper_limit_W": [11000],
   "L1_V": 228.03,
   "L1_A": 9.228,
   "L1_W": 2104,
@@ -352,8 +340,6 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | Field                | Unit      | Data Type | Description                                                                 |
 |----------------------|-----------|-----------|-----------------------------------------------------------------------------|
 | `W`                  | W         | integer   | Active Power (+ charge/import to vehicle, - discharge/export from vehicle) |
-| `lower_limit_W`      | W         | [integer]*   | Most-negative allowable powers (e.g., -11000 for V2G discharge capability; 0 for uni-directional chargers without discharge support) |
-| `upper_limit_W`      | W         | [integer]*   | Most-positive allowable powers (e.g., 11000 for max charge)                 |
 | `L1_V`               | V         | float     | L1 Phase Voltage                                                            |
 | `L1_A`               | A         | float     | L1 Phase Current                                                            |
 | `L1_W`               | W         | float     | L1 Phase Power (computed as V * A)                                          |
@@ -376,15 +362,6 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
 | `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
 
-* Array of limit values. This can be used to specfy intervals of limits. E.g. a v2g charger that can discharge with -5000 to -500, and charge with 500 to 5000 would be specified as `lower_limit_W=[-5000, 0, 500]` and `upper_limit_W=[-500, 0, 5000]`. Note that these two arrays need to have matching pairs.
-
-### Implications for EMS and Optimization
-
-- **Control (realtime)**: EMS uses only W, lower_limit_W, upper_limit_W – it works regardless of data quality. If connected: false, clamp limits to 0. For phase balancing, use phase-data directly (e.g., to avoid overload on one phase). For chargers with V2G support (e.g., Ambibox), lower_limit can go negative – great for grid stabilization. For uni-directional chargers, lower_limit is 0.
-
-- **Optimization (planning)**: This is where it gets interesting. If SoC and capacity are null/unknown, fallback to defaults (e.g., 60 kWh, start-SoC 0.3) and run conservatively: Optimize only based on limits, without long-term planning (e.g., "charge max now if spot price low, but no SoC-prediction"). With rich data (Ambibox/ISO 15118), full steam ahead: Calculate remaining Wh to full (capacity * (1 - SoC)), schedule discharge for peak hours. Estimation works ok for simple cases: At connect, set initial_SoC (user/default), update with session_import_Wh / capacity – but as you said, ignore losses initially (add 10% factor later). If the user charges elsewhere, reset at reconnect via user prompt.
-
-- **Hierarchy-fit**: DEVICE becomes the charger's comm-point (OCPP/MQTT), DER is "charger". Fits perfectly with your example – SITE optimizes charger-DER alongside battery/PV. No need for sub-DERs.
 
 ### Thoughts on UX and Defaults for Launch
 
@@ -395,5 +372,3 @@ For December (V2X-launch), prioritize minimal viable: Run with Alt A (automatic 
 2. Otherwise: Prompt "Car connected on charger X. Is it your [last/default car]? Yes/No" – choose from registry.
 
 3. Override: Always button for manual SoC/input.
-
-Defaults: 60 kWh capacity (average EV), 0.3 initial SoC (typical "low" level). For optimization, if unknown: Assume infinite capacity (no SoC-clamp) or conservative (plan for 20 kWh flex). That's enough for launch – accurate SoC is nice-to-have for advanced optimization, but realtime control (limits) is must-have. You can A/B-test API integrations (Tesla/Volvo) post-launch to automate more – e/acc-style, iterate fast.

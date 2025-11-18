@@ -303,7 +303,6 @@ Grid meter data with import/export and phase-level measurements:
 EV charger data with charge/discharge metrics and phase-level measurements. This DER type represents the charger's capability as a flexible load/source (uni- or bi-directional), with optional vehicle-specific attributes.
 
 **Example:**
-
 ```json
 {
   "type": "charger",
@@ -321,8 +320,7 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
   "L3_A": 9.444,
   "L3_W": 2150,
   "offered_A": 10.0,
-  "connected": true,
-  "charging": true,
+  "status": "charging",
   "vehicle_id": "my_tesla_model3",
   "vehicle_capacity_Wh": 75000,
   "vehicle_SoC_fract": 0.65,
@@ -350,8 +348,7 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | `L3_A`               | A         | float     | L3 Phase Current                                                            |
 | `L3_W`               | W         | float     | L3 Phase Power (computed as V * A)                                          |
 | `offered_A`          | A         | float     | Current offered by charger (from OCPP)                                      |
-| `connected`          | -         | boolean   | Is a vehicle connected?                                                     |
-| `charging`           | -         | boolean   | Is active charging/discharging occurring?                                   |
+| `status`             | -         | string    | Charger status: "charging", "available", "preparing", "error"               |
 | `vehicle_id`         | -         | string, optional | User-supplied or detected vehicle reference (null if unknown)        |
 | `vehicle_capacity_Wh`| Wh        | integer, optional | Vehicle battery capacity (null if unknown)                           |
 | `vehicle_SoC_fract`  | fraction  | float, optional | State of Charge (0.0-1.0, null if unknown)                            |
@@ -361,6 +358,13 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)     |
 | `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
 | `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
+
+**Status Values:**
+
+- `"charging"` - Vehicle is connected and actively charging/discharging
+- `"available"` - Charger is ready and no vehicle connected
+- `"preparing"` - Vehicle connected, preparing to charge (authentication, cable check, etc.)
+- `"error"` - Charger or charging session has encountered an error
 
 
 ### Thoughts on UX and Defaults for Launch

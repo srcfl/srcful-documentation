@@ -319,7 +319,6 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
   "L3_V": 227.62,
   "L3_A": 9.444,
   "L3_W": 2150,
-  "offered_A": 10.0,
   "status": "charging",
   "vehicle_id": "my_tesla_model3",
   "vehicle_capacity_Wh": 75000,
@@ -328,6 +327,7 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
   "capacity_source": "user",
   "total_import_Wh": 3623394,
   "total_export_Wh": 12000,
+  "session_id": "1234",
   "session_import_Wh": 15200,
   "session_export_Wh": 0
 }
@@ -347,21 +347,22 @@ EV charger data with charge/discharge metrics and phase-level measurements. This
 | `L3_V`               | V         | float     | L3 Phase Voltage                                                            |
 | `L3_A`               | A         | float     | L3 Phase Current                                                            |
 | `L3_W`               | W         | float     | L3 Phase Power (computed as V * A)                                          |
-| `offered_A`          | A         | float     | Current offered by charger (from OCPP)                                      |
 | `status`             | -         | string    | Charger status: "charging", "available", "preparing", "error"               |
 | `vehicle_id`         | -         | string, optional | User-supplied or detected vehicle reference (null if unknown)        |
 | `vehicle_capacity_Wh`| Wh        | integer, optional | Vehicle battery capacity (null if unknown)                           |
 | `vehicle_SoC_fract`  | fraction  | float, optional | State of Charge (0.0-1.0, null if unknown)                            |
 | `SoC_source`         | -         | string, optional | Data source ("vehicle", "estimated", "manual", "unknown")     |
-| `capacity_source`    | -         | string, optional | Data source ("vehicle", "user", "default")                      |
+| `capacity_source`    | -         | string, optional | Data source ("vehicle", "user", "default")                           |
 | `total_import_Wh`    | Wh        | integer   | Total Energy Imported (lifetime charge energy)                              |
-| `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)     |
+| `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)      |
+| `session_id`         | -         | string    | Session identifier                                                          |
 | `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
 | `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
 
 **Status Values:**
 
 - `"charging"` - Vehicle is connected and actively charging/discharging
+- `"suspended"` - A vehicle is plugged into the port, but the charger is not delivering any power
 - `"available"` - Charger is ready and no vehicle connected
 - `"preparing"` - Vehicle connected, preparing to charge (authentication, cable check, etc.)
 - `"error"` - Charger or charging session has encountered an error

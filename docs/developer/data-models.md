@@ -298,81 +298,78 @@ Grid meter data with import/export and phase-level measurements:
 | `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
 | `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
 
-### Charger Data Model
-
-EV charger data with charge/discharge metrics and phase-level measurements. This DER type represents the charger's capability as a flexible load/source (uni- or bi-directional), with optional vehicle-specific attributes.
+### EV Charger Data Model (V2X Enabled)
 
 **Example:**
+
 ```json
 {
-  "type": "charger",
-  "make": "Ambibox",
-  "timestamp": 1731573040000,
-  "read_time_ms": 42,
-  "W": 6400,
-  "L1_V": 228.03,
-  "L1_A": 9.228,
-  "L1_W": 2104,
-  "L2_V": 227.92,
-  "L2_A": 9.333,
-  "L2_W": 2127,
-  "L3_V": 227.62,
-  "L3_A": 9.444,
-  "L3_W": 2150,
-  "offered_A": 10.0,
+  "type": "ev_charger",
+  "make": "Ferroamp",
   "status": "charging",
-  "vehicle_id": "my_tesla_model3",
-  "vehicle_capacity_Wh": 75000,
-  "vehicle_SoC_fract": 0.65,
-  "SoC_source": "vehicle",
-  "capacity_source": "user",
-  "total_import_Wh": 3623394,
-  "total_export_Wh": 12000,
-  "session_import_Wh": 15200,
-  "session_export_Wh": 0
+  "protocol": "ISO_15118_20",
+  "control_mode": "dynamic_bpt",
+  "plug_connected": true,
+  "W": 5300,
+  "A": 23.0,
+  "V": 230.5,
+  "Hz": 49.98,
+  "L1_V": 232.8,
+  "L1_A": 23.0,
+  "L1_W": 5354,
+  "L2_V": 230.9,
+  "L2_A": 0.0,
+  "L2_W": 0,
+  "L3_V": 230.2,
+  "L3_A": 0.0,
+  "L3_W": 0,
+  "dc_W": 5100,
+  "dc_V": 400.0,
+  "dc_A": 12.75,
+  "vehicle_soc_fract": 0.55,
+  "ev_target_energy_req_Wh": 5300,
+  "ev_max_energy_req_Wh": 18100,
+  "ev_min_energy_req_Wh": -25800,
+  "session_charge_Wh": 1500,
+  "session_discharge_Wh": 0,
+  "total_charge_Wh": 142000,
+  "total_discharge_Wh": 5100
 }
 ```
 
-**Fields:**
+**Fields Definition:**
 
-| Field                | Unit      | Data Type | Description                                                                 |
-|----------------------|-----------|-----------|-----------------------------------------------------------------------------|
-| `W`                  | W         | integer   | Active Power (+ charge/import to vehicle, - discharge/export from vehicle) |
-| `L1_V`               | V         | float     | L1 Phase Voltage                                                            |
-| `L1_A`               | A         | float     | L1 Phase Current                                                            |
-| `L1_W`               | W         | float     | L1 Phase Power (computed as V * A)                                          |
-| `L2_V`               | V         | float     | L2 Phase Voltage                                                            |
-| `L2_A`               | A         | float     | L2 Phase Current                                                            |
-| `L2_W`               | W         | float     | L2 Phase Power (computed as V * A)                                          |
-| `L3_V`               | V         | float     | L3 Phase Voltage                                                            |
-| `L3_A`               | A         | float     | L3 Phase Current                                                            |
-| `L3_W`               | W         | float     | L3 Phase Power (computed as V * A)                                          |
-| `offered_A`          | A         | float     | Current offered by charger (from OCPP)                                      |
-| `status`             | -         | string    | Charger status: "charging", "available", "preparing", "error"               |
-| `vehicle_id`         | -         | string, optional | User-supplied or detected vehicle reference (null if unknown)        |
-| `vehicle_capacity_Wh`| Wh        | integer, optional | Vehicle battery capacity (null if unknown)                           |
-| `vehicle_SoC_fract`  | fraction  | float, optional | State of Charge (0.0-1.0, null if unknown)                            |
-| `SoC_source`         | -         | string, optional | Data source ("vehicle", "estimated", "manual", "unknown")     |
-| `capacity_source`    | -         | string, optional | Data source ("vehicle", "user", "default")                      |
-| `total_import_Wh`    | Wh        | integer   | Total Energy Imported (lifetime charge energy)                              |
-| `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)     |
-| `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
-| `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
+| Field | Unit | Data Type | Description |
+|-------|------|-----------|-------------|
+| `type` | - | string | Always "ev_charger" |
+| `make` | - | string | Manufacturer brand (e.g., Ferroamp, Ambibox) |
+| `status` | - | string | State (idle, charging, discharging, error, suspended) |
+| `protocol` | - | string | Active protocol (e.g., ISO_15118_2, ISO_15118_20, DIN) |
+| `control_mode` | - | string | scheduled (Car decides) or dynamic (EMS/Charger decides) |
+| `plug_connected` | - | boolean | true if cable is physically inserted |
+| `W` | W | integer | AC Grid Power: (+) Charging, (-) Discharging/V2G |
+| `A` | A | float | AC Grid Current (Total) |
+| `V` | V | float | AC Grid Voltage (Average) |
+| `Hz` | Hz | float | Grid Frequency |
+| `L1_V` / `L2_V` / `L3_V` | V | float | Phase Voltage |
+| `L1_A` / `L2_A` / `L3_A` | A | float | Phase Current |
+| `L1_W` / `L2_W` / `L3_W` | W | float | Phase Power |
+| `dc_W` | W | integer | DC Battery Power: Actual power entering/leaving car battery |
+| `dc_V` | V | float | DC Voltage level of the EV battery |
+| `dc_A` | A | float | DC Current flow |
+| `vehicle_soc_fract` | fraction | float | Vehicle State of Charge (0.0 - 1.0) |
+| `ev_target_energy_req_Wh` | Wh | integer | Demand: Energy needed to reach driver's target SoC |
+| `ev_max_energy_req_Wh` | Wh | integer | Capacity: Empty space in battery available for charging |
+| `ev_min_energy_req_Wh` | Wh | integer | V2G Potential: Energy available for export (Negative value = V2G) |
+| `session_charge_Wh` | Wh | integer | Energy imported by EV during this session |
+| `session_discharge_Wh` | Wh | integer | Energy exported by EV during this session |
+| `total_charge_Wh` | Wh | integer | Lifetime Energy delivered to EV |
+| `total_discharge_Wh` | Wh | integer | Lifetime Energy exported from EV (V2G) |
 
 **Status Values:**
 
 - `"charging"` - Vehicle is connected and actively charging/discharging
+- `"suspended"` - A vehicle is plugged into the port, but the charger is not delivering any power
 - `"available"` - Charger is ready and no vehicle connected
 - `"preparing"` - Vehicle connected, preparing to charge (authentication, cable check, etc.)
 - `"error"` - Charger or charging session has encountered an error
-
-
-### Thoughts on UX and Defaults for Launch
-
-For December (V2X-launch), prioritize minimal viable: Run with Alt A (automatic + override) – it's user-friendly without being annoying. At connect (detect via OCPP):
-
-1. If Ambibox/ISO 15118: Pull SoC/capacity auto.
-
-2. Otherwise: Prompt "Car connected on charger X. Is it your [last/default car]? Yes/No" – choose from registry.
-
-3. Override: Always button for manual SoC/input.

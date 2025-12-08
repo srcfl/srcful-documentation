@@ -304,7 +304,6 @@ Grid meter data with import/export and phase-level measurements:
 
 ```json
 {
-<<<<<<< HEAD
   "type": "ev_charger",
   "make": "Ferroamp",
   "status": "charging",
@@ -335,39 +334,11 @@ Grid meter data with import/export and phase-level measurements:
   "session_discharge_Wh": 0,
   "total_charge_Wh": 142000,
   "total_discharge_Wh": 5100
-=======
-  "type": "charger",
-  "make": "Ambibox",
-  "timestamp": 1731573040000,
-  "read_time_ms": 42,
-  "W": 6400,
-  "L1_V": 228.03,
-  "L1_A": 9.228,
-  "L1_W": 2104,
-  "L2_V": 227.92,
-  "L2_A": 9.333,
-  "L2_W": 2127,
-  "L3_V": 227.62,
-  "L3_A": 9.444,
-  "L3_W": 2150,
-  "status": "charging",
-  "vehicle_id": "my_tesla_model3",
-  "vehicle_capacity_Wh": 75000,
-  "vehicle_SoC_fract": 0.65,
-  "SoC_source": "vehicle",
-  "capacity_source": "user",
-  "total_import_Wh": 3623394,
-  "total_export_Wh": 12000,
-  "session_id": "1234",
-  "session_import_Wh": 15200,
-  "session_export_Wh": 0
->>>>>>> 80c42c135267afe99420ab74b3176adcb6891689
 }
 ```
 
 **Fields Definition:**
 
-<<<<<<< HEAD
 | Field | Unit | Data Type | Description |
 |-------|------|-----------|-------------|
 | `type` | - | string | Always "ev_charger" |
@@ -394,31 +365,6 @@ Grid meter data with import/export and phase-level measurements:
 | `session_discharge_Wh` | Wh | integer | Energy exported by EV during this session |
 | `total_charge_Wh` | Wh | integer | Lifetime Energy delivered to EV |
 | `total_discharge_Wh` | Wh | integer | Lifetime Energy exported from EV (V2G) |
-=======
-| Field                | Unit      | Data Type | Description                                                                 |
-|----------------------|-----------|-----------|-----------------------------------------------------------------------------|
-| `W`                  | W         | integer   | Active Power (+ charge/import to vehicle, - discharge/export from vehicle) |
-| `L1_V`               | V         | float     | L1 Phase Voltage                                                            |
-| `L1_A`               | A         | float     | L1 Phase Current                                                            |
-| `L1_W`               | W         | float     | L1 Phase Power (computed as V * A)                                          |
-| `L2_V`               | V         | float     | L2 Phase Voltage                                                            |
-| `L2_A`               | A         | float     | L2 Phase Current                                                            |
-| `L2_W`               | W         | float     | L2 Phase Power (computed as V * A)                                          |
-| `L3_V`               | V         | float     | L3 Phase Voltage                                                            |
-| `L3_A`               | A         | float     | L3 Phase Current                                                            |
-| `L3_W`               | W         | float     | L3 Phase Power (computed as V * A)                                          |
-| `status`             | -         | string    | Charger status: "charging", "available", "preparing", "error"               |
-| `vehicle_id`         | -         | string, optional | User-supplied or detected vehicle reference (null if unknown)        |
-| `vehicle_capacity_Wh`| Wh        | integer, optional | Vehicle battery capacity (null if unknown)                           |
-| `vehicle_SoC_fract`  | fraction  | float, optional | State of Charge (0.0-1.0, null if unknown)                            |
-| `SoC_source`         | -         | string, optional | Data source ("vehicle", "estimated", "manual", "unknown")     |
-| `capacity_source`    | -         | string, optional | Data source ("vehicle", "user", "default")                           |
-| `total_import_Wh`    | Wh        | integer   | Total Energy Imported (lifetime charge energy)                              |
-| `total_export_Wh`    | Wh        | integer   | Total Energy Exported (lifetime discharge energy; 0 if no V2G support)      |
-| `session_id`         | -         | string    | Session identifier                                                          |
-| `session_import_Wh`  | Wh        | integer   | Session Energy Imported (reset on connect/disconnect)                       |
-| `session_export_Wh`  | Wh        | integer   | Session Energy Exported (reset on connect/disconnect)                       |
->>>>>>> 80c42c135267afe99420ab74b3176adcb6891689
 
 **Status Values:**
 

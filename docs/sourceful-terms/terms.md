@@ -283,7 +283,7 @@ The Zap is intended for private residential use in conjunction with the Sourcefu
 The End User may not resell, modify, tamper with, or use the device in a manner that interferes with Sourceful’s systems or data integrity.
 
 ### 4. Warranty
-Sourceful provides a two (2)-year commercial warranty covering manufacturing defects from the date of delivery.
+Sourceful provides one (1)-year commercial warranty covering manufacturing defects from the date of delivery.
 
 The warranty covers:
 - Manufacturing defects in materials or workmanship

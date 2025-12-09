@@ -40,11 +40,11 @@ The data is stored until your request is handled and one year thereafter.
 Storage period
 The data is stored for as long as necessary to provide the hardware device in accordance with the contract, and to handle any claims based on the provision of the hardware device.
 
-### To automatically find and connect to your solar inverter (via the Zap device)
+### To automatically find and connect to your distributed energy resource (DER) (via the Zap device)
 
 | What processing we perform | What personal data we process | Our legal basis for the processing |
 |:---:|:---:|:---:|
-| Scanning the local network that the **Zap device** is connected to help the user automatically find their solar inverter. This functionality is also helpful for users who don't have their inverter IP set to static, as it allows the gateway to find the new IP assigned by the router and connect to it within a few minutes. | IP addresses and network information of devices connected to the local network | Legitimate interest in providing seamless connectivity and functionality for the user’s solar inverter |
+| Scanning the local network that the **Zap device** is connected to help the user automatically find their DER. This functionality is also helpful for users who don't have their inverter IP set to static, as it allows the gateway to find the new IP assigned by the router and connect to it within a few minutes. | IP addresses and network information of devices connected to the local network | Legitimate interest in providing seamless connectivity and functionality for the user’s DER |
 Storage period
 We retain the new inverter IP after a scan, along with previously obtained information such as the inverter port, type, address, and, in some cases, the serial number
 

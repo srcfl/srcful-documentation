@@ -97,8 +97,8 @@ WALLET: user_abc123
       ├─ DEVICE: hybrid_inverter_01 (Modbus-TCP)
       │   ├─ DER: pv_rooftop (Solar PV)
       │   └─ DER: battery_01 (Home Battery)
-      ├─ DEVICE: ev_charger_01 (MQTT)
-      │   └─ DER: tesla_model3 (Charger)
+      ├─ DEVICE: v2x_charger_01 (ISO 15118)
+      │   └─ DER: tesla_model3 (V2X Charger)
       └─ DEVICE: smart_meter_01 (P1)
           └─ DER: grid_meter (Meter)
 ```
@@ -304,7 +304,7 @@ Grid meter data with import/export and phase-level measurements:
 
 ```json
 {
-  "type": "ev_charger",
+  "type": "v2x_charger",
   "make": "Ferroamp",
   "status": "charging",
   "protocol": "ISO_15118_20",
@@ -341,7 +341,7 @@ Grid meter data with import/export and phase-level measurements:
 
 | Field | Unit | Data Type | Description |
 |-------|------|-----------|-------------|
-| `type` | - | string | Always "ev_charger" |
+| `type` | - | string | Always "v2x_charger" |
 | `make` | - | string | Manufacturer brand (e.g., Ferroamp, Ambibox) |
 | `status` | - | string | State (idle, charging, discharging, error, suspended) |
 | `protocol` | - | string | Active protocol (e.g., ISO_15118_2, ISO_15118_20, DIN) |

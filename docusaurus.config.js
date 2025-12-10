@@ -55,6 +55,18 @@ const config = {
   // Add mermaid theme
   themes: ['@docusaurus/theme-mermaid'],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Compatible devices redirect is handled by custom page component
+          // at src/pages/compatible-devices.js with query parameter logic
+        ],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',

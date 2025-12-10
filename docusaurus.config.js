@@ -44,7 +44,19 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'sv'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      sv: {
+        label: 'Svenska',
+        direction: 'ltr',
+        htmlLang: 'sv-SE',
+      },
+    },
   },
 
   // Add markdown config for mermaid
@@ -124,6 +136,10 @@ const config = {
           {
             href: 'https://support.sourceful.energy',
             label: 'Support',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
             position: 'right',
           },
         ],

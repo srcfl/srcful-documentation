@@ -1,0 +1,20 @@
+# Crowdin configuration for Sourceful Documentation
+# See: https://docusaurus.io/docs/i18n/crowdin
+
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+preserve_hierarchy: true
+
+files:
+  # JSON translation files
+  - source: /i18n/en/**/*
+    translation: /i18n/%two_letters_code%/**/%original_file_name%
+    
+  # Documentation files
+  - source: /docs/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    # Exclude archived content
+    ignore:
+      - /docs/archive/**
+
+

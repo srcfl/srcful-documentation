@@ -1,0 +1,22 @@
+{
+  "logo.alt": {
+    "message": "srcful - Building a sustainable future, together",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Explorer": {
+    "message": "Explorer",
+    "description": "Navbar item with label Explorer"
+  },
+  "item.label.Support": {
+    "message": "Support",
+    "description": "Navbar item with label Support"
+  }
+}

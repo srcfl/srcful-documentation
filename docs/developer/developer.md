@@ -10,6 +10,7 @@ Build on the Grid Intelligence Layer with permissioned access to energy data, pr
 
 - [Authentication & Permissioning](/developer/auth)
 - [GraphQL API (Data)](/developer/api/docs)
+- [Zap Local API](/developer/zap-local-api)
 - [Price API](/developer/price-api)
 - [Data Models](/developer/data-models)
 - [EMS & Control](/developer/ems)

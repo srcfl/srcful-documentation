@@ -531,7 +531,7 @@ Latest device data snapshot in JSON format.
     "make": "ambibox",
     "sessionState": "CHARGE_LOOP",
     "W": -500,
-    "soc_percent": 85
+    "SoC_nom_fract": 85
   },
   "meter": { /* ... if present ... */ },
   "version": "v0",

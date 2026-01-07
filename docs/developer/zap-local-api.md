@@ -22,19 +22,19 @@ Complete endpoint documentation for the Zap firmware.
    - [Connection Types](#get-apidevicestypes)
    - [List Devices](#get-apidevices)
    - [Add Device](#post-apidevices)
-   - [Remove Device](#delete-apidevices-sn)
-   - [Device Data](#get-apidevices-sn-datajson)
-   - [Update DER Types](#post-apidevices-sn-types)
-   - [Get DER Metadata](#get-apidevices-sn-ders)
-   - [Update DER Metadata](#post-apidevices-sn-ders)
-   - [Read Registers](#get-apidevices-sn-registersaddress)
-   - [Write Register](#post-apidevices-sn-registersaddress)
+   - [Remove Device](#delete-apidevicessen)
+   - [Device Data](#get-apidevicessndatajson)
+   - [Update DER Types](#post-apidevicessentypes)
+   - [Get DER Metadata](#get-apidevicessnders)
+   - [Update DER Metadata](#post-apidevicessnders)
+   - [Read Registers](#get-apidevicessnregistersaddress)
+   - [Write Register](#post-apidevicessnregistersaddress)
 3. [Control & Operations](#control--operations)
-   - [Init Control](#post-apicontrol-sn-init)
-   - [Battery Control](#post-apicontrol-sn-battery)
-   - [PV Curtailment](#post-apicontrol-sn-curtail)
-   - [Disable Curtailment](#post-apicontrol-sn-curtaildisable)
-   - [Deinit Control](#post-apicontrol-sn-deinit)
+   - [Init Control](#post-apicontrolsninit)
+   - [Battery Control](#post-apicontrolsnbattery)
+   - [PV Curtailment](#post-apicontrolsncurtail)
+   - [Disable Curtailment](#post-apicontrolsncurtaildisable)
+   - [Deinit Control](#post-apicontrolsndeinit)
    - [MQTT Topics](#mqtt-control-topics)
 4. [Identity & Security](#identity--security)
    - [Crypto Info](#get-apicrypto)
@@ -479,7 +479,7 @@ Add device. Connects immediately, saved only on success.
 - 409 - Device exists or conflicts (UART/TCP endpoint)
 - 503 - Connection failed or insufficient memory (requires >55KB free heap)
 
-### DELETE /api/devices/{sn}
+### DELETE `/api/devices/{sn}`
 
 Remove device by serial number.
 
@@ -507,7 +507,7 @@ Remove all devices. Clears runtime memory and deletes all device configurations 
 **Errors**:
 - 500 - Failed to clear devices (e.g. SPIFFS error)
 
-### GET /api/devices/{sn}/data/json
+### GET `/api/devices/{sn}/data/json`
 
 Latest device data snapshot in JSON format.
 
@@ -542,7 +542,7 @@ Latest device data snapshot in JSON format.
 - 204 - No harvest data yet
 - 404 - Device not found
 
-### POST /api/devices/{sn}/types
+### POST `/api/devices/{sn}/types`
 
 Enable/disable publishing for detected DERs on a device. Only included DERs in the request are modified. Omitted entries remain unchanged.
 
@@ -568,7 +568,7 @@ By default, all detected DERs have `enabled = false` on first connection.
 - 404 - Device not found
 - 500 - Failed to persist config
 
-### GET /api/devices/{sn}/ders
+### GET `/api/devices/{sn}/ders`
 
 Fetch publish state plus configured DER metadata. The fields returned are the user-configurable fields that can be updated via POST.
 
@@ -618,7 +618,7 @@ Fetch publish state plus configured DER metadata. The fields returned are the us
 **Errors**:
 - 404 - Device not found
 
-### POST /api/devices/{sn}/ders
+### POST `/api/devices/{sn}/ders`
 
 Update publish flags and static DER metadata in one request. For PV entries, supply `rated_power` in watts. For battery entries, supply `rated_power` (W) and `capacity` (Wh). For v2x_charger entries, supply `capacity` (Wh); power limits are read-only from the device. `enabled` is optional here; omit it to leave the current publish state untouched. Only the DERs included in the payload are modified.
 
@@ -650,7 +650,7 @@ Update publish flags and static DER metadata in one request. For PV entries, sup
 - 404 - Device not found
 - 500 - Failed to persist config
 
-### GET /api/devices/{sn}/registers/{address}
+### GET `/api/devices/{sn}/registers/{address}`
 
 Read Modbus register(s).
 
@@ -697,7 +697,7 @@ Read Modbus register(s).
 - 404 - Device not found
 - 500 - Read failed
 
-### POST /api/devices/{sn}/registers/{address}
+### POST `/api/devices/{sn}/registers/{address}`
 
 Write single holding register.
 
@@ -722,7 +722,7 @@ Write single holding register.
 - 404 - Device not found
 - 500 - Write failed
 
-### POST /api/devices/{sn}/registers
+### POST `/api/devices/{sn}/registers`
 
 Batch write multiple holding registers.
 
@@ -750,7 +750,7 @@ Batch write multiple holding registers.
 - 404 - Device not found
 - 207 - Partial success (check success/failed counts)
 
-### POST /api/devices/{sn}/write
+### POST `/api/devices/{sn}/write`
 
 Write single holding register (Legacy/Alternative).
 
@@ -779,7 +779,7 @@ Write single holding register (Legacy/Alternative).
 
 ## Control & Operations
 
-### POST /api/control/{sn}/init
+### POST `/api/control/{sn}/init`
 
 Initialize control for a device (e.g. take control of inverter).
 
@@ -792,7 +792,7 @@ Initialize control for a device (e.g. take control of inverter).
 }
 ```
 
-### POST /api/control/{sn}/battery
+### POST `/api/control/{sn}/battery`
 
 Set battery charge/discharge power.
 
@@ -815,7 +815,7 @@ Set battery charge/discharge power.
 }
 ```
 
-### POST /api/control/{sn}/curtail
+### POST `/api/control/{sn}/curtail`
 
 Set PV curtailment (limit solar generation).
 
@@ -834,7 +834,7 @@ Set PV curtailment (limit solar generation).
 }
 ```
 
-### POST /api/control/{sn}/curtail/disable
+### POST `/api/control/{sn}/curtail/disable`
 
 Disable PV curtailment.
 
@@ -847,7 +847,7 @@ Disable PV curtailment.
 }
 ```
 
-### POST /api/control/{sn}/deinit
+### POST `/api/control/{sn}/deinit`
 
 Release control of device (return to default/self-consumption mode).
 
@@ -1059,7 +1059,7 @@ curl -X DELETE http://192.168.1.100/api/devices
 
 ### Notes
 
-- Device configs persist in `/spiffs/devices/{sn}.json`
+- Device configs persist in `/spiffs/devices/\{sn\}.json`
 - Auto-reconnect every 10s for disconnected devices
 - Modbus timeout: 1000ms per request
 - UART pins fixed by firmware (RTU only configures baud/unit_id)

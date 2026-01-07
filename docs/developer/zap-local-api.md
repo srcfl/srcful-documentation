@@ -6,7 +6,7 @@ slug: /developer/zap-local-api
 
 # Zap Local API
 
-Complete endpoint documentation for the Zap firmware.
+Complete endpoint documentation for the controller firmware.
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ Complete endpoint documentation for the Zap firmware.
    - [Connection Types](#get-apidevicestypes)
    - [List Devices](#get-apidevices)
    - [Add Device](#post-apidevices)
-   - [Remove Device](#delete-apidevicessen)
+   - [Remove Device](#delete-apidevicessn)
    - [Device Data](#get-apidevicessndatajson)
    - [Update DER Types](#post-apidevicessentypes)
    - [Get DER Metadata](#get-apidevicessnders)
@@ -528,12 +528,48 @@ Latest device data snapshot in JSON format.
   "battery": {
     "type": "battery",
     "timestamp": 1761832393075,
-    "make": "ambibox",
-    "sessionState": "CHARGE_LOOP",
+    "read_time_ms": 156,
+    "make": "sungrow",
     "W": -500,
-    "SoC_nom_fract": 85
+    "V": 48.2,
+    "A": -10.4,
+    "SoC_nom_fract": 0.85
   },
   "meter": { /* ... if present ... */ },
+  "v2x_charger": {
+    "type": "v2x_charger",
+    "timestamp": 1761832393075,
+    "read_time_ms": 0,
+    "make": "ambibox",
+    "status": "charging",
+    "W": 7400,
+    "A": 32.0,
+    "V": 230.0,
+    "Hz": 50.0,
+    "L1_V": 230.0,
+    "L1_A": 10.7,
+    "L1_W": 2461.0,
+    "L2_V": 229.5,
+    "L2_A": 10.6,
+    "L2_W": 2432.7,
+    "L3_V": 230.2,
+    "L3_A": 10.8,
+    "L3_W": 2486.2,
+    "dc_W": -7200,
+    "dc_V": 400.0,
+    "dc_A": -18.0,
+    "vehicle_soc_fract": 0.45,
+    "ev_min_energy_req_Wh": 5000,
+    "ev_max_energy_req_Wh": 40000,
+    "session_charge_Wh": 12500,
+    "session_discharge_Wh": 0,
+    "total_charge_Wh": 125000,
+    "total_discharge_Wh": 45000,
+    "lower_limit_W": [-11000, 0, 1400],
+    "upper_limit_W": [-1400, 0, 11000],
+    "capacity_Wh": 77000,
+    "rated_power_W": 11000
+  },
   "version": "v0",
   "format": "sungrow"
 }
@@ -543,7 +579,7 @@ Latest device data snapshot in JSON format.
 - 204 - No harvest data yet
 - 404 - Device not found
 
-### POST `/api/devices/{sn}/types`
+### POST /api/devices/{sn}/types
 
 Enable/disable publishing for detected DERs on a device. Only included DERs in the request are modified. Omitted entries remain unchanged.
 
@@ -1060,7 +1096,7 @@ curl -X DELETE http://192.168.1.100/api/devices
 
 ### Notes
 
-- Device configs persist in `/spiffs/devices/\{sn\}.json`
+- Device configs persist in `/spiffs/devices/{sn}.json`
 - Auto-reconnect every 10s for disconnected devices
 - Modbus timeout: 1000ms per request
 - UART pins fixed by firmware (RTU only configures baud/unit_id)

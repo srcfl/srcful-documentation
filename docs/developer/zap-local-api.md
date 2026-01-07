@@ -506,7 +506,7 @@ Latest device data snapshot in JSON format.
     "timestamp": 1761832393075,
     "read_time_ms": 472,
     "make": "Sungrow",
-    "W": 2500,
+    "W": -2500,
     "total_generation_Wh": 22698000
   },
   "battery": {

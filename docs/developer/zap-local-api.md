@@ -1096,7 +1096,7 @@ curl -X DELETE http://192.168.1.100/api/devices
 
 ### Notes
 
-- Device configs persist in `/spiffs/devices/{sn}.json`
+- Device configs persist in `/spiffs/devices/\{sn\}.json`
 - Auto-reconnect every 10s for disconnected devices
 - Modbus timeout: 1000ms per request
 - UART pins fixed by firmware (RTU only configures baud/unit_id)

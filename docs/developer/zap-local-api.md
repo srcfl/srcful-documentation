@@ -579,7 +579,7 @@ Latest device data snapshot in JSON format.
 - 204 - No harvest data yet
 - 404 - Device not found
 
-### POST /api/devices/{sn}/types
+### POST `/api/devices/{sn}/types`
 
 Enable/disable publishing for detected DERs on a device. Only included DERs in the request are modified. Omitted entries remain unchanged.
 

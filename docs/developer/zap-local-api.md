@@ -362,22 +362,6 @@ List all configured devices. Each entry is the persisted config augmented with r
         }
       ]
     },
-    {
-      "type": "mqtt",
-      "broker_host": "192.168.1.50",
-      "broker_port": 1883,
-      "username": "user",
-      "client_id": "esp32_local",
-      "sn": "ambibox_192.168.1.50",
-      "connected": false,
-      "ders": [
-        {
-          "type": "v2x_charger",
-          "enabled": false,
-          "capacity": 0
-        }
-      ]
-    }
   ]
 }
 ```
@@ -536,40 +520,6 @@ Latest device data snapshot in JSON format.
     "SoC_nom_fract": 0.85
   },
   "meter": { /* ... if present ... */ },
-  "v2x_charger": {
-    "type": "v2x_charger",
-    "timestamp": 1761832393075,
-    "read_time_ms": 0,
-    "make": "ambibox",
-    "status": "charging",
-    "W": 7400,
-    "A": 32.0,
-    "V": 230.0,
-    "Hz": 50.0,
-    "L1_V": 230.0,
-    "L1_A": 10.7,
-    "L1_W": 2461.0,
-    "L2_V": 229.5,
-    "L2_A": 10.6,
-    "L2_W": 2432.7,
-    "L3_V": 230.2,
-    "L3_A": 10.8,
-    "L3_W": 2486.2,
-    "dc_W": -7200,
-    "dc_V": 400.0,
-    "dc_A": -18.0,
-    "vehicle_soc_fract": 0.45,
-    "ev_min_energy_req_Wh": 5000,
-    "ev_max_energy_req_Wh": 40000,
-    "session_charge_Wh": 12500,
-    "session_discharge_Wh": 0,
-    "total_charge_Wh": 125000,
-    "total_discharge_Wh": 45000,
-    "lower_limit_W": [-11000, 0, 1400],
-    "upper_limit_W": [-1400, 0, 11000],
-    "capacity_Wh": 77000,
-    "rated_power_W": 11000
-  },
   "version": "v0",
   "format": "sungrow"
 }
@@ -629,11 +579,6 @@ Fetch publish state plus configured DER metadata. The fields returned are the us
     {
       "type": "meter",
       "enabled": false
-    },
-    {
-      "type": "v2x_charger",
-      "enabled": true,
-      "capacity": 50000
     }
   ]
 }
@@ -649,8 +594,6 @@ Fetch publish state plus configured DER metadata. The fields returned are the us
 | battery | `rated_power` | W | Battery inverter rated power |
 | battery | `capacity` | Wh | Battery capacity |
 | meter | `enabled` | - | Enable/disable publishing |
-| v2x_charger | `enabled` | - | Enable/disable publishing |
-| v2x_charger | `capacity` | Wh | EV battery capacity |
 
 **Errors**:
 - 404 - Device not found

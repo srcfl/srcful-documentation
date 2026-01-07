@@ -1,9 +1,10 @@
 ---
 sidebar_position: 6
+sidebar_label: Zap Local API
 slug: /developer/zap-local-api
 ---
 
-# REST API Reference
+# Zap Local API
 
 Complete endpoint documentation for the Zap firmware.
 

@@ -14,37 +14,52 @@ Complete endpoint documentation for the controller firmware.
    - [System Info](#get-apisystem)
    - [System Reboot](#post-apisystemreboot)
    - [Factory Reset](#post-apisystemfactory-reset)
+   - [Log Stream](#post-apisystemlog_stream)
+   - [Network Status](#get-apinetwork)
    - [WiFi Status](#get-apiwifi)
    - [WiFi Config](#post-apiwifi)
    - [WiFi Reset](#delete-apiwifi)
    - [WiFi Scan](#get-apiwifiscan)
+   - [BLE Stop](#post-apiblestop)
+   - [MQTT Config (GET)](#get-apisystemmqtt)
+   - [MQTT Config (POST)](#post-apisystemmqtt)
+   - [MQTT Config (DELETE)](#delete-apisystemmqtt)
 2. [Device Management](#device-management)
    - [Supported Devices](#get-apidevicessupported)
    - [Connection Types](#get-apidevicestypes)
    - [List Devices](#get-apidevices)
    - [Add Device](#post-apidevices)
+   - [Get Device](#get-apidevicessn)
    - [Remove Device](#delete-apidevicessn)
-   - [Device Data](#get-apidevicessndatajson)
-   - [Update DER Types](#post-apidevicessentypes)
+   - [Remove All Devices](#delete-apidevices)
+   - [Device Data (JSON)](#get-apidevicessndatajson)
+   - [Device Data (Raw)](#get-apidevicessndataraw)
+   - [Device Data (Debug)](#get-apidevicessndatadebug)
+   - [Update DER Types](#post-apidevicessntypes)
    - [Get DER Metadata](#get-apidevicessnders)
    - [Update DER Metadata](#post-apidevicessnders)
    - [Read Registers](#get-apidevicessnregistersaddress)
-   - [Write Register](#post-apidevicessnregistersaddress)
+   - [Write Registers](#post-apidevicessnregisters)
 3. [Control & Operations](#control--operations)
    - [Init Control](#post-apicontrolsninit)
    - [Battery Control](#post-apicontrolsnbattery)
    - [PV Curtailment](#post-apicontrolsncurtail)
    - [Disable Curtailment](#post-apicontrolsncurtaildisable)
    - [Deinit Control](#post-apicontrolsndeinit)
-   - [MQTT Topics](#mqtt-control-topics)
-4. [Identity & Security](#identity--security)
+4. [Diagnostics](#diagnostics)
+   - [Port Check](#post-apinetworkport-check)
+   - [Modbus Read](#post-apimodbusread)
+5. [Identity & Security](#identity--security)
    - [Crypto Info](#get-apicrypto)
    - [Sign Message](#post-apicryptosign)
    - [Device Name](#get-apiname)
-5. [Utilities](#utilities)
+6. [OTA Updates](#ota-updates)
+   - [Start Update](#post-apiotaupdate)
+   - [Update Status](#get-apiotastatus)
+7. [Utilities](#utilities)
    - [Debug Info](#get-apidebug)
    - [Echo](#post-apiecho)
-6. [Reference](#reference)
+8. [Reference](#reference)
    - [Status Codes](#status-codes)
    - [Examples](#examples)
    - [Notes](#notes)
@@ -101,7 +116,8 @@ System info, memory, WiFi status, uptime.
       "localIP": "192.168.1.100",
       "ssid": "MyNetwork",
       "rssi": -45,
-      "internetConnected": true
+      "internetConnected": true,
+      "mqttConnected": true
     }
   }
 }
@@ -121,7 +137,7 @@ Reboot device after 5s delay.
 
 ### POST /api/system/factory-reset
 
-Factory reset the device. Clears all device configurations and WiFi credentials, then reboots.
+Factory reset the device. Clears all device configurations, MQTT configuration, and WiFi credentials, then reboots.
 
 **Response** (200):
 ```json
@@ -130,9 +146,12 @@ Factory reset the device. Clears all device configurations and WiFi credentials,
 }
 ```
 
+**Errors**:
+- 500 - Reset operation failed
+
 ### POST /api/system/log_stream
 
-Toggle real-time log streaming to MQTT. When enabled, device logs are published to `logs/{gateway_id}/raw`.
+Toggle real-time log streaming to MQTT. When enabled, device logs are published to `gateways/{gateway_id}/logs/raw`.
 
 **Request**:
 ```json
@@ -150,6 +169,24 @@ Toggle real-time log streaming to MQTT. When enabled, device logs are published 
   "status": "ok"
 }
 ```
+
+### GET /api/network
+
+Network connectivity status. Returns the same data as the `network` object in `GET /api/system`.
+
+**Response** (200):
+```json
+{
+  "wifiStatus": "connected",
+  "wifiConnected": true,
+  "localIP": "192.168.1.100",
+  "ssid": "MyNetwork",
+  "rssi": -45,
+  "internetConnected": true,
+  "mqttConnected": true
+}
+```
+*Note: When disconnected, only `wifiStatus`, `wifiConnected`, and `internetConnected` are returned.*
 
 ### GET /api/wifi
 
@@ -187,6 +224,10 @@ Set WiFi credentials and connect.
 }
 ```
 
+**Errors**:
+- 400 - Missing `ssid` or `psk`
+- 500 - WiFi connect failed
+
 ### DELETE /api/wifi
 
 Clear WiFi credentials and disconnect.
@@ -223,6 +264,55 @@ Stop the BLE service.
 }
 ```
 
+### GET /api/system/mqtt
+
+Get current MQTT broker configuration.
+
+**Response** (200):
+```json
+{
+  "mqtt_connection_str": "mqtt://broker.example.com:1883",
+  "mqtt_connection_fallback_str": ""
+}
+```
+*Note: Both fields are empty strings when no MQTT config is set.*
+
+### POST /api/system/mqtt
+
+Set MQTT broker configuration. Triggers a reboot.
+
+**Request**:
+```json
+{
+  "mqtt_connection_str": "mqtt://broker.example.com:1883",
+  "mqtt_connection_fallback_str": "mqtt://fallback.example.com:1883"
+}
+```
+*Note: At least one of `mqtt_connection_str` or `mqtt_connection_fallback_str` is required. Both are optional individually.*
+
+**Response** (200):
+```json
+{
+  "status": "success",
+  "message": "MQTT config updated, reboot scheduled"
+}
+```
+
+**Errors**:
+- 400 - Empty body or missing both connection strings
+
+### DELETE /api/system/mqtt
+
+Remove MQTT broker configuration. Triggers a reboot.
+
+**Response** (200):
+```json
+{
+  "status": "success",
+  "message": "MQTT config removed from NVS, reboot scheduled"
+}
+```
+
 ---
 
 ## Device Management
@@ -234,30 +324,42 @@ List supported device profiles.
 **Response** (200):
 ```json
 {
-  "count": 3,
-  "inverters": [
-    { 
-      "display_name": "Sungrow", 
-      "profile": "sungrow",
-      "connection_types": ["modbus_tcp", "modbus_rtu"]
-    },
-    { 
-      "display_name": "Solis", 
-      "profile": "solis",
-      "connection_types": ["modbus_tcp", "modbus_rtu"]
-    }
-  ],
-  "meters": [
+  "count": 12,
+  "batteries": [],
+  "ev_chargers": [],
+  "energy_meters": [
     {
       "display_name": "P1 Meter",
       "profile": "p1_meter",
+      "device_type": "energy_meter",
       "connection_types": ["p1_uart"]
+    },
+    {
+      "display_name": "Fronius Smart Meter",
+      "profile": "fronius_smart_meter",
+      "device_type": "energy_meter",
+      "connection_types": ["modbus_tcp"]
     }
   ],
-  "ev_chargers": [
+  "inverters": [
+    {
+      "display_name": "Sungrow",
+      "profile": "sungrow",
+      "device_type": "inverter",
+      "connection_types": ["modbus_tcp", "modbus_rtu"]
+    },
+    {
+      "display_name": "Solis",
+      "profile": "solis",
+      "device_type": "inverter",
+      "connection_types": ["modbus_tcp", "modbus_rtu"]
+    }
+  ],
+  "v2x_chargers": [
     {
       "display_name": "Ambibox",
       "profile": "ambibox",
+      "device_type": "v2x_charger",
       "connection_types": ["mqtt"]
     }
   ]
@@ -326,7 +428,7 @@ List all configured devices. Each entry is the persisted config augmented with r
 - `connected`: boolean – current connection state
 - `last_harvest`: unix ms timestamp of most recent DER data (omitted if none yet)
 - `path`: string – the path to the configuration file in SPIFFS (e.g. `spiffs/devices/6178e775.json`)
-- `ders`: per-DER entries (pv/battery/meter/v2x_charger) with publish flags; PV entries also expose `installed_power` (W) alongside persisted `rated_power` (W) and battery `capacity` (Wh)
+- `ders`: per-DER entries (pv/battery/meter/v2x_charger) with publish flags; PV entries also expose `installed_power` (W) alongside persisted `rated_power` (W), and battery `capacity` (Wh)
 
 **Response** (200):
 ```json
@@ -335,11 +437,12 @@ List all configured devices. Each entry is the persisted config augmented with r
   "devices": [
     {
       "type": "modbus_tcp",
+      "profile": "sungrow",
+      "device_type": "inverter",
+      "sn": "INV003SIM03",
       "ip": "192.168.1.60",
       "port": 502,
       "unit_id": 1,
-      "profile": "sungrow",
-      "sn": "INV003SIM03",
       "connected": true,
       "last_harvest": 1761832393075,
       "path": "spiffs/devices/6178e775.json",
@@ -362,6 +465,24 @@ List all configured devices. Each entry is the persisted config augmented with r
         }
       ]
     },
+    {
+      "type": "mqtt",
+      "profile": "ambibox",
+      "device_type": "v2x_charger",
+      "sn": "ambibox_192.168.1.50",
+      "broker_host": "192.168.1.50",
+      "broker_port": 1883,
+      "username": "user",
+      "client_id": "esp32_local",
+      "connected": false,
+      "ders": [
+        {
+          "type": "v2x_charger",
+          "enabled": false,
+          "capacity": 0
+        }
+      ]
+    }
   ]
 }
 ```
@@ -381,7 +502,7 @@ Add device. Connects immediately, saved only on success.
 }
 ```
 
-**Modbus RTU**:
+**Modbus RTU** (RS-485):
 ```json
 {
   "type": "modbus_rtu",
@@ -391,6 +512,7 @@ Add device. Connects immediately, saved only on success.
   "parity": 0
 }
 ```
+*Note: On ESP32-C3 (ZAP), Modbus RTU uses UART0 (TX=GPIO7, RX=GPIO5, RTS=GPIO6). P1 and RTU can run simultaneously.*
 
 **P1 UART**:
 ```json
@@ -464,6 +586,20 @@ Add device. Connects immediately, saved only on success.
 - 409 - Device exists or conflicts (UART/TCP endpoint)
 - 503 - Connection failed or insufficient memory (requires >55KB free heap)
 
+### GET `/api/devices/{sn}`
+
+Get device details by serial number. *Not yet implemented — returns 501.*
+
+**Response** (501):
+```json
+{ "message": "Not implemented" }
+```
+
+**Errors**:
+- 400 - Missing serial number
+- 404 - Device not found
+- 501 - Not implemented
+
 ### DELETE `/api/devices/{sn}`
 
 Remove device by serial number.
@@ -476,6 +612,7 @@ Remove device by serial number.
 ```
 
 **Errors**:
+- 400 - Missing serial number
 - 404 - Device not found
 
 ### DELETE /api/devices
@@ -505,7 +642,7 @@ Latest device data snapshot in JSON format.
     "type": "pv",
     "timestamp": 1761832393075,
     "read_time_ms": 472,
-    "make": "Sungrow",
+    "make": "sungrow",
     "W": -2500,
     "total_generation_Wh": 22698000
   },
@@ -520,13 +657,138 @@ Latest device data snapshot in JSON format.
     "SoC_nom_fract": 0.85
   },
   "meter": { /* ... if present ... */ },
-  "version": "v0",
-  "format": "sungrow"
+  "v2x_charger": {
+    "type": "v2x_charger",
+    "timestamp": 1761832393075,
+    "read_time_ms": 0,
+    "make": "ambibox",
+    "status": "charging",
+    "W": 7400,
+    "A": 32.0,
+    "V": 230.0,
+    "Hz": 50.0,
+    "L1_V": 230.0,
+    "L1_A": 10.7,
+    "L1_W": 2461.0,
+    "L2_V": 229.5,
+    "L2_A": 10.6,
+    "L2_W": 2432.7,
+    "L3_V": 230.2,
+    "L3_A": 10.8,
+    "L3_W": 2486.2,
+    "dc_W": -7200,
+    "dc_V": 400.0,
+    "dc_A": -18.0,
+    "vehicle_soc_fract": 0.45,
+    "ev_min_energy_req_Wh": 5000,
+    "ev_max_energy_req_Wh": 40000,
+    "session_charge_Wh": 12500,
+    "session_discharge_Wh": 0,
+    "total_charge_Wh": 125000,
+    "total_discharge_Wh": 45000,
+    "lower_limit_W": [-11000, 0, 1400],
+    "upper_limit_W": [-1400, 0, 11000],
+    "capacity_Wh": 77000,
+    "rated_power_W": 11000
+  },
+  "version": "v1",
+  "format": "json"
 }
 ```
 
 **Errors**:
 - 204 - No harvest data yet
+- 404 - Device not found
+- 503 - Device busy (lock timeout)
+
+### GET `/api/devices/{sn}/data/raw`
+
+Raw device data snapshot. For P1 meters, returns the raw OBIS strings as received from the meter. For other device types, returns device-specific raw data if available.
+
+**Example**: `GET /api/devices/p1_meter/data/raw`
+
+**Response** (200) - P1 Meter:
+```json
+{
+  "format": "p1_uart",
+  "data": {
+    "ts": 1770302863728,
+    "device_id": "p1_meter",
+    "obis": [
+      "1-3:0.2.8(50)",
+      "0-0:1.0.0(251021091842S)",
+      "1-0:1.8.1(004121.646*kWh)",
+      "1-0:1.8.2(004416.112*kWh)",
+      "1-0:2.8.1(002029.530*kWh)",
+      "1-0:2.8.2(004760.021*kWh)",
+      "1-0:1.7.0(00.000*kW)",
+      "1-0:2.7.0(00.445*kW)",
+      "1-0:32.7.0(238.1*V)",
+      "1-0:52.7.0(236.6*V)",
+      "1-0:72.7.0(237.9*V)"
+    ]
+  }
+}
+```
+
+**Fields**:
+- `format`: Device connection type (e.g., `p1_uart`, `modbus_tcp`)
+- `data`: Raw payload object (format varies by device type)
+  - P1 meters: `ts` (timestamp ms), `device_id`, `obis` (array of OBIS strings)
+
+**Errors**:
+- 204 - No raw data available yet
+- 404 - Device not found
+- 503 - Device busy
+
+### GET `/api/devices/{sn}/data/debug`
+
+Debug information for troubleshooting device communication issues. For P1 meters, returns the hex dump and ASCII representation of the last frame that failed to decode.
+
+**Example**: `GET /api/devices/p1_meter/data/debug`
+
+**Response** (200) - P1 Meter with failed frame:
+```json
+{
+  "device_type": "p1_uart",
+  "sn": "p1_meter",
+  "last_failed_ts": 1770302863728,
+  "last_failed_type": 0,
+  "last_failed_size": 56,
+  "last_failed_hex": "2F 58 4D 58 35 4C 47 42 42 46 46 46 46 31 30 30 31 32 33 34 35 36 37 38 ...",
+  "last_failed_ascii": "/XMX5LGBBFFFF10012345678..."
+}
+```
+
+**Response** (200) - P1 Meter with no failed frames:
+```json
+{
+  "device_type": "p1_uart",
+  "sn": "p1_meter",
+  "last_failed_hex": "",
+  "message": "No failed frames recorded yet"
+}
+```
+
+**Response** (200) - Non-P1 device:
+```json
+{
+  "sn": "INV003SIM03",
+  "message": "Debug info not available for this device type"
+}
+```
+
+**Fields**:
+- `device_type`: Device connection type
+- `last_failed_ts`: Timestamp (ms) when the frame was received
+- `last_failed_type`: Frame type (0=ASCII, 1=HDLC, 2=MBUS)
+- `last_failed_size`: Size of the failed frame in bytes
+- `last_failed_hex`: Hex dump of frame bytes (up to 256 bytes)
+- `last_failed_ascii`: ASCII representation (non-printable chars replaced with '.')
+
+*Note: Failed frames are also logged to the MQTT log stream with the first 64 bytes in hex format.*
+
+**Errors**:
 - 404 - Device not found
 
 ### POST `/api/devices/{sn}/types`
@@ -579,6 +841,11 @@ Fetch publish state plus configured DER metadata. The fields returned are the us
     {
       "type": "meter",
       "enabled": false
+    },
+    {
+      "type": "v2x_charger",
+      "enabled": true,
+      "capacity": 50000
     }
   ]
 }
@@ -594,13 +861,14 @@ Fetch publish state plus configured DER metadata. The fields returned are the us
 | battery | `rated_power` | W | Battery inverter rated power |
 | battery | `capacity` | Wh | Battery capacity |
 | meter | `enabled` | - | Enable/disable publishing |
+| v2x_charger | `enabled` | - | Enable/disable publishing |
 
 **Errors**:
 - 404 - Device not found
 
 ### POST `/api/devices/{sn}/ders`
 
-Update publish flags and static DER metadata in one request. For PV entries, supply `rated_power` in watts. For battery entries, supply `rated_power` (W) and `capacity` (Wh). For v2x_charger entries, supply `capacity` (Wh); power limits are read-only from the device. `enabled` is optional here; omit it to leave the current publish state untouched. Only the DERs included in the payload are modified.
+Update publish flags and static DER metadata in one request. For PV entries, supply `rated_power` in watts. For battery entries, supply `rated_power` (W) and `capacity` (Wh). For v2x_charger entries, power limits are read-only from the device. `enabled` is optional here; omit it to leave the current publish state untouched. Only the DERs included in the payload are modified.
 
 **Request**:
 ```json
@@ -676,84 +944,37 @@ Read Modbus register(s).
 - 400 - Invalid type/size or non-Modbus device
 - 404 - Device not found
 - 500 - Read failed
-
-### POST `/api/devices/{sn}/registers/{address}`
-
-Write single holding register.
-
-**Example**: `POST /api/devices/INV003SIM03/registers/33010`
-
-**Request**:
-```json
-{ "value": 5000 }
-```
-
-**Response** (200):
-```json
-{
-  "message": "Register written successfully",
-  "address": 33010,
-  "value": 5000
-}
-```
-
-**Errors**:
-- 400 - Missing value or non-Modbus device
-- 404 - Device not found
-- 500 - Write failed
+- 503 - Device busy
 
 ### POST `/api/devices/{sn}/registers`
 
-Batch write multiple holding registers.
+Write one or more holding registers (FC 0x06). Each key in the `registers` object is an address, each value is a 16-bit register value. Writes are executed sequentially with a 50 ms inter-write delay.
 
 **Example**: `POST /api/devices/INV003SIM03/registers`
 
 **Request**:
 ```json
 {
-  "33010": 5000,
-  "33011": 1234
+  "registers": {
+    "33010": 5000,
+    "33011": 1234
+  }
 }
 ```
 
 **Response** (200):
 ```json
 {
-  "message": "Batch write completed",
-  "success": 2,
+  "written": 2,
   "failed": 0
 }
 ```
 
 **Errors**:
-- 400 - Invalid JSON or non-Modbus device
+- 400 - Missing `registers` object or non-Modbus device
 - 404 - Device not found
-- 207 - Partial success (check success/failed counts)
-
-### POST `/api/devices/{sn}/write`
-
-Write single holding register (Legacy/Alternative).
-
-**Example**: `POST /api/devices/INV003SIM03/write`
-
-**Request**:
-```json
-{
-  "addr": 33010,
-  "value": 5000
-}
-```
-
-**Response** (200):
-```json
-{
-  "message": "Register written successfully"
-}
-```
-
-**Errors**:
-- 400 - Missing addr/value or non-Modbus device
-- 404 - Device not found or write failed
+- 500 - One or more writes failed (check written/failed counts)
+- 503 - Device busy (lock timeout)
 
 ---
 
@@ -771,6 +992,9 @@ Initialize control for a device (e.g. take control of inverter).
   "action": "init"
 }
 ```
+
+**Errors**:
+- 400 - Invalid request
 
 ### POST `/api/control/{sn}/battery`
 
@@ -795,6 +1019,9 @@ Set battery charge/discharge power.
 }
 ```
 
+**Errors**:
+- 400 - Missing `power_w`
+
 ### POST `/api/control/{sn}/curtail`
 
 Set PV curtailment (limit solar generation).
@@ -814,6 +1041,9 @@ Set PV curtailment (limit solar generation).
 }
 ```
 
+**Errors**:
+- 400 - Missing `power_w`
+
 ### POST `/api/control/{sn}/curtail/disable`
 
 Disable PV curtailment.
@@ -826,6 +1056,9 @@ Disable PV curtailment.
   "action": "curtail_disable"
 }
 ```
+
+**Errors**:
+- 400 - Invalid request
 
 ### POST `/api/control/{sn}/deinit`
 
@@ -840,34 +1073,79 @@ Release control of device (return to default/self-consumption mode).
 }
 ```
 
-### MQTT Control Topics
+**Errors**:
+- 400 - Invalid request
 
-The firmware subscribes to the following topics for backend control.
+---
 
-#### Battery Control
+## Diagnostics
 
-**Topic**: `control/{gateway_id}/battery/+/ems/commands`
-**Wildcard**: `+` is the device serial number.
+### POST /api/network/port-check
 
-**Payload**:
+Check if a TCP port is open on a remote host. Useful for verifying network connectivity to Modbus devices or brokers before adding them.
+
+**Request**:
 ```json
 {
-  "power_w": 1000,
-  "command_id": "optional-uuid"
+  "host": "192.168.1.60",
+  "port": 502,
+  "timeout": 2000
+}
+```
+*Note: `timeout` is optional (default: 2000ms).*
+
+**Response** (200):
+```json
+{
+  "host": "192.168.1.60",
+  "port": 502,
+  "open": true
 }
 ```
 
-#### PV Curtailment
+**Errors**:
+- 400 - Missing `host` or `port`
 
-**Topic**: `control/{gateway_id}/pv/+/ems/commands`
-**Wildcard**: `+` is the device serial number.
+### POST /api/modbus/read
 
-**Payload**:
+Ad-hoc Modbus register read without requiring a registered device. Connects, reads, and disconnects automatically.
+
+**Request**:
 ```json
 {
-  "power_w": 5000
+  "ip": "192.168.1.60",
+  "port": 502,
+  "unit_id": 1,
+  "register": 13001,
+  "count": 5,
+  "register_type": "holding"
 }
 ```
+
+| Field | Required | Default | Description |
+|-------|----------|---------|-------------|
+| `ip` | Yes | - | Modbus device IP |
+| `port` | Yes | - | Modbus device port |
+| `unit_id` | Yes | - | Modbus unit/slave ID |
+| `register` | Yes | - | Starting register address |
+| `count` | No | 1 | Number of registers to read (1-125) |
+| `register_type` | No | `"holding"` | `"holding"` (function code 3) or `"input"` (function code 4) |
+
+**Response** (200):
+```json
+{
+  "ip": "192.168.1.60",
+  "port": 502,
+  "unit_id": 1,
+  "register": 13001,
+  "register_type": "holding",
+  "values": [1, 0, 5000, 0, 100]
+}
+```
+
+**Errors**:
+- 400 - Missing required field or invalid config
+- 502 - Connection failed or read failed
 
 ---
 
@@ -906,6 +1184,9 @@ Sign a message with the device's private key.
 }
 ```
 
+**Errors**:
+- 400 - Pipe character (`|`) in message or timestamp
+
 ### GET /api/name
 
 Get device name (ID).
@@ -914,6 +1195,46 @@ Get device name (ID).
 ```json
 {
   "name": "abc123def456"
+}
+```
+
+---
+
+## OTA Updates
+
+### POST /api/ota/update
+
+Start an OTA firmware update. The update runs asynchronously in the background.
+
+**Request**:
+```json
+{
+  "url": "https://example.com/firmware.bin"
+}
+```
+
+**Response** (202):
+```json
+{
+  "status": "accepted",
+  "message": "OTA update started"
+}
+```
+
+**Errors**:
+- 400 - Missing or invalid `url`
+- 409 - Update already in progress
+- 500 - Failed to start OTA
+
+### GET /api/ota/status
+
+Query the current OTA update status and progress.
+
+**Response** (200):
+```json
+{
+  "status": "in_progress",
+  "progress": 45
 }
 ```
 
@@ -956,16 +1277,21 @@ Echo the request body.
 
 ### Status Codes
 
-- **200** OK
-- **201** Created
-- **204** No Content
-- **400** Bad Request
-- **404** Not Found
-- **405** Method Not Allowed
-- **409** Conflict
-- **500** Internal Server Error
-- **501** Not Implemented
-- **503** Service Unavailable
+| Code | Meaning |
+|------|---------|
+| **200** | OK — request succeeded |
+| **201** | Created — resource was created |
+| **202** | Accepted — async operation queued |
+| **204** | No Content — no data available yet |
+| **207** | Multi-Status — partial success (some operations failed) |
+| **400** | Bad Request — invalid JSON, missing fields, or bad parameter values |
+| **404** | Not Found — resource does not exist |
+| **405** | Method Not Allowed — wrong HTTP verb for this endpoint |
+| **409** | Conflict — resource already exists or operation conflicts |
+| **500** | Internal Server Error — operation failed |
+| **501** | Not Implemented — endpoint exists but feature is not yet built |
+| **502** | Bad Gateway — upstream connection or communication failure |
+| **503** | Service Unavailable — device busy, connection failed, or insufficient memory |
 
 ### Examples
 
@@ -1015,16 +1341,21 @@ curl -X POST http://192.168.1.100/api/devices \
 curl "http://192.168.1.100/api/devices/INV003SIM03/registers/13045?type=u32&scale_factor=0.1"
 ```
 
-**Write register**:
+**Write registers**:
 ```bash
-curl -X POST http://192.168.1.100/api/devices/INV003SIM03/registers/33010 \
+curl -X POST http://192.168.1.100/api/devices/INV003SIM03/registers \
   -H "Content-Type: application/json" \
-  -d '{"value": 5000}'
+  -d '{"registers": {"33010": 5000}}'
 ```
 
-**Get device data**:
+**Get device data (JSON)**:
 ```bash
 curl http://192.168.1.100/api/devices/INV003SIM03/data/json
+```
+
+**Get device data (Raw/OBIS)**:
+```bash
+curl http://192.168.1.100/api/devices/p1_meter/data/raw
 ```
 
 **Remove device**:
@@ -1039,9 +1370,11 @@ curl -X DELETE http://192.168.1.100/api/devices
 
 ### Notes
 
-- Device configs persist in `/spiffs/devices/\{sn\}.json`
+- Device configs persist in `/spiffs/devices/{sn}.json`
 - Auto-reconnect every 10s for disconnected devices
 - Modbus timeout: 1000ms per request
 - UART pins fixed by firmware (RTU only configures baud/unit_id)
 - Register read/write defaults to Input registers (use `function_code=3` for Holding)
 - Wrong HTTP method returns 405
+- **ESP32-C3 (ZAP)**: P1 (UART1) and Modbus RTU (UART0) can run simultaneously
+- **ZAP Hardware Variants**: RS-485 requires the RS-485 module variant. The firmware detects the hardware via SENSE pins and warns if attempting RS-485 on incompatible hardware.

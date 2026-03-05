@@ -51,15 +51,13 @@ Complete endpoint documentation for the controller firmware.
    - [Modbus Read](#post-apimodbusread)
 5. [Identity & Security](#identity--security)
    - [Crypto Info](#get-apicrypto)
+   - [Initialize (Sign Wallet)](#post-apicrypto)
    - [Sign Message](#post-apicryptosign)
    - [Device Name](#get-apiname)
-6. [OTA Updates](#ota-updates)
-   - [Start Update](#post-apiotaupdate)
-   - [Update Status](#get-apiotastatus)
-7. [Utilities](#utilities)
+6. [Utilities](#utilities)
    - [Debug Info](#get-apidebug)
    - [Echo](#post-apiecho)
-8. [Reference](#reference)
+7. [Reference](#reference)
    - [Status Codes](#status-codes)
    - [Examples](#examples)
    - [Notes](#notes)
@@ -195,10 +193,7 @@ Get WiFi status and scan results.
 **Response** (200):
 ```json
 {
-  "ssids": [
-    { "ssid": "Network1", "rssi": -60, "auth": "WPA2" },
-    { "ssid": "Network2", "rssi": -80, "auth": "OPEN" }
-  ],
+  "ssids": ["Network1", "Network2"],
   "connected": "Network1"
 }
 ```
@@ -1164,6 +1159,28 @@ Get device identity information.
 }
 ```
 
+### POST /api/crypto
+
+Sign the device ID concatenated with a wallet address. Used to prove device identity during initialization.
+
+**Request**:
+```json
+{
+  "wallet": "0xYourWalletAddress"
+}
+```
+
+**Response** (200):
+```json
+{
+  "idAndWallet": "abc123def456:0xYourWalletAddress",
+  "signature": "3045022100..."
+}
+```
+
+**Errors**:
+- 400 - Missing `wallet` field
+
 ### POST /api/crypto/sign
 
 Sign a message with the device's private key.
@@ -1195,46 +1212,6 @@ Get device name (ID).
 ```json
 {
   "name": "abc123def456"
-}
-```
-
----
-
-## OTA Updates
-
-### POST /api/ota/update
-
-Start an OTA firmware update. The update runs asynchronously in the background.
-
-**Request**:
-```json
-{
-  "url": "https://example.com/firmware.bin"
-}
-```
-
-**Response** (202):
-```json
-{
-  "status": "accepted",
-  "message": "OTA update started"
-}
-```
-
-**Errors**:
-- 400 - Missing or invalid `url`
-- 409 - Update already in progress
-- 500 - Failed to start OTA
-
-### GET /api/ota/status
-
-Query the current OTA update status and progress.
-
-**Response** (200):
-```json
-{
-  "status": "in_progress",
-  "progress": 45
 }
 ```
 

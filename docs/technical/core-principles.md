@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /developer/core_principles
+slug: /technical/core_principles
 pagination_prev: null
 ---
 

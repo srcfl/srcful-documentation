@@ -7,7 +7,7 @@ pagination_prev: null
 # Hardware/Firmware Guide (Legacy)
 
 :::warning Legacy Documentation
-This document is archived and describes the legacy Sourceful Energy Gateway and the open-source P1 reader firmware for the Zap. The Zap is now a universal connector with closed-source firmware supporting P1 ports, Modbus TCP, Modbus RTU, MQTT, and more. For current development guidance, please refer to the [Zap Developer Documentation](/developer/zap-for-developers).
+This document is archived and describes the legacy Sourceful Energy Gateway and the open-source P1 reader firmware for the Zap. The Zap is now a universal connector with closed-source firmware supporting P1 ports, Modbus TCP, Modbus RTU, MQTT, and more. For current development guidance, please refer to the [Zap Developer Documentation](/technical/zap-for-developers).
 :::
 
 This document describes basic requirements for a device to be compatible with the Sourceful Energy Network (SEN). The focus is firmware compatibility. Document is under development.

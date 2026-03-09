@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /developer/ems
+slug: /technical/ems
 pagination_prev: null
 ---
 # Energy Management System (EMS)
@@ -80,7 +80,7 @@ This aligns with Sourceful's core thesis: **building the coordination protocol f
 
 ## Site-Based Optimization
 
-The EMS operates at the **Site level** (see [Data Models](/developer/data-models) for hierarchy details):
+The EMS operates at the **Site level** (see [Data Models](/technical/data-models) for hierarchy details):
 
 A **Site** represents the logical grouping of your energy system - everything "behind the meter":
 - Your grid connection point (meter)
@@ -125,13 +125,10 @@ While the EMS itself is not open, developers can access:
 - **Real-time telemetry** from connected DERs via GraphQL API
 - **Historical data** for analytics and visualization
 - **Site metadata** and configuration
-- **Price and tariff data** via the [Price API](/developer/price-api)
-
-See [Authentication & Permissioning](/developer/auth) for details on OAuth-style access with user-granted scopes.
+- **Price and tariff data** via the [Price API](/technical/price-api)
 
 ## Related Documentation
 
-- [Data Models](/developer/data-models) - Understanding the WALLET > SITE > DEVICE > DER hierarchy
-- [Zap for Developers](/developer/zap-for-developers) - Edge execution platform
-- [Price API](/developer/price-api) - Accessing pricing data for optimization
-- [Authentication](/developer/auth) - OAuth-style permissioning model
+- [Data Models](/technical/data-models) - Understanding the WALLET > SITE > DEVICE > DER hierarchy
+- [Zap for Developers](/technical/zap-for-developers) - Edge execution platform
+- [Price API](/technical/price-api) - Accessing pricing data for optimization

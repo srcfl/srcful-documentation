@@ -6,7 +6,7 @@ pagination_prev: null
 slug: /
 ---
 
-# Sourceful Energy — Developer Overview
+# Sourceful Energy — Overview
 
 :::tip Support
 For product setup and troubleshooting, visit **[support.sourceful.energy](https://support.sourceful.energy/)**. This page focuses on developer concepts and integration paths.
@@ -32,9 +32,9 @@ Zap is our Connector — the base of the hardware layer. It anchors trustworthy,
 - Permissions: user‑granted scopes governing API access and actions.
 
 ## Developer entry points
-- Authentication & scopes: see `/developer/auth.md` and `/developer/core-principles.md`.
-- Data models: see `/developer/data-models.md`.
-- Price & tariffs: see `/developer/price-api.md`.
-- EMS & control: see `/developer/ems.md` and `/developer/zap-for-developers.md`.
+- Core principles & scopes: see `/technical/core-principles.md`.
+- Data models: see `/technical/data-models.md`.
+- Price & tariffs: see `/technical/price-api.md`.
+- EMS & control: see `/technical/ems.md` and `/technical/zap-for-developers.md`.
 
-Proceed to the Developer section (`/developer/`) to start building.
+Proceed to the Developer section (`/technical/`) to start building.

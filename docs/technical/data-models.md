@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /developer/data-models
+slug: /technical/data-models
 pagination_prev: null
 ---
 
@@ -23,7 +23,7 @@ The **Wallet** is the top-level authentication and authorization entity. It repr
 - Access control for all resources beneath it
 - The entity that grants or revokes access to applications
 
-A Wallet can own multiple Sites. See [Authentication & Permissioning](/developer/auth) for details on OAuth-style access patterns.
+A Wallet can own multiple Sites.
 
 ### SITE (Logical Grouping)
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /developer/price-api
+slug: /technical/price-api
 pagination_prev: null
 ---
 

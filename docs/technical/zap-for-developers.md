@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /developer/zap-for-developers
+slug: /technical/zap-for-developers
 ---
 
 # Zap for Developers
@@ -82,7 +82,7 @@ Each connection point can be a separate Zap, enabling independent protocol handl
 - **Verified DER telemetry** normalized into platform resources (sites, meters, batteries, inverters)
 - **Near-real-time readings** and historical access via APIs
 - **Bidirectional control** capabilities (where DER APIs support it)
-- **Price/tariff alignment** for forecasting and analytics (see [Price API](/developer/price-api))
+- **Price/tariff alignment** for forecasting and analytics (see [Price API](/technical/price-api))
 - **Secure, user-granted access** using "Connect with Sourceful" OAuth-style scopes
 
 ## Access Pattern
@@ -91,7 +91,7 @@ Each connection point can be a separate Zap, enabling independent protocol handl
 3. Subscribe to change streams or poll for new samples (depending on your integration).
 
 ## Data Model Overview
-Refer to `/developer/data-models.md` for canonical schemas. Typical reading payloads include:
+Refer to `/technical/data-models.md` for canonical schemas. Typical reading payloads include:
 ```
 {
   siteId: string,
@@ -147,8 +147,6 @@ For historical reference on the original Sourceful Energy Gateway and legacy P1 
 These documents describe systems that are no longer actively developed but provide context for the evolution to the current Zap platform.
 
 ## Where to Go Next
-- [Authentication & Permissioning](/developer/auth)
-- [Data Models](/developer/data-models)
-- [Price & Tariffs](/developer/price-api)
-- [EMS/Control Integrations](/developer/ems)
-- [API Documentation](/developer/API/api-docs)
+- [Data Models](/technical/data-models)
+- [Price & Tariffs](/technical/price-api)
+- [EMS/Control Integrations](/technical/ems)

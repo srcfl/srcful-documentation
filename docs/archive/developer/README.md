@@ -27,9 +27,8 @@ Documentation for the legacy Sourceful Energy Gateway and the open-source P1 rea
 
 For current development guidance, please refer to:
 
-- **[Zap Developer Documentation](/developer/zap-for-developers)** - Information about the current Zap universal connector
-- **[Developer Overview](/developer/developer)** - Main developer documentation hub
-- **[API Documentation](/developer/API/api-docs)** - Current API reference
+- **[Zap Developer Documentation](/technical/zap-for-developers)** - Information about the current Zap universal connector
+- **[Overview](/technical/developer)** - Main developer documentation hub
 
 ## About the Zap
 

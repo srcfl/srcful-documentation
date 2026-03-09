@@ -119,8 +119,8 @@ const config = {
         },
         items: [
           {
-            label: 'API',
-            href: 'https://api.srcful.dev/playground',
+            label: 'Developer',
+            href: 'https://developer.sourceful.energy/',
             position: 'right'
           },
           {
@@ -161,7 +161,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/developer/',
+                to: '/technical/',
               },
               {
                 label: 'API Playground',

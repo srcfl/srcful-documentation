@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: Zap Local API
-slug: /developer/zap-local-api
+slug: /technical/zap-local-api
 ---
 
 # Zap Local API

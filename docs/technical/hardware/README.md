@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
 sidebar_label: "Hardware Setup"
-slug: /developer/hardware
+slug: /technical/hardware
 ---
 
 # Hardware Setup
@@ -18,7 +18,7 @@ The Zap is built on ESP32-C3 hardware and requires firmware flashing before depl
 
 ## Available Guides
 
-### [Flashing Zap Firmware](/developer/hardware/flashing-zap-firmware)
+### [Flashing Zap Firmware](/technical/hardware/flashing-zap-firmware)
 
 Learn how to flash Sourceful Zap firmware to ESP32-C3 devices using the sequential flasher tool:
 - Installation and setup
@@ -26,7 +26,7 @@ Learn how to flash Sourceful Zap firmware to ESP32-C3 devices using the sequenti
 - Extracting device serial numbers and public keys
 - Troubleshooting common issues
 
-### [Packaging Guide](/developer/hardware/packaging)
+### [Packaging Guide](/technical/hardware/packaging)
 
 Step-by-step guide for packaging Zap devices after firmware flashing:
 - Box assembly and preparation
@@ -47,8 +47,8 @@ The Zap's hardware-agnostic firmware can run on most ESP32-C3 boards (~$10 USD c
 
 If you're building applications on the Sourceful platform:
 - **You don't need to flash Zaps yourself** - end users receive pre-flashed devices
-- **Focus on the software side** - see [Zap for Developers](/developer/zap-for-developers)
-- **Use the APIs** - access telemetry and control through our [GraphQL API](/developer/API/api-docs)
+- **Focus on the software side** - see [Zap for Developers](/technical/zap-for-developers)
+
 
 This hardware section is primarily for:
 - Manufacturing and production teams
@@ -57,6 +57,6 @@ This hardware section is primarily for:
 
 ## Related Documentation
 
-- [Zap for Developers](/developer/zap-for-developers) - Understanding the Zap platform and capabilities
-- [Data Models](/developer/data-models) - WALLET > SITE > DEVICE > DER hierarchy
-- [EMS Documentation](/developer/ems) - How Zaps integrate with the Energy Management System
+- [Zap for Developers](/technical/zap-for-developers) - Understanding the Zap platform and capabilities
+- [Data Models](/technical/data-models) - WALLET > SITE > DEVICE > DER hierarchy
+- [EMS Documentation](/technical/ems) - How Zaps integrate with the Energy Management System

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /developer/hardware/flashing-zap-firmware
+slug: /technical/hardware/flashing-zap-firmware
 ---
 
 # Flashing Zap Firmware
@@ -223,9 +223,9 @@ uv run mypy flasher.py
 
 After flashing devices:
 1. Send CSV file to provisioning team
-2. See [Packaging Guide](/developer/hardware/packaging) for packaging instructions
+2. See [Packaging Guide](/technical/hardware/packaging) for packaging instructions
 
 ## Related Documentation
 
-- [Zap for Developers](/developer/zap-for-developers) - Understanding the Zap platform
-- [Data Models](/developer/data-models) - Device and DER hierarchy
+- [Zap for Developers](/technical/zap-for-developers) - Understanding the Zap platform
+- [Data Models](/technical/data-models) - Device and DER hierarchy

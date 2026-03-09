@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /developer/hardware/packaging
+slug: /technical/hardware/packaging
 ---
 
 # Zap Packaging Guide
@@ -10,7 +10,7 @@ This guide covers the packaging process for Sourceful Zap devices after firmware
 ## Prerequisites
 
 Before packaging, ensure:
-- Zaps are successfully flashed (see [Flashing Zap Firmware](/developer/hardware/flashing-zap-firmware))
+- Zaps are successfully flashed (see [Flashing Zap Firmware](/technical/hardware/flashing-zap-firmware))
 - CSV file with device information has been sent to provisioning team
 - Packaging materials are available:
   - Cardboard boxes
@@ -83,5 +83,5 @@ After packaging:
 
 ## Related Documentation
 
-- [Flashing Zap Firmware](/developer/hardware/flashing-zap-firmware) - Firmware flashing process
-- [Zap for Developers](/developer/zap-for-developers) - Understanding the Zap platform
+- [Flashing Zap Firmware](/technical/hardware/flashing-zap-firmware) - Firmware flashing process
+- [Zap for Developers](/technical/zap-for-developers) - Understanding the Zap platform

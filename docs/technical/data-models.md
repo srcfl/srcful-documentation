@@ -127,16 +127,18 @@ The following sections describe the standardized telemetry data structures for D
   - [PV Data Model](#pv-data-model)
   - [Battery Data Model](#battery-data-model)
   - [Meter Data Model](#meter-data-model)
+  - [V2X Charger Data Model](#ev-charger-data-model-v2x-enabled)
 
 ## Base Structure
 
 ### DERData Root Structure
 
-The root data structure can contain up to three subsystems:
+The root data structure can contain up to four subsystems:
 
 - **pv**: Photovoltaic system data
 - **battery**: Battery storage system data
 - **meter**: Meter data
+- **v2x_charger**: Vehicle-to-grid charger data
 
 ### Inheritance Model
 
@@ -183,7 +185,7 @@ Common fields shared by all device types:
 
 | Field          | Unit         | Data Type | Description                            |
 | -------------- | ------------ | --------- | -------------------------------------- |
-| `type`         | -            | string    | Object type ("pv", "battery", "meter") |
+| `type`         | -            | string    | Object type ("pv", "battery", "meter", "v2x_charger") |
 | `make`         | -            | string    | Manufacturer/brand name (optional)     |
 | `timestamp`    | milliseconds | integer   | Timestamp of reading start             |
 | `read_time_ms` | milliseconds | integer   | Time taken to complete the reading     |
@@ -306,30 +308,23 @@ Grid meter data with import/export and phase-level measurements:
 {
   "type": "v2x_charger",
   "make": "Ferroamp",
-  "status": "charging",
+  "connector_status": "occupied",
+  "charging_state": "charging",
   "protocol": "ISO_15118_20",
-  "control_mode": "dynamic_bpt",
+  "control_mode": "bi_dir",
   "plug_connected": true,
   "W": 5300,
+  "ac_W": 5300,
   "A": 23.0,
   "V": 230.5,
   "Hz": 49.98,
   "L1_V": 232.8,
   "L1_A": 23.0,
   "L1_W": 5354,
-  "L2_V": 230.9,
-  "L2_A": 0.0,
-  "L2_W": 0,
-  "L3_V": 230.2,
-  "L3_A": 0.0,
-  "L3_W": 0,
   "dc_W": 5100,
   "dc_V": 400.0,
   "dc_A": 12.75,
   "vehicle_soc_fract": 0.55,
-  "ev_target_energy_req_Wh": 5300,
-  "ev_max_energy_req_Wh": 18100,
-  "ev_min_energy_req_Wh": -25800,
   "session_charge_Wh": 1500,
   "session_discharge_Wh": 0,
   "total_charge_Wh": 142000,
@@ -341,13 +336,16 @@ Grid meter data with import/export and phase-level measurements:
 
 | Field | Unit | Data Type | Description |
 |-------|------|-----------|-------------|
-| `type` | - | string | Always "v2x_charger" |
+| `type` | - | string | Always `"v2x_charger"` |
 | `make` | - | string | Manufacturer brand (e.g., Ferroamp, Ambibox) |
-| `status` | - | string | State (idle, charging, discharging, error, suspended) |
+| `connector_status` | - | string | Connector availability (see [Connector Status](#connector-status)) |
+| `charging_state` | - | string | Vehicle/session charging state (see [Charging State](#charging-state)) |
+| `status` | - | string | **Deprecated.** Legacy flat status string. Use `connector_status` + `charging_state` instead |
 | `protocol` | - | string | Active protocol (e.g., ISO_15118_2, ISO_15118_20, DIN) |
-| `control_mode` | - | string | scheduled (Car decides) or dynamic (EMS/Charger decides) |
-| `plug_connected` | - | boolean | true if cable is physically inserted |
-| `W` | W | integer | AC Grid Power: (+) Charging, (-) Discharging/V2G |
+| `control_mode` | - | string | `"unknown"`, `"bi_dir"` (bidirectional), or `"uni_dir"` (charge only) |
+| `plug_connected` | - | boolean | **Deprecated.** Use `connector_status` instead — derivable from status != `"available"` |
+| `W` | W | integer | Active Power, derived from `ac_W` or `dc_W * 0.95`. (+) Charging, (-) V2G |
+| `ac_W` | W | integer | AC Active Power (+) Charging, (-) V2G |
 | `A` | A | float | AC Grid Current (Total) |
 | `V` | V | float | AC Grid Voltage (Average) |
 | `Hz` | Hz | float | Grid Frequency |
@@ -360,16 +358,35 @@ Grid meter data with import/export and phase-level measurements:
 | `vehicle_soc_fract` | fraction | float | Vehicle State of Charge (0.0 - 1.0) |
 | `ev_target_energy_req_Wh` | Wh | integer | Demand: Energy needed to reach driver's target SoC |
 | `ev_max_energy_req_Wh` | Wh | integer | Capacity: Empty space in battery available for charging |
-| `ev_min_energy_req_Wh` | Wh | integer | V2G Potential: Energy available for export (Negative value = V2G) |
+| `ev_min_energy_req_Wh` | Wh | integer | V2G Potential: Energy available for export (negative = V2G) |
 | `session_charge_Wh` | Wh | integer | Energy imported by EV during this session |
 | `session_discharge_Wh` | Wh | integer | Energy exported by EV during this session |
 | `total_charge_Wh` | Wh | integer | Lifetime Energy delivered to EV |
 | `total_discharge_Wh` | Wh | integer | Lifetime Energy exported from EV (V2G) |
 
-**Status Values:**
+#### Connector Status
 
-- `"charging"` - Vehicle is connected and actively charging/discharging
-- `"suspended"` - A vehicle is plugged into the port, but the charger is not delivering any power
-- `"available"` - Charger is ready and no vehicle connected
-- `"preparing"` - Vehicle connected, preparing to charge (authentication, cable check, etc.)
-- `"error"` - Charger or charging session has encountered an error
+Describes the physical connector's availability. Based on OCPP 2.0.1 `ConnectorStatusEnumType`, with `preparing` and `finishing` retained from OCPP 1.6 for backward compatibility.
+
+| Value | Meaning |
+|-------|---------|
+| `"available"` | Ready, nothing plugged in |
+| `"preparing"` | Cable plugged in, session not started yet |
+| `"finishing"` | Session ending, cable still plugged in |
+| `"reserved"` | Locked for a specific user |
+| `"unavailable"` | Intentionally offline (maintenance, admin) |
+| `"faulted"` | Hardware/software fault |
+| `"occupied"` | In use (charging, discharging, or connected) |
+
+#### Charging State
+
+Describes the vehicle/charging session state. Based on OCPP 2.0.1 `ChargingStateEnumType`, extended with `discharging` for V2G.
+
+| Value | Meaning |
+|-------|---------|
+| `"charging"` | Energy actively flowing to vehicle |
+| `"discharging"` | Energy flowing from vehicle to grid (V2G) |
+| `"suspended_ev"` | Vehicle not accepting power (e.g., battery full) |
+| `"suspended_evse"` | Charger not delivering power (e.g., smart charging limit, pending auth) |
+| `"ev_connected"` | Cable plugged in, session open, no energy flowing yet |
+| `"idle"` | Transaction open but no EV connected (e.g., cable removed mid-session) |

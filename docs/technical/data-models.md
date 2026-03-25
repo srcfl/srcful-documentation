@@ -370,6 +370,7 @@ Describes the physical connector's availability. Based on OCPP 2.0.1 `ConnectorS
 
 | Value | Meaning |
 |-------|---------|
+| `"unknown"` | State not yet determined |
 | `"available"` | Ready, nothing plugged in |
 | `"preparing"` | Cable plugged in, session not started yet |
 | `"finishing"` | Session ending, cable still plugged in |
@@ -384,6 +385,7 @@ Describes the vehicle/charging session state. Based on OCPP 2.0.1 `ChargingState
 
 | Value | Meaning |
 |-------|---------|
+| `"unknown"` | State not yet determined |
 | `"charging"` | Energy actively flowing to vehicle |
 | `"discharging"` | Energy flowing from vehicle to grid (V2G) |
 | `"suspended_ev"` | Vehicle not accepting power (e.g., battery full) |

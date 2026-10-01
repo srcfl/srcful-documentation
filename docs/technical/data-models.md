@@ -117,29 +117,34 @@ In this example:
 
 ## Telemetry and Control Data Models
 
-The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2.1.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
+The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v3.0.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
 
 **Field reference:** [srcful-data-models `docs/REFERENCE.md`](https://github.com/srcfl/srcful-data-models/blob/main/docs/REFERENCE.md) lists every field per DER type. This page does not repeat it.
 
 ### Rules in Brief
 
-- One flat JSON object per DER per reading, with `type` set to the DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
-- Field names are bare and carry the unit (`_W`, `_Wh`, `_V`, `_A`, `_Hz`, `_C`, `_fract`), case-exact: `W`, `L1_V`, `SoC_nom_fract`, `total_import_Wh`.
-- `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took.
-- Leave out values that were not read. Never send 0 for them.
-- MPPT inputs are flat: `mppt1_V`, `mppt1_A`, `mppt1_W` … up to `mppt4_*`.
+- One flat JSON object per DER per reading, with `type` set to the device-support DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
+- Field names carry the unit, case-exact as the physical symbol (`_W`, `_Wh`, `_V`, `_A`, `_Hz`, `_C`, `_fract`).
+- A quantity that can be AC or DC carries a lowercase `_ac` / `_dc` postfix: `W_ac`, `W_dc`, `V_dc`, `A_dc`, `total_charge_Wh_dc`, `total_import_Wh_ac`, `upper_limit_W_dc`, `rated_power_W_ac`. When a device measures both sides, send both.
+- A quantity that can only be one side has no postfix: `Hz`, `VA`, `VAR`, per-phase `L1_V` / `L1_A` / `L1_W`, `mppt1_V` … `mppt4_*` (always DC). EV charger DC values are `W_dc`, `V_dc`, `A_dc`.
+- Every DER payload carries at least one of `W_ac` / `W_dc`.
+- `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took (a duration, not a time).
+- Missing values: leave the field out. **Never send 0 for a value that was not read.**
 - Limits are scalars for battery and solar, and `[min, 0, max]` bands for EV charger ports.
-- Base units only: W, Wh, V, A, Hz, °C, and fractions from 0.0 to 1.0.
+- Inverter and meter are separate DERs: `inverter` is the inverter's AC output, `meter` is an energy meter (typically the grid connection).
+- Control: `power_W_dc` is the battery's DC power target; the ack reports `actual_power_W_dc`.
+- Base units only: W, Wh, V, A, Hz, °C, and fractions from 0.0 to 1.0. Never kW or kWh.
+- NovaCore still accepts the bare names (`W` etc.) for backwards compatibility for now.
 
 ### Sign Convention
 
-Positive = power into the DER (import, charge), negative = power out of it (export, discharge, generation).
+Sourceful sign convention: **+ import, − export**, seen from the DER. Power into the DER (charge, consume) is positive; power out of it (discharge, generation, delivery) is negative. Applies to `_ac` and `_dc` alike.
 
 | DER | + | − |
-|---|---|---|
+|-----|---|---|
 | solar | never | generating |
 | battery | charging | discharging |
 | inverter | absorbing AC | delivering AC |
 | meter (grid) | import | export |
 | ev_charger_port | charging the vehicle | V2G |
-| control `power_w` | charge / consume | discharge / produce |
+| control `power_W_dc` | charge | discharge |

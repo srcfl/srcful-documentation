@@ -129,6 +129,6 @@ While the EMS itself is not open, developers can access:
 
 ## Related Documentation
 
-- [Data Models](/technical/data-models) - Understanding the WALLET > SITE > DEVICE > DER hierarchy
+- [Data Models](/technical/data-models) - Understanding the ORGANIZATION > SITE > DEVICE > DER hierarchy
 - [Zap for Developers](/technical/zap-for-developers) - Edge execution platform
 - [Price API](/technical/price-api) - Accessing pricing data for optimization

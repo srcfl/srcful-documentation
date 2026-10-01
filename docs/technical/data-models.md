@@ -124,17 +124,17 @@ The fields of each DER type (names, units, sign convention, shape) and the contr
 ### Rules in Brief
 
 - One flat JSON object per DER per reading, with `type` set to the device-support DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
-- Field names carry the unit, case-exact as the physical symbol (`_W`, `_Wh`, `_V`, `_A`, `_Hz`, `_C`, `_fract`).
+- Everything in a field name that is not a unit is lowercase (`soc_nom_fract`, `soh_fract`, `l1_V`, `total_charge_Wh_dc`); units keep their physical casing (`W`, `Wh`, `V`, `A`, `Hz`, `VA`, `var`, `C`).
 - A quantity that can be AC or DC carries a lowercase `_ac` / `_dc` postfix: `W_ac`, `W_dc`, `V_dc`, `A_dc`, `total_charge_Wh_dc`, `total_import_Wh_ac`, `upper_limit_W_dc`, `rated_power_W_ac`. When a device measures both sides, send both.
-- A quantity that can only be one side has no postfix: `Hz`, `VA`, `VAR`, per-phase `L1_V` / `L1_A` / `L1_W`, `mppt1_V` … `mppt4_*` (always DC). EV charger DC values are `W_dc`, `V_dc`, `A_dc`.
-- Every DER payload carries at least one of `W_ac` / `W_dc`.
+- A quantity that can only be one side has no postfix: `Hz`, `VA`, `var`, `heatsink_C`, per-phase `l1_V` / `l1_A` / `l1_W`, `mppt1_V` … `mppt4_*` (always DC). EV charger DC values are `W_dc`, `V_dc`, `A_dc`.
+- solar, battery, inverter and meter payloads carry at least one of `W_ac` / `W_dc` (optional for ev_charger_port).
 - `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took (a duration, not a time).
-- Missing values: leave the field out. **Never send 0 for a value that was not read.**
+- Every field is always present. A value that was not read is JSON `null`. **Never send 0 for a value that was not read.**
 - Limits are scalars for battery and solar, and `[min, 0, max]` bands for EV charger ports.
 - Inverter and meter are separate DERs: `inverter` is the inverter's AC output, `meter` is an energy meter (typically the grid connection).
 - Control: `power_W_dc` is the battery's DC power target; the ack reports `actual_power_W_dc`.
 - Base units only: W, Wh, V, A, Hz, °C, and fractions from 0.0 to 1.0. Never kW or kWh.
-- NovaCore still accepts the bare names (`W` etc.) for backwards compatibility for now.
+- No aliases: consumers move to the 3.0 names. NovaCore ingest still accepts the pre-3.0 names (`W`, `SoC_nom_fract` …) for now.
 
 ### Sign Convention
 

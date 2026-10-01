@@ -78,18 +78,18 @@ A **DER** is the logical representation of an energy resource or function:
 - **DEVICE**: The inverter itself (communication/control point via Modbus)
 - **DER #1**: Solar PV (generation capability)
 - **DER #2**: Battery (storage capability)
-- **DER #3**: Meter (the inverter's AC side, import/export)
+- **DER #3**: Inverter (the inverter's AC output)
 
-You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (solar, battery, meter). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
+You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (solar, battery, inverter). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
 
 **DER Types:**
 
 DER types and device types are owned by the device-support API (`GET /der-types`, `GET /device-types`):
 
-- **DER types**: `solar`, `battery`, `meter`, `ev_charger_port`
+- **DER types**: `solar`, `battery`, `inverter`, `meter`, `ev_charger_port`
 - **Device types**: `inverter`, `battery`, `energy_meter`, `ev_charger`, `v2x_charger`
 
-Each device type allows a fixed set of DER types. There is no inverter DER: the AC side of an inverter is a `meter` DER on the inverter device.
+Each device type allows a fixed set of DER types. Inverter and meter are separate DERs: `inverter` is the inverter's AC output, `meter` is an energy meter (typically the grid connection).
 
 ## Hierarchy Example
 
@@ -99,7 +99,7 @@ ORGANIZATION: org_abc123
       ├─ DEVICE: hybrid_inverter_01 (inverter, Modbus-TCP)
       │   ├─ DER: pv_rooftop (solar)
       │   ├─ DER: battery_01 (battery)
-      │   └─ DER: inverter_ac (meter)
+      │   └─ DER: inverter_ac (inverter)
       ├─ DEVICE: v2x_charger_01 (v2x_charger, ISO 15118)
       │   └─ DER: port_1 (ev_charger_port)
       └─ DEVICE: smart_meter_01 (energy_meter, P1)
@@ -117,13 +117,13 @@ In this example:
 
 ## Telemetry and Control Data Models
 
-The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2.0.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
+The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2.1.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
 
 **Field reference:** [srcful-data-models `docs/REFERENCE.md`](https://github.com/srcfl/srcful-data-models/blob/main/docs/REFERENCE.md) lists every field per DER type. This page does not repeat it.
 
 ### Rules in Brief
 
-- One flat JSON object per DER per reading, with `type` set to the DER type (`solar`, `battery`, `meter`, `ev_charger_port`).
+- One flat JSON object per DER per reading, with `type` set to the DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
 - Field names are bare and carry the unit (`_W`, `_Wh`, `_V`, `_A`, `_Hz`, `_C`, `_fract`), case-exact: `W`, `L1_V`, `SoC_nom_fract`, `total_import_Wh`.
 - `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took.
 - Leave out values that were not read. Never send 0 for them.
@@ -139,7 +139,7 @@ Positive = power into the DER (import, charge), negative = power out of it (expo
 |---|---|---|
 | solar | never | generating |
 | battery | charging | discharging |
+| inverter | absorbing AC | delivering AC |
 | meter (grid) | import | export |
-| meter (inverter AC) | absorbing | delivering |
 | ev_charger_port | charging the vehicle | V2G |
 | control `power_w` | charge / consume | discharge / produce |

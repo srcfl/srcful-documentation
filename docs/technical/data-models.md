@@ -124,9 +124,9 @@ The fields of each DER type (names, units, sign convention, shape) and the contr
 ### Rules in Brief
 
 - One flat JSON object per DER per reading, with `type` set to the device-support DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
-- Everything in a field name that is not a unit is lowercase (`soc_nom_fract`, `soh_fract`, `l1_V`, `total_charge_Wh_dc`); units keep their physical casing (`W`, `Wh`, `V`, `A`, `Hz`, `VA`, `var`, `C`).
-- A quantity that can be AC or DC carries a lowercase `_ac` / `_dc` postfix: `W_ac`, `W_dc`, `V_dc`, `A_dc`, `total_charge_Wh_dc`, `total_import_Wh_ac`, `upper_limit_W_dc`, `rated_power_W_ac`. When a device measures both sides, send both.
-- A quantity that can only be one side has no postfix: `Hz`, `VA`, `var`, `heatsink_C`, per-phase `l1_V` / `l1_A` / `l1_W`, `mppt1_V` … `mppt4_*` (always DC). EV charger DC values are `W_dc`, `V_dc`, `A_dc`.
+- Everything in a field name that is not a unit is lowercase (`soc_nom_fract`, `soh_fract`, `l1_V_ac`, `total_charge_Wh_dc`); units keep their physical casing (`W`, `Wh`, `V`, `A`, `Hz`, `VA`, `var`, `C`).
+- Every field in W, V, A or Wh carries a lowercase `_ac` / `_dc` postfix, even where only one side is physically possible: `W_ac`, `W_dc`, `V_dc`, `total_charge_Wh_dc`, `upper_limit_W_dc`, per-phase `l1_V_ac` / `l1_A_ac` / `l1_W_ac`, `mppt1_V_dc` … `mppt4_*_dc`, `rated_power_W_ac` / `rated_power_W_dc`, `capacity_Wh_dc`, `installed_power_W_dc`. Where a device can report either side, both fields exist and both are sent when measured.
+- Only `Hz`, `VA` and `var` have no postfix. Other units such as `_C` and `_fract` have none either (`heatsink_C`, `soc_nom_fract`).
 - solar, battery, inverter and meter payloads carry at least one of `W_ac` / `W_dc` (optional for ev_charger_port).
 - `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took (a duration, not a time).
 - Every field is always present. A value that was not read is JSON `null`. **Never send 0 for a value that was not read.**

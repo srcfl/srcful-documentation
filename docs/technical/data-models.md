@@ -52,7 +52,7 @@ A **Device** represents the physical hardware you communicate with and control:
 
 - The actual communication endpoint (Modbus address, MQTT client, P1 port)
 - Often the electrical connection point
-- What the Zap directly talks to via protocols
+- What the gateway talks to directly via protocols
 
 **Examples:**
 
@@ -97,16 +97,16 @@ Each device type allows a fixed set of DER types. Inverter and meter are separat
 ORGANIZATION: org_abc123
   └─ SITE: home_main_street
       ├─ DEVICE: hybrid_inverter_01 (inverter, Modbus-TCP)
-      │   ├─ DER: pv_rooftop (solar)
-      │   ├─ DER: battery_01 (battery)
-      │   └─ DER: inverter_ac (inverter)
+      │   ├─ DER: solar (solar)
+      │   ├─ DER: battery (battery)
+      │   └─ DER: inverter (inverter)
       ├─ DEVICE: v2x_charger_01 (v2x_charger, ISO 15118)
-      │   └─ DER: port_1 (ev_charger_port)
+      │   └─ DER: ev_charger_port (ev_charger_port)
       └─ DEVICE: smart_meter_01 (energy_meter, P1)
-          └─ DER: grid_meter (meter)
+          └─ DER: meter (meter)
 ```
 
-In this example:
+In this example (DER names are the v2 defaults, the DER type):
 
 - The hybrid inverter is one physical device, but exposes three DERs
 - Each Device may use a different protocol
@@ -117,29 +117,20 @@ In this example:
 
 ## Telemetry and Control Data Models
 
-The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2, package 2.0.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
+The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2, package 2.3.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
 
-**Rules and field reference:** the srcful-data-models [README](https://github.com/srcfl/srcful-data-models/blob/main/README.md) has the rules (subjects, naming, sign, electrical definitions), and [`docs/REFERENCE.md`](https://github.com/srcfl/srcful-data-models/blob/main/docs/REFERENCE.md) lists every field per DER type. This page does not repeat the field lists.
+**Rules and field reference:** the srcful-data-models [README](https://github.com/srcfl/srcful-data-models/blob/main/README.md) has the rules (subjects, naming, sign, electrical definitions, SoC window, derived values), and [`docs/REFERENCE.md`](https://github.com/srcfl/srcful-data-models/blob/main/docs/REFERENCE.md) lists every field per DER type. This page does not repeat them.
 
-### Rules in Brief
+### In Brief
 
 - One flat JSON object per DER per reading, with `type` set to the device-support DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
-- Subjects are versioned. v2 payloads are published on `gateways.{gateway_id}.devices.{hardware_id}.ders.{der_name}.telemetry.json.v2` (MQTT uses the same path with `/`). `json.v1` keeps the legacy 1.x format side by side. Nothing translates between the two: a consumer reads the version it subscribes to, so moving to v2 is opt-in.
-- The `der_name` segment is the DER's provisioned name. In v2 it defaults to the DER type: `solar` (it was `pv` in v1), `battery`, `inverter`, `meter`. NovaCore temporarily resolves a v2 `solar` segment to a DER provisioned as `pv`, until srcfl/srcful-novacore#185 removes that fallback.
-- Everything in a field name that is not a unit is lowercase (`soc_nom_fract`, `soh_fract`, `l1_V_ac`, `total_charge_Wh_dc`); units keep their physical casing (`W`, `Wh`, `V`, `A`, `VA`, `Hz`, `C`).
-- Every field in W, V, A, VA or Wh carries a lowercase `_ac` / `_dc` postfix, even where only one side is physically possible: `W_ac`, `W_dc`, `V_dc`, `total_charge_Wh_dc`, `upper_limit_W_dc`, per-phase `l1_V_ac` / `l1_A_ac` / `l1_W_ac`, `mppt1_V_dc` … `mppt4_*_dc`, `rated_power_W_ac` / `rated_power_W_dc`, `capacity_Wh_dc`, `installed_power_W_dc`. Where a device can report either side, both fields exist and both are sent when measured. Only frequency (`Hz`) has no postfix; non-electrical units such as `_C` and `_fract` have none either.
-- Reactive power is `reactive_VA_ac`, signed: + the DER absorbs reactive power (inductive), − it delivers (capacitive). Apparent power is `apparent_VA_ac` (≥ 0).
-- solar, battery, inverter and meter payloads carry at least one of `W_ac` / `W_dc` (optional for ev_charger_port).
-- `timestamp` is Unix epoch **milliseconds**; `read_time_ms` is how long the read took (a duration, not a time).
-- Every field is always present. A value that was not read is JSON `null`. **Never send 0 for a value that was not read.**
-- Limits are scalars for battery and solar, and `[min, 0, max]` bands for EV charger ports.
-- Inverter and meter are separate DERs. `inverter` is the inverter's AC output stage only: its DC side is the `solar` and `battery` DERs, so nothing is counted twice. `meter` is an energy meter (typically the grid connection).
-- Control: a `v: 2` command carries `power_W_dc` (the battery's DC power target), and the gateway acks on `…control.ack.json.v2` with `actual_power_W_dc`. `v: 1` commands (`power_w`) are the legacy format.
-- Base units only: W, Wh, V, A, VA, Hz, °C, and fractions from 0.0 to 1.0. Never kW or kWh.
+- Subjects are versioned: v2 payloads go on `gateways.{gateway_id}.devices.{hardware_id}.ders.{der_name}.telemetry.json.v2` (MQTT uses `/`). `json.v1` keeps the legacy 1.x format side by side; nothing translates between them, so moving to v2 is opt-in.
+- Every field is always present. A value that was not read is `null`, **never 0**.
+- Control: a `v: 2` command carries `power_W_dc` and an optional `execute_at`; the gateway acks on `…control.ack.json.v2` with status `executed`, `nack` or `failed`. NovaCore stores the final ack on the command (`status`, `acked_at`, `completed_at`, `error_message`).
 
 ### Sign Convention
 
-Sourceful sign convention: **+ import, − export**, seen from the DER. Power into the DER (charge, consume) is positive; power out of it (discharge, generation, delivery) is negative. Applies to `_ac` and `_dc` alike.
+Sourceful sign convention: **+ import, − export**, seen from the DER. Power into the DER (charge, consume) is positive; power out of it (discharge, generation, delivery) is negative.
 
 | DER | + | − |
 |-----|---|---|
@@ -149,17 +140,3 @@ Sourceful sign convention: **+ import, − export**, seen from the DER. Power in
 | meter (grid) | import | export |
 | ev_charger_port | charging the vehicle | V2G |
 | control `power_W_dc` | charge | discharge |
-
-### Electrical Definitions
-
-| Quantity | Definition |
-|----------|------------|
-| Per-phase voltage `l1_V_ac` … | RMS, phase-to-neutral. A device that only reports phase-to-phase voltage sends `null` |
-| Per-phase current `l1_A_ac` … | RMS magnitude (≥ 0). Direction comes from the phase's active power `l1_W_ac` |
-| AC current `A_ac` | Sum of the phases' RMS current magnitudes (≥ 0) |
-| AC voltage `V_ac` | Mean of the available phases' RMS phase-to-neutral voltages |
-| Active power `W_ac` | Sum of the phases' active power, signed as above |
-| DC current `A_dc`, `mpptN_A_dc` | Signed: + into the DER, − out of it (a generating PV input is negative) |
-| Aggregates | Formed from the phases the device reports; `null` if they cannot be formed, never estimated |
-
-The full definitions, including reactive and apparent power, are in the srcful-data-models [README](https://github.com/srcfl/srcful-data-models/blob/main/README.md).

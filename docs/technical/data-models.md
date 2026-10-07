@@ -6,24 +6,25 @@ pagination_prev: null
 
 # Data Models
 
-This document describes Sourceful's data model architecture, covering both the logical hierarchy of resources and the telemetry data structures for distributed energy resources.
+This document describes Sourceful's data model architecture: the logical hierarchy of resources, and where the telemetry and control field definitions for distributed energy resources live.
 
 ## Platform Hierarchy
 
 Sourceful organizes energy resources in a four-level hierarchy:
 
-### 1. WALLET → 2. SITE → 3. DEVICE → 4. DER
+### 1. ORGANIZATION → 2. SITE → 3. DEVICE → 4. DER
 
-### WALLET (Permission Layer)
+Users and API clients act through identities that belong to an Organization (Identity → Organization → Site → Device → DER).
 
-The **Wallet** is the top-level authentication and authorization entity. It represents:
+### ORGANIZATION (Permission Layer)
 
-- User identity and ownership
-- Permission boundaries (OAuth-style scopes)
-- Access control for all resources beneath it
+The **Organization** is the top-level owner of resources. It represents:
+
+- Ownership of everything beneath it
+- The permission boundary for access to its resources
 - The entity that grants or revokes access to applications
 
-A Wallet can own multiple Sites.
+An Organization can own multiple Sites.
 
 ### SITE (Logical Grouping)
 
@@ -51,7 +52,7 @@ A **Device** represents the physical hardware you communicate with and control:
 
 - The actual communication endpoint (Modbus address, MQTT client, P1 port)
 - Often the electrical connection point
-- What the Zap directly talks to via protocols
+- What the gateway talks to directly via protocols
 
 **Examples:**
 
@@ -77,318 +78,65 @@ A **DER** is the logical representation of an energy resource or function:
 - **DEVICE**: The inverter itself (communication/control point via Modbus)
 - **DER #1**: Solar PV (generation capability)
 - **DER #2**: Battery (storage capability)
-- **DER #3**: Grid connection (import/export capability)
+- **DER #3**: Inverter (the inverter's AC output stage)
 
-You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (PV, battery). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
+You control the **Device** (inverter), but you represent its capabilities as separate **DERs** (solar, battery, inverter). You cannot directly control the battery - you control the inverter which manages the battery - but you still model the battery as a distinct DER for optimization purposes.
 
 **DER Types:**
 
-- **PV (Photovoltaic)**: Solar generation
-- **Battery**: Energy storage
-- **Meter**: Grid import/export measurement
-- **Charger**: EV charger (uni- or bi-directional)
-- **Flexible Load**: Controllable consumption (heat pumps, HVAC, etc.)
+DER types and device types are owned by the device-support API (`GET /der-types`, `GET /device-types`):
+
+- **DER types**: `solar`, `battery`, `inverter`, `meter`, `ev_charger_port`
+- **Device types**: `inverter`, `battery`, `energy_meter`, `ev_charger`, `v2x_charger`
+
+Each device type allows a fixed set of DER types. Inverter and meter are separate DERs: `inverter` is the inverter's AC output stage (its DC side is the `solar` and `battery` DERs), `meter` is an energy meter (typically the grid connection).
 
 ## Hierarchy Example
 
 ```
-WALLET: user_abc123
+ORGANIZATION: org_abc123
   └─ SITE: home_main_street
-      ├─ DEVICE: hybrid_inverter_01 (Modbus-TCP)
-      │   ├─ DER: pv_rooftop (Solar PV)
-      │   └─ DER: battery_01 (Home Battery)
-      ├─ DEVICE: v2x_charger_01 (ISO 15118)
-      │   └─ DER: tesla_model3 (V2X Charger)
-      └─ DEVICE: smart_meter_01 (P1)
-          └─ DER: grid_meter (Meter)
+      ├─ DEVICE: hybrid_inverter_01 (inverter, Modbus-TCP)
+      │   ├─ DER: solar (solar)
+      │   ├─ DER: battery (battery)
+      │   └─ DER: inverter (inverter)
+      ├─ DEVICE: v2x_charger_01 (v2x_charger, ISO 15118)
+      │   └─ DER: ev_charger_port (ev_charger_port)
+      └─ DEVICE: smart_meter_01 (energy_meter, P1)
+          └─ DER: meter (meter)
 ```
 
-In this example:
+In this example (DER names are the v2 defaults, the DER type):
 
-- The hybrid inverter is one physical device, but exposes two DER capabilities
+- The hybrid inverter is one physical device, but exposes three DERs
 - Each Device may use a different protocol
 - The Site optimizes across all DERs as a coordinated system
-- The Wallet controls access permissions for the entire hierarchy
+- The Organization controls access permissions for the entire hierarchy
 
 ---
 
-## Telemetry Data Models
+## Telemetry and Control Data Models
 
-The following sections describe the standardized telemetry data structures for DER types. Each DER type inherits from a common base structure while adding resource-specific fields.
+The fields of each DER type (names, units, sign convention, shape) and the control command and acknowledgement are defined in one place: **[srcful-data-models](https://github.com/srcfl/srcful-data-models)** (v2, package 2.3.0). It publishes JSON Schema plus TypeScript, Go, Rust and Python types generated from the same schemas.
 
-- [Base Structure](#base-structure)
-  - [DERData Root Structure](#derdata-root-structure)
-  - [Inheritance Model](#inheritance-model)
-- [Units and Conventions](#units-and-conventions)
-  - [Units](#units)
-  - [Sign Conventions](#sign-conventions)
-- [Device Types](#device-types)
-  - [BaseDeviceData](#basedevicedata)
-  - [PV Data Model](#pv-data-model)
-  - [Battery Data Model](#battery-data-model)
-  - [Meter Data Model](#meter-data-model)
-  - [V2X Charger Data Model](#ev-charger-data-model-v2x-enabled)
+**Rules and field reference:** the srcful-data-models [README](https://github.com/srcfl/srcful-data-models/blob/main/README.md) has the rules (subjects, naming, sign, electrical definitions, SoC window, derived values), and [`docs/REFERENCE.md`](https://github.com/srcfl/srcful-data-models/blob/main/docs/REFERENCE.md) lists every field per DER type. This page does not repeat them.
 
-## Base Structure
+### In Brief
 
-### DERData Root Structure
+- One flat JSON object per DER per reading, with `type` set to the device-support DER type (`solar`, `battery`, `inverter`, `meter`, `ev_charger_port`).
+- Subjects are versioned: v2 payloads go on `gateways.{gateway_id}.devices.{hardware_id}.ders.{der_name}.telemetry.json.v2` (MQTT uses `/`). `json.v1` keeps the legacy 1.x format side by side; nothing translates between them, so moving to v2 is opt-in.
+- Every field is always present. A value that was not read is `null`, **never 0**.
+- Control: a `v: 2` command carries `power_W_dc` and an optional `execute_at`; the gateway acks on `…control.ack.json.v2` with status `executed`, `nack` or `failed`. NovaCore stores the final ack on the command (`status`, `acked_at`, `completed_at`, `error_message`).
 
-The root data structure can contain up to four subsystems:
+### Sign Convention
 
-- **pv**: Photovoltaic system data
-- **battery**: Battery storage system data
-- **meter**: Meter data
-- **v2x_charger**: Vehicle-to-grid charger data
+Sourceful sign convention: **+ import, − export**, seen from the DER. Power into the DER (charge, consume) is positive; power out of it (discharge, generation, delivery) is negative.
 
-### Inheritance Model
-
-All device types inherit from `BaseDeviceData`:
-
-```json
-{
-  "type": "pv",
-  "make": "Deye",
-  "timestamp": 1755701251122,
-  "read_time_ms": 42
-}
-```
-
-## Units and Conventions
-
-### Units
-
-All measurements use base SI units:
-
-- **Power**: W (watts)
-- **Energy**: Wh (watt-hours)
-- **Voltage**: V (volts)
-- **Current**: A (amperes)
-- **Frequency**: Hz (hertz)
-- **Temperature**: °C (Celsius)
-- **State of Charge**: fraction (0.0 = empty, 1.0 = full)
-- **Time**: s (seconds), ms (milliseconds for timestamps)
-
-### Sign Conventions
-
-- **Generation**: Negative power (PV: `W < 0`)
-- **Charging**: Positive power/current (Battery: `W > 0`, `A > 0`)
-- **Discharging**: Negative power/current (Battery: `W < 0`, `A < 0`)
-- **Import**: Positive power (Meter: `W > 0`)
-- **Export**: Negative power (Meter: `W < 0`)
-- **Energy Totals**: Always positive values
-
-## Device Types
-
-### BaseDeviceData
-
-Common fields shared by all device types:
-
-| Field          | Unit         | Data Type | Description                            |
-| -------------- | ------------ | --------- | -------------------------------------- |
-| `type`         | -            | string    | Object type ("pv", "battery", "meter", "v2x_charger") |
-| `make`         | -            | string    | Manufacturer/brand name (optional)     |
-| `timestamp`    | milliseconds | integer   | Timestamp of reading start             |
-| `read_time_ms` | milliseconds | integer   | Time taken to complete the reading     |
-
-### PV Data Model
-
-Photovoltaic system data with solar generation metrics:
-
-**Example:**
-
-```json
-{
-  "type": "pv",
-  "make": "Deye",
-  "W": -1500,
-  "rated_power_W": 3000,
-  "mppt1_V": 400,
-  "mppt1_A": -3.75,
-  "mppt2_V": 380,
-  "mppt2_A": -3.68,
-  "heatsink_C": 45,
-  "total_generation_Wh": 15000
-}
-```
-
-**Fields:**
-
-| Field                 | Unit | Data Type | Description                                                     |
-| --------------------- | ---- | --------- | --------------------------------------------------------------- |
-| `W`                   | W    | integer   | Power Generation (always negative)                              |
-| `rated_power_W`       | W    | integer   | System Rated Power                                              |
-| `mppt1_V`             | V    | float     | MPPT1 Voltage                                                   |
-| `mppt1_A`             | A    | float     | MPPT1 Current                                                   |
-| `mppt2_V`             | V    | float     | MPPT2 Voltage                                                   |
-| `mppt2_A`             | A    | float     | MPPT2 Current                                                   |
-| `heatsink_C`          | °C   | float     | Inverter Temperature                                            |
-| `total_generation_Wh` | Wh   | integer   | Total Energy Generated                                          |
-
-### Battery Data Model
-
-Battery storage system data with charge/discharge metrics:
-
-**Example:**
-
-```json
-{
-  "type": "battery",
-  "make": "Tesla",
-  "W": 500,
-  "A": 10.5,
-  "V": 48.2,
-  "SoC_nom_fract": 0.75,
-  "heatsink_C": 25,
-  "total_charge_Wh": 8000,
-  "total_discharge_Wh": 7200
-}
-```
-
-**Fields:**
-
-| Field                | Unit     | Data Type | Description                                                                                             |
-| -------------------- | -------- | --------- | ------------------------------------------------------------------------------------------------------- |
-| `W`                  | W        | integer   | Active Power (+ charge, - discharge)                                                                    |
-| `A`                  | A        | float     | Current (+ charge, - discharge)                                                                         |
-| `V`                  | V        | float     | Voltage                                                                                                 |
-| `SoC_nom_fract`      | fraction | float     | State of Charge (0.0-1.0)                                                                               |
-| `heatsink_C`         | °C       | float     | Battery Temperature                                                                                     |
-| `total_charge_Wh`    | Wh       | integer   | Total Energy Charged                                                                                    |
-| `total_discharge_Wh` | Wh       | integer   | Total Energy Discharged                                                                                 |
-
-### Meter Data Model
-
-Grid meter data with import/export and phase-level measurements:
-
-**Example:**
-
-```json
-{
-  "type": "meter",
-  "make": "Kamstrup",
-  "W": 1200,
-  "Hz": 50.0,
-  "L1_V": 230,
-  "L1_A": 5.2,
-  "L1_W": 400,
-  "L2_V": 229,
-  "L2_A": 5.1,
-  "L2_W": 380,
-  "L3_V": 231,
-  "L3_A": 5.3,
-  "L3_W": 420,
-  "total_import_Wh": 25000,
-  "total_export_Wh": 18000
-}
-```
-
-**Fields:**
-
-| Field             | Unit | Data Type | Description                             |
-| ----------------- | ---- | --------- | --------------------------------------- |
-| `W`               | W    | integer   | Total Active Power (+ import, - export) |
-| `Hz`              | Hz   | float     | Grid Frequency                          |
-| `L1_V`            | V    | float     | L1 Phase Voltage                        |
-| `L1_A`            | A    | float     | L1 Phase Current                        |
-| `L1_W`            | W    | float     | L1 Phase Power                          |
-| `L2_V`            | V    | float     | L2 Phase Voltage                        |
-| `L2_A`            | A    | float     | L2 Phase Current                        |
-| `L2_W`            | W    | float     | L2 Phase Power                          |
-| `L3_V`            | V    | float     | L3 Phase Voltage                        |
-| `L3_A`            | A    | float     | L3 Phase Current                        |
-| `L3_W`            | W    | float     | L3 Phase Power                          |
-| `total_import_Wh` | Wh   | integer   | Total Energy Imported                   |
-| `total_export_Wh` | Wh   | integer   | Total Energy Exported                   |
-
-### EV Charger Data Model (V2X Enabled)
-
-**Example:**
-
-```json
-{
-  "type": "v2x_charger",
-  "make": "Ferroamp",
-  "connector_status": "occupied",
-  "charging_state": "charging",
-  "protocol": "ISO_15118_20",
-  "control_mode": "bi_dir",
-  "plug_connected": true,
-  "W": 5300,
-  "ac_W": 5300,
-  "A": 23.0,
-  "V": 230.5,
-  "Hz": 49.98,
-  "L1_V": 232.8,
-  "L1_A": 23.0,
-  "L1_W": 5354,
-  "dc_W": 5100,
-  "dc_V": 400.0,
-  "dc_A": 12.75,
-  "vehicle_soc_fract": 0.55,
-  "session_charge_Wh": 1500,
-  "session_discharge_Wh": 0,
-  "total_charge_Wh": 142000,
-  "total_discharge_Wh": 5100
-}
-```
-
-**Fields Definition:**
-
-| Field | Unit | Data Type | Description |
-|-------|------|-----------|-------------|
-| `type` | - | string | Always `"v2x_charger"` |
-| `make` | - | string | Manufacturer brand (e.g., Ferroamp, Ambibox) |
-| `connector_status` | - | string | Connector availability (see [Connector Status](#connector-status)) |
-| `charging_state` | - | string | Vehicle/session charging state (see [Charging State](#charging-state)) |
-| `status` | - | string | **Deprecated.** Legacy flat status string. Use `connector_status` + `charging_state` instead |
-| `protocol` | - | string | Active protocol (e.g., ISO_15118_2, ISO_15118_20, DIN) |
-| `control_mode` | - | string | `"unknown"`, `"bi_dir"` (bidirectional), or `"uni_dir"` (charge only) |
-| `plug_connected` | - | boolean | **Deprecated.** Use `connector_status` instead — derivable from status != `"available"` |
-| `W` | W | integer | Active Power, derived from `ac_W` or `dc_W * 0.95`. (+) Charging, (-) V2G |
-| `ac_W` | W | integer | AC Active Power (+) Charging, (-) V2G |
-| `A` | A | float | AC Grid Current (Total) |
-| `V` | V | float | AC Grid Voltage (Average) |
-| `Hz` | Hz | float | Grid Frequency |
-| `L1_V` / `L2_V` / `L3_V` | V | float | Phase Voltage |
-| `L1_A` / `L2_A` / `L3_A` | A | float | Phase Current |
-| `L1_W` / `L2_W` / `L3_W` | W | float | Phase Power |
-| `dc_W` | W | integer | DC Battery Power: Actual power entering/leaving car battery |
-| `dc_V` | V | float | DC Voltage level of the EV battery |
-| `dc_A` | A | float | DC Current flow |
-| `vehicle_soc_fract` | fraction | float | Vehicle State of Charge (0.0 - 1.0) |
-| `ev_target_energy_req_Wh` | Wh | integer | Demand: Energy needed to reach driver's target SoC |
-| `ev_max_energy_req_Wh` | Wh | integer | Capacity: Empty space in battery available for charging |
-| `ev_min_energy_req_Wh` | Wh | integer | V2G Potential: Energy available for export (negative = V2G) |
-| `session_charge_Wh` | Wh | integer | Energy imported by EV during this session |
-| `session_discharge_Wh` | Wh | integer | Energy exported by EV during this session |
-| `total_charge_Wh` | Wh | integer | Lifetime Energy delivered to EV |
-| `total_discharge_Wh` | Wh | integer | Lifetime Energy exported from EV (V2G) |
-
-#### Connector Status
-
-Describes the physical connector's availability. Based on OCPP 2.0.1 `ConnectorStatusEnumType`, with `preparing` and `finishing` retained from OCPP 1.6 for backward compatibility.
-
-| Value | Meaning |
-|-------|---------|
-| `"unknown"` | State not yet determined |
-| `"available"` | Ready, nothing plugged in |
-| `"preparing"` | Cable plugged in, session not started yet |
-| `"finishing"` | Session ending, cable still plugged in |
-| `"reserved"` | Locked for a specific user |
-| `"unavailable"` | Intentionally offline (maintenance, admin) |
-| `"faulted"` | Hardware/software fault |
-| `"occupied"` | In use (charging, discharging, or connected) |
-
-#### Charging State
-
-Describes the vehicle/charging session state. Based on OCPP 2.0.1 `ChargingStateEnumType`, extended with `discharging` for V2G.
-
-| Value | Meaning |
-|-------|---------|
-| `"unknown"` | State not yet determined |
-| `"charging"` | Energy actively flowing to vehicle |
-| `"discharging"` | Energy flowing from vehicle to grid (V2G) |
-| `"suspended_ev"` | Vehicle not accepting power (e.g., battery full) |
-| `"suspended_evse"` | Charger not delivering power (e.g., smart charging limit, pending auth) |
-| `"ev_connected"` | Cable plugged in, session open, no energy flowing yet |
-| `"idle"` | Transaction open but no EV connected (e.g., cable removed mid-session) |
+| DER | + | − |
+|-----|---|---|
+| solar | never | generating |
+| battery | charging | discharging |
+| inverter | absorbing AC | delivering AC |
+| meter (grid) | import | export |
+| ev_charger_port | charging the vehicle | V2G |
+| control `power_W_dc` | charge | discharge |

@@ -58,5 +58,5 @@ This hardware section is primarily for:
 ## Related Documentation
 
 - [Zap for Developers](/technical/zap-for-developers) - Understanding the Zap platform and capabilities
-- [Data Models](/technical/data-models) - WALLET > SITE > DEVICE > DER hierarchy
+- [Data Models](/technical/data-models) - ORGANIZATION > SITE > DEVICE > DER hierarchy
 - [EMS Documentation](/technical/ems) - How Zaps integrate with the Energy Management System

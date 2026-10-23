@@ -356,9 +356,17 @@ At least one of `mqtt_connection_str` or `mqtt_connection_fallback_str` is requi
 **Errors**:
 - 400 - Empty body or missing both connection strings
 
+:::warning TLS certificate verification
+
+- For broker hosts under `*.sourceful.dev` and `*.srcful.dev`, the Zap verifies the server certificate against a pinned Let's Encrypt root.
+- For **any other broker host**, a `mqtts://` connection is encrypted with TLS, but the Zap does **not** verify the server certificate or hostname. This is what currently makes it possible to point the Zap at a third-party broker without installing a CA on the device.
+- This may change in future firmware, for example stricter verification or a configurable CA or certificate fingerprint. Integrators should not rely on unverified TLS long-term and should check the firmware release notes before upgrading.
+
+:::
+
 **Behaviour**:
 - **URL format:** `mqtts://host[:port]` (TLS) or `mqtt://host[:port]` (plain). The default port is 8883 for `mqtts` and 1883 for `mqtt`. The Zap uses MQTT 3.1.1.
-- **TLS:** for hosts under `sourceful.dev` or `srcful.dev`, the server certificate is checked against the pinned Let's Encrypt root. For **any other host, certificate verification is turned off** (the connection is encrypted but the server is not verified).
+- **TLS:** certificates are verified only for `*.sourceful.dev` and `*.srcful.dev`. For other hosts the connection is encrypted but not verified (see the warning above).
 - **Fallback:** if a fallback is set and the primary broker cannot be reached, the Zap **overwrites the primary with the fallback**, saves it and reboots. It does not switch back by itself.
 - **Backend is unchanged:** this endpoint only changes the MQTT broker. OTA update checks and device self-registration still use the active backend (see [POST /api/system/backend](#post-apisystembackend)).
 - **Storage:** the settings are saved in `/spiffs/system_config.json` and kept across reboots and firmware updates. A [factory reset](#post-apisystemfactory-reset) clears them.

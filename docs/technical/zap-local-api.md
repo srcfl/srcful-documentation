@@ -8,9 +8,14 @@ slug: /technical/zap-local-api
 
 Complete endpoint documentation for the controller firmware.
 
+> **Firmware version:** This page documents Zap firmware **v2.3.27**. Newer firmware may add, change or remove endpoints. Check `zap.firmwareVersion` in [GET /api/system](#get-apisystem).
+
+> **No authentication:** The local API does not require authentication. Anyone who can reach the Zap on the local network can call every endpoint, including those that change the MQTT broker, WiFi credentials or devices. Keep the Zap on a trusted network. The same endpoints are also reachable over BLE during onboarding and through the cloud request/response channel over MQTT.
+
 ## Table of Contents
 
-1. [System & Network](#system--network)
+1. [Discovery (mDNS)](#discovery-mdns)
+2. [System & Network](#system--network)
    - [System Info](#get-apisystem)
    - [System Reboot](#post-apisystemreboot)
    - [Factory Reset](#post-apisystemfactory-reset)
@@ -24,12 +29,15 @@ Complete endpoint documentation for the controller firmware.
    - [MQTT Config (GET)](#get-apisystemmqtt)
    - [MQTT Config (POST)](#post-apisystemmqtt)
    - [MQTT Config (DELETE)](#delete-apisystemmqtt)
-2. [Device Management](#device-management)
+   - [Backend (GET)](#get-apisystembackend)
+   - [Backend (POST)](#post-apisystembackend)
+3. [Device Management](#device-management)
    - [Supported Devices](#get-apidevicessupported)
    - [Connection Types](#get-apidevicestypes)
    - [List Devices](#get-apidevices)
    - [Add Device](#post-apidevices)
    - [Get Device](#get-apidevicessn)
+   - [Update Device](#put-apidevicessn)
    - [Remove Device](#delete-apidevicessn)
    - [Remove All Devices](#delete-apidevices)
    - [Device Data (JSON)](#get-apidevicessndatajson)
@@ -40,24 +48,24 @@ Complete endpoint documentation for the controller firmware.
    - [Update DER Metadata](#post-apidevicessnders)
    - [Read Registers](#get-apidevicessnregistersaddress)
    - [Write Registers](#post-apidevicessnregisters)
-3. [Control & Operations](#control--operations)
+4. [Control & Operations](#control--operations)
    - [Init Control](#post-apicontrolsninit)
    - [Battery Control](#post-apicontrolsnbattery)
    - [PV Curtailment](#post-apicontrolsncurtail)
    - [Disable Curtailment](#post-apicontrolsncurtaildisable)
    - [Deinit Control](#post-apicontrolsndeinit)
-4. [Diagnostics](#diagnostics)
+5. [Diagnostics](#diagnostics)
    - [Port Check](#post-apinetworkport-check)
+   - [Network Scan](#post-apinetworkscan)
    - [Modbus Read](#post-apimodbusread)
-5. [Identity & Security](#identity--security)
+6. [Identity & Security](#identity--security)
    - [Crypto Info](#get-apicrypto)
-   - [Initialize (Sign Wallet)](#post-apicrypto)
    - [Sign Message](#post-apicryptosign)
    - [Device Name](#get-apiname)
-6. [Utilities](#utilities)
+7. [Utilities](#utilities)
    - [Debug Info](#get-apidebug)
    - [Echo](#post-apiecho)
-7. [Reference](#reference)
+8. [Reference](#reference)
    - [Status Codes](#status-codes)
    - [Examples](#examples)
    - [Notes](#notes)
@@ -68,7 +76,36 @@ Complete endpoint documentation for the controller firmware.
 
 All endpoints prefixed with `/api/`.
 
-Example: `http://192.168.1.100/api/system`
+Examples:
+- `http://192.168.1.100/api/system` (IP address)
+- `http://zap-0000a1b2c3d4e5f6.local/api/system` (device-unique mDNS name)
+- `http://zap.local/api/system` (alias, only on the first Zap on the network, see below)
+
+The server listens on plain HTTP, port 80.
+
+---
+
+## Discovery (mDNS)
+
+Once connected to a network, the Zap announces itself over mDNS:
+
+| What | Value |
+| --- | --- |
+| Primary hostname | `<device id>.local`, e.g. `zap-0000a1b2c3d4e5f6.local`. The device ID is `zap-0000` followed by the WiFi STA MAC address in reverse byte order, lowercase hex. It is the same value as `zap.deviceId` in `GET /api/system` and `name` in `GET /api/name`. |
+| Alias | `zap.local`. The Zap claims it only if no other device answers to `zap.local` within 2 seconds. With several Zaps on one network, only the first one gets it, so use the device-unique name when you can. |
+| Service | `_http._tcp`, port 80, instance name = device ID |
+| TXT records | `id` (device ID), `ver` (firmware version), `mac` (WiFi MAC, `AA:BB:CC:DD:EE:FF`) |
+| DHCP hostname | Same as the device ID, so the Zap also shows up under that name in most routers. |
+
+mDNS starts once the network is up **and** the BLE onboarding service has stopped. On WiFi this is normally about 60 seconds after the Zap connects. On Ethernet it does not wait for BLE. Until then, use the IP address.
+
+Example discovery:
+```bash
+# Linux (Avahi)
+avahi-browse -rt _http._tcp | grep -A3 zap-
+# macOS
+dns-sd -B _http._tcp
+```
 
 ---
 
@@ -76,50 +113,70 @@ Example: `http://192.168.1.100/api/system`
 
 ### GET /api/system
 
-System info, memory, WiFi status, uptime.
+System info, memory, network status, uptime and active backend.
 
 **Response** (200):
 ```json
 {
-  "time_utc_sec": 1697515200,
-  "uptime_seconds": 123456,
-  "temperature_celsius": 0.0,
-  "memory_kb": {
-    "total": 4096.0,
-    "free": 2560.0,
-    "used": 1536.0,
-    "percent_used": 37.5,
-    "min": 2048.0,
-    "largest": 1024.0
+  "timeUtcSec": 1697515200,
+  "uptimeSeconds": 123456,
+  "temperatureCelsius": 41.5,
+  "backend": "mainnet",
+  "memoryKb": {
+    "total": 300.2,
+    "free": 120.5,
+    "used": 179.7,
+    "percentUsed": 59.9,
+    "min": 80.1,
+    "largest": 60.0
   },
-  "processes_average": {
-    "last_1min": 0,
-    "last_5min": 0,
-    "last_15min": 0
+  "processesAverage": {
+    "last1min": 0,
+    "last5min": 0,
+    "last15min": 0
   },
   "logging": {
-    "enabled": true,
+    "enabled": false,
     "level": 4
   },
   "zap": {
-    "deviceId": "abc123",
+    "deviceId": "zap-0000a1b2c3d4e5f6",
+    "platform": "zap",
     "cpuFreqMHz": 160,
     "flashSizeMB": 0.0,
-    "sdkVersion": "v5.1",
-    "firmwareVersion": "1.0.0",
-    "publicKey": "04a1b2c3...",
+    "sdkVersion": "v5.x",
+    "firmwareVersion": "2.3.27",
+    "publicKey": "<128 hex chars>",
     "network": {
+      "wifiMac": "AA:BB:CC:DD:EE:FF",
       "wifiStatus": "connected",
       "wifiConnected": true,
       "localIP": "192.168.1.100",
       "ssid": "MyNetwork",
       "rssi": -45,
+      "interfaces": {
+        "wifi": {
+          "mac": "AA:BB:CC:DD:EE:FF",
+          "connected": true,
+          "ip": "192.168.1.100",
+          "ssid": "MyNetwork",
+          "rssi": -45
+        }
+      },
       "internetConnected": true,
       "mqttConnected": true
     }
   }
 }
 ```
+
+- `backend`: active backend network (`mainnet`, `testnet` or `devnet`), see [GET /api/system/backend](#get-apisystembackend).
+- `temperatureCelsius`: SoC temperature, `0.0` if the chip has no sensor.
+- `publicKey`: the device's P-256 public key as 128 hex characters (X‖Y, no `04` prefix).
+- `flashSizeMB` is always `0.0` in v2.3.27. `processesAverage` is a placeholder (always zero).
+- `platform`: board name. The value depends on the hardware.
+- On boards with Ethernet, the `network` object also contains `ethMac`, `ethStatus`, `ethConnected`, `ethAvailable`, `ethLocalIP` (when connected) and `interfaces.eth` (`mac`, `connected`, `available`, `ip`).
+- When WiFi is disconnected, `wifiStatus` is `"disconnected"`, `wifiConnected` is `false`, and `localIP`, `ssid`, `rssi` are left out.
 
 ### POST /api/system/reboot
 
@@ -170,21 +227,24 @@ Toggle real-time log streaming to MQTT. When enabled, device logs are published 
 
 ### GET /api/network
 
-Network connectivity status. Returns the same data as the `network` object in `GET /api/system`.
+Network connectivity status. Returns the same object as `zap.network` in [GET /api/system](#get-apisystem) (WiFi fields, Ethernet fields on Ethernet boards, `interfaces`, `internetConnected`, `mqttConnected`).
 
 **Response** (200):
 ```json
 {
+  "wifiMac": "AA:BB:CC:DD:EE:FF",
   "wifiStatus": "connected",
   "wifiConnected": true,
   "localIP": "192.168.1.100",
   "ssid": "MyNetwork",
   "rssi": -45,
+  "interfaces": {
+    "wifi": { "mac": "AA:BB:CC:DD:EE:FF", "connected": true, "ip": "192.168.1.100", "ssid": "MyNetwork", "rssi": -45 }
+  },
   "internetConnected": true,
   "mqttConnected": true
 }
 ```
-*Note: When disconnected, only `wifiStatus`, `wifiConnected`, and `internetConnected` are returned.*
 
 ### GET /api/wifi
 
@@ -261,29 +321,29 @@ Stop the BLE service.
 
 ### GET /api/system/mqtt
 
-Get current MQTT broker configuration.
+Get the stored MQTT broker configuration.
 
 **Response** (200):
 ```json
 {
-  "mqtt_connection_str": "mqtt://broker.example.com:1883",
+  "mqtt_connection_str": "mqtts://broker.example.com:8883",
   "mqtt_connection_fallback_str": ""
 }
 ```
-*Note: Both fields are empty strings when no MQTT config is set.*
+Both fields are empty strings when no custom broker is set. In that case the Zap connects to the default broker of the active [backend](#get-apisystembackend) (`mqtts://novacore-mainnet.sourceful.dev` by default).
 
 ### POST /api/system/mqtt
 
-Set MQTT broker configuration. Triggers a reboot.
+Point the Zap at a custom MQTT broker. The new settings take effect after a reboot, which the Zap schedules itself about 2 seconds after it responds.
 
 **Request**:
 ```json
 {
-  "mqtt_connection_str": "mqtt://broker.example.com:1883",
-  "mqtt_connection_fallback_str": "mqtt://fallback.example.com:1883"
+  "mqtt_connection_str": "mqtts://broker.example.com:8883",
+  "mqtt_connection_fallback_str": "mqtts://fallback.example.com:8883"
 }
 ```
-*Note: At least one of `mqtt_connection_str` or `mqtt_connection_fallback_str` is required. Both are optional individually.*
+At least one of `mqtt_connection_str` or `mqtt_connection_fallback_str` is required. A field that is left out keeps its current value. Each value can be at most 255 characters.
 
 **Response** (200):
 ```json
@@ -296,9 +356,16 @@ Set MQTT broker configuration. Triggers a reboot.
 **Errors**:
 - 400 - Empty body or missing both connection strings
 
+**Behaviour**:
+- **URL format:** `mqtts://host[:port]` (TLS) or `mqtt://host[:port]` (plain). The default port is 8883 for `mqtts` and 1883 for `mqtt`. The Zap uses MQTT 3.1.1.
+- **TLS:** for hosts under `sourceful.dev` or `srcful.dev`, the server certificate is checked against the pinned Let's Encrypt root. For **any other host, certificate verification is turned off** (the connection is encrypted but the server is not verified).
+- **Fallback:** if a fallback is set and the primary broker cannot be reached, the Zap **overwrites the primary with the fallback**, saves it and reboots. It does not switch back by itself.
+- **Backend is unchanged:** this endpoint only changes the MQTT broker. OTA update checks and device self-registration still use the active backend (see [POST /api/system/backend](#post-apisystembackend)).
+- **Storage:** the settings are saved in `/spiffs/system_config.json` and kept across reboots and firmware updates. A [factory reset](#post-apisystemfactory-reset) clears them.
+
 ### DELETE /api/system/mqtt
 
-Remove MQTT broker configuration. Triggers a reboot.
+Remove the custom broker configuration (both strings). After the reboot the Zap connects to the default broker of the active backend. Reboots about 2 seconds after responding.
 
 **Response** (200):
 ```json
@@ -307,6 +374,44 @@ Remove MQTT broker configuration. Triggers a reboot.
   "message": "MQTT config removed from NVS, reboot scheduled"
 }
 ```
+The settings are stored in SPIFFS, not NVS; the message text is historical.
+
+### GET /api/system/backend
+
+Get the active backend network.
+
+**Response** (200):
+```json
+{ "backend": "mainnet" }
+```
+One of `mainnet`, `testnet`, `devnet`. Defaults to `mainnet` when nothing has been selected.
+
+### POST /api/system/backend
+
+Switch the Zap to another Sourceful backend network. This sets the backend used for OTA and self-registration **and** replaces the MQTT broker with that network's default broker, then reboots about 2 seconds after responding. The fallback broker string is not changed.
+
+**Request**:
+```json
+{ "backend": "testnet" }
+```
+
+| `backend` | MQTT broker |
+| --- | --- |
+| `mainnet` | `mqtts://novacore-mainnet.sourceful.dev` |
+| `testnet` | `mqtts://novacore-testnet.sourceful.dev` |
+| `devnet` | `mqtts://novacore-devnet.sourceful.dev` |
+
+**Response** (200):
+```json
+{
+  "status": "success",
+  "backend": "testnet",
+  "message": "Network switched, reboot scheduled"
+}
+```
+
+**Errors**:
+- 400 - Empty body, missing `backend`, or a value other than `devnet`, `testnet`, `mainnet`
 
 ---
 
@@ -363,24 +468,22 @@ List supported device profiles.
 
 ### GET /api/devices/types
 
-List all possible connection types and their required/optional parameters for creating a device.
+List all connection types and the parameters needed to create a device. The response is an object keyed by connection type.
 
-**Response** (200):
+**Response** (200, shortened):
 ```json
 {
-  "connection_types": [
-    {
-      "type": "modbus_tcp",
+  "connection_types": {
+    "modbus_tcp": {
       "description": "Modbus TCP connection",
       "parameters": [
-        { "name": "ip", "type": "string", "required": true },
-        { "name": "port", "type": "integer", "required": true, "default": 502 },
-        { "name": "unit_id", "type": "integer", "required": true, "default": 1 },
-        { "name": "profile", "type": "string", "required": true }
+        { "name": "ip", "display_name": "IP Address", "type": "string", "required": true },
+        { "name": "port", "display_name": "Port", "type": "integer", "required": true, "default": 502 },
+        { "name": "unit_id", "display_name": "Unit ID", "type": "integer", "required": true, "default": 1 },
+        { "name": "profile", "display_name": "Device Profile", "type": "string", "required": true }
       ]
     },
-    {
-      "type": "modbus_rtu",
+    "modbus_rtu": {
       "description": "Modbus RTU connection over RS485",
       "parameters": [
         { "name": "baud_rate", "type": "integer", "required": true, "default": 9600 },
@@ -391,8 +494,7 @@ List all possible connection types and their required/optional parameters for cr
         { "name": "stop_bits", "type": "integer", "required": false, "default": 1 }
       ]
     },
-    {
-      "type": "p1_uart",
+    "p1_uart": {
       "description": "P1 Port (DSMR) connection",
       "parameters": [
         { "name": "manufacturer", "type": "string", "required": false },
@@ -402,20 +504,26 @@ List all possible connection types and their required/optional parameters for cr
         { "name": "stop_bits", "type": "integer", "required": false, "default": 1 }
       ]
     },
-    {
-      "type": "mqtt",
+    "han_uart": {
+      "description": "HAN (Home Area Network) M-Bus connection",
+      "parameters": [
+        { "name": "manufacturer", "type": "string", "required": false }
+      ]
+    },
+    "mqtt": {
       "description": "MQTT connection",
       "parameters": [
         { "name": "broker_host", "type": "string", "required": true },
-        { "name": "broker_port", "type": "integer", "required": true, "default": 1883 },
+        { "name": "broker_port", "type": "integer", "required": false, "default": 1883 },
         { "name": "username", "type": "string", "required": false },
         { "name": "password", "type": "string", "required": false },
         { "name": "client_id", "type": "string", "required": false }
       ]
     }
-  ]
+  }
 }
 ```
+Every parameter object also has a `display_name` (omitted above except for `modbus_tcp`).
 
 ### GET /api/devices
 
@@ -484,7 +592,10 @@ List all configured devices. Each entry is the persisted config augmented with r
 
 ### POST /api/devices
 
-Add device. Connects immediately, saved only on success.
+Add a device.
+
+- **Modbus and MQTT devices:** the Zap connects and reads the device first. The config is saved only if that works.
+- **P1 and HAN smart meters (`p1_uart`, `han_uart`):** the meter is saved right away, without waiting for data. Detection of the physical port and serial framing then runs in the background, so setup works even if the meter is not plugged in yet. A Zap holds at most one smart meter; repeating the request returns the existing meter (200). The meter DER starts with `enabled: false`, so nothing is published until it is enabled with [POST /api/devices/\{sn\}/types](#post-apidevicessntypes). The serial number is generated from the device ID: `p1m-…` for P1, `han-…` for HAN (e.g. `p1m-0000a1b2c3d4e5f6`).
 
 **Modbus TCP**:
 ```json
@@ -518,6 +629,13 @@ Add device. Connects immediately, saved only on success.
   "data_bits": 8,
   "parity": "none",
   "stop_bits": 1
+}
+```
+
+**HAN UART** (M-Bus):
+```json
+{
+  "type": "han_uart"
 }
 ```
 
@@ -576,6 +694,18 @@ Add device. Connects immediately, saved only on success.
 }
 ```
 
+**Response for a P1/HAN smart meter** (201 when added, 200 when it already existed):
+```json
+{
+  "message": "Smart meter added; automatic port detection started",
+  "sn": "p1m-0000a1b2c3d4e5f6",
+  "ders": [
+    { "type": "meter", "enabled": false }
+  ]
+}
+```
+For an existing meter the message is `"Smart meter already added"`.
+
 **Errors**:
 - 400 - Invalid config
 - 409 - Device exists or conflicts (UART/TCP endpoint)
@@ -583,17 +713,42 @@ Add device. Connects immediately, saved only on success.
 
 ### GET `/api/devices/{sn}`
 
-Get device details by serial number. *Not yet implemented — returns 501.*
+Get the stored configuration of one device: its connection parameters, `sn` and DER metadata, in the same shape as the entries in [GET /api/devices](#get-apidevices) but without the runtime fields (`connected`, `last_harvest`, `path`).
 
-**Response** (501):
-```json
-{ "message": "Not implemented" }
-```
+Example: `GET /api/devices/INV003SIM03`
 
 **Errors**:
 - 400 - Missing serial number
 - 404 - Device not found
-- 501 - Not implemented
+
+### PUT `/api/devices/{sn}`
+
+Change the connection settings of an existing device, for example after its IP address changed. The body is a full device config, in the same format as [POST /api/devices](#post-apidevices). The Zap connects with the new settings and checks that the device reports the same serial number before it replaces the old config. If the body has a `ders` array it is applied (same format as [POST /api/devices/\{sn\}/ders](#post-apidevicessnders)); otherwise the existing DER settings are kept.
+
+Example: `PUT /api/devices/INV003SIM03`
+
+**Request**:
+```json
+{
+  "type": "modbus_tcp",
+  "ip": "192.168.1.61",
+  "port": 502,
+  "unit_id": 1,
+  "profile": "sungrow"
+}
+```
+
+**Response** (200):
+```json
+{ "message": "Device updated", "sn": "INV003SIM03" }
+```
+
+**Errors**:
+- 400 - Missing serial number or invalid config
+- 404 - Device not found
+- 409 - Serial number mismatch (a different physical device answered). The body includes `expected_sn` and `actual_sn`.
+- 500 - Failed to save the updated device
+- 503 - Could not connect with the new config, or could not read the serial number
 
 ### DELETE `/api/devices/{sn}`
 
@@ -806,6 +961,7 @@ By default, all detected DERs have `enabled = false` on first connection.
 ```json
 { "message": "Types updated", "sn": "INV003SIM03" }
 ```
+If nothing changed, the response is 200 with `"message": "No changes"`.
 
 **Errors**:
 - 400 - Missing ders array
@@ -1101,6 +1257,39 @@ Check if a TCP port is open on a remote host. Useful for verifying network conne
 **Errors**:
 - 400 - Missing `host` or `port`
 
+### POST /api/network/scan
+
+Scan the Zap's local subnet for hosts with open TCP ports, e.g. to find Modbus devices.
+
+**Request** (all fields optional):
+```json
+{
+  "ports": [502, 1883],
+  "timeout": 500,
+  "batch_size": 12
+}
+```
+- `ports`: up to 8 ports, default `[502]`.
+- `timeout`: per-connection timeout in ms, default 500, clamped to 50–5000.
+- `batch_size`: number of parallel probes, default 12.
+
+The scan can take a while on a /24 network. At most 64 hosts are returned.
+
+**Response** (200):
+```json
+{
+  "status": "success",
+  "subnet": "192.168.1.0/24",
+  "hosts_found": 1,
+  "hosts": [
+    { "ip": "192.168.1.60", "ports": [502] }
+  ]
+}
+```
+
+**Errors**:
+- 503 - Network interface not available
+
 ### POST /api/modbus/read
 
 Ad-hoc Modbus register read without requiring a registered device. Connects, reads, and disconnects automatically.
@@ -1148,38 +1337,16 @@ Ad-hoc Modbus register read without requiring a registered device. Connects, rea
 
 ### GET /api/crypto
 
-Get device identity information.
+Get device identity information. `serialNumber` is the device ID. `publicKey` is the P-256 public key as 128 hex characters. `deviceName` is always `"software_zap"`.
 
 **Response** (200):
 ```json
 {
   "deviceName": "software_zap",
-  "serialNumber": "abc123def456",
-  "publicKey": "04a1b2c3..."
+  "serialNumber": "zap-0000a1b2c3d4e5f6",
+  "publicKey": "<128 hex chars>"
 }
 ```
-
-### POST /api/crypto
-
-Sign the device ID concatenated with a wallet address. Used to prove device identity during initialization.
-
-**Request**:
-```json
-{
-  "wallet": "0xYourWalletAddress"
-}
-```
-
-**Response** (200):
-```json
-{
-  "idAndWallet": "abc123def456:0xYourWalletAddress",
-  "signature": "3045022100..."
-}
-```
-
-**Errors**:
-- 400 - Missing `wallet` field
 
 ### POST /api/crypto/sign
 
@@ -1211,7 +1378,7 @@ Get device name (ID).
 **Response** (200):
 ```json
 {
-  "name": "abc123def456"
+  "name": "zap-0000a1b2c3d4e5f6"
 }
 ```
 
@@ -1346,6 +1513,9 @@ curl -X DELETE http://192.168.1.100/api/devices
 ```
 
 ### Notes
+
+- Documented against firmware v2.3.27.
+- The local API has no authentication; keep the Zap on a trusted network.
 
 - Device configs persist in `/spiffs/devices/{sn}.json`
 - Auto-reconnect every 10s for disconnected devices
